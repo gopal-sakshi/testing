@@ -1,0 +1,40 @@
+
+<!------------------------------------- we need to import MatCheckBox & FormsModule for this example... do it later... 
+
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+        Sidenav content
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div><mat-checkbox [(ngModel)]="opened">Opened</mat-checkbox></div>
+        <div><button mat-button (click)="sidenav.toggle()">Closed</button></div>
+    </mat-sidenav-content>
+</mat-sidenav-container> 
+
+----------------------------->
+
+
+<mat-sidenav-container class="example-container">
+    
+    <!-- default is position="start"-->
+    <mat-sidenav [mode]="'side'" class="sidenav-class" opened mode="side" position="start">
+        <div class="div-in-sidenav-class"> Gonzalo Higuain </div>
+    </mat-sidenav> 
+    
+    <!-- remove opened and try once -->
+    <mat-sidenav class="sidenav-class" opened mode="side" position="end">
+        <div class="div-in-sidenav-class"> Karim Benzema </div>
+    </mat-sidenav>
+                
+    <mat-sidenav-content class="sidenav-content-class"> 
+        <div class="main-div"> RM Strikers </div>
+    </mat-sidenav-content>
+    
+</mat-sidenav-container>
+
+<!-- 
+    it seems 'opened' flag is important 
+    otherwise, mat-sidenav (or) mat-sidenav-content wont be displayed
+    (or) at least open() method must be called.... #sidenav id, then sidenav.toggle() 
+-->

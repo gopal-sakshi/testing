@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SubjectsModule } from './subjects/subjects.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductGuardService } from './classes/ProductGuardService';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FlexLayoutModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ProductGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

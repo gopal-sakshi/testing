@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CanActivate } from '@angular/router';
+
 
 @Component({
   selector: 'app-mat-forms23',

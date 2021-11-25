@@ -7,6 +7,7 @@ import { SubjectsModule } from './subjects/subjects.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductGuardService } from './classes/ProductGuardService';
+import { ConnectionService, ConnectionServiceModule } from 'ng-connection-service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,10 @@ import { ProductGuardService } from './classes/ProductGuardService';
     FlexLayoutModule,
     BrowserAnimationsModule
   ],
-  providers: [ProductGuardService],
+  providers: [
+    ProductGuardService,
+    ConnectionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

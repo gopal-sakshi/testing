@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'activate23',
     loadChildren: () => import('./route-guards/route-guards.module').then(m => m.RouteGuardsModule)
+  },
+  {
+    path: 'services-di',
+    loadChildren: () => import('./services-di/services-di.module').then(m => m.ServicesDIModule)
   }
 ];
 

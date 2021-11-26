@@ -1,8 +1,12 @@
+import { Injectable } from "@angular/core";
+import { LoggerService } from "./logger.service";
 import { Product } from "./product";
 
 
+@Injectable()               // bcoz, we are about to inject loggerService into this ProductService
 export class ProductService {
 
+    constructor(private loggerService:LoggerService) {}
     public getProducts() {
 
         let products: Product[];

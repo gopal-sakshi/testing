@@ -7,6 +7,7 @@ import { ProductNoDiComponent } from './components/product-no-di/product-no-di.c
 import { HomeDiComponent } from './components/home-di/home-di.component';
 import { FlexModule } from '@angular/flex-layout';
 import { ProductService } from './classes/product.service';
+import { LoggerService } from './classes/logger.service';
 
 
 @NgModule({
@@ -21,9 +22,10 @@ import { ProductService } from './classes/product.service';
     FlexModule
   ],
   providers: [
-    ProductService                        // ProductService is registered with Injector_of_ServicesDIModule
+    ProductService,                        // ProductService is registered with Injector_of_ServicesDIModule
                                             // now this ProductService is available across all the components of this module
                                             // remember that ServicesDIModule has an injector of its own
+    LoggerService
   ]
 })
 export class ServicesDIModule { }

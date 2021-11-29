@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../classes/product';
 import { ProductService } from '../../classes/product.service';
 
@@ -18,7 +18,7 @@ export class ProductNoDiComponent {
 
     // this is wrong... creating an instance of ProductService within the component...
     // ideally we should use DI & get instance of ProductService in the constructor of this ProductDiComponent.
-    
+
                   // this would throw error, bcoz ProductService now expects 1 argument... loggerService
         // this.productService = new ProductService();
         this.productService = new ProductService(this.blah);

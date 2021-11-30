@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'services-di',
     loadChildren: () => import('./services-di/services-di.module').then(m => m.ServicesDIModule)
+  },
+  {
+    path: 'random12',
+    loadChildren: () => import('./random12/random12.module').then(m => m.Random12Module)
   }
 ];
 

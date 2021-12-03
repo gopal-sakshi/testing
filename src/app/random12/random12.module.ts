@@ -5,16 +5,32 @@ import { Random12RoutingModule } from './random12-routing.module';
 
 import { HomeRandomComponent } from './components/home-random/home-random.component';
 import { Cors23Component } from './components/cors23/cors23.component';
+import { Lifecycle12Component } from './components/lifecycle12/lifecycle12.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { CanActivate12Guard } from './classes/canActivate12.service';
+import { Auth12Service } from './classes/auth12.service';
+import { MockUserDataService } from './resolvers/mock-user-data.service';
+import { UserResolver } from './resolvers/user.resolver';
+import { DisplayUsersComponent } from './components/display-users/display-users.component';
 
 
 @NgModule({
   declarations: [
     Cors23Component,
-    HomeRandomComponent
+    HomeRandomComponent,
+    Lifecycle12Component,
+    DisplayUsersComponent
   ],
   imports: [
     CommonModule,
-    Random12RoutingModule
+    Random12RoutingModule,
+    FlexLayoutModule
+  ],
+  providers:[
+    CanActivate12Guard,
+    Auth12Service,
+    UserResolver,
+    MockUserDataService
   ]
 })
 export class Random12Module { }

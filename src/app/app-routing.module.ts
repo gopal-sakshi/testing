@@ -34,6 +34,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  // imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+    //enableTracing flag = we can see the events emitted during router navigation
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })

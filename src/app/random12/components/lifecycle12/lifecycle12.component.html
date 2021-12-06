@@ -1,0 +1,10 @@
+<h1>router navigation Cycle</h1>
+
+<div fxLayout="column" fxLayoutGap="30px">
+    <!-- <a class="nav-link"[routerLink]="['/displayUsers']" [queryParams]="{'login': '1'}">Perform Authorized Navigation</a> -->
+    <a class="nav-link"[routerLink]="['displayUsers']" [queryParams]="{'login': '1'}">Perform Authorized Navigation</a>
+    <a class="nav-link" [routerLink]="['/displayUsers']" [queryParams]="{'login': '0'}">Unauthorized Navigation</a>
+</div>
+
+<span *ngIf="displayMessage">{{message}}</span>
+<router-outlet></router-outlet>

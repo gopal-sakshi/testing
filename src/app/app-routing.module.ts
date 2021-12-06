@@ -26,10 +26,16 @@ const routes: Routes = [
   {
     path: 'services-di',
     loadChildren: () => import('./services-di/services-di.module').then(m => m.ServicesDIModule)
+  },
+  {
+    path: 'random12',
+    loadChildren: () => import('./random12/random12.module').then(m => m.Random12Module)
   }
 ];
 
 @NgModule({
+  // imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+    //enableTracing flag = we can see the events emitted during router navigation
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })

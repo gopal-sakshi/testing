@@ -14,11 +14,11 @@ const routes: Routes = [
     component: Activate23Component,
     canActivate: [ProductGuardService]
   },
-  { path: 'home', component: Home11Component },
-  { path: 'contact', component: Contact11Component },
-  { path: 'product', component: Product11Component },
-  //{ path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', component: Error11Component }
+  // { path: 'home', component: Home11Component },
+  // { path: 'contact', component: Contact11Component },
+  // { path: 'product', component: Product11Component },
+  // //{ path: '', redirectTo: 'home', pathMatch: 'full' },
+  // { path: '**', component: Error11Component }
 ];
 
 @NgModule({

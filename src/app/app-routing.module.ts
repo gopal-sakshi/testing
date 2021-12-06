@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
+import { DisplayUsersComponent } from './random12/components/display-users/display-users.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent
-  }, 
+  },
   {
     path: 'home',
     component: HomeComponent
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'random12',
     loadChildren: () => import('./random12/random12.module').then(m => m.Random12Module)
+  },
+  {
+    path: 'displayUsers',
+    component: DisplayUsersComponent  //just to show how backslash (/) works during navigation
   }
 ];
 

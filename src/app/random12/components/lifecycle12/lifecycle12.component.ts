@@ -88,5 +88,12 @@ ActivationStart, ActivationEnd, ChildActivationStart, ChildActivationEnd
 
 (b) The component property on ActivatedRouteSnapshot tells the router which component is to be created.
 
-(c)
+(c) router's activateWith() function
+    helps in dynamically creating component
+    A ComponentFactoryResolver is used to create an instance of the DisplayUsersComponent
+    .... something more ....
+
+(d) the laststep = update the url to /displayUsers
+    now, the router is ready to listen for another URL change & start the cycle all over again
+    events    =   ActivationStart, ActivationEnd, ChildActivationStart, ChildActivationEnd
 */

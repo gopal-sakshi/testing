@@ -12,6 +12,8 @@ import { Auth12Service } from './classes/auth12.service';
 import { MockUserDataService } from './resolvers/mock-user-data.service';
 import { UserResolver } from './resolvers/user.resolver';
 import { DisplayUsersComponent } from './components/display-users/display-users.component';
+import { Decorator12Component } from './components/decorator12/decorator12.component';
+import { CustomDecorator12Component } from './components/custom-decorator12/custom-decorator12.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { DisplayUsersComponent } from './components/display-users/display-users.
     Cors23Component,
     HomeRandomComponent,
     Lifecycle12Component,
-    DisplayUsersComponent
+    DisplayUsersComponent,
+    Decorator12Component,
+    CustomDecorator12Component
   ],
   imports: [
     CommonModule,

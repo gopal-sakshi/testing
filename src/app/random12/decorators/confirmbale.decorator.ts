@@ -1,5 +1,13 @@
 import Swal, { SweetAlertOptions } from 'sweetalert2';
 
+/*
+
+    3 arguments of decorators
+    - target = the method being decorated.
+    - propertyKey = the name of the method being decorated.
+    - descriptor = a property descriptor of the given property if it exists on the object, undefined otherwise. The property descriptor is obtained by invoking the Object.getOwnPropertyDescriptor() function.
+
+*/
 
 export function old_Confirmable(target: Object, propertyKey: string, descriptor: PropertyDescriptor) {
     

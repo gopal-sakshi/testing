@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CanActivate12Guard } from './classes/canActivate12.service';
 import { Cors23Component } from './components/cors23/cors23.component';
+import { CustomComp12Component } from './components/custom-comp12/custom-comp12.component';
 import { CustomDecorator12Component } from './components/custom-decorator12/custom-decorator12.component';
 import { Decorator12Component } from './components/decorator12/decorator12.component';
 import { DisplayUsersComponent } from './components/display-users/display-users.component';
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'custom-decorator12',
     component: CustomDecorator12Component
+  },
+  {
+    path: 'custom-component',
+    component: CustomComp12Component
   }
 ];
 

@@ -14,6 +14,7 @@ import { UserResolver } from './resolvers/user.resolver';
 import { DisplayUsersComponent } from './components/display-users/display-users.component';
 import { Decorator12Component } from './components/decorator12/decorator12.component';
 import { CustomDecorator12Component } from './components/custom-decorator12/custom-decorator12.component';
+import { CustomComp12Component } from './components/custom-comp12/custom-comp12.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { CustomDecorator12Component } from './components/custom-decorator12/cust
     Lifecycle12Component,
     DisplayUsersComponent,
     Decorator12Component,
-    CustomDecorator12Component
+    CustomDecorator12Component,
+    //CustomComp12Component
   ],
   imports: [
     CommonModule,

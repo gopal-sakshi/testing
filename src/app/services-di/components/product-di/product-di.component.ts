@@ -6,14 +6,14 @@ import { ProductService } from '../../classes/product.service';
   selector: 'app-product-di',
   templateUrl: './product-di.component.html',
   styleUrls: ['./product-di.component.css'],
-  providers: [ProductService]                   // ProductService is registered with Injector_of_ProductDiComponent
-                                                    // remember that ProductDiComponent has an Injector of its own...
+  providers: [ProductService]           // ProductService is registered with Injector_of_ProductDiComponent
+                                          // remember that ProductDiComponent has an Injector of its own...
 })
 export class ProductDiComponent {
 
   products: Product[];
-  
-  // the component declares the dependencies they need in their constructor... 
+
+  // the component declares the dependencies they need in their constructor...
   // Injector reads dependencies from constructor of the consumer.. then, looks for the dependency in the provider
 
 

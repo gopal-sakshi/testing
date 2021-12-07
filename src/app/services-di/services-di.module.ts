@@ -22,7 +22,7 @@ import { LoggerService } from './classes/logger.service';
     FlexModule
   ],
   providers: [
-    ProductService,                        // ProductService is registered with Injector_of_ServicesDIModule
+    //ProductService,                        // ProductService is registered with Injector_of_ServicesDIModule
                                             // now this ProductService is available across all the components of this module
                                             // remember that ServicesDIModule has an injector of its own
     LoggerService

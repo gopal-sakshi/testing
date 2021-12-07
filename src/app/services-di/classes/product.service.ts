@@ -3,15 +3,20 @@ import { LoggerService } from "./logger.service";
 import { Product } from "./product";
 
 
-/** Injectable... then see providers[] Array in module... 1st way of adding this dependency to providersArray */
-@Injectable()         // bcoz, we are about to inject loggerService into this ProductService
-                      // any component, service ---> if it has any external dependency, then we use @Injectable()
-                      // here ProductService has dependency on LoggerService
-                      // for ProductService to get instantiated, it needs LoggerService (as argument in constructor)
+/**
+ *
+ * Injectable... then see providers[] Array in module... 1st way of adding this dependency to providersArray */
+@Injectable()   // bcoz, we are about to inject loggerService into this ProductService
+                // any component, service ---> if it has any external dependency, then we use @Injectable()
+                // here ProductService has dependency on LoggerService
+                  // (OR) ProductService is CONSUMER of LoggerService dependency
+                  // We add @Injectable() decorator before consumer of dependency
+                // for ProductService to get instantiated, it needs LoggerService (as argument in constructor)
 
 
-/*               Injectable provided at root level... 2nd way of adding dependency to providersArray
-
+/***    Injectable provided at root level... 2nd way of adding dependency to providersArray
+ *
+ *
   @Injectable({
     providedIn:'root'
       // providedIn: 'platform'

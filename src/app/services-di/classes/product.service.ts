@@ -6,6 +6,7 @@ import { Product } from "./product";
 /**
  *
  * Injectable... then see providers[] Array in module... 1st way of adding this dependency to providersArray */
+
 @Injectable()   // bcoz, we are about to inject loggerService into this ProductService
                 // any component, service ---> if it has any external dependency, then we use @Injectable()
                 // here ProductService has dependency on LoggerService
@@ -25,7 +26,11 @@ import { Product } from "./product";
 
 */
 
-
+/****
+ *        3rd way of injecting a dependency
+ *          using @Inject thingy...
+ *          
+ */
 export class ProductService {
 
     /**

@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./home11.component.css']
 })
 export class Home11Component {
-
+title: string = 'Some Title';
 
 }

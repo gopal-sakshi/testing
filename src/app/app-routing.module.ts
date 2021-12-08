@@ -21,7 +21,7 @@ const routes: Routes = [
     loadChildren: () => import('./material23/material23.module').then(m => m.Material23Module)
   },
   {
-    path: 'activate23',
+    path: 'routeGuards',
     loadChildren: () => import('./route-guards/route-guards.module').then(m => m.RouteGuardsModule)
   },
   {

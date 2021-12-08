@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ProductGuardService } from './classes/ProductGuardService';
+import { ProductGuardService } from './route-guards/classes/ProductGuardService';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

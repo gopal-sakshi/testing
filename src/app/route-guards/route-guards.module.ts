@@ -7,6 +7,7 @@ import { Contact11Component } from './components/contact11/contact11.component';
 import { Error11Component } from './components/error11/error11.component';
 import { Home11Component } from './components/home11/home11.component';
 import { Product11Component } from './components/product11/product11.component';
+import { ProductService11 } from './classes/ProductService11';
 
 
 
@@ -21,6 +22,9 @@ import { Product11Component } from './components/product11/product11.component';
   imports: [
     CommonModule,
     RouteGuardsRoutingModule
+  ],
+  providers: [
+    ProductService11
   ]
 })
 export class RouteGuardsModule { }

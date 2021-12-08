@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { SubjectsModule } from './subjects/subjects.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProductGuardService } from './classes/ProductGuardService';
+import { ProductGuardService } from './route-guards/classes/ProductGuardService';
 import { HttpInterceptor23 } from './classes/http-interceptor23';
 
 

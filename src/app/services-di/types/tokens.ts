@@ -3,13 +3,34 @@ import { InjectionToken } from "@angular/core";
 export const someStringTokenByInjectionToken = new InjectionToken<string>('');
 
 // Object.freeze() = object properties can no longer be modified...
-export const SOME_CONFIG = Object.freeze({  
+export const SOME_CONFIG = Object.freeze({
     someURL: 'https://en.wikipedia.org/wiki/Elephant',
     IsDevleomentMode: true
 });
 
-export const doubleFunction = function (count:number) { console.log("doubleFunction says hello ", count*2); }
-export const thriceFunction = function (count:number) { console.log("'thriceFunction says hello ", count*3); }
+export const doubleFunction = function (name:string) {
+  console.log("doubleFunction says hello ", name + ' ' + name);
+}
+export const thriceFunction = function (name:string) {
+  console.log("'thriceFunction says hello ", name + ' ' + name + ' ' + name);
+}
 
-//export const factoryFunction = function (someStringTokenByInjectionToken, )
+export function factoryFunctionUseValue (someArgument:string) {
+  if(someArgument === 'Sakshi') {
+    return doubleFunction(someArgument);
+  } else {
+    return thriceFunction(someArgument);
+  }
+}
+
+export function factoryFunction (someArgument:string) {
+  if(someArgument === 'Sakshi') {
+    return doubleFunction(someArgument);
+    //return doubleFunction
+  } else {
+    return thriceFunction(someArgument);
+    //return doubleFunction
+  }
+}
+
 

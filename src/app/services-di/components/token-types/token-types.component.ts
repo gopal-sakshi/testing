@@ -13,17 +13,28 @@ export class TokenTypesComponent implements OnInit {
   constructor(
     public productServiceClassToken: ProductService,
     @Inject('someStringToken') public someString:string,
-    @Inject(someStringTokenByInjectionToken) public anotherString:string
+    @Inject(someStringTokenByInjectionToken) public anotherString:string,
+    @Inject('myFunction') public localFactoryFunction:any,
+    @Inject('myFunctionUseValue') public localFactoryFunctionUseValue:any
   ) { }
 
   ngOnInit(): void {
+
+    this.localFactoryFunction;
+            // we injected a function into the localFactoryFunction (see factoryFunction in 'tokens.ts')
+            // hence this statement, executes whatever is in that factoyFunction in 'tokens.ts'
+            // we used useFactory to do this...
+
+    //this.localFactoryFunctionUseValue();
+
+
   }
 
 }
 
 
 /*
-    The Problem with the string tokens is that 
+    The Problem with the string tokens is that
       two developers can use the same string token at a different part of the app.
       may be third-party modules, which may use the same token...
       If the token is reused, the last to register overwrites all previously registered tokens.

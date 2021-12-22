@@ -40,11 +40,15 @@ import { TokenTypesComponent } from './components/token-types/token-types.compon
     //ProductTwiceService,
     LoggerService,
     LoggerTwiceService,
-    { provide: 'someStringToken', useValue: 'GopAL' },
+    { provide: 'someStringToken', useValue: 'GopALLLLLLLLLLL' },
     { provide: someStringTokenByInjectionToken, useValue: 'Sakshii' },
     { provide: 'myFunction', useFactory: factoryFunction,
       deps: [someStringTokenByInjectionToken] },
     { provide: 'myFunctionUseValue', useValue: factoryFunctionUseValue('Sakshi')}
   ]
+  /*
+   multi:true that the provider is a multi provider. 
+   with multi providers, we can provide multiple values for a single token in DI.
+   */
 })
 export class ServicesDIModule { }

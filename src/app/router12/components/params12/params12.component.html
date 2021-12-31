@@ -1,0 +1,21 @@
+<!--
+    
+    this component will have 2,3,4 products... all in the same route... I mean the URL doesnt change...
+    but the service call to backend must go with route params... 
+
+    we wont make service call here... but just print it out to console... 
+    
+    meaning product 1 must print ======> blah.com/product/1
+    meaning product 2 must print ======> blah.com/product/2
+
+-->
+<div fxLayout="row" fxLayoutGap="20px">
+    <div *ngFor="let element of products44, index as index">
+        <!-- <span [routerLink]="['itemDetail', index]">
+            {{element.id}} {{element.item}}
+        </span> -->
+        <span [routerLink]="['/router-12/itemDetail', index]">
+            {{element.id}} {{element.item}}
+        </span>        
+    </div>
+</div>

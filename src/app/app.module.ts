@@ -8,6 +8,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductGuardService } from './route-guards/classes/ProductGuardService';
 import { HttpInterceptor23 } from './classes/http-interceptor23';
+import { Common23Module } from './common23/common23.module';
 
 
 
@@ -21,7 +22,8 @@ import { HttpInterceptor23 } from './classes/http-interceptor23';
     AppRoutingModule,
     SubjectsModule,
     FlexLayoutModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    Common23Module
   ],
   providers: [
     ProductGuardService,

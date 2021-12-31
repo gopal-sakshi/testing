@@ -25,6 +25,10 @@ const routes: Routes = [
     loadChildren: () => import('./route-guards/route-guards.module').then(m => m.RouteGuardsModule)
   },
   {
+    path: 'router-12',
+    loadChildren:() => import('./router12/router12.module').then(m=>m.Router12Module)
+  },
+  {
     path: 'services-di',
     loadChildren: () => import('./services-di/services-di.module').then(m => m.ServicesDIModule)
   },

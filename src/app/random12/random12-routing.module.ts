@@ -8,6 +8,7 @@ import { Decorator12Component } from './components/decorator12/decorator12.compo
 import { DisplayUsersComponent } from './components/display-users/display-users.component';
 import { HomeRandomComponent } from './components/home-random/home-random.component';
 import { Lifecycle12Component } from './components/lifecycle12/lifecycle12.component';
+import { Zone12Component } from './components/zone12/zone12.component';
 import { UserResolver } from './resolvers/user.resolver';
 
 const routes: Routes = [
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'custom-component',
     component: CustomComp12Component
+  },
+  {
+    path: 'zone-12',
+    component: Zone12Component
   }
 ];
 

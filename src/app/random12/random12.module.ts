@@ -15,6 +15,7 @@ import { DisplayUsersComponent } from './components/display-users/display-users.
 import { Decorator12Component } from './components/decorator12/decorator12.component';
 import { CustomDecorator12Component } from './components/custom-decorator12/custom-decorator12.component';
 import { CustomComp12Component } from './components/custom-comp12/custom-comp12.component';
+import { Zone12Component } from './components/zone12/zone12.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { CustomComp12Component } from './components/custom-comp12/custom-comp12.
     DisplayUsersComponent,
     Decorator12Component,
     CustomDecorator12Component,
+    Zone12Component,
     //CustomComp12Component
   ],
   imports: [

@@ -16,6 +16,7 @@ import { Decorator12Component } from './components/decorator12/decorator12.compo
 import { CustomDecorator12Component } from './components/custom-decorator12/custom-decorator12.component';
 import { CustomComp12Component } from './components/custom-comp12/custom-comp12.component';
 import { Zone12Component } from './components/zone12/zone12.component';
+import { Zone11OutisdeAngularComponent } from './components/zone11-outisde-angular/zone11-outisde-angular.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { Zone12Component } from './components/zone12/zone12.component';
     Decorator12Component,
     CustomDecorator12Component,
     Zone12Component,
+    Zone11OutisdeAngularComponent,
     //CustomComp12Component
   ],
   imports: [

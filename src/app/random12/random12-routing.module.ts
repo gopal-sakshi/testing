@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CanActivate12Guard } from './classes/canActivate12.service';
+import { AngularSyntax12Component } from './components/angular-syntax12/angular-syntax12.component';
 import { Cors23Component } from './components/cors23/cors23.component';
 import { CustomComp12Component } from './components/custom-comp12/custom-comp12.component';
 import { CustomDecorator12Component } from './components/custom-decorator12/custom-decorator12.component';
@@ -47,7 +48,13 @@ const routes: Routes = [
   {
     path: 'zone-12',
     component: Zone12Component
+  },
+  {
+    path: 'angular-syntax12',
+    component: AngularSyntax12Component
   }
+
+  
 ];
 
 @NgModule({

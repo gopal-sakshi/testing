@@ -17,13 +17,21 @@
 -->
 <div class="some-mat-table">
     <mat-table class="mat-elevation-z8" [dataSource]="dataSource" matSort>
-        <ng-container matColumnDef="id">
-            <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
+        <ng-container matColumnDef="id">            <!-- this is column 1 -->
+            <mat-header-cell class="header-cell-class" *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
             <mat-cell *matCellDef="let row;">{{row.id}}</mat-cell>
         </ng-container>
+        <ng-container matColumnDef="description">       <!-- this is column 2 -->
+            <mat-header-cell class="header-cell-class" *matHeaderCellDef mat-sort-header>Description</mat-header-cell>
+            <mat-cell *matCellDef="let row;">{{row.description}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="complete">              <!-- this is column 3 -->
+            <mat-header-cell class="header-cell-class" *matHeaderCellDef mat-sort-header>Complete</mat-header-cell>
+            <mat-cell *matCellDef="let row;">{{row}}A{{row.complete}}</mat-cell>
+        </ng-container>                
         <mat-header-row *matHeaderRowDef="displayedColumns">
         </mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
     </mat-table>
-    <mat-paginator [pageSize]="2" [pageSizeOptions]="[1,2]"></mat-paginator>
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5,10,15]"></mat-paginator>
 </div>

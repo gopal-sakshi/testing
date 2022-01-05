@@ -2,3 +2,20 @@
     max-width:fit-content;
     min-width: 30%
 }
+
+.header-cell-class {
+    background-color:azure;
+    color:red;
+}
+
+.mat-row:nth-child(even){
+    background-color: grey;
+}
+
+/*              HOW TO APPLY STYLING TO TABLES
+
+    .mat-row:nth-child(odd){
+        background-color: black;
+    }
+
+*/

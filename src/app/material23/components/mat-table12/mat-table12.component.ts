@@ -13,7 +13,7 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class MatTable12Component implements OnInit, AfterViewInit {
 
-  displayedColumns = ['id'];
+  displayedColumns = ['id', 'description', 'complete'];
   dataSource: MatTableDataSource<ToDo23>
 
   // First grab the template sort directive with the @ViewChild
@@ -28,10 +28,13 @@ export class MatTable12Component implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     const todos: ToDo23[] = [
-      { id: '123', description: 'Apple', complete: false },
-      { id: '124', description: 'Banana', complete: false },
-      { id: '125', description: 'Chikoo', complete: false },
-      { id: '126', description: 'Dates', complete: false }
+      { id: '13', description: 'Apple', complete: false },
+      { id: '14', description: 'Banana', complete: false },
+      { id: '25', description: 'Chikoo', complete: false },
+      { id: '16', description: 'Dates', complete: false },
+      { id: '19', description: 'Eateries', complete: false },
+      { id: '11', description: 'Fruits', complete: false },
+      { id: '26', description: 'Grapes', complete: false },
     ]
     this.dataSource = new MatTableDataSource(todos)
   }

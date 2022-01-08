@@ -9,12 +9,14 @@ import { scan, throttleTime } from 'rxjs/operators';
 export class Observable1Component implements OnInit {
 
   obs1:Observable<any>
+  value1:string;
   
   constructor() { }
 
   ngOnInit(): void {
     //this.purity();
     this.flow();
+    this.value1 = window.localStorage.getItem("name")
   }
 
   purity() {

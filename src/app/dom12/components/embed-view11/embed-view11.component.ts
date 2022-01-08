@@ -26,7 +26,9 @@ export class EmbedView11Component implements OnInit {
   //@ViewChild("footerDiv") footerDiv:ElementRef;
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    window.localStorage.setItem("name","yeshwant");
+  }
 
   ngAfterViewInit() {
 

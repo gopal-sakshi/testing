@@ -16,6 +16,10 @@ export class DomQueryComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.element.nativeElement);
+    // But, the direct usage of ElementRef is discouraged by Angular Team
+      // because it directly provides the access to DOM which can make your application vulnerable to XSS attacks
+      // plus, it creates tight coupling between your application and rendering layers 
+        // which makes is difficult to run an app on multiple platforms.
   }
 
   ngAfterViewInit() {

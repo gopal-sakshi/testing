@@ -1,0 +1,37 @@
+<div class="embed-view11-container">
+    
+    <div class="header">I am a header</div>
+    
+    <div class="body1">
+        <!-- this is the placeholder... the embedded view that we created will be rendered here -->
+        <ng-container #container1></ng-container>
+    </div>
+
+    <div class="body2">
+        <ng-container #container2></ng-container>
+    </div>
+
+    <div class="body3">
+        <ng-container [ngTemplateOutlet]="template3" 
+            [ngTemplateOutletContext]="{surName12: 'agastyaraju', age12: '26'}"></ng-container>
+    </div>
+
+    <div #footerDiv class="footer">I am a footer</div>
+    
+</div>
+
+<ng-template #template1 let-viewName11="name11", let-viewCreatedBy11="createdBy11">
+    <div>Hi, My name is {{viewName11}}</div>
+    <div>I am a view created from a template by {{viewCreatedBy11}}</div>
+</ng-template>
+
+<ng-template #template2 let-viewName12="name12", let-viewCreatedBy12="createdBy12">
+    <div>Hi, My name is {{viewName12}}</div>
+    <div>I am a view created by {{viewCreatedBy12}}</div>
+    <div>we used createEmbeddedView of ViewContainerRef</div>
+</ng-template>
+
+<ng-template #template3 let-surName="surName12", let-ageEntha="age12">
+    <div>Whole logic moved into html itself</div>
+    <div>another view created by {{surName}} who is {{ageEntha}} years</div>
+</ng-template>

@@ -1,7 +1,11 @@
 <div class="embed-view11-container">
     
     <div class="header">I am a header</div>
-    
+
+    <div class="body0">
+        <ng-container [ngTemplateOutlet]="elementRef0"></ng-container>
+    </div>
+
     <div class="body1">
         <!-- this is the placeholder... the embedded view that we created will be rendered here -->
         <ng-container #container1></ng-container>
@@ -19,6 +23,10 @@
     <div #footerDiv class="footer">I am a footer</div>
     
 </div>
+
+<ng-template #elementRef0>
+    <div> whats happening </div>
+</ng-template>
 
 <ng-template #template1 let-viewName11="name11", let-viewCreatedBy11="createdBy11">
     <div>Hi, My name is {{viewName11}}</div>

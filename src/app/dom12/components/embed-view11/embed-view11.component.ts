@@ -16,6 +16,9 @@ import { Component, ElementRef, OnInit, TemplateRef, ViewChild, ViewContainerRef
 })
 export class EmbedView11Component implements OnInit {
 
+
+  @ViewChild("elementRef0", { read: ElementRef }) elementRef0: ElementRef<any>;
+
   // we created an embedded_view using TemplateRef... then supplied that embedded_view to ViewContainer
   @ViewChild("template1", { read: TemplateRef }) template1: TemplateRef<any>;
   @ViewChild("container1", { read: ViewContainerRef }) container1: ViewContainerRef;
@@ -24,6 +27,8 @@ export class EmbedView11Component implements OnInit {
   @ViewChild("template2", { read: TemplateRef }) template2: TemplateRef<any>;
   @ViewChild("container2", { read: ViewContainerRef }) container2: ViewContainerRef;
   //@ViewChild("footerDiv") footerDiv:ElementRef;
+
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -32,11 +37,16 @@ export class EmbedView11Component implements OnInit {
 
   ngAfterViewInit() {
 
+
+    this.elementRef0.nativeElement.textContent = "hello doctor"
+
+
     // creating an embedded view... lets call this "View 1"
     const viewRef = this.template1.createEmbeddedView({
       name11: "View1",
       createdBy11: "GopAL"
     });
+    
 
     // This view is still not visible in the UI. In order to see it in the UI, we need a placeholder to render it.
     this.container1.insert(viewRef);

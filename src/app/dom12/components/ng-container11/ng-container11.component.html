@@ -1,0 +1,20 @@
+<div *ngFor = "let item of items">
+    <div *ngIf="item.id">{{item.id}}&nbsp;{{item.name}}</div>
+</div>
+<!-- 
+    we do this, because ===> inability to use multiple structural directives on a single host element in Angular 
+    but it introduces several extra empty <div> in the DOM if item.id is a falsy value which might not be required.
+    Not a problem for small application, but for a huge application that has a complex DOM (to display tens of thousands of data) this might become troublesome ===> as the elements might have listeners attached to them which will still be there in the DOM listening to events.
+-->
+
+<!--
+    <ng-container> 
+        a grouping element that doesn't interfere with styles or layout because Angular doesn't put it in the DOM.
+-->
+
+<!-- so use this instead... it wont have any extra div elements -->
+<ng-container *ngFor="let item of items">
+    <div *ngIf="item.id">{{item.id}}&nbsp;{{item.name}}</div>
+</ng-container>
+
+

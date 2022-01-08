@@ -1,0 +1,31 @@
+<!-- 
+    ngTemplateOutlet  
+    say, if u want to use same info (like company logo) at multiple places, then use ngTemplateOutlet
+-->
+<div id="ng-template-outlet">
+    <div class="heading" fxLayout="column">
+        <h2>This is heading... some info about company</h2>
+        <ng-container *ngTemplateOutlet="companyLogo"></ng-container>
+    </div>
+    
+    <div class="main-content">
+        <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start center">
+            <ng-container *ngTemplateOutlet="companyLogo"></ng-container>
+            <span>This is paragraph 1</span>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start center">
+            <span>End of company info</span>
+            <ng-container *ngTemplateOutlet="companyLogo"></ng-container>
+        </div>
+    </div>
+</div>
+
+<ng-template #companyLogo>
+    <div class="company-logo" fxLayout="column">
+        <img src='../../../../assets/images/company-logo.png'>
+        <span class="title">Angular</span>
+    </div>
+</ng-template>

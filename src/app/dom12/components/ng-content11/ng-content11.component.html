@@ -1,0 +1,17 @@
+<div class="ng-content11-container" fxLayout="column" fxLayoutGap="20px">
+    <div class="ng-content-header">
+        <span>inside ng-content-header... color = red</span>
+        <ng-content select="h6"></ng-content>
+        <ng-content select="div"></ng-content>
+    </div>
+    <div class="ng-content-body">
+        <span>inside ng-content body.... color = yellowish tinge</span>
+        <ng-content select="div"></ng-content>
+    </div>
+    <div class="ng-content-footer">
+        <span>inside ng-content footer.... color = greenish tinge</span>
+        <ng-content select="span"></ng-content>
+    </div>
+    <ng-content></ng-content>
+</div>
+

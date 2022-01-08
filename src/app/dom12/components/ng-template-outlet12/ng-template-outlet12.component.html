@@ -1,0 +1,29 @@
+<!--
+    The second use case for *ngTemplateOutlet is highly customized components
+
+    right now this ng-template-outlet12 =======> is a customisable component
+
+    any other component say blah11component (or) blah34component can use this ng-template-outlet12 component
+        blah11component gives its own header, body, footer sections
+        while blah34component gives its own header, body, footer sections
+
+        ng-template-outlet12 will accepts whatever it is given and shows them... if nothing given, it shows its default values
+-->
+<div class="ng-template-outlet12-container">
+    <div class="heading">
+        <ng-container *ngTemplateOutlet="headerTemplate ? headerTemplate : defaultHeader"></ng-container>
+    </div>
+    
+    <div class="body">
+        <ng-container *ngTemplateOutlet="bodyTemplate ? bodyTemplate : defaultBody"></ng-container>
+    </div>
+    
+    <div class="footer">
+        <ng-container *ngTemplateOutlet="footerTemplate ? footerTemplate : defaultFooter"></ng-container>
+    </div>
+</div>
+
+
+<ng-template #defaultHeader>Some default header</ng-template>
+<ng-template #defaultBody>Some default body</ng-template>
+<ng-template #defaultFooter>Some default footer</ng-template>

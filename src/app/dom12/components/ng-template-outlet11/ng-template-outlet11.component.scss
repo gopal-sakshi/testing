@@ -1,0 +1,33 @@
+#ng-template-outlet {
+    
+    .heading {
+        margin:20px;        
+        justify-content:center;
+        align-items:center;
+        h2 {
+            color:rgb(117, 117, 187)
+        }
+    }
+    .main-content {
+        margin:20px; 
+    }
+
+    .footer {
+        margin:20px;
+    }
+
+    .company-logo{
+        max-width:80px;
+        max-height:80px;
+        border:1px dotted;
+        img {
+            background-color:grey;
+        }
+        .title {
+            color:rgb(48, 63, 58)
+        }
+    }
+}
+
+
+

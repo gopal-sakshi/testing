@@ -43,6 +43,10 @@ const routes: Routes = [
   {
     path: 'displayUsers',
     component: DisplayUsersComponent  //just to show how backslash (/) works during navigation
+  },
+  {
+    path: 'dom12',
+    loadChildren:() => import('./dom12/dom12.module').then(m=>m.Dom12Module)
   }
 ];
 

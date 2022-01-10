@@ -1,0 +1,14 @@
+<div class="life-cycle-hooks-container" fxLayout="column" fxLayoutGap="20px">
+    <!-- <a [routerLink]="['ng-do-check']">ng-do-check</a> -->
+    <div class="change-detection-1">
+        <button (click)="changeInput1()">change input 1</button>
+        <button (click)="changeInput2()">change input 2</button>
+        <button (click)="changeInput3()">change input 3</button>
+        <app-ng-do-check12 [input1]="input1" [input2]="input2" [input3]="input3"></app-ng-do-check12>
+    </div>
+    <div class="change-detection-2">
+        <!-- <a [routerLink]="['change-detection-11']">change-detection-11</a> -->
+        <app-change-detection11></app-change-detection11>
+    </div>
+</div>
+

@@ -1,0 +1,17 @@
+<div *ngIf="false">
+    <div class="change-detection-container" fxLayout="column" fxLayoutGap="20px">
+        <h3>
+            Change detection is triggered at:
+            <span [textContent]="time | date:'hh:mm:ss:SSS'"></span>
+        </h3>
+        <button (click)="doNothing()">Trigger Change Detection</button>
+        <input type="number" placeholder="enter something" value="userInput">
+    </div>
+</div>
+
+
+<h3>
+    Change detection is triggered at:
+    <span [textContent]="time | date:'hh:mm:ss:SSS'"></span>
+</h3>
+<button (click)="0">Trigger Change Detection</button>

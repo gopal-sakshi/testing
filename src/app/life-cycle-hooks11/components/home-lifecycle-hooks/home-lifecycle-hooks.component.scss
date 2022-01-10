@@ -1,0 +1,11 @@
+.life-cycle-hooks-container {
+    max-width:fit-content;
+    .change-detection-1 {
+        border:1px dotted red;
+        padding: 5px
+    }
+    .change-detection-2 {
+        border:1px dotted blue;
+        padding: 5px
+    }
+}

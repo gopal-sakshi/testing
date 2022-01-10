@@ -47,6 +47,10 @@ const routes: Routes = [
   {
     path: 'dom12',
     loadChildren:() => import('./dom12/dom12.module').then(m=>m.Dom12Module)
+  },
+  {
+    path:'life-cycle-hooks11',
+    loadChildren:() => import ('./life-cycle-hooks11/life-cycle-hooks11.module').then(m=>m.LifeCycleHooks11Module)
   }
 ];
 

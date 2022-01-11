@@ -11,6 +11,7 @@ export class HomeRandomComponent implements OnInit {
   constructor(public env:EnvironmentService) { }
 
   ngOnInit(): void {
+    console.log("testing git");
     console.log("My environment is ");
     console.log(this.env.APP_NAME, this.env.envName, this.env.production);
   }

@@ -1,0 +1,104 @@
+<div class="input-element-container" fxLayout="column" fxLayoutGap="20px">
+
+    <div fxLayout="row" fxLayoutGap="20px">
+        <input name="save-button" type="button" value="Click me" />
+        <input name="submit" type="submit" value="Registerrrr" />
+        <input name="first-name" type="text" (oninput)="doStuff()" placeholder="First Name, width only 20" size="20" />
+        <input name="last-name" type="text" placeholder="Last Name" style="width: 220px;" /> <!-- CSS style -->
+        <input name="chknewsletter" type="checkbox" value="opt-in-newsletter" />
+        <input name="pin" type="password" placeholder="password, width is 40 bhayyo" id="pin" size="40">
+    </div>
+    
+    <div fxLayout="column">
+        <label for="rad1">
+            <input name="station" type="radio" value="triple-m" id="rad1" />
+            Triple M
+        </label>
+        <label for="rad2">
+            <input name="station" type="radio" value="today-fm" id="rad2" />
+            Today FM
+        </label>        
+        <label for="rad3">
+            <input name="station" type="radio" value="abc-news" id="rad3" />
+            ABC News
+        </label>
+        <label for="rad4">
+            <input name="station" type="radio" value="triple-j" id="rad4" />
+            Triple J
+        </label>
+        <div><input name="money" type="radio" value="dollar" id="rad1" /> <label for="rad1">dollar</label></div>
+        <div><input name="money" type="radio" value="euro" id="rad2" /> <label for="rad2">euro</label></div>
+        <div><input name="money" type="radio" value="rupee" id="rad3" /> <label for="rad3">rupee</label></div>
+                
+    </div>
+    
+    <textarea name="description" rows="4" cols="50"></textarea>
+    
+    <div fxLayout="row" fxLayoutGap="20px" class="input-element-drop-down">
+        <!-- this renders as a drop down lst -->
+        <select name="favorite-food" id="favorite-food" style="height: fit-content;">
+            <option>Eggs</option>
+            <option>Fish</option>
+            <option>Bread</option>
+        </select>
+
+        <!-- this renders as a all-in-one list -->
+        <select name="favorite-food" id="favorite-food" multiple>
+            <option>Eggs</option>
+            <option>Fish</option>
+            <option>Bread</option>
+            <option>chicken</option>
+            <option>mutton</option>
+            <option>pizza</option>
+        </select>
+
+        <select name="favorite-food" id="favorite-food" style="height: fit-content;">
+            <option value="">Choose your favorite food</option>
+            <option value="eggs">I love Eggs!</option>
+            <option value="fish">Fish is my fave!</option>
+            <option value="bread">Bread rocks!</option>
+        </select>
+    </div>
+
+    <!--
+        label tag
+        - Users who have difficulty clicking on very small regions (such as checkboxes) 
+        - because when a user clicks the text within the <label> element, it toggles the input (this increases the hit area). 
+        - "for attribute of label tag" must be equal to "id attribute of input tag" to bind them together
+        - (or) you can place "input element" within the "label tag" to bind them together...
+    -->
+    
+    <label for="first-name34">Enter Your First Name</label>
+    <input name="first-name" type="text" id="first-name34" size="6"/>
+    
+    <label>
+        I agree to the terms and conditions
+        <input type="checkbox" name="terms" value="agree">
+    </label>
+       
+    <form action="/action_page.php" method="get">
+        <label for="browser">Choose your browser from the list:</label>
+        <input list="browsers" name="browser" id="browser">
+        <datalist id="browsers">
+            <option value="Edge">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+        <input type="submit">
+    </form>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+

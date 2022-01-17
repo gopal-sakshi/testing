@@ -22,6 +22,7 @@ import { Common23Module } from './common23/common23.module';
     AppRoutingModule,
     SubjectsModule,
     FlexLayoutModule,
+
     BrowserAnimationsModule,
     Common23Module
   ],

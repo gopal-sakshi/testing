@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
 import { ProductGuardService } from './route-guards/classes/ProductGuardService';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
   //connectionService:any;
   isConnected:boolean;
@@ -15,9 +14,5 @@ export class AppComponent implements OnInit {
     productGuardService: ProductGuardService
   ) {  }
 
-  ngOnInit() {
-    
-  }
 
-  title = 'testing';
 }

@@ -7,16 +7,19 @@ import { HomeStylingComponent } from './components/home-styling/home-styling.com
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HtmlStyling12Component } from './components/html-styling12/html-styling12.component';
+import { InputElement12Component } from './components/input-element12/input-element12.component';
 
 
 @NgModule({
   declarations: [
     Flex12Component,
-    HomeStylingComponent
+    HomeStylingComponent,
+    HtmlStyling12Component,
+    InputElement12Component
   ],
   imports: [
     CommonModule,
-    BrowserModule,
     FormsModule,
     Styling12RoutingModule,
     FlexLayoutModule

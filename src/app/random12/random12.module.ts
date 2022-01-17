@@ -18,7 +18,8 @@ import { CustomComp12Component } from './components/custom-comp12/custom-comp12.
 import { Zone12Component } from './components/zone12/zone12.component';
 import { Zone11OutisdeAngularComponent } from './components/zone11-outisde-angular/zone11-outisde-angular.component';
 import { AngularSyntax12Component } from './components/angular-syntax12/angular-syntax12.component';
-
+import { CustomFormcontrol12Component } from './components/custom-formcontrol12/custom-formcontrol12.component';
+import { MatIconModule } from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -31,12 +32,14 @@ import { AngularSyntax12Component } from './components/angular-syntax12/angular-
     Zone12Component,
     Zone11OutisdeAngularComponent,
     AngularSyntax12Component,
+    CustomFormcontrol12Component,
     //CustomComp12Component
   ],
   imports: [
     CommonModule,
     Random12RoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatIconModule
   ],
   providers:[
     CanActivate12Guard,

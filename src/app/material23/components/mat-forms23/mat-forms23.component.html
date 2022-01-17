@@ -1,12 +1,13 @@
 <!-- <form [formGroup]="editEventId"> -->
-<div *ngIf="!false">
-    <form>
-        <h4>Select event Id</h4>
-        <mat-form-field appearance="outline">
+<div *ngIf="!false" class="mat-forms23-container">
+    <h4>Select event Id</h4>
+    <form [formGroup]="event23Form">        
+        <mat-form-field appearance="outline" class="mat-forms23-form-field">
             <mat-label>Favorite food</mat-label>
-            <input matInput placeholder="hi" formControlName="eventId">
+            
             <mat-select *ngFor="let eventId of eventIds" formControlName="eventId">
-                <mat-option>{{eventId}}</mat-option>
+                <!-- <mat-option>{{eventId}}</mat-option> -->
+                <mat-option>event id 1</mat-option>
                 <mat-option>event id 2</mat-option>
                 <mat-option>event id 3</mat-option>
                 <mat-option>event id 4</mat-option>

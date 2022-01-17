@@ -9,6 +9,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HtmlStyling12Component } from './components/html-styling12/html-styling12.component';
 import { InputElement12Component } from './components/input-element12/input-element12.component';
+import { NgClass12Component } from './components/ng-class12/ng-class12.component';
 
 
 @NgModule({
@@ -16,7 +17,9 @@ import { InputElement12Component } from './components/input-element12/input-elem
     Flex12Component,
     HomeStylingComponent,
     HtmlStyling12Component,
-    InputElement12Component
+    InputElement12Component,
+    NgClass12Component          // comment and see the magic............
+                                    // what happens if a component is in a module, but not included in declarations[] array
   ],
   imports: [
     CommonModule,

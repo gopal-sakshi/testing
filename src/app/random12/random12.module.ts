@@ -19,7 +19,8 @@ import { Zone12Component } from './components/zone12/zone12.component';
 import { Zone11OutisdeAngularComponent } from './components/zone11-outisde-angular/zone11-outisde-angular.component';
 import { AngularSyntax12Component } from './components/angular-syntax12/angular-syntax12.component';
 import { CustomFormcontrol12Component } from './components/custom-formcontrol12/custom-formcontrol12.component';
-import { MatIconModule } from '@angular/material/icon'
+import { MatIconModule } from '@angular/material/icon';
+import { DynamicImports23Component } from './components/dynamic-imports23/dynamic-imports23.component'
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { MatIconModule } from '@angular/material/icon'
     Zone11OutisdeAngularComponent,
     AngularSyntax12Component,
     CustomFormcontrol12Component,
+    DynamicImports23Component,
     //CustomComp12Component
   ],
   imports: [

@@ -40,6 +40,14 @@ const routes: Routes = [
     path: 'styling12',
     loadChildren:() => import ('./styling12/styling12.module').then(m=>m.Styling12Module)
   },
+  /*
+        lazy-loading syntax uses loadChildren followed by a function
+        this function = uses the browser's built-in import('...') syntax for dynamic imports. 
+          The import path is the relative path to the module.
+
+        How to verify if a module is lazily loaded or not
+        - go to chrome dev tools... network tab... you will see a module getting loaded...
+  */
   {
     path: 'displayUsers',
     component: DisplayUsersComponent  //just to show how backslash (/) works during navigation

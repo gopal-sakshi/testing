@@ -8,6 +8,7 @@ import { CustomDecorator12Component } from './components/custom-decorator12/cust
 import { CustomFormcontrol12Component } from './components/custom-formcontrol12/custom-formcontrol12.component';
 import { Decorator12Component } from './components/decorator12/decorator12.component';
 import { DisplayUsersComponent } from './components/display-users/display-users.component';
+import { DynamicImports23Component } from './components/dynamic-imports23/dynamic-imports23.component';
 import { HomeRandomComponent } from './components/home-random/home-random.component';
 import { Lifecycle12Component } from './components/lifecycle12/lifecycle12.component';
 import { Zone12Component } from './components/zone12/zone12.component';
@@ -57,7 +58,14 @@ const routes: Routes = [
   {
     path: 'custom-formcontrol12',
     component: CustomFormcontrol12Component
+  },
+  {
+    path: 'dynamic-imports23',
+    component: DynamicImports23Component
   }
+
+
+  
 
   
 ];

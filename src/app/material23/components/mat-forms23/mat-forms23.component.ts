@@ -35,11 +35,18 @@ export class MatForms23Component implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
     this.event23Form = this.fb.group({
       eventId: ['', Validators.required],
-      eventName: ['', Validators.required],
-      
+      eventName: ['', Validators.required]
     })
+
+
+    this.event23Form.get('eventId').valueChanges.subscribe(res => {
+      console.log("value changed");
+    })
+
+    // the mat-select dropdown is irritating... lets leave it...
   }
 
 }

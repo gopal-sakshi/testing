@@ -11,7 +11,7 @@ const FORM_CONTROL_ACCESSOR = {
 @Component({
   selector: 'app-custom-formcontrol12',
   templateUrl: './custom-formcontrol12.component.html',
-  styleUrls: ['./custom-formcontrol12.component.css'],
+  styleUrls: ['./custom-formcontrol12.component.scss'],
   providers: [FORM_CONTROL_ACCESSOR]
 })
 export class CustomFormcontrol12Component extends FormControlRating implements OnInit {

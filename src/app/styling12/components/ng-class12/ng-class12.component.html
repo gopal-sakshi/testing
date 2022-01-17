@@ -1,9 +1,36 @@
-<div fxLayout="row" fxLayoutGap="20px" fxFlex="calc(0,0,20%)">
-    <!-- <div [ngClass]="{'testing-ngClass-1' : item>5}">element 1</div> -->
-    <div>element 2</div>
-    <div>element 3</div>
-    <div>element 4</div>
-    <div>element 5</div>
-    <div>element 6</div>
-    <div>element 7</div>
+<div class="ng-class12-container">
+    <div fxLayout="row" fxLayoutGap="20px" fxFlex="calc(0,0,20%)" class="ng-class12-items">
+        <div [ngClass]="{'testing-ngClass-1' : item1>5}">element 1</div>
+        <!-- <div [ngClass]="{(item2>5 && item2<13) ? 'testing-ngClass-1' : ''}">element 2</div> -->
+        <div [ngClass]="{'font-size-80': item1 === 6, 'blue-shade-color' : item2===12 }">element 3</div>
+        <div [ngClass]="item3 == 14 ? 'font-size-40' : 'font-size-20'">element 4</div>
+        <!-- <div>element 5</div>
+        <div>element 6</div>
+        <div>element 7</div> -->
+    </div>
 </div>
+
+
+<!--
+
+    ngClass is a directive in Angular that adds and removes CSS classes on an HTML element
+
+    EXPRESSION:
+    - they return a value
+    - x+y 
+    - 2*3
+    - In ECMAScript, assignment is also considered to be an expression and it does have a "return value"
+        but angular, doesnt accept assignments 
+
+    STATEMENT:
+    - we generally say, if statement (or) if else statement
+    - they dont have return value...
+
+    if(expression1) {
+        // if expression1 evaluates to true, this block gets executed...
+    }           // now this whole if block is a statement
+
+    
+    We can't write an if statement in ngClass, due to the fact that it is a statement.
+    but we can use a ? ternary operator... since its an expression
+-->

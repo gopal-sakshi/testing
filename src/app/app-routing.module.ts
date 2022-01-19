@@ -40,6 +40,10 @@ const routes: Routes = [
     path: 'styling12',
     loadChildren:() => import ('./styling12/styling12.module').then(m=>m.Styling12Module)
   },
+  {
+    path: 'forms12',
+    loadChildren:() => import ('./forms12/forms12.module').then(m=>m.Forms12Module)
+  },
   /*
         lazy-loading syntax uses loadChildren followed by a function
         this function = uses the browser's built-in import('...') syntax for dynamic imports. 

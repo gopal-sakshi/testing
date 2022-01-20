@@ -8,7 +8,7 @@ import { CustomValidator12Component } from './components/custom-validator12/cust
 import { MatButtonModule } from '@angular/material/button';
 import { CustomValidator13Component } from './components/custom-validator13/custom-validator13.component';
 import { ValidateEmailDirective13 } from './directives/validateEmailDirective13';
-import { EmailValidator12 } from './directives/validate-email-directive';
+import { EmailValidator12 } from './directives/validate-email-directive12';
 
 const routes: Routes = [
   {

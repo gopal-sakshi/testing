@@ -13,5 +13,6 @@ export class ValidateEmailDirective13 { }
     https://blog.thoughtram.io/angular/2015/09/03/forward-references-in-angular-2.html
     https://blog.thoughtram.io/angular/2016/03/14/custom-validators-in-angular-2.html
     https://blog.thoughtram.io/angular2/2015/11/23/multi-providers-in-angular-2.html
+    https://blog.thoughtram.io/angular/2015/05/18/dependency-injection-in-angular-2.html
 
 */

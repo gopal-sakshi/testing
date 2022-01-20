@@ -11,11 +11,17 @@
 </div>
 
 <div class="custom-validator13-container">
-    <form novalidate class="custom-validator13-form">
+    <!--
+        novalidate attribute on form element  (its HTML thingy... not angular)
+        - signify that the form won’t get validated on submit.
+        - If the form validation is disabled, the user can easily save the form and continue & submit the form later.
+    -->
+    <form #twoEmailForm="ngForm" class="custom-validator13-form">
         <div fxLayout="column" fxLayoutGap="20px">
-            <input type="email1" name="email">
-            <input type="email2" name="email" ngModel validateEmail12>
+            <input type="text" name="email1" ngModel>
+            <input type="text" name="email2" ngModel validateEmail12>
         </div>
+        <button mat-raised-button (click)="onSubmit(twoEmailForm)">Submit</button>
 
         <!-- validateEmail is applied as an attribute to the <input> DOM element -->
         <!-- 

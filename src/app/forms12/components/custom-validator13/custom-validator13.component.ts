@@ -12,10 +12,10 @@ export class CustomValidator13Component implements OnInit {
   form44:FormGroup;
   constructor() { }
 
-  ngOnInit() {
-    this.form44 = new FormGroup({
-      email: new FormControl('', [Validator22Class.validate22])
-    });
+  ngOnInit() {}
+
+  onSubmit(twoEmailForm) {
+    console.log(twoEmailForm);
   }
 
 }

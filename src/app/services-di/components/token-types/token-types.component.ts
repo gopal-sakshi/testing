@@ -13,6 +13,7 @@ export class TokenTypesComponent implements OnInit {
   constructor(
     public productServiceClassToken: ProductService,
     @Inject('someStringToken') public someString:string,
+    @Inject('function456') public someFunction,
     @Inject(someStringTokenByInjectionToken) public anotherString:string,
     @Inject('myFunction') public localFactoryFunction:any,
     @Inject('myFunctionUseValue') public localFactoryFunctionUseValue:any
@@ -28,6 +29,7 @@ export class TokenTypesComponent implements OnInit {
     //this.localFactoryFunctionUseValue();
 
 
+    console.log(this.someFunction);
   }
 
 }

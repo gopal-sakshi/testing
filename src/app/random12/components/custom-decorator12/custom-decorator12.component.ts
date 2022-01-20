@@ -4,7 +4,7 @@ import { Confirmable } from '../../decorators/confirmbale.decorator';
 @Component({
   selector: 'app-custom-decorator12',
   templateUrl: './custom-decorator12.component.html',
-  styleUrls: ['./custom-decorator12.component.css']
+  styleUrls: ['./custom-decorator12.component.scss']
 })
 export class CustomDecorator12Component implements OnInit {
 
@@ -19,7 +19,7 @@ export class CustomDecorator12Component implements OnInit {
   // }
 
   @Confirmable({
-    title: 'Are you sure - customised', 
+    title: 'Are you sureeeeeeeeeeeeeeeeeeeeeeeee - customised', 
     html: 'Do you want to delete this item?', 
     icon: 'warning'
   })
@@ -27,8 +27,9 @@ export class CustomDecorator12Component implements OnInit {
     console.log("An item was deleted");
   }
 
-}
-    function deleteLogs() {
-      throw new Error('Function not implemented.');
-    }
+  @Confirmable({})
+  deleteItem2():void {
+    console.log("item deleted2");
+  }
 
+}

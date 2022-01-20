@@ -14,7 +14,9 @@ import { LoggerTwiceService } from './classes/loggerTwice.service';
 import { factoryFunction, factoryFunctionUseValue, someStringTokenByInjectionToken } from './types/tokens';
 import { TokenTypesComponent } from './components/token-types/token-types.component';
 
-
+function usingFunction456() {
+  return true;
+}
 @NgModule({
   declarations: [
     ProductDiComponent,
@@ -41,6 +43,9 @@ import { TokenTypesComponent } from './components/token-types/token-types.compon
     LoggerService,
     LoggerTwiceService,
     { provide: 'someStringToken', useValue: 'GopALLLLLLLLLLL' },
+    { provide: 'function456', useValue: usingFunction456, multi:true }, 
+                // earlier useValue:'GopALLLLLLL' ------> a string
+                // now useValue: usingFunction456 --------> a function... can we use either string (or) function with useValue ???
     { provide: someStringTokenByInjectionToken, useValue: 'Sakshii' },
     { provide: 'myFunction', useFactory: factoryFunction,
       deps: [someStringTokenByInjectionToken] },

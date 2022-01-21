@@ -10,26 +10,33 @@ import { of } from 'rxjs';
 export class CustomValidator12Component implements OnInit {
 
   formGroup1:FormGroup;
+  formGroup2:FormGroup;
 
   constructor(private fb:FormBuilder) { }
 
   ngOnInit(): void {
+    
     this.formGroup1 = this.fb.group({
-      firstName: ['', this.firstNameValidator23],
+      // Asynchronous validators should be specified as a third argument
+      firstName: ['', [], [this.customValidator22]],
       lastName: [''],
       mobile: ['']
-    }, { validators: this.atleastOneValidator});
+    }, { validators: this.atleastOneValidator1 });
 
-    this.formGroup1.get('firstName').valueChanges.subscribe(() => {
-      console.log(this.formGroup1);
+    this.formGroup2 = this.fb.group({
+      age: ['', Validators.minLength(3)],
+      city: [''],
+      country: ['']
     });
+    this.formGroup2.setValidators(this.atleastOneValidator());
   }
 
   private atleastOneValidator = () => {
-    return (controlGroup) => {
-      let controls = controlGroup.controls;
+    return (formGroup) => {
+      let controls = formGroup.controls;
       if (controls) {
         let theOne = Object.keys(controls).find(key => controls[key].value !== '');
+        console.log(theOne);
         if (!theOne) {
           return {
             atLeastOneRequired: {
@@ -39,11 +46,19 @@ export class CustomValidator12Component implements OnInit {
         }
       }
       return null;
+      //return {waitu:'true'}
     };
+  }
+
+  atleastOneValidator1:ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
+    
+    console.log(control);
+    return {somethingsHappening: true};     // this is working... this doesnt return an observable...
   }
 
   // at least 2 formControls must be filled
   customValidator22:ValidatorFn  = (conntrol:AbstractControl):ValidationErrors|null => {
+    //return of( {whatsHappening: 'doubtful'});
     return of(null);
   }
 
@@ -60,11 +75,15 @@ export class CustomValidator12Component implements OnInit {
     return of(null);
   }
   
-  onSubmit() {
-    console.log("this form is valid");
+  onSubmit1() {
+    console.log("this is form1");
     console.log(this.formGroup1);
   }
 
+  onSubmit2() {
+    console.log("this is form2");
+    console.log(this.formGroup2);
+  }
 }
 
 
@@ -89,5 +108,7 @@ export class CustomValidator12Component implements OnInit {
       - just a function that takes a Control & returns either null when it’s valid, or and error object if it’s not.
 
 
+
+      https://medium.com/front-end-weekly/angular-how-to-implement-conditional-custom-validation-1ec14b0feb45
 
 */

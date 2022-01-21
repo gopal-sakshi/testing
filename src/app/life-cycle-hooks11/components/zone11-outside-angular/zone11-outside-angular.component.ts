@@ -1,11 +1,11 @@
 import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-zone11-outisde-angular',
-  templateUrl: './zone11-outisde-angular.component.html',
-  styleUrls: ['./zone11-outisde-angular.component.css']
+  selector: 'app-zone11-outside-angular',
+  templateUrl: './zone11-outside-angular.component.html',
+  styleUrls: ['./zone11-outside-angular.component.css']
 })
-export class Zone11OutisdeAngularComponent implements OnInit {
+export class Zone11OutsideAngularComponent implements OnInit {
 
   @ViewChild('div', { static: true }) div: ElementRef
 

@@ -15,8 +15,6 @@ import { DisplayUsersComponent } from './components/display-users/display-users.
 import { Decorator12Component } from './components/decorator12/decorator12.component';
 import { CustomDecorator12Component } from './components/custom-decorator12/custom-decorator12.component';
 import { CustomComp12Component } from './components/custom-comp12/custom-comp12.component';
-import { Zone12Component } from './components/zone12/zone12.component';
-import { Zone11OutisdeAngularComponent } from './components/zone11-outisde-angular/zone11-outisde-angular.component';
 import { AngularSyntax12Component } from './components/angular-syntax12/angular-syntax12.component';
 import { CustomFormcontrol12Component } from './components/custom-formcontrol12/custom-formcontrol12.component';
 import { MatIconModule } from '@angular/material/icon';
@@ -32,8 +30,6 @@ import { SweetAlert12Component } from './components/sweet-alert12/sweet-alert12.
     DisplayUsersComponent,
     Decorator12Component,
     CustomDecorator12Component,
-    Zone12Component,
-    Zone11OutisdeAngularComponent,
     AngularSyntax12Component,
     CustomFormcontrol12Component,
     DynamicImports23Component,

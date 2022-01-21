@@ -12,7 +12,6 @@ import { DynamicImports23Component } from './components/dynamic-imports23/dynami
 import { HomeRandomComponent } from './components/home-random/home-random.component';
 import { Lifecycle12Component } from './components/lifecycle12/lifecycle12.component';
 import { SweetAlert12Component } from './components/sweet-alert12/sweet-alert12.component';
-import { Zone12Component } from './components/zone12/zone12.component';
 import { UserResolver } from './resolvers/user.resolver';
 
 const routes: Routes = [
@@ -49,10 +48,6 @@ const routes: Routes = [
     component: CustomComp12Component
   },
   {
-    path: 'zone-12',
-    component: Zone12Component
-  },
-  {
     path: 'angular-syntax12',
     component: AngularSyntax12Component
   },
@@ -68,10 +63,6 @@ const routes: Routes = [
     path: 'direct-swal',
     component: SweetAlert12Component
   }
-
-
-  
-
   
 ];
 

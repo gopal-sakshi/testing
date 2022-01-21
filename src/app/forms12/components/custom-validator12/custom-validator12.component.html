@@ -6,15 +6,21 @@
                 <input formControlName="lastName" placeholder="last name">
                 <input formControlName="mobile" placeholder="mobile">
             </div>
-            <button mat-raised-button (click)="onSubmit()" [disabled]=formGroup1?.invalid>submit</button>
+            <button mat-raised-button (click)="onSubmit1()" [disabled]=formGroup1?.invalid>submit1</button>
             &nbsp;&nbsp;
-            <button mat-raised-button (click)="onSubmit()">submit</button>
+            <button mat-raised-button (click)="onSubmit1()">submit1</button>
         </form>
     </div>
     <div class="custom-validator-2">
-        lets work later
-    </div>
-    <div class="custom-validator-3">
-        lets work laterrrrr
+        <form [formGroup]="formGroup2">
+            <div fxLayout="column" fxLayoutGap="10px" class="form-group-2">
+                <input formControlName="age" placeholder="age">
+                <input formControlName="city" placeholder="ciy">
+                <input formControlName="country" placeholder="country">
+            </div>
+            <button mat-raised-button (click)="onSubmit2()" [disabled]=formGroup2?.invalid>submit2</button>
+            &nbsp;&nbsp;
+            <button mat-raised-button (click)="onSubmit2()">submit2</button>
+        </form>
     </div>
 </div>

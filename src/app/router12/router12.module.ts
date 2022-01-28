@@ -7,6 +7,7 @@ import { Params12Component } from './components/params12/params12.component';
 import { HomeRouter12Component } from './components/home-router12/home-router12.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
+import { RouteReuse12Component } from './components/route-reuse12/route-reuse12.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ItemDetailComponent } from './components/item-detail/item-detail.compon
     Snapshot12Component,
     Params12Component,
     HomeRouter12Component,
-    ItemDetailComponent
+    ItemDetailComponent,
+    RouteReuse12Component
   ],
   imports: [
     CommonModule,

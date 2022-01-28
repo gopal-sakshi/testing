@@ -9,5 +9,13 @@
     <a [routerLink]="['au-ng-content33']"> au-ng-content33 </a>
     <a [routerLink]="['embed-view11']"> embed-view11 </a>
     <a [routerLink]="['host-view11']"> host-view11 </a>
-
+    <a [routerLink]="['view-encapsulation12']"> view encapsulation12 </a>
+    <h1>some h1 element to test view encapsulation feature </h1>
+    <button mat-raised-button color="primary" title="click to enable/disable encapsulation" 
+        (click)="showEncapsulation=!showEncapsulation" style="max-width: fit-content;"> click</button>
+    <div *ngIf="showEncapsulation">
+        <app-view-encapsulation12></app-view-encapsulation12>
+    </div>
+    
+    
 </div>

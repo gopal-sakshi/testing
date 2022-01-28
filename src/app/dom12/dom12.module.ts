@@ -17,6 +17,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EmbedView11Component } from './components/embed-view11/embed-view11.component';
 import { HostView11Component } from './components/host-view11/host-view11.component';
 import { HostViewExampleComponent } from './components/host-view-example/host-view-example.component';
+import { ViewEncapsulation12Component } from './components/view-encapsulation12/view-encapsulation12.component';
+import { ViewEncapChild1Component } from './components/view-encap-child1/view-encap-child1.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { HostViewExampleComponent } from './components/host-view-example/host-vi
     AuNgContent33Component,
     EmbedView11Component,
     HostView11Component,
-    HostViewExampleComponent
+    HostViewExampleComponent,
+    ViewEncapsulation12Component,
+    ViewEncapChild1Component
   ],
   imports: [
     CommonModule,

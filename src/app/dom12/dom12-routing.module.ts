@@ -10,6 +10,7 @@ import { NgTemplateOutlet11Component } from './components/ng-template-outlet11/n
 import { NgTemplateOutlet12Component } from './components/ng-template-outlet12/ng-template-outlet12.component';
 import { NgTemplate11Component } from './components/ng-template11/ng-template11.component';
 import { ParentDomComponent } from './components/parent-dom/parent-dom.component';
+import { ViewEncapsulation12Component } from './components/view-encapsulation12/view-encapsulation12.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: 'host-view11',
     component: HostView11Component
+  },
+  {
+    path: 'view-encapsulation12',
+    component: ViewEncapsulation12Component
   }
 ];
 

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeDom12Component implements OnInit {
 
+  showEncapsulation:boolean = false
   constructor() { }
 
   ngOnInit(): void {

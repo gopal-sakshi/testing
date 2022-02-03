@@ -1,0 +1,23 @@
+.change-detection12-container {
+  .dialog-header {
+    top: 0;
+    position: sticky;
+    background:rgb(100, 62, 62);
+    color: rgb(46, 120, 163);
+    border-bottom: 2px solid grey;
+  }
+  .header-title {
+    margin: 0 !important;
+    font-size: 1.1rem;
+    padding: 8px 16px;
+    color:rosybrown
+  }
+  .close-dialog-btn {
+    margin-right: 5px;
+    color:sandybrown;
+  }
+  border: 2px solid grey;
+  .main-content {
+    padding:15px
+  }
+}

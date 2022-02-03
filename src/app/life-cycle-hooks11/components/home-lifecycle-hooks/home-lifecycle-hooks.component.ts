@@ -1,25 +1,28 @@
-import { Component, NgZone, OnInit } from '@angular/core';
+import { Component, Injector, NgZone, OnInit } from '@angular/core';
+import { ChangeDetection11 } from '../../classes/change-detection';
 
 @Component({
   selector: 'app-home-lifecycle-hooks',
   templateUrl: './home-lifecycle-hooks.component.html',
   styleUrls: ['./home-lifecycle-hooks.component.scss']
 })
-export class HomeLifecycleHooksComponent implements OnInit {
+export class HomeLifecycleHooksComponent extends ChangeDetection11 implements OnInit {
 
   input1:any;
   input2:any;
   input3:any;
 
-  constructor(private _ngZone:NgZone) { }
+  constructor(private _ngZone:NgZone, protected injector: Injector) {
+    super(injector);
+  }
 
   ngOnInit(): void {
-    
+
     this.input1 = {
       name: "gopal",
       age: 33,
     }
-    
+
     this.input2 = {
       city: "hyderabad",
       country: "India"
@@ -42,7 +45,7 @@ export class HomeLifecycleHooksComponent implements OnInit {
   }
 
   changeInput2() {
-    
+
     this._ngZone.runOutsideAngular(() => {
       this.input2.city = "vijayawada";
     });

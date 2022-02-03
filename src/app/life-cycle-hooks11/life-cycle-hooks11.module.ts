@@ -8,7 +8,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ChangeDetection11Component } from './components/change-detection11/change-detection11.component';
 import { Zone12Component } from './components/zone12/zone12.component';
 import { Zone11OutsideAngularComponent } from './components/zone11-outside-angular/zone11-outside-angular.component';
-
+import { ChangeDetection12Component } from './components/change-detection12/change-detection12.component';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,15 @@ import { Zone11OutsideAngularComponent } from './components/zone11-outside-angul
     NgDoCheck12Component,
     ChangeDetection11Component,
     Zone12Component,
-    Zone11OutsideAngularComponent
+    Zone11OutsideAngularComponent,
+    ChangeDetection12Component
   ],
   imports: [
     CommonModule,
     LifeCycleHooks11RoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatBottomSheetModule,
+    MatIconModule
   ]
 })
 export class LifeCycleHooks11Module { }

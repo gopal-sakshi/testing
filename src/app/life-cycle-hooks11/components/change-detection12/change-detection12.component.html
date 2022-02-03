@@ -1,0 +1,16 @@
+<div class="change-detection12-container" fxLayout="column" fxLayoutGap="20px">
+
+  <div class="dialog-header overflow-hidden" fxLayout="row" fxLayoutAlign="space-between center">
+    <h1 class="header-title" mat-dialog-title translate>This is frustrating</h1>
+      <button class="close-dialog-btn outline-none" mat-icon-button (click)="cancel()">
+          <mat-icon>clear</mat-icon>
+      </button>
+  </div>
+
+  <div class="main-content" fxLayout="column" style="max-width: fit-content;">
+    <span *ngIf="isLoaded12">player = {{playerName}}</span>
+    <span *ngIf="!isLoaded12">player = not {{playerName}}</span>
+    <span>club = {{club}}</span>
+  </div>
+</div>
+

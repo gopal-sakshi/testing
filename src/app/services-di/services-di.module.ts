@@ -11,8 +11,9 @@ import { LoggerService } from './classes/logger.service';
 import { ProductDiInjectComponent } from './components/product-di-inject/product-di-inject.component';
 import { ProductTwiceService } from './classes/productTwice.service';
 import { LoggerTwiceService } from './classes/loggerTwice.service';
-import { factoryFunction, factoryFunctionUseValue, someStringTokenByInjectionToken } from './types/tokens';
+import { factoryFunction, factoryFunctionUseValue, someClassTokenByInjectionToken, someStringTokenByInjectionToken } from './types/tokens';
 import { TokenTypesComponent } from './components/token-types/token-types.component';
+import { ClassManuallyInjected } from './classes/class-manually-injected';
 
 function usingFunction456() {
   return true;
@@ -49,7 +50,9 @@ function usingFunction456() {
     { provide: someStringTokenByInjectionToken, useValue: 'Sakshii' },
     { provide: 'myFunction', useFactory: factoryFunction,
       deps: [someStringTokenByInjectionToken] },
-    { provide: 'myFunctionUseValue', useValue: factoryFunctionUseValue('Sakshi')}
+    { provide: 'myFunctionUseValue', useValue: factoryFunctionUseValue('Sakshi')},
+    //{ provide: 'bhale bhale', useClass:ClassManuallyInjected},
+    { provide: someClassTokenByInjectionToken, useClass:ClassManuallyInjected},
   ]
   /*
    multi:true that the provider is a multi provider. 

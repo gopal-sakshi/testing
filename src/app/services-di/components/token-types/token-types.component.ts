@@ -1,6 +1,7 @@
 import { Component, Inject, InjectionToken, OnInit } from '@angular/core';
+import { ClassManuallyInjected } from '../../classes/class-manually-injected';
 import { ProductService } from '../../classes/product.service';
-import { someStringTokenByInjectionToken } from '../../types/tokens';
+import { someClassTokenByInjectionToken, someStringTokenByInjectionToken } from '../../types/tokens';
 
 @Component({
   selector: 'app-token-types',
@@ -12,16 +13,17 @@ export class TokenTypesComponent implements OnInit {
 
   constructor(
     public productServiceClassToken: ProductService,
-    @Inject('someStringToken') public someString:string,
-    @Inject('function456') public someFunction,
+    // @Inject('someStringToken') public someString:string,
+    // @Inject('function456') public someFunction,
     @Inject(someStringTokenByInjectionToken) public anotherString:string,
-    @Inject('myFunction') public localFactoryFunction:any,
-    @Inject('myFunctionUseValue') public localFactoryFunctionUseValue:any
+    @Inject(someClassTokenByInjectionToken) public anotherClass:ClassManuallyInjected
+    // @Inject('myFunction') public localFactoryFunction:any,
+    // @Inject('myFunctionUseValue') public localFactoryFunctionUseValue:any
   ) { }
 
   ngOnInit(): void {
 
-    this.localFactoryFunction;
+    //this.localFactoryFunction;
             // we injected a function into the localFactoryFunction (see factoryFunction in 'tokens.ts')
             // hence this statement, executes whatever is in that factoyFunction in 'tokens.ts'
             // we used useFactory to do this...
@@ -29,7 +31,10 @@ export class TokenTypesComponent implements OnInit {
     //this.localFactoryFunctionUseValue();
 
 
-    console.log(this.someFunction);
+    //console.log(this.someFunction);
+
+    console.log(this.anotherString);
+    this.anotherClass.someMethod1();
   }
 
 }

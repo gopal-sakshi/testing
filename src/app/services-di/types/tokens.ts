@@ -1,6 +1,9 @@
 import { InjectionToken } from "@angular/core";
+import { ClassManuallyInjected } from "../classes/class-manually-injected";
 
 export const someStringTokenByInjectionToken = new InjectionToken<string>('');
+
+export const someClassTokenByInjectionToken = new InjectionToken<ClassManuallyInjected>('bhale bhale');
 
 // Object.freeze() = object properties can no longer be modified...
 export const SOME_CONFIG = Object.freeze({

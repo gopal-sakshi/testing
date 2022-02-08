@@ -1,0 +1,9 @@
+<div class="js-home12-container" fxLayout="row" fxLayoutGap="20px">
+    <a [routerLink]="['call-bind-apply']">call-bind-apply</a>
+    <!-- <a [routerLink]="['mat-forms23']">mat forms</a>
+    <a [routerLink]="['mat-table12']">mat table</a> -->
+    <button mat-raised-button color="primay" (click)="toggleCallBindApply()">click for child</button>
+    <div *ngIf="showCallBindApply">
+        <app-call-bind-apply></app-call-bind-apply>
+    </div>    
+</div>

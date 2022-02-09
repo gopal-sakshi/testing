@@ -6,12 +6,14 @@ import { JsHome12Component } from './components/js-home12/js-home12.component';
 import { CallBindApplyComponent } from './components/call-bind-apply/call-bind-apply.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
+import { Inheritance12Component } from './components/inheritance12/inheritance12.component';
 
 
 @NgModule({
   declarations: [
     JsHome12Component,
-    CallBindApplyComponent
+    CallBindApplyComponent,
+    Inheritance12Component
   ],
   imports: [
     CommonModule,

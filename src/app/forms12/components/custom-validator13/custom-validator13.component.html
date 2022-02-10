@@ -11,8 +11,8 @@
                 <!-- <input formControlName="age" placeholder="enter age"> -->
                 <!-- <input formControlName="email" placeholder="enter email" ngModel validateEmail> -->
                 <input formControlName="email" placeholder="enter email">
-            </div>    
-        </form>    
+            </div>
+        </form>
     </div>
 </div>
 
@@ -20,7 +20,7 @@
     <form #multipleEmailForm="ngForm" class="custom-validator13-form">
         <div fxLayout="column" fxLayoutGap="20px">
             <input type="text" placeholder="email1" name="email1" ngModel>
-            
+
             <!-- validateEmail12 = only 'abc' is valid email -->
             <input type="text" placeholder="email2...12" name="email2" ngModel validateEmail12>
 
@@ -29,6 +29,11 @@
 
             <!-- validateEmail14 = gopal612, ped (blacklisted)  APPROACH 1-->
             <input type="text" placeholder="email2...14" name="email4" ngModel validateEmail14>
+            <!--
+                in validateEmail12 directive, we used 'useValue'
+                but in validateEmail14 directive, we are forced to use 'useFactory'
+                because we dont return the factoryFunction... rather we return what the factoryFunction returns
+            -->
 
             <!-- validateEmail14 = gopal612, ped (blacklisted)  APPROACH 2-->
             <input type="text" placeholder="email2...15" name="email5" ngModel validateEmail15>
@@ -37,7 +42,7 @@
         <button mat-raised-button (click)="consoleForm(multipleEmailForm)">Submit2</button>
 
         <!-- validateEmail is applied as an attribute to the <input> DOM element -->
-        <!-- 
+        <!--
             we need to build a directive with a matching selector (meaning selector MUST also be "validateEmail")
             so it will be executed on all input controls where the directive is applied
         -->
@@ -47,12 +52,12 @@
             b) It maintains a multi provider for a dependency token called NG_VALIDATORS
                     - Angular injects multiple values for a single token that is used for a multi provider.
             c) It turns out that all built-in validators are already added to the NG_VALIDATORS token
-            d) So whenever Angular instantiates a form control and performs validation, 
-                it basically injects the dependency for the NG_VALIDATORS token, which is a list of all validators, 
+            d) So whenever Angular instantiates a form control and performs validation,
+                it basically injects the dependency for the NG_VALIDATORS token, which is a list of all validators,
                 and executes them one by one on that form control.
-            e) Since multi providers can be extended by adding more multi providers to a token, 
+            e) Since multi providers can be extended by adding more multi providers to a token,
                 we can consider NG_VALIDATORS as a hook to add our own validators.
-            f) 
+            f)
         -->
     </form>
 </div>

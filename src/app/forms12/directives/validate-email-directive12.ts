@@ -13,7 +13,7 @@ import { FormControl, NG_VALIDATORS } from '@angular/forms';
 export class EmailValidator12 { }
 
 function validateEmail12Fn(c: FormControl) {
-    console.log("testing ey");
+    console.log("testing emailValidator12");
     
     // let EMAIL_REGEXP = /[abc]/
 

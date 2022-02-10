@@ -7,8 +7,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomValidator12Component } from './components/custom-validator12/custom-validator12.component';
 import { MatButtonModule } from '@angular/material/button';
 import { CustomValidator13Component } from './components/custom-validator13/custom-validator13.component';
-import { ValidateEmailDirective13 } from './directives/validateEmailDirective13';
+
 import { EmailValidator12 } from './directives/validate-email-directive12';
+import { EmailValidator13 } from './directives/validate-email-directive13';
+import { EmailValidator14 } from './directives/validate-email-directive14';
+import { EmailValidator15 } from './directives/validate-email-directive15';
+import { EmailBlackList12Service } from './classes/email-black-list12-service';
+
 
 const routes: Routes = [
   {
@@ -22,8 +27,10 @@ const routes: Routes = [
     HomeForms12Component,
     CustomValidator12Component,
     CustomValidator13Component,
-    ValidateEmailDirective13,
-    EmailValidator12
+    EmailValidator12,
+    EmailValidator13,
+    EmailValidator14,
+    EmailValidator15
   ],
   imports: [
     CommonModule,
@@ -32,6 +39,9 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
+  ],
+  providers: [
+    EmailBlackList12Service
   ]
 })
 export class Forms12Module { }

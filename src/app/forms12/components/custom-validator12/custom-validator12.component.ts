@@ -53,7 +53,8 @@ export class CustomValidator12Component implements OnInit {
   atleastOneValidator1:ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
     
     console.log(control);
-    return {somethingsHappening: true};     // this is working... this doesnt return an observable...
+    // return {somethingsHappening: true};     // this is working... this doesnt return an observable...
+    return null;
   }
 
   // at least 2 formControls must be filled

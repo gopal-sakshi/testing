@@ -10,7 +10,7 @@ import { inheritanceTest } from '../../types/js-types';
 export class Inheritance12Component implements OnInit {
 
   constructor(
-    @Inject(inheritanceTest) private test1:BaseClass12
+    //@Inject(inheritanceTest) private test1:BaseClass12
   ) { }
 
   ngOnInit(): void {

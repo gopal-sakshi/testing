@@ -7,7 +7,7 @@ import { NG_VALIDATORS } from '@angular/forms';
     //     { provide: NG_VALIDATORS, useValue: validateEmail13, multi: true }
     // ]
 })
-export class ValidateEmailDirective13 { }
+export class EmailValidator13 { }
 
 /*
     https://blog.thoughtram.io/angular/2015/09/03/forward-references-in-angular-2.html

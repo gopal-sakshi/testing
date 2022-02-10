@@ -1,5 +1,11 @@
 <div *ngIf="false">
     <div fxLayout="column" fxLayoutGap="20px" class="custom-validator13-container">
+        <!-- The novalidate attribute in HTML is used to signify that the form won't get validated on submit -->
+        <!--
+            novalidate attribute on form element  (its HTML thingy... not angular)
+            - signify that the form won’t get validated on submit.
+            - If the form validation is disabled, the user can easily save the form and continue & submit the form later.
+        -->
         <form novalidate>
             <div fxLayout="column" fxLayoutGap="20px" class="custom-validator13-form">
                 <!-- <input formControlName="age" placeholder="enter age"> -->
@@ -11,17 +17,24 @@
 </div>
 
 <div class="custom-validator13-container">
-    <!--
-        novalidate attribute on form element  (its HTML thingy... not angular)
-        - signify that the form won’t get validated on submit.
-        - If the form validation is disabled, the user can easily save the form and continue & submit the form later.
-    -->
-    <form #twoEmailForm="ngForm" class="custom-validator13-form">
+    <form #multipleEmailForm="ngForm" class="custom-validator13-form">
         <div fxLayout="column" fxLayoutGap="20px">
-            <input type="text" name="email1" ngModel>
-            <input type="text" name="email2" ngModel validateEmail12>
+            <input type="text" placeholder="email1" name="email1" ngModel>
+            
+            <!-- validateEmail12 = only 'abc' is valid email -->
+            <input type="text" placeholder="email2...12" name="email2" ngModel validateEmail12>
+
+            <!-- validateEmail13 = not implemented yet -->
+            <input type="text" placeholder="email2...13" name="email3" ngModel validateEmail13>
+
+            <!-- validateEmail14 = gopal612, ped (blacklisted)  APPROACH 1-->
+            <input type="text" placeholder="email2...14" name="email4" ngModel validateEmail14>
+
+            <!-- validateEmail14 = gopal612, ped (blacklisted)  APPROACH 2-->
+            <input type="text" placeholder="email2...15" name="email5" ngModel validateEmail15>
         </div>
-        <button mat-raised-button (click)="onSubmit(twoEmailForm)">Submit</button>
+        <button mat-raised-button [disabled]="isFormValid(multipleEmailForm)" (click)="onSubmit(multipleEmailForm)">Submit1</button>
+        <button mat-raised-button (click)="consoleForm(multipleEmailForm)">Submit2</button>
 
         <!-- validateEmail is applied as an attribute to the <input> DOM element -->
         <!-- 

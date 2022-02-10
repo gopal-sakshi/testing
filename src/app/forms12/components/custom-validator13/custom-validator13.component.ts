@@ -14,8 +14,19 @@ export class CustomValidator13Component implements OnInit {
 
   ngOnInit() {}
 
-  onSubmit(twoEmailForm) {
-    console.log(twoEmailForm);
+  onSubmit(multipleEmailForm) {
+    console.log(multipleEmailForm);
   }
 
+  isFormValid(multipleEmailForm:any):boolean {
+    if (multipleEmailForm.valid) {
+      return false;
+    } else {
+      return true
+    }
+  }
+
+  consoleForm(multipleEmailForm) {
+    console.log(multipleEmailForm);
+  }
 }

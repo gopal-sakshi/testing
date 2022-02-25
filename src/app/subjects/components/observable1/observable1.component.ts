@@ -11,10 +11,12 @@ export class Observable1Component implements OnInit {
   obs1:Observable<any>
   value1:string;
   
-  constructor() { }
+  constructor() { 
+    localStorage.setItem('name', 'Real Madrid')
+  }
 
   ngOnInit(): void {
-    //this.purity();
+    this.purity();
     this.flow();
     this.value1 = window.localStorage.getItem("name")
   }
@@ -24,7 +26,7 @@ export class Observable1Component implements OnInit {
     var button = document.querySelector('button');
 
     // Option A... we need external variable 'count' to keep track of how many times user clicked
-    button.addEventListener('click', () => console.log(`Clicked ${++count} times`));
+    button.addEventListener('click', () => console.log(`Clicked ${++count} times - not pure`));
 
 
     // Option B
@@ -45,7 +47,7 @@ export class Observable1Component implements OnInit {
     fromEvent(button, 'click').pipe(
       scan(count => count + 1, 0)).
       // subscribe(count => console.log('Clicked ${count} times'));
-      subscribe(count => console.log(`Clicked ${count} times`));
+      subscribe(count => console.log(`Clicked ${count} times - pure function`));
   }
 
   flow() {
@@ -117,11 +119,29 @@ export class Observable1Component implements OnInit {
       next: (x:any) => console.log('got 2a '+x)
     })
 
-    obs3$.subscribe();
-
+    obs3$.subscribe();      // these two didnt get executed... because there was no observer inside subscribe() method
     obs4$.subscribe();
+    
+    const jingChak1 = {
+      next: x => {console.log('jingChak1 observer value ',x)},
+      error: error => {console.log(error)},
+      complete: () => {console.log('jingChak1 observer finished')}
+    }
 
-    obs5$.subscribe();
+    const nextCb = function(nextValue) { console.log('next value is ',nextValue)};
+    const errorCb = function(errorValue) {console.log(errorValue)};
+    const completeCb1 = () => {console.log('jingChak2 finished')};
+    const completeCb2 = function() {console.log('jingChak2 finished')};
+
+
+    const jingChak2 = {nextCb, errorCb, completeCb1};
+    const jingChak3 = {nextCb, errorCb, completeCb2};
+
+
+
+    obs5$.subscribe(jingChak1);
+    // obs5$.subscribe(jingChak2);      // why this throws error ????
+    // obs5$.subscribe(jingChak3);
 
 
   }

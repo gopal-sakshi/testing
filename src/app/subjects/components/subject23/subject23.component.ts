@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, BehaviorSubject, of } from 'rxjs';
+import { Observable, BehaviorSubject, of, Subscription, from } from 'rxjs';
 
 
 @Component({
@@ -31,15 +31,24 @@ export class Subject23Component implements OnInit {
 
   constructor() { 
     
+    //ds$ is an Observable... it has pipe(), subscribe() methods on it... subscribe() method needs an observer object
     this.ds$ = this.dss.asObservable();
 
 
     // this didnt throw error, when I tried to subscribe
     // console.log() output ======>     inside subscribe method of subject observable
-    this.ds$.subscribe(res => {
-      console.log("inside subscribe method of subject observable");
-      console.log(res);
-    });
+    this.ds$.subscribe(
+      res => {
+        console.log("inside subscribe method of subject observable");
+        console.log(res);
+      }, 
+      err => {
+        console.log('error in ds$ observable ',err)
+      }, 
+      () => {
+        console.log('ds$ observable finished... complete cb doesnt take arguments')
+      }
+    );
 
     // this threw error, when I tried to subscribe... 
     // TypeError: Cannot read properties of undefined (reading 'subscribe')
@@ -73,29 +82,41 @@ export class Subject23Component implements OnInit {
   }
 
   callFirst() {
+    var esSubscription = new Subscription();
+
     this.dss.next(this.count);
     this.dss.complete();
 
-    this.es$ = of("hello doctor");
+    this.es$ = of("gopal", "sakshi", "real madrid");
     
-    this.fs$ = of("hello hospital");
+    this.fs$ = from("fs$_emits_values_one_by_one");
     this.fs$.subscribe(res => {
-      console.log("inside subscribe method of fs observable");
       console.log(res);
-    });
+    }, undefined, () => {console.log('fs$ finished')} );
 
-    this.gs$ = of("gonzalo higuain");
+    this.gs$ = of("value emitted by gs$ observable");
+
+
+    // it seems gs$ observable is subscribed two times... 
     this.gs$.subscribe( res => {
-      console.log("inside gs$ subscribe");
+      console.log("this is gs$ - 1st subscriber/observer");
       console.log(res);
     });
 
     this.gs$.subscribe(res => {
-      console.log("inside gs$ subscribe 2");
+      console.log("this is gs$ - 2nd subscriber/observer");
       console.log(res);
     });
 
-    this.hs$ = of("karim benzema");
+    const esObserver = {
+      next: nextValue => {console.log('esObserver ',nextValue)},
+      error: err => {console.log('esObserver ', err)},
+      complete: () => {console.log('esObservor finished')}
+    };
+
+    this.es$.subscribe(esObserver);
+
+    this.hs$ = of("hello hs$ observable");
     this.hs$.subscribe(res => {
       console.log("inside hs$ res");
       console.log(res);
@@ -103,6 +124,8 @@ export class Subject23Component implements OnInit {
       console.log("inside hs$ error");
     }, () => {
       console.log("inside hs$ complete");
-    })
+    });
+
+    
   }
 }

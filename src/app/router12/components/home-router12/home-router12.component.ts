@@ -32,11 +32,15 @@ export class HomeRouter12Component implements OnInit {
 
   goToHome() {
     console.log('not implemented');
-    // have to do navigateByUrl too
+    /*
+      router.navigate         = 1st argument must be ARRAY
+      router.navigateByUrl    = 1st argument must be string
+    */
+
   }
 
   goToRandom12() {
-    this.router.navigate(['./']);
+    this.router.navigateByUrl('./');
   }
 
 

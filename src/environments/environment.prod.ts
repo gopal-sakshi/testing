@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   envName: 'prod',
-  APP_NAME: 'testingProd'
+  APP_NAME: 'testing_prod'
 };

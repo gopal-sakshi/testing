@@ -3,13 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  // production: false,
-  // envName:'dvpt',
-  // APP_NAME: 'testingDvpt'
 
-  production: true,
-  envName: 'prod',
-  APP_NAME: 'testingProd'
+  production: false,
+  envName: 'normal',
+  APP_NAME: 'testing_normal'
 };
 
 /*

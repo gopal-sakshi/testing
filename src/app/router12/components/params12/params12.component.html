@@ -9,13 +9,26 @@
     meaning product 2 must print ======> blah.com/product/2
 
 -->
-<div fxLayout="row" fxLayoutGap="20px">
-    <div *ngFor="let element of products44, index as index">
-        <!-- <span [routerLink]="['itemDetail', index]">
-            {{element.id}} {{element.item}}
-        </span> -->
-        <span [routerLink]="['/router-12/itemDetail', index]">
-            {{element.id}} {{element.item}}
-        </span>        
+<div class="params12-container">
+    <div fxLayout="column" fxLayoutGap="20px">
+        <div *ngFor="let element of products44, index as index" fxLayout="row" fxLayoutGap="50px">
+            <!-- this approach looks for child routes -->
+            <!-- <span>{{element.id}} {{element.name}}</span> -->
+
+            <!-- this approach looks for absolute routes -->
+            <span>{{element.id}} {{element.name}}</span>
+
+            <button [routerLink]="['/router-12/itemDetail', index]" mat-flat-button color="primary">click me</button>
+        </div>
+        <a [routerLink]="['/router-12']"> Go Back </a>
     </div>
 </div>
+
+
+
+<!--
+    first segment begins with '/' ===> the router will look up the route from the root of the app.
+    first segment begins with './' ===> the router will instead look in the children of the current activated route.
+    first segment doesn't begin with a slash ===> the router will instead look in the children of the current activated route.
+    first segment begins with '../' ===> the router will go up one level.
+-->

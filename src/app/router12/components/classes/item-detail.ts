@@ -1,6 +1,6 @@
 export interface itemDetail {
     id: number,
     name: string,
-    img : string,
-    price: number
+    img? : string,
+    price?: number
 }

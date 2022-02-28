@@ -1,5 +1,26 @@
-<div fxLayout="row" fxLayoutGap="40px" class="home-class">
-    <a [routerLink]="['params12']"> Params12 </a>
-    <a [routerLink]="['snapshot12']"> snapshot12 </a>
-    <a [routerLink]="['itemDetail', '2']"> sdfl </a>        
+<div class="home-router12-container" fxLayout="row" fxLayoutGap="40px">
+    <div fxLayout="column" fxLayoutGap="40px" class="router-links">
+        <a [routerLink]="['params12']"> Params12 </a>
+        <a [routerLink]="['snapshot12']"> snapshot12 </a>
+
+        <!-- queryParams is another input of routerLink where they can be passed like -->
+        <a [routerLink]="['itemDetail', '2']" [queryParams]="{player1: 'Luka', player2: 'Casemiro'}"> Pass Query Param </a>
+        <a [routerLink]="['itemDetail', '2']"> Pass Query Param </a>
+    </div>
+
+    <div fxLayout="column" fxLayoutGap="40px" class="button-links">
+        <button mat-raised-button color="primary" (click)="itemDetail()">Item Detail 2</button>
+        <button mat-raised-button color="primary" (click)="goBack()">Go Back (TS)</button>
+        <button mat-raised-button color="primary" (click)="goToHome()">Go to home</button>
+        <button mat-raised-button color="primary" (click)="goToRandom12()">Random12 module</button>
+    </div>
 </div>
+
+
+
+<!--
+    first segment begins with '/' ===> the router will look up the route from the root of the app.
+    first segment begins with './' ===> the router will instead look in the children of the current activated route.
+    first segment doesn't begin with a slash ===> the router will instead look in the children of the current activated route.
+    first segment begins with '../' ===> the router will go up one level.
+-->

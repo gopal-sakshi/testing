@@ -1,37 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { GetItemDetailsService } from '../../services/get-item-details.service';
+import { itemDetail } from '../classes/item-detail';
 
 @Component({
   selector: 'app-params12',
   templateUrl: './params12.component.html',
-  styleUrls: ['./params12.component.css']
+  styleUrls: ['./params12.component.scss']
 })
 export class Params12Component implements OnInit {
 
-  constructor() { }
+  // products44:itemDetail = [];
+  products44:any = [];
+  constructor(private getItemDetails:GetItemDetailsService) { }
 
-  products44 = [
-    {
-      id: 1,
-      item: "apple"
-    },
-    {
-      id: 2,
-      item: "banana"
-    },
-    {
-      id: 3,
-      item: "chikoo"
-    },
-    {
-      id: 4,
-      item: "date"
-    },
-    {
-      id: 5,
-      item: "egg"
-    }
-  ]
+  
+
   ngOnInit(): void {
+    this.getItemDetails.getAllItemsShort().subscribe(res => {
+      this.products44 = res;
+    })
   }
 
 }

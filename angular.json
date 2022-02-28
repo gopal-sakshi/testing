@@ -11,11 +11,27 @@
       "schematics": {
         "@schematics/angular:application": {
           "strict": true
+        },
+        "@schematics/angular:component": {
+          "style": "scss"          
+        },
+        "@schematics/angular:class": {
+          "skipTests": true          
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": { },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
         }
-      },
+      },      
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "app69",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -27,6 +43,7 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
+              "src/gopal612_favicon.ico",
               "src/assets"
             ],
             "styles": [
@@ -63,6 +80,22 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "lukaBuild": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.luka.ts"
+                }
+              ]
+            },
+            "kroosBuild": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.kroos.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -75,6 +108,12 @@
             },
             "development": {
               "browserTarget": "testing:build:development"
+            },
+            "lukaServe": {
+              "browserTarget": "testing:build:lukaBuild"
+            },
+            "kroosServe": {
+              "browserTarget": "testing:build:kroosBuild"
             }
           },
           "defaultConfiguration": "development"

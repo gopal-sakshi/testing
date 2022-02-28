@@ -4,6 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 9999",
+    "start_with_luka" : "node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng serve -c lukaServe --base-href jc/version1/ ",
+    "start_with_kroos" : "node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng serve -c kroosServe",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

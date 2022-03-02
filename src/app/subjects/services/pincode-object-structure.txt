@@ -1,0 +1,25 @@
+[
+    {
+        "Message": "Number of pincode(s) found:21",
+        "Status": "Success",
+        "PostOffice": [
+            {
+                "Name": "Baroda House",
+                "Description": null,
+                "BranchType": "Sub Post Office",
+                "DeliveryStatus": "Non-Delivery",
+                "Circle": "Delhi",
+                "District": "Central Delhi",
+                "Division": "New Delhi Central",
+                "Region": "Delhi",
+                "Block": "New Delhi",
+                "State": "Delhi",
+                "Country": "India",
+                "Pincode": "110001"
+            }, 
+            {
+                "like this": "2nd, 3rd, ... 21 pincodes"
+            }
+        ]
+    }
+]

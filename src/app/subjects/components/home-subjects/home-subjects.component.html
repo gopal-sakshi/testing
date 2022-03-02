@@ -1,0 +1,28 @@
+<!-- 
+
+    screen capture, web share --------- junk, so not using anymore 
+
+<a [routerLink]="['screen_capture']">Screen Capture</a><br>
+<a [routerLink]="['web_share_2']">Web Share 2 </a> <br>
+<a [routerLink]="['web_share_3']">Web Share 3 </a> <br> 
+
+-->
+
+<div class="home-subjects-container">
+    <div fxLayout="row" fxLayoutGap="100px" class="links">
+        <a [routerLink]="['subject23']"> subject23 </a> <br>
+        <a [routerLink]="['observable1']"> Observable1 </a> <br> 
+    </div>
+    
+    <div fxLayout="column" fxLayoutGap="50px" class="child-components">
+        <div *ngIf="showObservable2">
+            <app69-observable2></app69-observable2>
+        </div>
+        <button mat-raised-button color="warning" (click)="showObservable2=!showObservable2">Observable 2</button>
+    </div>
+</div>
+
+<!-- <router-outlet></router-outlet> -->
+
+
+

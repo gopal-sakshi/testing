@@ -4,21 +4,30 @@ import { Subject23Component } from './components/subject23/subject23.component';
 import { SubjectsRoutingModule } from './subjects-routing.module';
 import { Observable1Component } from './components/observable1/observable1.component';
 import { RouterModule } from '@angular/router';
-import { AaSubjectsComponent } from './components/aa-subjects/aa-subjects.component';
-import { FlexLayoutModule } from '@angular/flex-layout'
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { Observable2Component } from './components/observable2/observable2.component'
+import { FakeJsonStats } from './services/fake-json-stats';
+import { HomeSubjectsComponent } from './components/home-subjects/home-subjects.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
   declarations: [
     Subject23Component,
     Observable1Component,
-    AaSubjectsComponent
+    Observable2Component,
+    HomeSubjectsComponent
   ],
   imports: [
     CommonModule,
     SubjectsRoutingModule,
     RouterModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatButtonModule
+  ],
+  providers: [
+    FakeJsonStats
   ]
 })
 export class SubjectsModule { }

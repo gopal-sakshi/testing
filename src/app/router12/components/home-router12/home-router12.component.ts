@@ -21,9 +21,9 @@ export class HomeRouter12Component implements OnInit {
     // this throws error.... Error: Cannot match any routes. URL Segment: 'router-12/itemDetail'
 
 
-    this.router.navigate(['router-12', '  itemDetail', '2'], navigationExtras);
+    this.router.navigate(['router-12', 'itemDetail', '2'], navigationExtras);
     // this works fine... because, we have a route URL Segment: 'router-12/itemDetail/2'
-    // this is absolute navigation... 
+    // this is absolute navigation...
   }
 
   goBack() {
@@ -40,8 +40,34 @@ export class HomeRouter12Component implements OnInit {
   }
 
   goToRandom12() {
-    this.router.navigateByUrl('./');
+    this.router.navigateByUrl('/random12');
   }
 
+  goToRandom12Component() {
+    // absolute navigation
+    this.router.navigateByUrl('/random12/decorator12');
+
+    // relative navigation
+    this.router.navigateByUrl('snapshot12');
+  }
+
+  /*
+
+  router.navigateByUrl()
+  - changing the location bar directly
+  – we are providing the “whole” new URL.
+  - it will only accept absolute URLs
+  - router.navigateByUrl("http://localhost/team/33/user/11")        // works
+  - router.navigateByUrl("../22", {relativeTo: route})              // WONT work... eventhough relativeTo parameter is provided
+
+  router.navigate()
+  - just a convenience method that wraps router.navigateByUrl()
+  - creates a new URL by applying an array of passed-in commands, a patch, to the current URL.
+
+  currentUrl                                                =        '/inbox/11/messages/22(popup:compose)'
+  router.navigate(['/inbox/33/messages/44'])                =        '/inbox/33/messages/44(popup:compose)'
+  router.navigateByUrl('/inbox/33/messages/44')             =        '/inbox/33/messages/44'
+
+  */
 
 }

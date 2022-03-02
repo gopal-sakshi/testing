@@ -1,5 +1,6 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,19 +9,15 @@ import { Observable } from 'rxjs';
 
 export class HttpInterceptor23 implements HttpInterceptor {
 
-    constructor() {}
+    constructor(private router:Router,
+      private activatedRoute:ActivatedRoute) {}
 
     intercept(request:HttpRequest<any>, next:HttpHandler):Observable<HttpEvent<any>> {
 
-        const blah = request.headers.get('project');
-
-        // if(!blah) {
-        //     // console.log("no project key yet");
-        //     request = request.clone({
-        //         headers: request.headers.append('project', 'testing')
-        //     });
-        // }
-        return next.handle(request);
+      console.log(request);
+      console.log(this.router);
+      console.log(this.activatedRoute);
+      return next.handle(request);
     }
 
 }

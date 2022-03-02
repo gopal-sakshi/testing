@@ -6,20 +6,20 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
 })
 
-export class HttpInterceptor23 implements HttpInterceptor { 
-    
+export class HttpInterceptor23 implements HttpInterceptor {
+
     constructor() {}
 
     intercept(request:HttpRequest<any>, next:HttpHandler):Observable<HttpEvent<any>> {
 
         const blah = request.headers.get('project');
 
-        if(!blah) {
-            console.log("no project key yet");
-            request = request.clone({
-                headers: request.headers.append('project', 'testing')
-            });
-        }
+        // if(!blah) {
+        //     // console.log("no project key yet");
+        //     request = request.clone({
+        //         headers: request.headers.append('project', 'testing')
+        //     });
+        // }
         return next.handle(request);
     }
 

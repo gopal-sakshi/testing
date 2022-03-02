@@ -41,12 +41,16 @@ const routes: Routes = [
     loadChildren: () => import('./styling12/styling12.module').then(m => m.Styling12Module)
   },
   {
+    path: 'serverless123',
+    loadChildren: () => import('./serverless123/serverless123.module').then(m => m.Serverless123Module)
+  },
+  {
     path: 'forms12',
     loadChildren: () => import('./forms12/forms12.module').then(m => m.Forms12Module)
   },
   /*
         lazy-loading syntax uses loadChildren followed by a function
-        this function = uses the browser's built-in import('...') syntax for dynamic imports. 
+        this function = uses the browser's built-in import('...') syntax for dynamic imports.
           The import path is the relative path to the module.
 
         How to verify if a module is lazily loaded or not

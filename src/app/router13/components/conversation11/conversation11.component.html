@@ -1,0 +1,13 @@
+
+<div class="conversation11-container" fxLayout="column" fxLayoutGap="30px">
+    <div fxLayout="row" fxLayoutGap="30px">
+        <button mat-raised-button color="primary" (click)="messages2022()">2022</button>
+        <button mat-raised-button color="primary" (click)="messages2021()">2021</button>
+    </div>
+    <div *ngIf="chosenYear">
+        <span>Showing messages for {{chosenYear}}</span> 
+        <a [routerLink]="['/router13', chosenFolder, chosenYear, 'messages']"></a>
+        <!-- <span style="margin:40px">Showing messages for {{chosenYear}}</span>       Why this didnt WORK -->
+        <app69-messages11 [chosenFolder]='chosenFolder' [chosenYear]="chosenYear" ></app69-messages11>
+    </div>    
+</div>

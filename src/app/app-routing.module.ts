@@ -45,6 +45,10 @@ const routes: Routes = [
     loadChildren: () => import('./serverless123/serverless123.module').then(m => m.Serverless123Module)
   },
   {
+    path: 'router13',
+    loadChildren: () => import('./router13/router13.module').then(m=>m.Router13Module)
+  },
+  {
     path: 'forms12',
     loadChildren: () => import('./forms12/forms12.module').then(m => m.Forms12Module)
   },

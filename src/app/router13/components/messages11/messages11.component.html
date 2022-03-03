@@ -1,0 +1,13 @@
+<div fxLayout="column" fxLayoutGap="10px">
+    <div *ngFor="let item of [1,2,3,4]; let index as index">
+        Message {{index}} of year <a [routerLink]="['/router13', chosenFolder, chosenYear, 'messages', 2]">{{chosenYear}}</a>
+    </div>
+</div>
+<!-- why do we need to place router-outlet here ??? just comment out and see... -->
+<router-outlet></router-outlet>
+
+<!--
+    The unnamed outlet is the primary outlet in your app 
+    Except for the primary outlet, all the other outlets must have a name.
+    
+-->

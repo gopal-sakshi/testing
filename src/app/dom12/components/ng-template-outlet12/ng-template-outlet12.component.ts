@@ -3,7 +3,7 @@ import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 @Component({
   selector: 'app-ng-template-outlet12',
   templateUrl: './ng-template-outlet12.component.html',
-  styleUrls: ['./ng-template-outlet12.component.css']
+  styleUrls: ['./ng-template-outlet12.component.scss']
 })
 export class NgTemplateOutlet12Component implements OnInit {
 

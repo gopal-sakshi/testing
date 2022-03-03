@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router, RouterState } from '@angular/router';
 
 @Component({
   selector: 'app-home-router12',
@@ -8,7 +8,7 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class HomeRouter12Component implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private activatedRoute:ActivatedRoute, private routerState:RouterState) { }
 
   ngOnInit(): void {
   }
@@ -49,6 +49,10 @@ export class HomeRouter12Component implements OnInit {
 
     // relative navigation
     this.router.navigateByUrl('snapshot12');
+  }
+
+  multipleOutlets() {
+    this.router.navigate(['router-12','multipleOutlets']);
   }
 
   /*

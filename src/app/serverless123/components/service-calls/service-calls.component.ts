@@ -35,6 +35,13 @@ export class ServiceCallsComponent implements OnInit {
     this.serviceCallService.getPosts().subscribe(res => {
       console.log('Posts ', res);
     })
+
+  }
+
+  postWithParams() {
+    this.serviceCallService.postWithParams().subscribe(res => {
+      console.log('post with params', res);
+    })
   }
 
 }

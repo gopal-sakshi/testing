@@ -16,9 +16,11 @@ import { AuNgContent33Component } from './components/au-ng-content33/au-ng-conte
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EmbedView11Component } from './components/embed-view11/embed-view11.component';
 import { HostView11Component } from './components/host-view11/host-view11.component';
-import { HostViewExampleComponent } from './components/host-view-example/host-view-example.component';
+import { HostViewExample1Component } from './components/host-view-example1/host-view-example1.component';
 import { ViewEncapsulation12Component } from './components/view-encapsulation12/view-encapsulation12.component';
 import { ViewEncapChild1Component } from './components/view-encap-child1/view-encap-child1.component';
+import { NgContent14Component } from './components/ng-content14/ng-content14.component';
+import { HostViewExample2Component } from './components/host-view-example2/host-view-example2.component';
 
 
 @NgModule({
@@ -35,9 +37,11 @@ import { ViewEncapChild1Component } from './components/view-encap-child1/view-en
     AuNgContent33Component,
     EmbedView11Component,
     HostView11Component,
-    HostViewExampleComponent,
+    HostViewExample1Component,
     ViewEncapsulation12Component,
-    ViewEncapChild1Component
+    ViewEncapChild1Component,
+    NgContent14Component,
+    HostViewExample2Component
   ],
   imports: [
     CommonModule,

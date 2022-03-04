@@ -1,26 +1,42 @@
 .embed-view11-container{
-    .body0 {
-        color:red;
-        border:1px dotted;
-        max-width:fit-content;
-        padding:5px;
+    .info {
+        border: 1px dotted black;
+        max-width: fit-content;
     }
-    .body1 {
-        color:rgb(201, 86, 86);
-        border:1px dotted;
-        max-width:fit-content;
-        padding:5px;
+    .header {
+        color:green;
     }
-    .body2 {
-        color:rgb(66, 65, 133);
-        border:1px solid;
-        max-width:fit-content;
-        padding:5px;
+    .main-content {
+        border: 1px solid rgb(192, 72, 72);
+        max-width: 800px;
+        .body0 {
+            color:red;
+            border:1px dotted;
+            max-width:fit-content;
+            padding:5px;
+        }
+        .body1 {
+            color:rgb(201, 86, 86);
+            border:1px dotted;
+            max-width:fit-content;
+            padding:5px;
+        }
+        .body2 {
+            color:rgb(66, 65, 133);
+            border:1px solid;
+            max-width:fit-content;
+            padding:5px;
+        }
+        .body3 {
+            color:rgb(141, 216, 71);
+            border:1px inset;
+            max-width:fit-content;
+            padding:5px;
+        }
     }
-    .body3 {
-        color:rgb(141, 216, 71);
-        border:1px inset;
-        max-width:fit-content;
-        padding:5px;
+
+    .footer {
+        color:blue;
     }
+    
 }

@@ -1,0 +1,14 @@
+.ng-template11-container {
+    .heading {
+        color: rgb(88, 88, 172);
+    }
+    .test2-saying-hello {
+        color:yellowgreen;
+    }
+    .test3-saying-hello {
+        color:red;              /* why red color didnt get applied */
+                                /* it seems styling cant be applied on <ng-template> 
+                                it must be applied on <div> */
+    }
+}
+

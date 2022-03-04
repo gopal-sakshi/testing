@@ -1,62 +1,72 @@
-<h4> this is parent dom </h4>
+<div class="parent-dom-container">
+    <!-- 
+        parent dom uses these components
+        - child-dom
+        - ng-content11
+        - ng-content14
+        - ng-template-outlet12
+    -->
+    <h4> this is parent dom </h4>
 
-<!--ViewChild examples --> 
-<div>
-    <app-child-dom></app-child-dom>
-</div>
-<!-- /ViewChild examples -->
-
-
-<!-- this is example of ng-content -->
-<div>
-    <app-ng-content11>
-        <h6>this is h6 element</h6>
-        <div>this is div element</div>
-        <span>this is span element</span>
-    </app-ng-content11>
-</div>
-<!--- /this is example of ng-content -->
-
-<!--ngTemplateOutlet customisable components -->
-
-<div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="start center">
-    <div class="customised1-component">
-        <app-ng-template-outlet12 [headerTemplate]="header1" [bodyTemplate]="body1" [footerTemplate]="footer1">
-        </app-ng-template-outlet12>
+    <!--ViewChild examples --> 
+    <div>
+        <app-child-dom></app-child-dom>
     </div>
+    <!-- /ViewChild examples -->
     
-    <div class="customised2-component">
-        <app-ng-template-outlet12 [headerTemplate]="header2" [bodyTemplate]="body2" [footerTemplate]="footer2">
-        </app-ng-template-outlet12>
-    </div>
     
-    <div class="default-component">
-        <app-ng-template-outlet12></app-ng-template-outlet12>
-        <!--shows default header/body/footer -->
+    <!-- this is example of ng-content -->
+    <div>
+        <app-ng-content11>      <!-- "parent-dom component" provides content to "app-ng-content11 component" -->
+            <h6>this is h6 element</h6>
+            <div>this is div element</div>
+            <span>this is span element</span>
+            <p>this is a paragraph (p element)</p>
+        </app-ng-content11>
+    </div>
+    <!-- here we use "app69-ng-content14 component" twice - each time with different content -->
+    <div fxLayout="row" fxLayoutGap="30px" class="using-ngContent-twice">   
+        <app69-ng-content14>
+            <div class="first-div">hello doctor</div>
+            <div class="second-div">hello nurse</div>
+        </app69-ng-content14>
+        <app69-ng-content14>
+            <div class="first-div">hello compounder</div>
+            <div class="second-div">hello hospital</div>
+        </app69-ng-content14>
+    </div>
+    <!--- /this is example of ng-content -->
+    
+    <!--ngTemplateOutlet customisable components -->
+    
+    <div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="start center">
+        <div class="customised1-component">
+            <app-ng-template-outlet12 [headerTemplate]="header1" [bodyTemplate]="body1" [footerTemplate]="footer1">
+            </app-ng-template-outlet12>
+        </div>
+        
+        <div class="customised2-component">
+            <app-ng-template-outlet12 [headerTemplate]="header2" [bodyTemplate]="body2" [footerTemplate]="footer2">
+            </app-ng-template-outlet12>
+        </div>
+        
+        <div class="default-component">
+            <app-ng-template-outlet12></app-ng-template-outlet12>
+            <!--shows default header/body/footer -->
+        </div>
     </div>
 </div>
+
     
 
 <!--/ngTemplateOutlet customisable components -->
 
 <!-- section defining ng-templates -->
-    <ng-template #header1>
-        <div>this is header1</div>
-    </ng-template>
-    <ng-template #body1>
-        <div>this is body1</div>
-    </ng-template>
-    <ng-template #footer1>
-        <div>this is footer1</div>
-    </ng-template>
+<ng-template #header1><div>this is header1</div></ng-template>
+<ng-template #body1><div>this is body1</div></ng-template>
+<ng-template #footer1><div>this is footer1</div></ng-template>
 
-    <ng-template #header2>
-        <div>this is header2</div>
-    </ng-template>
-    <ng-template #body2>
-        <div>this is body2</div>
-    </ng-template>
-    <ng-template #footer2>
-        <div>this is footer2</div>
-    </ng-template>
+<ng-template #header2><div>this is header2</div></ng-template>
+<ng-template #body2><div>this is body2</div></ng-template>
+<ng-template #footer2><div>this is footer2</div></ng-template>
 <!-- /section defining ng-templates -->

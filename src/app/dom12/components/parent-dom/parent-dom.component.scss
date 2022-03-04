@@ -1,0 +1,16 @@
+.parent-dom-container {
+    .customised1-component{
+        color:rgb(162, 86, 233)
+    }
+    
+    .customised2-component {
+        color:rgb(218, 77, 105)
+    }
+    
+    .default-component {
+        color:rgb(238, 174, 14)
+    }
+    .using-ngContent-twice {
+        border: rgb(131, 58, 58) dotted 2px
+    }
+}

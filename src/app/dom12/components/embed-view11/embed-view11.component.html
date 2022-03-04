@@ -1,36 +1,47 @@
 <div class="embed-view11-container">
-    
+    <div class="info">
+        <div>Template Reference is taken from &lt;ng-template&gt; in html &nbsp; </div>
+        <div>Then createEmbeddedView() is called on that Template reference which returns viewRef.</div> 
+        <div>And this viewRef is inserted into container Ref from &lt;ng-container&gt;</div>
+        <div>
+            APPROACH 1 = call <strong>"createEmbeddedView() on templateRef"</strong> And then <span style="text-decoration:underline">"insert() on container ref"</span>
+            APPROACH 2 = call createEmbeddedView() directly on container ref
+        </div>        
+    </div>
     <div class="header">I am a header</div>
 
-    <div class="body0">
-        <ng-container [ngTemplateOutlet]="elementRef0"></ng-container>
+    <div class="main-content">
+        <div class="body0">
+            <ng-container [ngTemplateOutlet]="elementRef0"></ng-container>
+        </div>
+    
+        <div class="body1">
+            <!-- this is the placeholder... the embedded view that we created will be rendered here -->
+            <ng-container #container1></ng-container>
+        </div>
+    
+        <div class="body2">
+            <ng-container #container2></ng-container>
+        </div>
+    
+        <div class="body3">
+            <ng-container [ngTemplateOutlet]="template3" 
+                [ngTemplateOutletContext]="{surName12: 'agastyaraju', age12: '26'}"></ng-container>
+        </div>
     </div>
-
-    <div class="body1">
-        <!-- this is the placeholder... the embedded view that we created will be rendered here -->
-        <ng-container #container1></ng-container>
-    </div>
-
-    <div class="body2">
-        <ng-container #container2></ng-container>
-    </div>
-
-    <div class="body3">
-        <ng-container [ngTemplateOutlet]="template3" 
-            [ngTemplateOutletContext]="{surName12: 'agastyaraju', age12: '26'}"></ng-container>
-    </div>
+    
 
     <div #footerDiv class="footer">I am a footer</div>
     
 </div>
 
 <ng-template #elementRef0>
-    <div> whats happening </div>
+    <div> whats happening - this is body0 </div>
 </ng-template>
 
 <ng-template #template1 let-viewName11="name11", let-viewCreatedBy11="createdBy11">
     <div>Hi, My name is {{viewName11}}</div>
-    <div>I am a view created from a template by {{viewCreatedBy11}}</div>
+    <div>I am a view created from .ts file by {{viewCreatedBy11}}</div>
 </ng-template>
 
 <ng-template #template2 let-viewName12="name12", let-viewCreatedBy12="createdBy12">

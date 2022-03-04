@@ -1,40 +1,43 @@
-<div class="test2-saying-hello" *ngIf="test2">saying test2</div>
+<div class="ng-template11-container">
+    <h4 class="heading"> this component shows how 
+        <span style="text-decoration: underline;">ngIf directive & ng-template is used by Angular</span>
+    </h4>
+    <div class="test2-saying-hello" *ngIf="test2">saying test2</div>
 
-<!-- this is translated by angular like this 
-
-        <ng-template [ngIf]="test2">
-            <div class="test2-saying-hello">saying test2</div>              // ngIf is removed
-        </ng-template> 
+    <!-- this is translated by angular like this 
     
-    /this is translated by angular like this -->
-
-<!--
+            <ng-template [ngIf]="test2">
+                <div class="test2-saying-hello">saying test2</div>              // ngIf is removed
+            </ng-template> 
+        
+        /this is translated by angular like this -->
     
-*ngIf is applied on div with class="test2-saying-hello"... lets call that div as "div23"
-    so, that "div23" is placed within <ng-template>
-
-    div with class="test2-saying-hello" =====> is how Angular uses <ng-template>
-    div with class="test3-saying-hello" =====> is how we use <ng-template>
--->    
-
-
-<ng-template *ngIf="test3" class="test3-saying-hello">saying test3</ng-template>
-<!--        this is PLAIN WRONG 
-    because, as soon as angular sees *ngIf="test3", 
-        it puts the entire ng-template within another ng-template (ofcourse, after removing *ngIf structural directive)
-    this is how it looks...
-
-    <ng-template [ngIf]="test3">
-        <ng-template class="test3-saying-hello">saying test3</ng-template>
+    <!--
+        
+    *ngIf is applied on div with class="test2-saying-hello"... lets call that div as "div23"
+        so, that "div23" is placed within <ng-template>
+    
+        div with class="test2-saying-hello" =====> is how Angular uses <ng-template>
+        div with class="test3-saying-hello" =====> is how we use <ng-template>
+    -->    
+    
+    
+    <ng-template *ngIf="test3" class="test3-saying-hello">saying test3</ng-template>
+    <!--        this is PLAIN WRONG 
+        because, as soon as angular sees *ngIf="test3", 
+            it puts the entire ng-template within another ng-template (ofcourse, after removing *ngIf structural directive)
+        this is how it looks...
+    
+        <ng-template [ngIf]="test3">
+            <ng-template class="test3-saying-hello">saying test3</ng-template>
+        </ng-template>
+    -->
+    
+    <!-- CORRECT WAY-->
+    <ng-template *ngIf="test3 then applyTest3"></ng-template>
+    <ng-template #applyTest3>
+        <div class="test3-saying-hello">saying test3</div>
     </ng-template>
--->
-
-<ng-template *ngIf="test3 then applyTest3"></ng-template>
-<ng-template #applyTest3 class="test3-saying-hello">saying test3</ng-template>
-<!-- CORRECT WAY-->
-<!-- 
-    angular translates this to
-    <ng-template *ngIf="test3 then applyTest3" class="test3-saying-hello">saying test3</ng-template>
-    <ng-template *ngIf="test3 then applyTest3" class="test3-saying-hello">saying test3</ng-template>
-
--->
+    
+    
+</div>

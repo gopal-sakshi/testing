@@ -1,13 +1,19 @@
 .ng-content11-container {
     
     .ng-content-header {
-        color:red
+        color:red;
+        border:rgb(221, 211, 199) dotted 1px;
+        max-width:fit-content
     }
     .ng-content-body {
-        color:rgb(177, 104, 9)
+        color:rgb(177, 104, 9);
+        border:rgb(221, 211, 199) dotted 1px;
+        max-width:fit-content
     }
     .ng-content-footer {
-        color:green
+        color:green;
+        border:rgb(221, 211, 199) dotted 1px;
+        max-width:fit-content
     }
     border:2px solid;
 }

@@ -46,12 +46,12 @@ export class EmbedView11Component implements OnInit {
       name11: "View1",
       createdBy11: "GopAL"
     });
-    
-
     // This view is still not visible in the UI. In order to see it in the UI, we need a placeholder to render it.
-    this.container1.insert(viewRef);
-
+    this.container1.insert(viewRef);      
     this.container2.createEmbeddedView(this.template2, {name12:"View2", createdBy12:"Sakshi"})
+    // APPROACH 1 = call "createEmbeddedView() on templateRef" And then "insert() on container ref"
+    // APPROACH 2 = call createEmbeddedView() directly on container ref
+
   }
 
   ngAfterContentInit(): void {}

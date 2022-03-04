@@ -7,7 +7,7 @@
         blah11component gives its own header, body, footer sections
         while blah34component gives its own header, body, footer sections
 
-        ng-template-outlet12 will accepts whatever it is given and shows them... if nothing given, it shows its default values
+        ng-template-outlet12 will accept whatever it is given and shows them... if nothing given, it shows its default values
 -->
 <div class="ng-template-outlet12-container">
     <div class="heading">
@@ -22,7 +22,6 @@
         <ng-container *ngTemplateOutlet="footerTemplate ? footerTemplate : defaultFooter"></ng-container>
     </div>
 </div>
-
 
 <ng-template #defaultHeader>Some default header</ng-template>
 <ng-template #defaultBody>Some default body</ng-template>

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-ng-container11',
   templateUrl: './ng-container11.component.html',
-  styleUrls: ['./ng-container11.component.css']
+  styleUrls: ['./ng-container11.component.scss']
 })
 export class NgContainer11Component implements OnInit {
 

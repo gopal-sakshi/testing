@@ -1,17 +1,20 @@
 <div class="ng-content11-container" fxLayout="column" fxLayoutGap="20px">
     <div class="ng-content-header">
-        <span>inside ng-content-header... color = red</span>
+        <span>inside ng-content-header... color = red... We show h6 & div elements</span>
         <ng-content select="h6"></ng-content>
         <ng-content select="div"></ng-content>
     </div>
     <div class="ng-content-body">
-        <span>inside ng-content body.... color = yellowish tinge</span>
-        <ng-content select="div"></ng-content>
+        <span>inside ng-content body.... color = yellowish tinge... Plus, we show only 'p' tag in body</span>
+        <ng-content select="p"></ng-content>
     </div>
     <div class="ng-content-footer">
-        <span>inside ng-content footer.... color = greenish tinge</span>
+        <span>inside ng-content footer.... color = greenish tinge... Plus, we show only span in footer&nbsp;</span>
         <ng-content select="span"></ng-content>
     </div>
     <ng-content></ng-content>
 </div>
 
+<!--
+    The ng-content is used when we want to insert the content dynamically inside the component that helps to increase component reusability. Using ng-content we can pass content inside the component selector and when angular parses that content that appears at the place of ng-content.
+-->

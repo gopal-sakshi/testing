@@ -1,9 +1,8 @@
-<!-- 
-    host views are similar to embedded view
-    except that host views are created from components, instead of templates
--->
-
 <div class="host-view11-container" fxLayout="column" fxLayoutGap="20px">
+    <h4>
+        host views are similar to embedded view
+        except that host views are created from components, instead of templates
+    </h4>
     <div>this is host view 11 component. Below, you'll see dynamically created components</div>
     <div class="host-view11-dynamic-component1">
         <div>created using <strong>viewContainer.insert()</strong></div>
@@ -17,5 +16,6 @@
         <div>created using <strong>ngComponentOutlet</strong></div>
         <ng-container [ngComponentOutlet]="someComponent23"></ng-container>
     </div>
+    <button mat-raised-button color="primary" (click)="createSecondComponent()">Create example2</button>
 </div>
 

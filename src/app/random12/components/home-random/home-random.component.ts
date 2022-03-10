@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { EnvironmentService } from 'src/config/environment.service';
 
 @Component({
@@ -8,7 +9,8 @@ import { EnvironmentService } from 'src/config/environment.service';
 })
 export class HomeRandomComponent implements OnInit {
 
-  constructor(public env:EnvironmentService) { }
+  showTypescript:boolean = true;
+  constructor(public env:EnvironmentService, private titleService: Title) { }
 
   ngOnInit(): void {
     console.log("testing git");
@@ -16,6 +18,8 @@ export class HomeRandomComponent implements OnInit {
     console.log("testing 3.0");
     console.log("My environment is ");
     console.log(this.env.APP_NAME, this.env.envName, this.env.production);
+
+    this.titleService.setTitle('random12');
   }
 
 }

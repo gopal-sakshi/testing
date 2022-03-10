@@ -20,7 +20,8 @@ import { CustomFormcontrol12Component } from './components/custom-formcontrol12/
 import { MatIconModule } from '@angular/material/icon';
 import { DynamicImports23Component } from './components/dynamic-imports23/dynamic-imports23.component';
 import { CustomDecorator13Component } from './components/custom-decorator13/custom-decorator13.component';
-import { SweetAlert12Component } from './components/sweet-alert12/sweet-alert12.component'
+import { SweetAlert12Component } from './components/sweet-alert12/sweet-alert12.component';
+import { Typescript11Component } from './components/typescript11/typescript11.component'
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { SweetAlert12Component } from './components/sweet-alert12/sweet-alert12.
     DynamicImports23Component,
     CustomDecorator13Component,
     SweetAlert12Component,
+    Typescript11Component,
     //CustomComp12Component
   ],
   imports: [

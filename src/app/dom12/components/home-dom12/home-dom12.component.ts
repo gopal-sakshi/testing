@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home-dom12',
@@ -8,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class HomeDom12Component implements OnInit {
 
   showEncapsulation:boolean = false
-  constructor() { }
+  constructor(private titleService:Title) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('dom12');
   }
 
 }

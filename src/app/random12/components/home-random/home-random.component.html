@@ -20,6 +20,11 @@
     <div>
         <div>My environment is {{env.APP_NAME}}</div>
     </div>
+
+    <button style='max-width: fit-content;' mat-raised-button color="primary" (click)="showTypescript=!showTypescript">typescript</button>
+    <div *ngIf="showTypescript">
+        <app69-typescript11></app69-typescript11>    
+    </div>
     
 
 </div>

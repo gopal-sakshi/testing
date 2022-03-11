@@ -22,9 +22,10 @@
     </div>
 
     <button style='max-width: fit-content;' mat-raised-button color="primary" (click)="showTypescript=!showTypescript">typescript</button>
-    <div *ngIf="showTypescript">
+    <div *ngIf="showTypescript" fxLayout="column" fxLayoutGap="20px">
         <app69-typescript11></app69-typescript11>
         <app69-event-manager14></app69-event-manager14>
+        <app69-type-safety23></app69-type-safety23>
     </div>
 
 

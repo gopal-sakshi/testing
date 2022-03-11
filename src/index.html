@@ -1,19 +1,47 @@
 <!doctype html>
 <html lang="en">  <!-- lang attribute only with "html tag" not for "div tag"-->
 <head>
+  <!-- meta tag starts -->
   <meta charset="utf-8">
+  <meta name="keywords" content="gopal learning angular" />
+  <meta name="description about" content="gopal learning angular through testing repo" />
+  <meta name="author" content="gopal612" />
+  <meta name="viewport" content="width=200px, initial-scale=1">
+  <!-- <meta http-equiv="refresh" content="5">  --> <!-- this is included in event-manager14.component.ts-->
+    <!-- open dev tools & then you can see that the document is refreshed every 5 seconds-->
+
+  <!--
+    meta tag accepts four attributes ===> name, http-equiv, content, charset
+    - If the http-equiv attribute is set, the name attribute should not be set.
+
+    name="viewport"
+    The viewport is the user's visible area of a web page.
+    The viewport varies with the device, and will be smaller on a mobile phone than on a computer screen.
+
+    name="keywords"
+    - utilized by the web browser to rank the page according to searches.
+    - if anyone searches in google for 'gopal learning angular', our website will come in search results
+
+    name="description"
+    - help the web page rank on the internet.
+
+    http-equiv="refresh"
+    - refresh the document every 5 seconds
+
+
+  -->
+<!-- meta tag ends -->
   
   <title>Testing</title>
   <!-- 
     The root component of the application is an element contained within the <body> tag. 
     The HTML <title> is in the document <head>, outside the body, making it inaccessible to Angular data binding.
     You could grab the browser document object & set the title manually. 
-      That's dirty and undermines your chances of running the app outside of a browser someday.
-    
+      That's dirty and undermines your chances of running the app outside of a browser someday.    
   -->
 
   <base href="/">           <!-- specifies the base URL to use for all relative URLs contained within a document -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <!-- 
     <link rel="icon" type="image/x-icon" href="favicon.ico"> 
     this is original favicon... replaced by my favicon

@@ -7,13 +7,15 @@ import { CallBindApplyComponent } from './components/call-bind-apply/call-bind-a
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { Inheritance12Component } from './components/inheritance12/inheritance12.component';
+import { Debounce13Component } from './components/debounce13/debounce13.component';
 
 
 @NgModule({
   declarations: [
     JsHome12Component,
     CallBindApplyComponent,
-    Inheritance12Component
+    Inheritance12Component,
+    Debounce13Component
   ],
   imports: [
     CommonModule,

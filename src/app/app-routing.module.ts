@@ -52,6 +52,10 @@ const routes: Routes = [
     path: 'forms12',
     loadChildren: () => import('./forms12/forms12.module').then(m => m.Forms12Module)
   },
+  {
+    path: 'AgGrid34',
+    loadChildren: () => import('./ag-grid34/ag-grid34.module').then(m => m.AgGrid34Module)
+  },
   /*
         lazy-loading syntax uses loadChildren followed by a function
         this function = uses the browser's built-in import('...') syntax for dynamic imports.

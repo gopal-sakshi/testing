@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { GridOptions } from "ag-grid-community";
-import * as data from "../../resources/olympic-winners.json";
+
+// import * as data from "../../resources/olympic-winners.json";
+  // this didnt work... inquire WHY
+
+import olympicData from "../../resources/olympic-winners.json";
 
 
 
@@ -18,7 +22,7 @@ export class AgGrid22Component implements OnInit {
   //   flex: '1 1 auto',
   // };
 
-  
+
   paginationPageSize: number = 500;
   pagination: boolean = true;
   paginationAutoPageSize: boolean = false;
@@ -39,8 +43,8 @@ export class AgGrid22Component implements OnInit {
   url = 'https://www.ag-grid.com/example-assets/olympic-winners.json';
 
   gridOptions:GridOptions = {};
-  
-  constructor(private http: HttpClient) { 
+
+  constructor(private http: HttpClient) {
   }
 
   ngOnInit(): void {
@@ -50,21 +54,22 @@ export class AgGrid22Component implements OnInit {
     //     console.log(data);
     //     this.rowData = data as any[];
     // });
-    
+
     // this.rowData = require('../../resources/olympic-winners.json')
       // because require used in node... we need to change types in compiler options
-    this.rowData = data;
+
+    this.rowData = olympicData;
   }
 
   // setStyle() {
-  //   this.style = {width: '100%', height: '100%'}    
+  //   this.style = {width: '100%', height: '100%'}
   // }
 }
 
 
 
-/** 
-  a) We use two modules 
+/**
+  a) We use two modules
     ag-grid-angular
     ag-grid-community
 
@@ -72,6 +77,6 @@ export class AgGrid22Component implements OnInit {
     @import "~ag-grid-community/dist/styles/ag-grid.css";
     @import "~ag-grid-community/dist/styles/ag-theme-balham.css";
 
-  c) 
+  c)
 
 */

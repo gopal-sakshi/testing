@@ -7,12 +7,14 @@ import { HomeAgGridComponent } from './components/home-ag-grid/home-ag-grid.comp
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AgGridModule } from 'ag-grid-angular';
 import { AgGrid22Component } from './components/ag-grid22/ag-grid22.component';
+import { AgGrid21Component } from './components/ag-grid21/ag-grid21.component';
 
 
 @NgModule({
   declarations: [
     HomeAgGridComponent,
-    AgGrid22Component
+    AgGrid22Component,
+    AgGrid21Component
   ],
   imports: [
     CommonModule,

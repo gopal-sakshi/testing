@@ -39,6 +39,8 @@ export class AgGrid22Component implements OnInit {
     { field: 'bronze', width: 100 },
     { field: 'total', width: 100 },
 	];
+
+
 	rowData:any;
   url = 'https://www.ag-grid.com/example-assets/olympic-winners.json';
 
@@ -61,9 +63,9 @@ export class AgGrid22Component implements OnInit {
     this.rowData = olympicData;
   }
 
-  // setStyle() {
-  //   this.style = {width: '100%', height: '100%'}
-  // }
+  afterRowClicked(event) {
+    console.log(event);
+  }
 }
 
 
@@ -79,4 +81,14 @@ export class AgGrid22Component implements OnInit {
 
   c)
 
+  // https://www.ag-grid.com/javascript-data-grid/getting-started/
+    ----> this is ag-grid using plain javascript... no angular, react nothing...
+  // https://www.ag-grid.com/angular-data-grid/row-pagination/
+    ----> unbelievable website
+
+    
+  Some of the columnDefs
+  a) headerName (or) field = The name to render in the column header
+  b) 
+  
 */

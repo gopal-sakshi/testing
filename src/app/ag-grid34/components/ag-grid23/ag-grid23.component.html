@@ -1,0 +1,30 @@
+<div *ngIf="false">         <!-- using custom pagination -->
+    <ag-grid-angular style="width: 100%; height: 300px;" class="ag-theme-balham" [rowData]="rowData2"
+        [columnDefs]="columnDefs2" [paginationAutoPageSize]="paginationAutoPageSize"
+        [paginationPageSize]="paginationPageSize" [pagination]="pagination"
+        (paginationChanged)="paginationHappened($event)" [suppressPaginationPanel]="true"
+        [suppressScrollOnNewData]="true" (gridReady)="onGridReady($event)">
+        <!-- suppresssPaginationPanel = so that we can implement our own pagination thingy -->
+        <!-- use rowData2 & columnDefs2 for large olympic medal winners json -->
+    </ag-grid-angular>
+
+    <div class="pagination-section">
+        <button (click)="previousFivePages()"> &lt;&lt; </button>
+        <button (click)="previousPage()"> previous</button>
+        <button (click)="nextPage()"> next</button>
+        <button (click)="nextFivePages()"> &gt;&gt;</button>
+        <select (change)="onPageSelect($event)">
+            <!-- <option *ngFor="page of pages" [value]="page">{{page}}</option> -->
+            <option *ngFor="let page of [5,10,20]" [value]="paginationPageSize">{{page}}</option>
+        </select>
+    </div>
+</div>
+
+<div *ngIf="true">         <!-- using ag-grid pagination -->
+    <ag-grid-angular style="width: 100%; height: 300px;" class="ag-theme-balham" [rowData]="rowData2"
+        [columnDefs]="columnDefs2" [paginationAutoPageSize]="paginationAutoPageSize"
+        [paginationPageSize]="paginationPageSize" [pagination]="pagination"
+        (paginationChanged)="paginationHappened($event)" (gridReady)="onGridReady($event)">        
+        <!-- use rowData2 & columnDefs2 for large olympic medal winners json -->
+    </ag-grid-angular>
+</div>

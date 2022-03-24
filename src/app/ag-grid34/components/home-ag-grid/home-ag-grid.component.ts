@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeAgGridComponent implements OnInit {
 
-  showAgGrid: boolean = false;
+  showAgGrid22: boolean = false;
+  showAgGrid23: boolean = false;
+  
   constructor() { }
 
   ngOnInit(): void {

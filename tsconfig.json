@@ -25,8 +25,8 @@
       "node",
     ],
     "resolveJsonModule" : true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "esModuleInterop": true,              // this one
+    "allowSyntheticDefaultImports": true  // and this one ----> needed to import json modules = see ag-grid22.component.ts (olympic-winners.json)
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

@@ -17,6 +17,7 @@
         [columnDefs]="columnDefs"
         [paginationAutoPageSize]="paginationAutoPageSize"
         [paginationPageSize]="paginationPageSize" 
-        [pagination]="pagination">
+        [pagination]="pagination"
+        (rowClicked)="afterRowClicked($event)">
     </ag-grid-angular>
 </div>

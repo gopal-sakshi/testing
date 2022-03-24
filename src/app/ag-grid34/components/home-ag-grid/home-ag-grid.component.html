@@ -1,7 +1,11 @@
 <div class="home-agGrid-container" fxLayout="row" fxLayoutGap="30px">
     <div><h4>Welcome to Ag Grid34</h4></div>
+    <button style="width:fit-content; height:fit-content" (click)="showAgGrid21=!showAgGrid21">show ag grid21 </button>
     <button style="width:fit-content; height:fit-content" (click)="showAgGrid22=!showAgGrid22">show ag grid22 </button>
-    <button style="width:fit-content; height:fit-content" (click)="showAgGrid23=!showAgGrid23">show ag grid23 </button>
+    <button style="width:fit-content; height:fit-content" (click)="showAgGrid23=!showAgGrid23">show ag grid23 </button>    
+</div>
+<div *ngIf="showAgGrid21">
+    <app69-ag-grid21></app69-ag-grid21>    
 </div>
 <div *ngIf="showAgGrid22">
     <app69-ag-grid22></app69-ag-grid22>

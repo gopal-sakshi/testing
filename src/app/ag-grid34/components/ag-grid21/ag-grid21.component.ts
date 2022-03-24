@@ -12,8 +12,25 @@ import { catchError, map, switchMap, toArray } from 'rxjs/operators';
 })
 export class AgGrid21Component implements OnInit {
 
-  columnDefs: [];
-  rowDefs: [];
+  paginationPageSize: number = 5;
+  pagination: boolean = true;
+  paginationAutoPageSize: boolean = false;
+
+  columnDefs:any = [
+    { field: 'name', width: 150, sortable:true },
+    { field: 'url', width: 150, resizable:true}
+  ];
+  rowDefs: any =  [];
+  rowDefs2: any =  [
+    {"name": 'gopal', "url": 'gopal-url'},
+    {name: 'kroos', url: 'kroos-url'},
+    {name: 'modric', url: 'modric-url'},
+    {name: 'casemiro', url: 'casemiro-url'},
+    {name: 'alaba', url: 'alaba-url'},
+    {name: 'militao', url: 'militao-url'},
+    {name: 'mendy', url: 'mendy-url'},
+  ];
+  rowDefs3:any = [];
   url = 'https://pokeapi.co/api/v2/ability';
   batchSize = 96;
   fetchMethodCalled: number = 0;
@@ -21,9 +38,20 @@ export class AgGrid21Component implements OnInit {
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
+    
     this.fetchData().pipe().subscribe(result => {
       console.log(result);
+      result.forEach((item, index) => {
+        this.rowDefs.push(...(item.results));
+        console.log(this.rowDefs);
+      });
+      console.log(this.rowDefs);
+      console.log(this.rowDefs2);
+      this.rowDefs3 = Object.assign({}, this.rowDefs);
+      console.log(this.columnDefs);
     });
+
+   
   }
 
   fetchData() {
@@ -105,3 +133,4 @@ export class AgGrid21Component implements OnInit {
   }
 
 }
+

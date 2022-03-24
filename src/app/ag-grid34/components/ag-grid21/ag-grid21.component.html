@@ -1,1 +1,11 @@
-<p>ag-grid21 works!</p>
+<div class="ag-grid21-container">
+    <ag-grid-angular
+        style="width: 100%; height: 500px" 
+        class="ag-theme-balham"
+        [rowData]="rowDefs2" 
+        [columnDefs]="columnDefs"
+        [paginationAutoPageSize]="paginationAutoPageSize"
+        [paginationPageSize]="paginationPageSize" 
+        [pagination]="pagination">
+    </ag-grid-angular>
+</div>

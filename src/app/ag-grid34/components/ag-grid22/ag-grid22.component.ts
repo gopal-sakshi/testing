@@ -66,6 +66,11 @@ export class AgGrid22Component implements OnInit {
   afterRowClicked(event) {
     console.log(event);
   }
+
+  showStats() {
+    console.log(this.columnDefs);
+    console.log(this.rowData);
+  }
 }
 
 

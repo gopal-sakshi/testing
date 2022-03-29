@@ -1,1 +1,20 @@
-<p>flex12 works!</p>
+<div class="flex12-container" fxLayout="column" fxLayoutGap="20px">
+    <div class="stadium-details">
+        The capacity of Santiago Bernabeu stadium is {{santiagoBernabeuCapacity | numConverter}}
+    </div>
+    <div class="goal-keeper">
+        <span>Courtoius</span>
+    </div>
+    <div class="defenders">
+        <span redHighlight>Carvajal, Militao, Alaba, Mendy</span>
+    </div>
+    <div class="midfielders">
+        <span> Modric, Casemiro, Kroos</span>
+    </div>
+    <div *delayRendering="5000" class="attackers">
+        <span>Rodrygo, Benzema, Vinicius</span>
+    </div>
+    
+    <!-- textarea - opening & closing tags must be in the same line, otherwise \n appears, placeholder doesnt kickin anymore -->
+    <textarea noPasteInput id="textarea-id" name="textarea-name" placeholder="cant paste content" rows="5" style="max-width:700px"></textarea>
+</div>

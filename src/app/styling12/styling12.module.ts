@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { HtmlStyling12Component } from './components/html-styling12/html-styling12.component';
 import { InputElement12Component } from './components/input-element12/input-element12.component';
 import { NgClass12Component } from './components/ng-class12/ng-class12.component';
+import { Common23Module } from '../common23/common23.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { NgClass12Component } from './components/ng-class12/ng-class12.component
     CommonModule,
     FormsModule,
     Styling12RoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    Common23Module            // we added this Common23Module ----> because we want to use redHighlight directive
   ]
 })
 export class Styling12Module { }

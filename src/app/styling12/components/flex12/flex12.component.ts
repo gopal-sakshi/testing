@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Flex12Component implements OnInit {
 
+  santiagoBernabeuCapacity: number = 81004;
   constructor() { }
 
   ngOnInit(): void {

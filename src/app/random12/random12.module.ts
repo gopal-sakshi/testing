@@ -24,6 +24,7 @@ import { SweetAlert12Component } from './components/sweet-alert12/sweet-alert12.
 import { Typescript11Component } from './components/typescript11/typescript11.component';
 import { EventManager14Component } from './components/event-manager14/event-manager14.component';
 import { TypeSafety23Component } from './components/type-safety23/type-safety23.component'
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { TypeSafety23Component } from './components/type-safety23/type-safety23.
     CommonModule,
     Random12RoutingModule,
     FlexLayoutModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ],
   providers:[
     CanActivate12Guard,

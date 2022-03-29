@@ -1,10 +1,20 @@
-<div class="js-home12-container" fxLayout="row" fxLayoutGap="20px">
+<div class="js-home12-container" fxLayout="column" fxLayoutGap="20px">
     <a [routerLink]="['call-bind-apply']">call-bind-apply</a>
     <!-- <a [routerLink]="['mat-forms23']">mat forms</a>
     <a [routerLink]="['mat-table12']">mat table</a> -->
     <button mat-raised-button color="primay" (click)="toggleCallBindApply()">click for child</button>
+    <button mat-raised-button color="primay" (click)="showCricket = !showCricket">click for cricket</button>
+    
+    <select [(ngModel)]="format">
+        <option *ngFor="let cricketFormat of  ['ODI', 'TEST', 'T20']" [value]="cricketFormat">{{cricketFormat}}</option>
+    </select>
+
     <div *ngIf="showCallBindApply">
         <app-call-bind-apply></app-call-bind-apply>
         <app69-debounce13></app69-debounce13>
-    </div>    
+    </div>
+    <div *ngIf="showCricket">
+        <app69-cricket23 [format]="format"></app69-cricket23>
+    </div>
+
 </div>

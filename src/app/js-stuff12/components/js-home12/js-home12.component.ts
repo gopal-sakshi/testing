@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class JsHome12Component implements OnInit {
 
   showCallBindApply: boolean = false;
+  showCricket:boolean = false;
+  format:string = 'ODI';
 
   constructor() { }
 

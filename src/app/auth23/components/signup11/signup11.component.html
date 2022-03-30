@@ -1,0 +1,11 @@
+<div class="signup-container">
+    <div class="signup-form">
+        <form [formGroup]="signUpForm">
+            <div fxLayout="column" fxLayoutGap="10px">
+                <input formControlName="userName" placeholder="Enter username">
+                <input formControlName="password" placeholder="last name">            
+            </div>
+            <button [disabled]="!signUpForm.valid" (click)="submitForSignUp()"> Sign Up</button>
+        </form>
+    </div>
+</div>

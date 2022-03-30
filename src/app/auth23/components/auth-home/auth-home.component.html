@@ -1,0 +1,18 @@
+
+<div class="auth-home-container" fxLayout="column" fxLayoutGap="20px">
+    <div>
+        Please run simpleExpress app to hit the endpoints... try JWT authentication too
+    </div>
+    <div class="user-actions">
+        <button mat-raised-button color="primary" (click)="gotoSignIn()">Sign In</button>
+        <button mat-raised-button color="primary" (click)="gotoSignUp()">Sign Up</button>
+    </div>
+    <div class="signIn-signUp-forms" fxLayout="row" fxLayoutGap="30px">
+        <div class="signIn-form" *ngIf="showSignin">
+            <app69-signin11></app69-signin11>
+        </div>
+        <div class="signUp-form" *ngIf="showSignup">
+            <app69-signup11></app69-signup11>
+        </div>
+    </div>    
+</div>

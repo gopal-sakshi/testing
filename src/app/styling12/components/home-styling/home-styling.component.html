@@ -1,9 +1,12 @@
-<div fxLayout="row" fxLayoutGap="20px" class="services-di-home">
-
-    <a [routerLink]="['ng-class12']"> ngClass </a>
-    <a [routerLink]="['flex12']"> flex 12 </a>
-    <a [routerLink]="['html-styling12']"> html-styling12 </a>
-    <a [routerLink]="['input-element12']"> input element?? </a>
-    
-    
+<div class="home-styling-container">
+    <div fxLayout="row" fxLayoutGap="20px" class="services-di-home">
+        <a [routerLink]="['ng-class12']"> ngClass </a>
+        <a [routerLink]="['flex12']"> flex 12 </a>
+        <a [routerLink]="['html-styling12']"> html-styling12 </a>
+        <a [routerLink]="['input-element12']"> input element?? </a>
+        <button (click)="showAnimate12=!showAnimate12">show animation</button>
+    </div>
+    <div *ngIf="showAnimate12">
+        <app69-animate12></app69-animate12>
+    </div>
 </div>

@@ -3,10 +3,11 @@ import { fromEvent, Observable, Subscription } from 'rxjs';
 @Component({
   selector: 'app-home-styling',
   templateUrl: './home-styling.component.html',
-  styleUrls: ['./home-styling.component.css']
+  styleUrls: ['./home-styling.component.scss']
 })
 export class HomeStylingComponent implements OnInit {
 
+  showAnimate12:boolean = false;
   resizeObservable23$: Observable<any>
   resizeSubscription33: Subscription
 

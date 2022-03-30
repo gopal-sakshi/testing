@@ -79,6 +79,10 @@ const routes: Routes = [
   {
     path: 'js-stuff12',
     loadChildren: () => import('./js-stuff12/js-stuff12.module').then(m => m.JsStuff12Module)
+  },
+  {
+    path: 'auth23',
+    loadChildren: () => import('./auth23/auth23.module').then(m=>m.Auth23Module)
   }
 ];
 

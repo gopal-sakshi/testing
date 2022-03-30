@@ -11,6 +11,7 @@ import { HtmlStyling12Component } from './components/html-styling12/html-styling
 import { InputElement12Component } from './components/input-element12/input-element12.component';
 import { NgClass12Component } from './components/ng-class12/ng-class12.component';
 import { Common23Module } from '../common23/common23.module';
+import { Animate12Component } from './components/animate12/animate12.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { Common23Module } from '../common23/common23.module';
     HomeStylingComponent,
     HtmlStyling12Component,
     InputElement12Component,
-    NgClass12Component          // comment and see the magic............
+    NgClass12Component,
+    Animate12Component          // comment and see the magic............
                                     // what happens if a component is in a module, but not included in declarations[] array
   ],
   imports: [

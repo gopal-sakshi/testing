@@ -1,0 +1,14 @@
+
+.auth-home-container {
+    .signIn-signUp-forms {
+        max-width: fit-content;
+        .signIn-form {
+            border: 1px dotted rgb(161, 109, 109);
+            padding: 10px
+        }
+        .signUp-form {
+            border: 1px dotted rgb(157, 158, 83);
+            padding: 10px
+        }        
+    }
+}

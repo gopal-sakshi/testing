@@ -9,6 +9,7 @@ export class JsHome12Component implements OnInit {
 
   showCallBindApply: boolean = false;
   showCricket:boolean = false;
+  showPromises:boolean = false;
   format:string = 'ODI';
 
   constructor() { }

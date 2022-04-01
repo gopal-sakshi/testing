@@ -11,6 +11,8 @@ import { Debounce13Component } from './components/debounce13/debounce13.componen
 import { Cricket23Component } from './components/cricket23/cricket23.component';
 import { Football23Component } from './components/football23/football23.component';
 import { FormsModule } from '@angular/forms';
+import { Promise44Component } from './components/promise44/promise44.component';
+import { JsStuff12Service } from './services/js-stuff12.service';
 
 
 
@@ -21,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     Inheritance12Component,
     Debounce13Component,
     Cricket23Component,
-    Football23Component    
+    Football23Component,
+    Promise44Component    
   ],
   imports: [
     CommonModule,
@@ -29,6 +32,9 @@ import { FormsModule } from '@angular/forms';
     FlexLayoutModule,
     MatButtonModule,
     FormsModule
+  ],
+  providers: [
+    JsStuff12Service
   ]
 })
 export class JsStuff12Module { }

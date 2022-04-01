@@ -4,6 +4,7 @@
     <a [routerLink]="['mat-table12']">mat table</a> -->
     <button mat-raised-button color="primay" (click)="toggleCallBindApply()">click for child</button>
     <button mat-raised-button color="primay" (click)="showCricket = !showCricket">click for cricket</button>
+    <button mat-raised-button color="primay" (click)="showPromises = !showPromises">click for Promise</button>
     
     <select [(ngModel)]="format">
         <option *ngFor="let cricketFormat of  ['ODI', 'TEST', 'T20']" [value]="cricketFormat">{{cricketFormat}}</option>
@@ -15,6 +16,9 @@
     </div>
     <div *ngIf="showCricket">
         <app69-cricket23 [format]="format"></app69-cricket23>
+    </div>
+    <div *ngIf="showPromises">
+        <app69-promise44></app69-promise44>
     </div>
 
 </div>

@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductGuardService } from './route-guards/classes/ProductGuardService';
 import { HttpInterceptor23 } from './classes/http-interceptor23';
 import { Common23Module } from './common23/common23.module';
+import { HttpInterceptor24 } from './classes/http-interceptor24';
 
 
 
@@ -33,6 +34,11 @@ import { Common23Module } from './common23/common23.module';
       useClass: HttpInterceptor23,
       multi: true,
     },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptor24,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

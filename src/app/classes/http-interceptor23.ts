@@ -14,6 +14,7 @@ export class HttpInterceptor23 implements HttpInterceptor {
 
     intercept(request:HttpRequest<any>, next:HttpHandler):Observable<HttpEvent<any>> {
 
+      console.log('inside interceptor23');
       // console.log(request);
       // console.log(this.router);
       // console.log(this.activatedRoute);

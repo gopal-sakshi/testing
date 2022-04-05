@@ -105,6 +105,7 @@ export class AgGrid21Component implements OnInit {
         this.fetch(url, offset, this.batchSize)
       );
     }
+    console.log(obs);
     return obs;   // obs = an array... not array of strings (or) array of numbers... but array of observables
                     // arrNum = [1,2,3,4]
                     // arrString = ["gopal", "priya", "sahasra"]

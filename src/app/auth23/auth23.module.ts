@@ -8,12 +8,19 @@ import { Routes, RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { Auth23Service } from './services/auth23.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SeeArticleComponent } from './components/see-article/see-article.component';
+import { AuthGuard23 } from './classes/authGuard23';
 
 
 const routes:Routes = [
   {
     path: '',
     component: AuthHomeComponent
+  },
+  {
+    path: 'seeArticles',
+    component: SeeArticleComponent,
+    canActivate: [AuthGuard23],
   }
 ]
 
@@ -21,7 +28,8 @@ const routes:Routes = [
   declarations: [
     AuthHomeComponent,
     Signin11Component,
-    Signup11Component
+    Signup11Component,
+    SeeArticleComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +38,8 @@ const routes:Routes = [
     ReactiveFormsModule,
   ],
   providers: [
-    Auth23Service
+    Auth23Service,
+    AuthGuard23
   ]
 })
 export class Auth23Module { }

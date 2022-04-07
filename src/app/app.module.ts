@@ -10,6 +10,7 @@ import { ProductGuardService } from './route-guards/classes/ProductGuardService'
 import { HttpInterceptor23 } from './classes/http-interceptor23';
 import { Common23Module } from './common23/common23.module';
 import { HttpInterceptor24 } from './classes/http-interceptor24';
+import { AuthInterceptor } from './auth23/classes/authInterceptor23';
 
 
 
@@ -37,6 +38,11 @@ import { HttpInterceptor24 } from './classes/http-interceptor24';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpInterceptor24,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
       multi: true
     }
   ],

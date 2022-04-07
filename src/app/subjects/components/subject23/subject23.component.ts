@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, BehaviorSubject, of, Subscription, from } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -9,6 +10,7 @@ import { Observable, BehaviorSubject, of, Subscription, from } from 'rxjs';
 })
 export class Subject23Component implements OnInit {
 
+  subscription44: Subscription
 
   count:any = 23;
   dss = new BehaviorSubject('')      // it seems BehaviorSubject needs one argument
@@ -35,9 +37,11 @@ export class Subject23Component implements OnInit {
     this.ds$ = this.dss.asObservable();
 
 
+// this.ds$ = of(1,2,3, 9, 10)
+// from ("gopal", "sakshi");
     // this didnt throw error, when I tried to subscribe
     // console.log() output ======>     inside subscribe method of subject observable
-    this.ds$.subscribe(
+    this.subscription44 = this.ds$.subscribe(
       res => {
         console.log("inside subscribe method of subject observable");
         console.log(res);
@@ -49,6 +53,7 @@ export class Subject23Component implements OnInit {
         console.log('ds$ observable finished... complete cb doesnt take arguments')
       }
     );
+    // this.subscription44.unsubscribe();
 
     // this threw error, when I tried to subscribe... 
     // TypeError: Cannot read properties of undefined (reading 'subscribe')
@@ -80,7 +85,7 @@ export class Subject23Component implements OnInit {
     console.log("ngOnInit called");
     this.callFirst();
   }
-
+// observer.create()
   callFirst() {
     var esSubscription = new Subscription();
 

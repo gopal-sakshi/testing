@@ -6,18 +6,24 @@ import { Observable, of } from "rxjs";
 export class Auth23Service {
 
     private url = 'http://localhost:3044/auth';
-    httpHeaders:HttpHeaders;
+    
 
     constructor(private httpClient:HttpClient) {}
 
     signIn(payload:any):Observable<any> {
         console.log(payload);
-        this.httpHeaders = new HttpHeaders().append('content-type', 'application/json');
+
+        let headers = new HttpHeaders();        // it seems it MUST be named headers ONLY... headers23 (or) httpHeaders threw error
+        headers.append('Content-Type', 'application/json');
         // return of(1,2,3);
         let signInUrl = this.url + '/signin'
-        return this.httpClient.put(signInUrl, payload, {
-            'headers': this.httpHeaders
-        });
+        return this.httpClient.put<any>(signInUrl, payload, {headers});
+
+        // let httpHeaders = new HttpHeaders();        
+        // httpHeaders.append('Content-Type', 'application/json');
+        // // return of(1,2,3);
+        // let signInUrl = this.url + '/signin'
+        // return this.httpClient.put<any>(signInUrl, payload, {headers: httpHeaders});        // Or you can use this way...
     }
 
     signUp(payload:any):Observable<any> {

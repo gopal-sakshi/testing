@@ -10,6 +10,8 @@ import { Auth23Service } from './services/auth23.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SeeArticleComponent } from './components/see-article/see-article.component';
 import { AuthGuard23 } from './classes/authGuard23';
+import { Common23Module } from '../common23/common23.module';
+import { AuthInterceptor } from './classes/authInterceptor23';
 
 
 const routes:Routes = [
@@ -36,10 +38,12 @@ const routes:Routes = [
     RouterModule.forChild(routes),
     FlexLayoutModule,    
     ReactiveFormsModule,
+    Common23Module
   ],
   providers: [
     Auth23Service,
-    AuthGuard23
+    AuthGuard23,
+    AuthInterceptor
   ]
 })
 export class Auth23Module { }

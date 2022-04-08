@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { of } from 'rxjs';
+import { Auth23Service } from '../../services/auth23.service';
 
 @Component({
   selector: 'app69-see-article',
@@ -8,7 +9,8 @@ import { of } from 'rxjs';
 })
 export class SeeArticleComponent implements OnInit {
 
-  constructor() { }
+  showSecretArticle:boolean = false;
+  constructor(private auth23Service:Auth23Service) { }
 
   ngOnInit(): void {
     this.doStuff();    
@@ -24,4 +26,12 @@ export class SeeArticleComponent implements OnInit {
     return of('gopal').toPromise();
   }
 
+  fetchSecretArticle() {
+    this.showSecretArticle = !this.showSecretArticle;
+  
+    this.auth23Service.seeArticles().subscribe(res => {
+      console.log(res);
+    });
+  
+  }
 }

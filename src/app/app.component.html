@@ -1,8 +1,9 @@
 <div fxLayout="column" fxLayoutGap="40px">
 
 
-<div class="app-header">
+<div class="app-header" fxLayoutAlign="row" fxLayoutGap="80px">
     <app-header12></app-header12>
+    <div class="logged-in-details" *ngIf="userName">{{userName}}</div>    
 </div>
 <div fxLayout="row wrap" fxLayoutGap="40px" class="home-sections">
     <a [routerLink]="['home']"> Home </a>

@@ -1,5 +1,12 @@
 
 <div class="auth-home-container" fxLayout="column" fxLayoutGap="20px">
+    <!-- this is just to see how binding works -->
+    <div *ngIf="false">
+        <div style="font-weight: 300; color:rgb(167, 123, 123)">learn how binding works</div>
+        <div *ngFor="let product of products23">
+            {{product?.level3Product ? product?.level3Product?.l3Name : product?.referenceSku ? product?.referenceSku?.rSkuName : product.productName}}
+        </div>
+    </div>
     <div>
         Please run simpleExpress app to hit the endpoints... try JWT authentication too
     </div>
@@ -16,6 +23,6 @@
         </div>
     </div>
     <div fxLayout="column" fxLayoutGap="20px">
-        <a [routerLink]="['seeArticles']"> See Articles </a>
+        <a [routerLink]="['seeArticles']"> See Articles </a><span style="font-weight:100">of course login first</span>
     </div>
 </div>

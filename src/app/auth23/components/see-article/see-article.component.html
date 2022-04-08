@@ -1,1 +1,10 @@
-<p>see-article works!</p>
+<div class="see-article-container" fxLayout="column" fxLayoutGap="20px">
+    <button style="max-width: fit-content;" (click)="fetchSecretArticle()">show secret Article</button>
+    <div class="normal-article">
+        Real Madrid plays in Laliga
+    </div>
+    <div class="secret-article" *ngIf="showSecretArticle">
+        showing secret article
+    </div>
+    
+</div>

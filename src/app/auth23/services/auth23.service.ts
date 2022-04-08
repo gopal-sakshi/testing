@@ -29,7 +29,20 @@ export class Auth23Service {
     signUp(payload:any):Observable<any> {
         console.log(payload);
         // return of(1,2,3);
-        let signUpUrl = this.url + '/signup'
+        let signUpUrl = this.url + '/signup';
         return this.httpClient.put(signUpUrl, payload);
+    }
+
+    seeArticles():Observable<any> {
+        let seeArticlesUrl = this.url + '/secretArticles';
+        
+        // let headers44 = new HttpHeaders();        // we will send token as part of http request headers for this service
+        // headers44.append('token', localStorage.getItem('token'));
+        // return this.httpClient.get(seeArticlesUrl, {headers: headers44});
+
+        let headers = new HttpHeaders();        // we will send token as part of http request headers for this service
+        // headers = headers.append('token', '123');
+        headers = headers.append('token', localStorage.getItem('token'));
+        return this.httpClient.get(seeArticlesUrl, {headers});
     }
 }

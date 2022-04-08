@@ -1,6 +1,9 @@
 .app-header {
     /* position:absolute; */
     top: 5px;
+    .logged-in-details {       
+        background-color: rgb(153, 207, 83);
+    }
 }
 .home-sections {
     background-color:antiquewhite;

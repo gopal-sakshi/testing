@@ -3,10 +3,10 @@ import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { catchError, map, switchMap, tap } from "rxjs/operators";
 import { Common23Service } from "src/app/common23/services/common23.service";
-import { Auth23Service } from "../services/auth23.service";
+
 
 @Injectable()
-export class AuthInterceptor implements HttpInterceptor {
+export class AuthInterceptor23 implements HttpInterceptor {
 
     constructor(private commonService: Common23Service) {}
     
@@ -14,7 +14,7 @@ export class AuthInterceptor implements HttpInterceptor {
         
         return this.tryHttpRequest(req,next).pipe(
             map((res) => {
-                console.log(res); 
+                console.log(res);
                 return res
             }),
             switchMap(async (res:any) => {
@@ -24,9 +24,14 @@ export class AuthInterceptor implements HttpInterceptor {
                         console.log(message);
                         console.log('promise returned');
                     });
+                } else {
+                    console.log(res);
                 }
             }),
-            switchMap(res => this.tryHttpRequest(req,next))
+            switchMap(res => {
+                console.log(res);
+                return this.tryHttpRequest(req,next)
+            })
         )
     }
 

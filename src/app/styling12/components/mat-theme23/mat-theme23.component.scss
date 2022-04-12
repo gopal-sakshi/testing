@@ -1,0 +1,18 @@
+@import "../../../../styles/mixin23.scss";
+
+.mat-theme23-container {
+    max-width: fit-content;
+    .main-content-1 {
+        margin:20px;        
+        @include gopalTheme;
+    }
+    .main-content-2 {
+        margin:20px;        
+        @include priyaTheme;
+    }
+    .main-content-3 {        
+        margin:20px;
+        margin-left: 500px;
+        @include withVariables23(rgb(212, 212, 71), rgb(77, 77, 197), 900);
+    }
+}

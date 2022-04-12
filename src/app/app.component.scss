@@ -2,11 +2,11 @@
     /* position:absolute; */
     top: 5px;
     .logged-in-details {       
-        background-color: rgb(153, 207, 83);
+        background-color:var(--gopal-success);
     }
 }
 .home-sections {
-    background-color:antiquewhite;
+    background-color:var(--gopal-info);
     color:chocolate
 }
 

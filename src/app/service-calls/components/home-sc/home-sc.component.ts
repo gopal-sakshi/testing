@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeScComponent implements OnInit {
 
+  // not being used anymore....
   constructor() { }
 
   ngOnInit(): void {

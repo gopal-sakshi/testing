@@ -1,0 +1,24 @@
+@mixin gopalTheme {
+    float: left;
+    background-color: rgb(156, 95, 95);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    color: rgb(134, 199, 134);
+}
+
+@mixin priyaTheme {
+    float: right;
+    background-color:rgb(158, 224, 35);    
+    font-weight:lighter;
+    color:rgb(64, 46, 68);
+}
+
+@mixin withVariables23($base, $hover, $fontWeight) {
+    div {
+        background-color: $base;
+        font-weight: $fontWeight;
+        &:hover {
+            background-color: $hover;
+        }        
+    }
+}

@@ -1,0 +1,19 @@
+// We can set them initially to reflect our custom theme. 
+    // Since we want our theme to be global, I have defined it using the :root selector
+    // we can also use html (or) body tag...
+
+// THESE ARE ALL DEFAULT VALUES
+:root {
+    --gopal-success:#43eb01;
+    //--gopal-success-100:#5ea564;
+
+    --gopal-info:#ececa8;
+    //--gopal-info-100:#adad72;
+
+    --gopal-warn:#ff0000;
+    //--gopal-warn-100:#f18f8f;
+    
+    --gopal-background-color:#ffffff;    
+    --gopal-footer-font:400;
+    --gopal-header-font:400;
+}

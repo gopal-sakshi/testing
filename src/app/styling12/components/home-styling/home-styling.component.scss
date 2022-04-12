@@ -1,0 +1,20 @@
+@import "../../../../styles/variables.scss";
+.home-styling-container {    
+    .styling-section {
+        .success-section {
+            border: 2px dotted black;
+            padding:20px;
+            background-color: var(--gopal-success);
+        };
+        .info-section {
+            border: 2px dotted black;
+            padding:20px;
+            background-color: var(--gopal-info);
+        };
+        .warn-section {
+            border: 2px dotted black;
+            padding:20px;
+            background-color: var(--gopal-warn);
+        }
+    }
+}

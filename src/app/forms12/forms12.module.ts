@@ -13,7 +13,12 @@ import { EmailValidator13 } from './directives/validate-email-directive13';
 import { EmailValidator14 } from './directives/validate-email-directive14';
 import { EmailValidator15 } from './directives/validate-email-directive15';
 import { EmailBlackList12Service } from './classes/email-black-list12-service';
-
+import { DateValidatorComponent } from './components/date-validator/date-validator.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { DateValidator2Component } from './components/date-validator2/date-validator2.component';
 
 const routes: Routes = [
   {
@@ -30,7 +35,9 @@ const routes: Routes = [
     EmailValidator12,
     EmailValidator13,
     EmailValidator14,
-    EmailValidator15
+    EmailValidator15,
+    DateValidatorComponent,
+    DateValidator2Component
   ],
   imports: [
     CommonModule,
@@ -39,6 +46,10 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     EmailBlackList12Service

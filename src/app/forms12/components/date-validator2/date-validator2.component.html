@@ -1,0 +1,14 @@
+<div class="date-validator2-container">
+    <form [formGroup]="dateRange2">
+        <mat-form-field appearance="outline">
+            <input matInput readonly [matDatepicker]="from" placeholder="Start Date" formControlName="from">
+            <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
+            <mat-datepicker #from></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <input matInput readonly [matDatepicker]="to" placeholder="End Date" formControlName="to">
+            <mat-datepicker-toggle matSuffix [for]="to"></mat-datepicker-toggle>
+            <mat-datepicker #to></mat-datepicker>
+        </mat-form-field>
+    </form>
+</div>

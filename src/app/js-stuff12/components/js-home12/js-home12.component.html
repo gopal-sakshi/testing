@@ -5,6 +5,7 @@
     <button mat-raised-button color="primay" (click)="toggleCallBindApply()">click for child</button>
     <button mat-raised-button color="primay" (click)="showCricket = !showCricket">click for cricket</button>
     <button mat-raised-button color="primay" (click)="showPromises = !showPromises">click for Promise</button>
+    <button mat-raised-button color="primay" (click)="showConsole23 = !showConsole23">click for Console</button>
     
     <select [(ngModel)]="format">
         <option *ngFor="let cricketFormat of  ['ODI', 'TEST', 'T20']" [value]="cricketFormat">{{cricketFormat}}</option>
@@ -19,6 +20,10 @@
     </div>
     <div *ngIf="showPromises">
         <app69-promise44></app69-promise44>
+    </div>
+    <div *ngIf="showConsole23">
+        <button (click)="changeInputToConsole23()">Change Input to Console</button>
+        <app69-console23 [input23]="inputToConsole"></app69-console23>
     </div>
 
 </div>

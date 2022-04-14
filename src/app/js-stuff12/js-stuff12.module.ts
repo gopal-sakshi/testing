@@ -13,6 +13,7 @@ import { Football23Component } from './components/football23/football23.componen
 import { FormsModule } from '@angular/forms';
 import { Promise44Component } from './components/promise44/promise44.component';
 import { JsStuff12Service } from './services/js-stuff12.service';
+import { Console23Component } from './components/console23/console23.component';
 
 
 
@@ -24,7 +25,8 @@ import { JsStuff12Service } from './services/js-stuff12.service';
     Debounce13Component,
     Cricket23Component,
     Football23Component,
-    Promise44Component    
+    Promise44Component,
+    Console23Component    
   ],
   imports: [
     CommonModule,

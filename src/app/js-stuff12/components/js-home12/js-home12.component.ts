@@ -10,7 +10,10 @@ export class JsHome12Component implements OnInit {
   showCallBindApply: boolean = false;
   showCricket:boolean = false;
   showPromises:boolean = false;
+  showConsole23:boolean = false;
+
   format:string = 'ODI';
+  inputToConsole:string = 'Input from parent';
 
   constructor() { }
 
@@ -19,6 +22,10 @@ export class JsHome12Component implements OnInit {
 
   toggleCallBindApply() {
     this.showCallBindApply = !this.showCallBindApply;
+  }
+
+  changeInputToConsole23() {
+    this.inputToConsole = 'Gonzalo Higuain';
   }
 
 }

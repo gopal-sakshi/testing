@@ -1,0 +1,23 @@
+<div class="date-validator-container" fxLayout="column">
+  <form [formGroup]="dateRange1">
+    
+    <mat-form-field appearance="outline">
+      <input matInput readonly [matDatepicker]="from" placeholder="Start Date" formControlName="from">
+      <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
+      <mat-datepicker #from></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input matInput readonly [matDatepicker]="from" placeholder="Start Date" formControlName="from">
+      <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
+      <mat-datepicker #from></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input matInput readonly [matDatepicker]="to" [max]="toDate" placeholder="End Date" formControlName="to">
+      <mat-datepicker-toggle matSuffix [for]="to"></mat-datepicker-toggle>
+      <mat-datepicker #to></mat-datepicker>
+    </mat-form-field>
+  </form>
+    <button style="max-width: fit-content;" (click)="getDate()">get date</button>
+</div>

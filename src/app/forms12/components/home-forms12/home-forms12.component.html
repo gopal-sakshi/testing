@@ -1,5 +1,10 @@
 <div fxLayout="column" fxLayoutGap="20px" class="home-forms12-container">
     <div> lets work on forms</div>
-    <app-custom-validator12></app-custom-validator12>
-    <app-custom-validator13></app-custom-validator13>
+    <!-- <app-custom-validator12></app-custom-validator12>
+    <app-custom-validator13></app-custom-validator13> -->
+    <button style="max-width:fit-content" (click)="showDateValidator=!showDateValidator">Date Validator</button>
+    <div *ngIf="showDateValidator">
+        <app69-date-validator></app69-date-validator>
+        <app69-date-validator2></app69-date-validator2>
+    </div>
 </div>

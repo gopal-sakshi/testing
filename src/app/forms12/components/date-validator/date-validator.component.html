@@ -2,13 +2,7 @@
   <form [formGroup]="dateRange1">
     
     <mat-form-field appearance="outline">
-      <input matInput readonly [matDatepicker]="from" placeholder="Start Date" formControlName="from">
-      <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
-      <mat-datepicker #from></mat-datepicker>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <input matInput readonly [matDatepicker]="from" placeholder="Start Date" formControlName="from">
+      <input matInput readonly [matDatepicker]="from" [min]="fromDate" placeholder="Start Date" formControlName="from">
       <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
       <mat-datepicker #from></mat-datepicker>
     </mat-form-field>

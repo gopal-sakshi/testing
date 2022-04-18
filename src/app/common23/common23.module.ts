@@ -9,6 +9,7 @@ import { DelayRenderingDirective } from './directives/delay-rendering.directive'
 import { NumberConverterPipe } from './Pipes/num-converter.pipe';
 import { NoPaste23Directive } from './directives/no-paste23.directive';
 import { Common23Service } from './services/common23.service';
+import { NoCopy23Directive } from './directives/no-copy23.directive';
 
 
 
@@ -19,7 +20,8 @@ import { Common23Service } from './services/common23.service';
     RedHighlightDirective,
     DelayRenderingDirective,
     NumberConverterPipe,
-    NoPaste23Directive
+    NoPaste23Directive,
+    NoCopy23Directive
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { Common23Service } from './services/common23.service';
     RedHighlightDirective,
     DelayRenderingDirective,
     NumberConverterPipe,
-    NoPaste23Directive
+    NoPaste23Directive,
+    NoCopy23Directive
   ],
   providers: [
     // Common23Service      

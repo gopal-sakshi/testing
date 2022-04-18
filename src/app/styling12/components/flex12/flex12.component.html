@@ -15,6 +15,10 @@
         <span>Rodrygo, Benzema, Vinicius</span>
     </div>
     
-    <!-- textarea - opening & closing tags must be in the same line, otherwise \n appears, placeholder doesnt kickin anymore -->
-    <textarea noPasteInput id="textarea-id" name="textarea-name" placeholder="cant paste content" rows="5" style="max-width:700px"></textarea>
+    <div fxLayout="column" fxLayoutGap="20px">
+        <textarea noPasteInput id="textarea-id1" name="no-paste" placeholder="cant paste content" rows="5" style="max-width:700px"></textarea>
+        <textarea noCopyInput id="textarea-id2" name="no-copy" placeholder="cant copy content" rows="5" style="max-width:700px"></textarea>
+        <textarea id="textarea-id3" name="default" placeholder="do anything" rows="5" style="max-width:700px"></textarea>
+    </div>
+    <!-- textarea - opening & closing tags must be in the same line, otherwise \n appears, placeholder doesnt kickin anymore -->    
 </div>

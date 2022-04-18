@@ -18,18 +18,19 @@ export class DateValidatorComponent implements OnInit {
 
   ngOnInit(): void {
     // console.log(this.toDate);
-    this.fromDate = new Date(this.toDate.setDate(this.toDate.getDate() - 60));
-    // console.log(this.fromDate);
+    this.fromDate = new Date(this.toDate.setDate(this.toDate.getDate() - 60));    
     this.dateRange1 = new FormGroup({
       to: new FormControl(''),
       from: new FormControl('')      
     });
-    this.dateRange1.get('from').valueChanges.subscribe(res => {
-      console.log(res);
+    this.dateRange1.get('from').valueChanges.subscribe(res => {      
       this.toDate = new Date(res);
-      this.toDate.setDate(this.toDate.getDate() + 60);
-      console.log(this.toDate);
+      this.toDate.setDate(this.toDate.getDate() + 60);      
     });
+    this.dateRange1.get('to').valueChanges.subscribe(res => {      
+      this.fromDate = new Date(res);
+      this.fromDate.setDate(this.fromDate.getDate() - 60);      
+    })
   }
 
   getDate() {

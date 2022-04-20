@@ -15,6 +15,7 @@ import { Promise44Component } from './components/promise44/promise44.component';
 import { JsStuff12Service } from './services/js-stuff12.service';
 import { Console23Component } from './components/console23/console23.component';
 import { Functions12Component } from './components/functions12/functions12.component';
+import { Common23Module } from '../common23/common23.module';
 
 
 
@@ -32,6 +33,7 @@ import { Functions12Component } from './components/functions12/functions12.compo
   ],
   imports: [
     CommonModule,
+    Common23Module,
     JsStuff12RoutingModule,
     FlexLayoutModule,
     MatButtonModule,

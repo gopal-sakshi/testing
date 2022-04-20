@@ -16,9 +16,27 @@ export class JsHome12Component implements OnInit {
   format:string = 'ODI';
   inputToConsole:string = 'Input from parent';
 
+  arr24 = [
+    {name: 'Real Madrid', stadium: 'Santiago Bernabeu', country: 'Spain'},
+    {name: 'Barcelona', stadium: 'Camp Nou', country: 'Spain'},
+    {name: 'Bayern', stadium: 'Allianz Arena', country: 'Germany'},
+    {name: 'Man U', stadium: 'Old Trafford', country: 'England'}
+  ];
+  obj24 = { name: 'Real Madrid', stadium: 'Santiago Bernabeu', country: 'Spain', 
+    players: {goalkeeper: "Courtois", defenders: ["Carvajal", "Militao", "Alaba", "Mendy"], midfielders: ["Modric"], striker: "Karim Benzema"} }
+   
+  firstParam:string = 'white'  ;
+  secondParam:string = 'Real Madrid';
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
+  }
+
+  printTables() {
+    //checking how console.table() works
+    console.table(this.arr24);
+    console.table(this.obj24);
   }
 
   toggleCallBindApply() {
@@ -29,4 +47,8 @@ export class JsHome12Component implements OnInit {
     this.inputToConsole = 'Gonzalo Higuain';
   }
 
+  processInput(value) {    
+    console.log(value);
+    value = value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');    
+  }
 }

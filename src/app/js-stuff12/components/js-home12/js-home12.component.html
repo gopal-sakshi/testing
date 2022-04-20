@@ -1,4 +1,4 @@
-<div class="js-home12-container" fxLayout="column" fxLayoutGap="20px">
+<div class="js-home12-container" fxLayout="row" fxLayoutGap="20px">
     <a [routerLink]="['call-bind-apply']">call-bind-apply</a>
     <!-- <a [routerLink]="['mat-forms23']">mat forms</a>
     <a [routerLink]="['mat-table12']">mat table</a> -->
@@ -30,6 +30,10 @@
     <div *ngIf="showFunctions12">        
         <app69-functions12></app69-functions12>
     </div>
-    
-
+    <div class="other-js-stuff"> 
+        <input type="text" name="htmlInput" 
+            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); this.value=this.value.slice(0, this.value.indexOf('.')+4);">
+        <input #inputValue type="text" name="angularInput" (input)="processInput(inputValue.value)">        
+        <input processDecimal [firstParam]="firstParam" [secondParam]="secondParam" value="23">
+    </div>    
 </div>

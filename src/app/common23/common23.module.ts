@@ -10,6 +10,8 @@ import { NumberConverterPipe } from './Pipes/num-converter.pipe';
 import { NoPaste23Directive } from './directives/no-paste23.directive';
 import { Common23Service } from './services/common23.service';
 import { NoCopy23Directive } from './directives/no-copy23.directive';
+import { ThreeDecimalsPipe } from './Pipes/threeDecimals.pipe';
+import { ProcessDecimalDirective } from './directives/processDecimal.directive';
 
 
 
@@ -21,7 +23,9 @@ import { NoCopy23Directive } from './directives/no-copy23.directive';
     DelayRenderingDirective,
     NumberConverterPipe,
     NoPaste23Directive,
-    NoCopy23Directive
+    NoCopy23Directive,
+    ThreeDecimalsPipe,
+    ProcessDecimalDirective
   ],
   imports: [
     CommonModule,
@@ -34,7 +38,9 @@ import { NoCopy23Directive } from './directives/no-copy23.directive';
     DelayRenderingDirective,
     NumberConverterPipe,
     NoPaste23Directive,
-    NoCopy23Directive
+    NoCopy23Directive,
+    ThreeDecimalsPipe,
+    ProcessDecimalDirective
   ],
   providers: [
     // Common23Service      

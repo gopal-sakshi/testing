@@ -29,6 +29,14 @@ const routes: Routes = [
     loadChildren: () => import('./router12/router12.module').then(m => m.Router12Module)
   },
   {
+    path: 'router13',
+    loadChildren: () => import('./router13/router13.module').then(m=>m.Router13Module)
+  },
+  {
+    path: 'router14',
+    loadChildren: () => import('./router14/router14.module').then(m=>m.Router14Module)
+  },
+  {
     path: 'services-di',
     loadChildren: () => import('./services-di/services-di.module').then(m => m.ServicesDIModule)
   },
@@ -43,10 +51,6 @@ const routes: Routes = [
   {
     path: 'serverless123',
     loadChildren: () => import('./serverless123/serverless123.module').then(m => m.Serverless123Module)
-  },
-  {
-    path: 'router13',
-    loadChildren: () => import('./router13/router13.module').then(m=>m.Router13Module)
   },
   {
     path: 'forms12',

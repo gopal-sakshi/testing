@@ -1,0 +1,38 @@
+<div class="router14-container">
+    <div fxLayout="row">
+        <div class="using-html" fxLayout="column">
+            <button (click)="showRouteOne=!showRouteOne">show route one - url doesnt change</button>
+            <button (click)="showRouteTwo=!showRouteTwo">show route two - url doesnt change</button>
+            <div *ngIf="showRouteOne">
+                <app69-route-one></app69-route-one>
+            </div>
+            <div *ngIf="showRouteTwo">
+                <app69-route-two></app69-route-two>
+            </div>
+        </div>
+        <div class="route-links1" fxLayout="column">
+            <h4>url will change, coz we used routerLink</h4>
+            <h6>loaded route will show @that place where we used placeholder router-outlet </h6>
+            <a routerLink="route-one">route one </a> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a routerLink="route-two">route two </a>
+        </div>
+        <div class="route-links2" fxLayout="column">
+            <h4>url will change, coz we used router.navigate() & router.navigateByUrl</h4>
+            <button (click)="goToRouteOne()">route one</button>
+            <button (click)="goToRouteTwo()">route two</button>
+        </div>
+        <div class="going-back" fxLayout="column">
+            <a routerLink="/router14">Go to home14</a>
+            <button (click)="goingBack()">go back</button>
+            <a routerLink="/router14/home15">Go to home15</a>
+            <button (click)="goToHome15()">go to home15</button>
+        </div>
+    </div>
+
+    <!-- 2nd router outlet -->
+    <div class="place-for-router-outlet">
+        <h3>place for router-outlet</h3>
+        <router-outlet></router-outlet>
+    </div>
+    
+</div>

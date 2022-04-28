@@ -1,0 +1,13 @@
+<div class="template-driven-forms-container">
+    <form #templateForm1="ngForm" (ngSubmit)="submitForm()">
+        <!-- in input if [(ngModel)] is used... name & #name attributes = mandatory -->
+        <input ngModel name="clubName" placeholder="clubName" required>
+        <input ngModel name="stadiumName" placeholder="stadiumName">
+        <!-- button type must button... otherwise form will be submitted -->
+        <button type="button" (click)="addPlayers=!addPlayers">add players</button>
+        <div *ngIf="addPlayers" class="add-players-section">
+            <textarea width="100px" height="40px" placeholder="enter players" ngModel name="clubPlayers"></textarea>
+        </div>
+        <button>submit</button>
+    </form>
+</div>

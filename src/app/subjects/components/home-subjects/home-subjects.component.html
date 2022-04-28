@@ -8,7 +8,12 @@
 
 -->
 
-<div class="home-subjects-container">
+<div class="home-subjects-container" fxLayout="column" fxLayoutGap="10px">
+    <div>
+        <button mat-raised-button color="warning" (click)="showObservable2=!showObservable2">Observable 2</button>
+        <button mat-raised-button color="warning" (click)="showSwitchMap=!showSwitchMap">switch map</button>
+    </div>
+
     <div fxLayout="row" fxLayoutGap="100px" class="links">
         <a [routerLink]="['subject23']"> subject23 </a> <br>
         <a [routerLink]="['observable1']"> Observable1 </a> <br> 
@@ -17,9 +22,13 @@
     <div fxLayout="column" fxLayoutGap="50px" class="child-components">
         <div *ngIf="showObservable2">
             <app69-observable2></app69-observable2>
-        </div>
-        <button mat-raised-button color="warning" (click)="showObservable2=!showObservable2">Observable 2</button>
+        </div>        
     </div>
+
+    <div class="switch-map" *ngIf="showSwitchMap">
+        <app69-switch-map></app69-switch-map>
+    </div>
+
 </div>
 
 <!-- <router-outlet></router-outlet> -->

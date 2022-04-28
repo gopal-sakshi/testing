@@ -19,6 +19,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { DateValidator2Component } from './components/date-validator2/date-validator2.component';
+import { Template12Component } from './components/template12/template12.component';
+import { Reactive12Component } from './components/reactive12/reactive12.component';
 
 const routes: Routes = [
   {
@@ -37,7 +39,9 @@ const routes: Routes = [
     EmailValidator14,
     EmailValidator15,
     DateValidatorComponent,
-    DateValidator2Component
+    DateValidator2Component,
+    Template12Component,
+    Reactive12Component
   ],
   imports: [
     CommonModule,

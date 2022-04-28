@@ -1,10 +1,18 @@
 <div fxLayout="column" fxLayoutGap="20px" class="home-forms12-container">
     <div> lets work on forms</div>
-    <!-- <app-custom-validator12></app-custom-validator12>
-    <app-custom-validator13></app-custom-validator13> -->
     <button style="max-width:fit-content" (click)="showDateValidator=!showDateValidator">Date Validator</button>
+    <button style="max-width:fit-content" (click)="showCustomValidator=!showCustomValidator">Custom Validator</button>
+    <button style="max-width:fit-content" (click)="showTemplateForm=!showTemplateForm">show Template Form</button>
+    <button style="max-width:fit-content" (click)="showReactiveForm=!showReactiveForm">show Reactive Form</button>
+    <div *ngIf="showCustomValidator">
+        <app-custom-validator12></app-custom-validator12>
+        <app-custom-validator13></app-custom-validator13>
+    </div>
     <div *ngIf="showDateValidator">
         <app69-date-validator></app69-date-validator>
-        <!-- <app69-date-validator2></app69-date-validator2> -->
+        <app69-date-validator2></app69-date-validator2>
+    </div>
+    <div *ngIf="showTemplateForm">
+        <app69-template12></app69-template12>
     </div>
 </div>

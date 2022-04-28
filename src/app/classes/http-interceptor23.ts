@@ -14,10 +14,13 @@ export class HttpInterceptor23 implements HttpInterceptor {
 
     intercept(request:HttpRequest<any>, next:HttpHandler):Observable<HttpEvent<any>> {
 
-      console.log('inside interceptor23');
-      // console.log(request);
-      // console.log(this.router);
-      // console.log(this.activatedRoute);
+      console.log('inside interceptor23');      
+      if(request.url.includes('pincode')) {
+        // if the request object contains 'project' (or) userName in the headers ---------> you'll get CORS error        
+        // request = request.clone({ headers: request.headers.append('project', 'jingchak')}); 
+        // request = request.clone({ headers: request.headers.append('userName', 'jingchak')}); 
+          // -----------> just comment this part & see... you wont get CORS error <-----------
+      }
       return next.handle(request);
     }
 

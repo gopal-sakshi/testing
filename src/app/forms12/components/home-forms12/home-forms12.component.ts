@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class HomeForms12Component implements OnInit {
 
   showDateValidator:boolean = false;
+  showReactiveForm:boolean = false;
+  showTemplateForm:boolean = false;
+  showCustomValidator:boolean = false
+
   constructor() { }
 
   ngOnInit(): void {

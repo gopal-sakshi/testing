@@ -10,6 +10,8 @@ import { Observable2Component } from './components/observable2/observable2.compo
 import { FakeJsonStats } from './services/fake-json-stats';
 import { HomeSubjectsComponent } from './components/home-subjects/home-subjects.component';
 import { MatButtonModule } from '@angular/material/button';
+import { SwitchMapComponent } from './components/switch-map/switch-map.component';
+import { RxJsService } from './services/rx-js-service';
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { MatButtonModule } from '@angular/material/button';
     Subject23Component,
     Observable1Component,
     Observable2Component,
-    HomeSubjectsComponent
+    HomeSubjectsComponent,
+    SwitchMapComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +30,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule
   ],
   providers: [
-    FakeJsonStats
+    FakeJsonStats,
+    RxJsService
   ]
 })
 export class SubjectsModule { }

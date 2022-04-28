@@ -39,6 +39,7 @@ export class AppComponent {
     localStorage.setItem('userName', payload.userName);
     localStorage.setItem('password', payload.password);
     localStorage.setItem('token', payload.token ? payload.token : 'token ledu babai');
+    console.log(localStorage.getItem('token'));
   }
 
 }

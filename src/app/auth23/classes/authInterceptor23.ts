@@ -1,4 +1,4 @@
-import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
+import { HttpErrorResponse, HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { catchError, map, switchMap, tap } from "rxjs/operators";
@@ -13,12 +13,12 @@ export class AuthInterceptor23 implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         
         return this.tryHttpRequest(req,next).pipe(
-            map((res) => {
-                console.log(res);
-                return res
-            }),
-            switchMap(async (res:any) => {
-                if(res.error == 'expired auth token') {
+            // map((res) => {
+            //     console.log(res);
+            //     return res
+            // }),
+            switchMap(async (res) => {
+                if((res as any).error == 'expired auth token') {
                     console.log(res);
                     await this.refreshAuthToken(res).then(message => {
                         console.log(message);
@@ -26,11 +26,16 @@ export class AuthInterceptor23 implements HttpInterceptor {
                     });
                 } else {
                     console.log(res);
+                    console.log('no error - dont make another service call');                    
                 }
+                return res;
             }),
-            switchMap(res => {
-                console.log(res);
-                return this.tryHttpRequest(req,next)
+            switchMap((res: HttpEvent<any>) => {
+                if((res as any).error) {
+                    console.log(res);
+                    return this.tryHttpRequest(req,next)
+                } else 
+                    return null;
             })
         )
     }
@@ -38,7 +43,7 @@ export class AuthInterceptor23 implements HttpInterceptor {
     async refreshAuthToken(res:any):Promise<any> {
         // .promise()           // what this .promise() does ???
         console.log('inside doStuff ',res);
-        // need to regenerate authToken... we will do that by calling signin service again
+        // need to regenerate authToken... we will do that by calling token (or) signin service again
         const payload23 = {
             userName:localStorage.getItem('userName'), 
             password:localStorage.getItem('password')
@@ -48,12 +53,20 @@ export class AuthInterceptor23 implements HttpInterceptor {
     }
 
     tryHttpRequest(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        console.log('inside tryHtpRequest')
+        console.log('inside tryHtpRequest ',req);
+        
+        // let headers44 = new HttpHeaders();        // we will send token as part of http request headers for this service
+        // headers44.append('token', localStorage.getItem('token'));
+        // return this.httpClient.get(seeArticlesUrl, {headers: headers44});
+        let headers = new HttpHeaders();        // we will send token as part of http request headers for this service
+        // headers = headers.append('token', '123');        
+        req.headers.set('token', localStorage.getItem('token'));
+        console.log(req);
         return next.handle(req).pipe(
-            map(res => {
-                console.log(res);
-                return res;
-            }),
+            // map(res => {
+            //     console.log(res);
+            //     return res;
+            // }),
             tap(evt => {}),
             catchError((err:any) => {
                 if (err instanceof HttpErrorResponse) {

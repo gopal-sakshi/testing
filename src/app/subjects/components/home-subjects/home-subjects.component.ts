@@ -11,6 +11,7 @@ export class HomeSubjectsComponent implements OnInit {
   showSwitchMap:boolean = false;
   showSubjects:boolean = false;
   showReplaySubjects:boolean = false;
+  showObservable21:boolean = false;
 
   constructor() { }
 

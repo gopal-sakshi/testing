@@ -15,14 +15,14 @@ export class Subjects43Component implements OnInit {
   constructor(private middlemanService: MiddleManService) { }
 
   ngOnInit(): void {
-    this.middlemanService.getFootballMsg().subscribe(res => {      
+    this.clubNameSubscription = this.middlemanService.getFootballMsg().subscribe(res => {      
       this.clubNames.push(res.player);
     })
   }
 
 
   // In ngOnDestroy() lifecycle hook, we are unsubscribing from the subscription. 
-    // If we don’t unsubscribe before the component gets destroyed, it can cause memory leaks.
+    // If we don’t unsubscribe before the component gets destroyed, it can cause memory leaks.    
   ngOnDestroy() {
     this.clubNameSubscription.unsubscribe();
   }

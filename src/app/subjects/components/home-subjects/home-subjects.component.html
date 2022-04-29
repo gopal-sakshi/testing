@@ -17,9 +17,13 @@
         <button mat-raised-button color="warning" (click)="showSwitchMap=!showSwitchMap">switch map</button>
         <button mat-raised-button color="warning" (click)="showSubjects=!showSubjects">show subjects</button>
         <button mat-raised-button color="warning" (click)="showReplaySubjects=!showReplaySubjects">replay/beh subjects</button>
+        <button mat-raised-button color="warning" (click)="showObservable21=!showObservable21">observable21</button>
     </div>
     
     <div fxLayout="column" fxLayoutGap="50px" class="child-components">
+        <div *ngIf="showObservable21">
+            <app69-observable41></app69-observable41>
+        </div>
         <div *ngIf="showObservable2">
             <app69-observable2></app69-observable2>
         </div>

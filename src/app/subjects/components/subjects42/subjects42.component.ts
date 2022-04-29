@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { MiddleManService } from '../../services/middleman.service';
 
 @Component({
@@ -8,14 +9,19 @@ import { MiddleManService } from '../../services/middleman.service';
 })
 export class Subjects42Component implements OnInit {
 
+  playerNameSubscription:Subscription;
   playerNames:any = [];
   
   constructor(private middlemanService: MiddleManService) { }
 
   ngOnInit(): void {
-    this.middlemanService.getFootballMsg().subscribe(res => {
+    this.playerNameSubscription = this.middlemanService.getFootballMsg().subscribe(res => {
       this.playerNames.push(res.club);
     })
+  }
+
+  ngOnDestroy() {
+    this.playerNameSubscription.unsubscribe();
   }
 
 }

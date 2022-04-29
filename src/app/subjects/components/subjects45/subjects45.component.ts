@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { MiddleManService } from '../../services/middleman.service';
 
 @Component({
@@ -8,14 +9,19 @@ import { MiddleManService } from '../../services/middleman.service';
 })
 export class Subjects45Component implements OnInit {
 
+  countryNameSubscription:Subscription;
   countries:any = [];
 
   constructor(private middleManService:MiddleManService) { }
 
   ngOnInit(): void {
-    this.middleManService.getCountryMsg().subscribe(res => {
+    this.countryNameSubscription = this.middleManService.getCountryMsg().subscribe(res => {
       this.countries.push(res.country);
     })
+  }
+  
+  ngOnDestroy() {
+    this.countryNameSubscription.unsubscribe();
   }
 
 }

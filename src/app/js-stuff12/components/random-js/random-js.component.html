@@ -1,0 +1,17 @@
+<div class="random-js-container">
+
+    <div class="other-js-stuff"> 
+        <input type="text"
+            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); 
+                        this.value=this.value.slice(0, this.value.indexOf('.')+4);"
+            name="htmlInput" 
+            placeholder="only numbers with 3 decimals">
+        <input #inputValue type="text" name="angularInput" (input)="processInput(inputValue.value)">        
+        <input processDecimal [firstParam]="firstParam" [secondParam]="secondParam" value="23">
+    </div>
+
+    <select [(ngModel)]="format">
+        <option *ngFor="let cricketFormat of  ['ODI', 'TEST', 'T20']" [value]="cricketFormat">{{cricketFormat}}</option>
+    </select>
+
+</div>

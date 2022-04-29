@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeSubjectsComponent } from './components/home-subjects/home-subjects.component';
 
 import { Observable1Component } from './components/observable1/observable1.component';
-import { Subject23Component } from './components/subject23/subject23.component';
+import { Observable23Component } from './components/observable23/observable23.component';
+
 
 
 const routes: Routes = [
@@ -12,8 +13,8 @@ const routes: Routes = [
         component: HomeSubjectsComponent
     },
     {
-        path: 'subject23',
-        component: Subject23Component
+        path: 'obs23',
+        component: Observable23Component
     },
     {
         path: 'observable1',

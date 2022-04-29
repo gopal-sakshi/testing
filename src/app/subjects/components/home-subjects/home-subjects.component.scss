@@ -1,12 +1,18 @@
 .home-subjects-container {
-    .links {
-        color:#ff0000
+    .links-and-buttons {
+        color:#ff0000;
+        max-width: fit-content;
     }
 
     .child-components {
         button {
             max-width: fit-content;
         }   
+    }
+
+    .replay-subjects {
+        padding:10px;
+        border: 1px dotted rgb(95, 95, 187)
     }
 
 }

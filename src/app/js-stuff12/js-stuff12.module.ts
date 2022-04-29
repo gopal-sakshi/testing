@@ -16,6 +16,8 @@ import { JsStuff12Service } from './services/js-stuff12.service';
 import { Console23Component } from './components/console23/console23.component';
 import { Functions12Component } from './components/functions12/functions12.component';
 import { Common23Module } from '../common23/common23.module';
+import { TwoWayBindingComponent } from './components/two-way-binding/two-way-binding.component';
+import { RandomJsComponent } from './components/random-js/random-js.component';
 
 
 
@@ -29,7 +31,9 @@ import { Common23Module } from '../common23/common23.module';
     Football23Component,
     Promise44Component,
     Console23Component,
-    Functions12Component    
+    Functions12Component,
+    TwoWayBindingComponent,
+    RandomJsComponent    
   ],
   imports: [
     CommonModule,

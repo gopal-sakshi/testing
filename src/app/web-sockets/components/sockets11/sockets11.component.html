@@ -1,0 +1,18 @@
+<div class="sockets11-container">
+    <div class="send-input" fxLayout="row" fxLayoutAlign="start center">
+        <textarea [(ngModel)]="content" name="contentInput" cols="40" rows="2"></textarea>
+        <button (click)="sendMsg()">Send Message</button>
+    </div>
+    <div class="chat-box">
+        <div class="sent-messages">
+            <ul>
+                <li *ngFor="let item of sent">Source: {{item.source}} -> Content {{item.content}}</li>
+              </ul>
+        </div>
+        <div class="received-messages">
+            <ul>
+                <li *ngFor="let item of received">Source: {{item.source}} -> Content {{item.content}}</li>
+              </ul>
+        </div>
+    </div>    
+</div>

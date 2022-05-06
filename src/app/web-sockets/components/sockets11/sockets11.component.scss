@@ -1,0 +1,13 @@
+.sockets11-container {
+    .chat-box {
+        border: 1px dotted rgb(223, 131, 131);
+        padding: 10px;
+        max-width: fit-content;
+        .sent-messages {
+            color: rgb(184, 224, 71);
+        }
+        .received-messages {
+            color: rgb(54, 141, 129);
+        }
+    }
+}

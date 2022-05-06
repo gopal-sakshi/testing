@@ -1,0 +1,48 @@
+HTTP & WebSocket
+- both are communication protocols
+- used in client-server communication. 
+
+HTTP
+- is unidirectional where the client sends the request and the server sends the response.
+- each request is associated with a corresponding response
+    (OR) after sending the response the connection gets closed
+    (OR) each HTTP or HTTPS request establish the new connection to the server every time 
+        and after getting the response the connection gets terminated by itself. 
+- HTTP is a stateless protocol 
+    runs on top of TCP which is a connection-oriented protocol 
+    it guarantees the delivery of data packet transfer using the three-way handshaking methods and re-transmits the lost packets. 
+- If the client sends 10 requests to the server, then 10 separate TCP connection will be opened. 
+    and get closed after getting the response/fallback. 
+- Each HTTP request message is composed of
+    HTTP protocol version (HTTP/1.1, HTTP/2), 
+    HTTP methods (GET/POST, etc.), 
+    HTTP headers (content type, content length), 
+    host information
+    body (which contain the actual message which is being transferred to the server)
+- HTTP message information encoded in ASCII
+
+
+WebSocket
+- is bidirectional, a full-duplex protocol that is used in the same scenario of client-server communication
+- unlike HTTP, it starts from ws:// or wss://
+- It is a stateful protocol
+    which means the connection between client and server will keep alive until it is terminated by either party
+- Websockets are event-driven (unlike HTTP)
+
+When can a web socket be used: 
+- Real-time web application
+    trading website (bitcoin trading)
+    live cricket scores
+- Chat application
+
+
+HTTP Streaming
+- HTTP streaming is a push-style data transfer technique 
+    that allows a web server to continuously send data to a client 
+    over a single HTTP connection that remains open indefinitely. 
+- Essentially, the client makes an HTTP request, and the server pushes out a response of indefinite length. 
+- HTTP Streaming can be alternative to WebSocket
+- But client can send another request within the same connection in case of HTTP Streaming
+    while in WebSockets, client can send multiple requests to server
+
+

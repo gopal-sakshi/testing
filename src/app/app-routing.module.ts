@@ -87,6 +87,10 @@ const routes: Routes = [
   {
     path: 'auth23',
     loadChildren: () => import('./auth23/auth23.module').then(m=>m.Auth23Module)
+  },
+  {
+    path: 'web-sockets',
+    loadChildren: () => import('./web-sockets/web-sockets.module').then(m=>m.WebSocketsModule)
   }
 ];
 

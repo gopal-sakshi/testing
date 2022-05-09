@@ -1,0 +1,17 @@
+<div class="observable61-container">    
+    
+    <button (click)="startObservable()">start obs</button>    
+    <button (click)="completeObservable()">finish</button>
+    <button (click)="addSecondObservor()">add 2nd observer</button>
+    <button (click)="checkSubscription()">check subscription status</button>
+    <input id="inputItem" placeholder="enter number"> <button (click)="nextCallBack()">next/submit</button>
+    
+    <div fxLayout="column" fxLayoutGap="10px">
+        <div class="values-array-22">
+            <span *ngFor="let value of valuesArray22">{{value}}&nbsp;</span>
+        </div> 
+        <div class="values-array-21">
+            <span *ngFor="let value of valuesArray21">{{value}}&nbsp;</span>
+        </div> 
+    </div>    
+</div>

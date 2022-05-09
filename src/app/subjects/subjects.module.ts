@@ -19,6 +19,8 @@ import { Subjects45Component } from './components/subjects45/subjects45.componen
 import { Subjects46Component } from './components/subjects46/subjects46.component';
 import { Subjects47Component } from './components/subjects47/subjects47.component';
 import { Observable41Component } from './components/observable41/observable41.component';
+import { Observable61Component } from './components/observable61/observable61.component';
+import { Observable62Component } from './components/observable62/observable62.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { Observable41Component } from './components/observable41/observable41.co
     Subjects45Component,
     Subjects46Component,
     Subjects47Component,
-    Observable41Component
+    Observable41Component,
+    Observable61Component,
+    Observable62Component
   ],
   imports: [
     CommonModule,

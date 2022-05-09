@@ -15,6 +15,11 @@ export class Observable41Component extends MiddleMan implements OnInit {
     super(rxJsService); 
   }
 
+  // this is for that auth kalgudi thingyy... token service getting called multiple times...
+    // all 'blahblah functions' in some page calling --------> refresh auth token
+    // but, refresh auth token must be called only ONCE... only then, these 'blahblah functions' can return
+    // till token is refreshed, they must wait/await at refreshAuthToken() function itself ...
+    
   ngOnInit(): void {
     this.makeServiceCallsComp();
   }

@@ -14,13 +14,18 @@
         <a [routerLink]="['obs23']"> subject23 </a> <br>
         <a [routerLink]="['observable1']"> Observable1 </a> <br> 
         <button mat-raised-button color="warning" (click)="showObservable2=!showObservable2">Observable 2</button>
+        <button mat-raised-button color="warning" (click)="showObservable21=!showObservable21">observable21-KalugdiAuth</button>
+        <button mat-raised-button color="warning" (click)="showObservable61=!showObservable61">userGenObservable</button>
         <button mat-raised-button color="warning" (click)="showSwitchMap=!showSwitchMap">switch map</button>
         <button mat-raised-button color="warning" (click)="showSubjects=!showSubjects">show subjects</button>
         <button mat-raised-button color="warning" (click)="showReplaySubjects=!showReplaySubjects">replay/beh subjects</button>
-        <button mat-raised-button color="warning" (click)="showObservable21=!showObservable21">observable21</button>
+
     </div>
     
     <div fxLayout="column" fxLayoutGap="50px" class="child-components">
+        <div *ngIf="showObservable61">
+            <app69-observable61></app69-observable61>
+        </div>
         <div *ngIf="showObservable21">
             <app69-observable41></app69-observable41>
         </div>

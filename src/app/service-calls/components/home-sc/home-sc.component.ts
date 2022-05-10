@@ -3,11 +3,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home-sc',
   templateUrl: './home-sc.component.html',
-  styleUrls: ['./home-sc.component.css']
+  styleUrls: ['./home-sc.component.scss']
 })
 export class HomeScComponent implements OnInit {
 
-  // not being used anymore....
+  
+  showVideo11:boolean = false;
+  showSimpleExpress:boolean = false;
+  
   constructor() { }
 
   ngOnInit(): void {

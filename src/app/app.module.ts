@@ -46,11 +46,11 @@ import { AuthInterceptor24 } from './auth23/classes/authInterceptor24';
     //   useClass: AuthInterceptor23,
     //   multi: true
     // },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor24,
-      multi: true
-    }
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: AuthInterceptor24,
+    //   multi: true
+    // }
   ],
   bootstrap: [AppComponent]
 })

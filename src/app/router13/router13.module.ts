@@ -9,6 +9,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { Message00Component } from './components/message00/message00.component';
 import { MultipleOutletsComponent } from '../router12/components/multiple-outlets/multiple-outlets.component';
+import { CheckSnapshotService } from './services/check-snapshot.service';
 
 export const router13Routes:Routes = [
   {
@@ -60,7 +61,8 @@ export const router13Routes:Routes = [
     MatButtonModule
   ],
   providers: [
-    Message13Resolver
+    Message13Resolver,
+    CheckSnapshotService
   ]
 })
 export class Router13Module { }

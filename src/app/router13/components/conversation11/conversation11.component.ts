@@ -25,11 +25,11 @@ export class Conversation11Component implements OnInit {
   }
 
   messages2021() {
-    this.router.navigate(['/router13/inbox/2021']);
+    this.router.navigate(['/router13/inbox/2021'], {queryParams: {name:"gopal"}});
   }
 
   messages2022() {
-    this.router.navigate(['/router13/inbox/2022']);
+    this.router.navigate(['/router13/inbox/2022'], {queryParams: {name:"gopal"}});
   }
 
 }

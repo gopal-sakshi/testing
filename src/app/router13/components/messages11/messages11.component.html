@@ -1,6 +1,6 @@
 <div fxLayout="column" fxLayoutGap="10px">
     <div *ngFor="let item of [1,2,3,4]; let index as index">
-        Message {{index}} of year <a [routerLink]="['/router13', chosenFolder, chosenYear, 'messages', 2]">{{chosenYear}}</a>
+        Message {{index}} of year <a [routerLink]="['/router13', chosenFolder, chosenYear, 'messages', 2]" [queryParams]="{player:'Luka'}">{{chosenYear}}</a>
     </div>
 </div>
 <!-- why do we need to place router-outlet here ??? just comment out and see... -->

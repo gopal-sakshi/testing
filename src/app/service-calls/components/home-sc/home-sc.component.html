@@ -1,8 +1,14 @@
-<div fxLayout="row" fxLayoutGap="40px" class="home-class">
-    
-    <a [routerLink]="['wiki']"> Wiki </a>
-    <!-- <a [routerLink]="['material23']"> material Stuff </a>
-    <a [routerLink]="['routeGuards']"> route guards </a>
-    <a [routerLink]="['services-di']"> services-di </a>
-    <a [routerLink]="['random12']"> random12 </a> -->
+<div class="home-service-calls-container" fxLayout="row" fxLayoutGap="40px" class="home-class">    
+    <div class="buttons" fxLayout="column" fxLayoutGap="10px">
+        <button (click)="showVideo11=!showVideo11">video11</button>
+        <button (click)="showSimpleExpress=!showSimpleExpress">simple Express</button>
+    </div>
+    <div class="components" fxLayout="column">
+        <div class="video-component" *ngIf="showVideo11">
+            <app69-video11></app69-video11>
+        </div>
+        <div class="simple-express-component" *ngIf="showSimpleExpress">
+            <app69-simple-express></app69-simple-express>
+        </div>
+    </div>    
 </div>

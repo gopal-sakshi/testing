@@ -12,6 +12,7 @@ import { Common23Service } from './services/common23.service';
 import { NoCopy23Directive } from './directives/no-copy23.directive';
 import { ThreeDecimalsPipe } from './Pipes/threeDecimals.pipe';
 import { ProcessDecimalDirective } from './directives/processDecimal.directive';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -29,7 +30,8 @@ import { ProcessDecimalDirective } from './directives/processDecimal.directive';
   ],
   imports: [
     CommonModule,
-    Common23RoutingModule
+    Common23RoutingModule,
+    FlexLayoutModule
   ],
   exports: [
     Header12Component,

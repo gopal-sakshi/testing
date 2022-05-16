@@ -1,0 +1,11 @@
+.observables-home-container {
+    .links-and-buttons {
+        max-width: fit-content;
+    }
+    .child-components {
+        .child-component-element {
+            border: 1px dotted rgb(202, 61, 61);
+            padding: 10px
+        }
+    }
+}

@@ -21,15 +21,7 @@ export class AgGrid21Component implements OnInit {
     { field: 'url', width: 150, resizable:true}
   ];
   rowDefs: any =  [];
-  rowDefs2: any =  [
-    {"name": 'gopal', "url": 'gopal-url'},
-    {name: 'kroos', url: 'kroos-url'},
-    {name: 'modric', url: 'modric-url'},
-    {name: 'casemiro', url: 'casemiro-url'},
-    {name: 'alaba', url: 'alaba-url'},
-    {name: 'militao', url: 'militao-url'},
-    {name: 'mendy', url: 'mendy-url'},
-  ];
+  rowDefs2: any =  [];
   rowDefs3:any = [];
   url = 'https://pokeapi.co/api/v2/ability';
   batchSize = 96;
@@ -40,19 +32,36 @@ export class AgGrid21Component implements OnInit {
   ngOnInit(): void {
     
     this.fetchData().pipe().subscribe(result => {
-      console.log(result);
+      // console.log(result);
       result.forEach((item, index) => {
         this.rowDefs.push(...(item.results));
-        console.log(this.rowDefs);
+        // console.log(this.rowDefs);
       });
       console.log(this.rowDefs);
       console.log(this.rowDefs2);
       this.rowDefs3 = Object.assign({}, this.rowDefs);
       console.log(this.columnDefs);
-    });
-
-   
+    });   
   }
+
+  showDiff() {
+    this.rowDefs2 = [
+      {"name": 'gopal', "url": 'gopal-url'},
+      {name: 'kroos', url: 'kroos-url'},
+      {name: 'modric', url: 'modric-url'},
+      {name: 'casemiro', url: 'casemiro-url'},
+      {name: 'alaba', url: 'alaba-url'},
+      {name: 'militao', url: 'militao-url'},
+      {name: 'mendy', url: 'mendy-url'},
+    ];
+    console.log(typeof this.rowDefs);
+    console.log(typeof this.rowDefs2);
+    console.log(typeof this.rowDefs[0]);
+    console.log(typeof this.rowDefs2[0]);
+    console.log(Object.keys(this.rowDefs[0]));
+    console.log(Object.keys(this.rowDefs2[0]));
+  }
+
 
   fetchData() {
     console.log('inside fetchData');

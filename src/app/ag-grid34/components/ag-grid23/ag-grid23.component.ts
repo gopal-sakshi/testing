@@ -13,7 +13,8 @@ export class AgGrid23Component implements OnInit {
   paginationPageSize: number = 100;
   pagination: boolean = true;
   paginationAutoPageSize: boolean = false;
-  pages = [5,10,20]
+  pages = [5,10,20];
+  currentPage:number = 1;
   columnDefs1 = [
     { headerName: "company", resizable: true, pinned:"left", field: "make" },
     { field: "model" },
@@ -62,9 +63,14 @@ export class AgGrid23Component implements OnInit {
   }
 
   paginationHappened(event) {
-    let currentPage = this.gridApi.paginationGetCurrentPage()
-    console.log(currentPage);
+    this.currentPage = this.gridApi ? this.gridApi.paginationGetCurrentPage() : 232323;
+    console.log(this.currentPage);
     console.log(event);
+  }
+
+  getCurrentPage() {
+    // this.currentPage = this.gridApi.paginationGetCurrentPage();
+    console.log(this.gridApi.paginationGetCurrentPage());
   }
 
   onGridReady(event:GridReadyEvent) {
@@ -78,9 +84,9 @@ export class AgGrid23Component implements OnInit {
   }
 
   previousFivePages() {
-    let currentPage = this.gridApi.paginationGetCurrentPage();
-    if(currentPage > 5) {
-      this.gridApi.paginationGoToPage(currentPage-4)
+    this.currentPage = this.gridApi.paginationGetCurrentPage();
+    if(this.currentPage > 5) {
+      this.gridApi.paginationGoToPage(this.currentPage-4)
     }    
   }
 

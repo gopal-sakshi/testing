@@ -1,13 +1,34 @@
 <div class="template-driven-forms-container">
-    <form #templateForm1="ngForm" (ngSubmit)="submitForm()">
-        <!-- in input if [(ngModel)] is used... name & #name attributes = mandatory -->
-        <input ngModel name="clubName" placeholder="clubName" required>
-        <input ngModel name="stadiumName" placeholder="stadiumName">
-        <!-- button type must button... otherwise form will be submitted -->
-        <button type="button" (click)="addPlayers=!addPlayers">add players</button>
-        <div *ngIf="addPlayers" class="add-players-section">
-            <textarea width="100px" height="40px" placeholder="enter players" ngModel name="clubPlayers"></textarea>
-        </div>
-        <button>submit</button>
-    </form>
+    <div class="ng-model-direcrive">
+        <form #templateForm1="ngForm" (ngSubmit)="submitForm1()">
+            <!-- in input if [(ngModel)] is used... name & #name attributes = mandatory -->
+            <input ngModel name="clubName_name_attr" placeholder="clubName" value="jc-club" required>
+            <input ngModel name="stadiumName_name_attr" placeholder="stadiumName">
+            <!-- button type must button... otherwise form will be submitted -->
+            <button type="button" (click)="addPlayers=!addPlayers">add players</button>
+            <div *ngIf="addPlayers" class="add-players-section">
+                <textarea width="100px" height="40px" placeholder="enter players" ngModel name="clubPlayers_name_attr"></textarea>
+            </div>
+            <button><span style="font-weight:800">SUBMIT 1</span></button>
+        </form>
+    </div>
+    <div class="ng-model-two-way-binding">
+        <form #templateForm2="ngForm" (ngSubmit)="submitForm2()">
+            <input [(ngModel)]="iplClubName1" name="iplClub_Name1" placeholder="ipl club name1">
+            <input [ngModel]="iplClubName2" (ngModelChange)="iplClubName2=$event" name="iplClub_Name2" 
+                placeholder="ipl club name2 - another way">            
+            <button><span style="font-weight:800">SUBMIT 2</span></button>
+        </form>        
+    </div>
+    <div class="user-actions">
+        <button (click)="changeFromTs()">changeFromTs for 1st input</button>
+    </div>
 </div>
+
+<!--
+
+    we dont need to add ngForm directive explicitly... 
+    If Forms module is imported in any custom23 module ===> angualar looks for <forms> tag and adds ngForm directive automatically
+    
+
+-->

@@ -50,17 +50,22 @@ export class AgGrid22Component implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.http
-    //   .get(this.url)
-    //   .subscribe((data) => {
-    //     console.log(data);
-    //     this.rowData = data as any[];
-    // });
+    const queryParams = {
+      offset: 0,
+      limit: 500
+    };
+    this.url = this.url + '?offset=0&limit=500';
+    this.http
+      .get(this.url)
+      .subscribe((data) => {
+        console.log(data);
+        this.rowData = data as any[];
+    });
 
     // this.rowData = require('../../resources/olympic-winners.json')
       // because require used in node... we need to change types in compiler options
 
-    this.rowData = olympicData;
+    // this.rowData = olympicData;
   }
 
   afterRowClicked(event) {

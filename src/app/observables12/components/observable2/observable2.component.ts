@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FakeJsonStats } from '../../services/fake-json-stats';
 
+
 @Component({
   selector: 'app69-observable2',
   templateUrl: './observable2.component.html',

@@ -1,0 +1,14 @@
+<div class="merge-container" fxLayout="row">
+    <div class="user-actions" fxLayout="column">
+        <button (click)="getPlayers()">get players</button>
+        <input [(ngModel)]="searchString" id="search-string" placeholder="search players" name="player">
+    </div>
+    <div class="main-content-1">
+        <span *ngFor="let player of realMadridPlayers">
+            {{player}} &nbsp;
+        </span>
+        <div>
+            <button *ngIf="morePlayers" (click)="getMorePlayers()">get more</button>
+        </div>
+    </div>
+</div>

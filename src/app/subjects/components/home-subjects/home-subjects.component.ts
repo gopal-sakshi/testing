@@ -7,12 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeSubjectsComponent implements OnInit {
 
-  showObservable2:boolean = false;
-  showSwitchMap:boolean = false;
+
   showSubjects:boolean = false;
   showReplaySubjects:boolean = false;
-  showObservable21:boolean = false;
-  showObservable61:boolean = false;
+
 
   constructor() { }
 

@@ -43,7 +43,7 @@ export class Video11Component implements OnInit {
       console.log('playing now')
     }).catch((err) => {
       console.log('error happened ',err);
-    })
+    });
 
   }
 }

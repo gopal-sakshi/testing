@@ -10,31 +10,13 @@
 
 <div class="home-subjects-container" fxLayout="row" fxLayoutGap="50px">    
 
-    <div fxLayout="column" fxLayoutGap="10px" class="links-and-buttons">
-        <a [routerLink]="['obs23']"> subject23 </a> <br>
-        <a [routerLink]="['observable1']"> Observable1 </a> <br> 
-        <button mat-raised-button color="warning" (click)="showObservable2=!showObservable2">Observable 2</button>
-        <button mat-raised-button color="warning" (click)="showObservable21=!showObservable21">observable21-KalugdiAuth</button>
-        <button mat-raised-button color="warning" (click)="showObservable61=!showObservable61">userGenObservable</button>
-        <button mat-raised-button color="warning" (click)="showSwitchMap=!showSwitchMap">switch map</button>
+    <div fxLayout="column" fxLayoutGap="10px" class="links-and-buttons">        
         <button mat-raised-button color="warning" (click)="showSubjects=!showSubjects">show subjects</button>
         <button mat-raised-button color="warning" (click)="showReplaySubjects=!showReplaySubjects">replay/beh subjects</button>
 
     </div>
     
-    <div fxLayout="column" fxLayoutGap="50px" class="child-components">
-        <div *ngIf="showObservable61">
-            <app69-observable61></app69-observable61>
-        </div>
-        <div *ngIf="showObservable21">
-            <app69-observable41></app69-observable41>
-        </div>
-        <div *ngIf="showObservable2">
-            <app69-observable2></app69-observable2>
-        </div>
-        <div class="switch-map" *ngIf="showSwitchMap">
-            <app69-switch-map></app69-switch-map>
-        </div>
+    <div fxLayout="column" fxLayoutGap="50px" class="child-components">        
         <div class="subjects" *ngIf="showSubjects">
             <div fxLayout="row" fxLayoutGap="5px">
                 <app69-subjects41></app69-subjects41>
@@ -43,9 +25,9 @@
             </div>
             <div class="replay-subjects" *ngIf="showReplaySubjects">
                 <div fxLayout="row" fxLayoutGap="5px">
-                    <app69-subjects45></app69-subjects45>
-                    <app69-subjects46></app69-subjects46>
-                    <app69-subjects47></app69-subjects47>
+                    <app69-subjects45></app69-subjects45>               <!-- replay subject -->
+                    <app69-subjects46></app69-subjects46>               <!-- behaviour subject -->
+                    <app69-subjects47></app69-subjects47>               <!-- async subject -->
                 </div>                
             </div>
         </div>

@@ -1,0 +1,28 @@
+<div class="observables-home-container" fxLayout="row" fxLayoutGap="10px">
+    <div class="links-and-buttons" fxLayout="column" fxLayoutGap="5px"> 
+        <a [routerLink]="['observable23']"> observable 23 - as$, bs$, hs$</a> <br>
+        <a [routerLink]="['observable1']"> observable 1 - purity, flow </a> <br> 
+        <button mat-raised-button color="warning" (click)="showObservable2=!showObservable2">Observable 2</button>
+        <button mat-raised-button color="warning" (click)="showObservable21=!showObservable21">observable21-KalugdiAuth</button>
+        <button mat-raised-button color="warning" (click)="showObservable61=!showObservable61">userGenObservable</button>
+        <button mat-raised-button color="warning" (click)="showSwitchMap=!showSwitchMap">switch map</button>
+        <button mat-raised-button color="warning" (click)="showMerge=!showMerge">merge</button>
+    </div>
+    <div class="child-components" fxLayout="column" fxLayoutGap="10px">
+        <div class="child-component-element" *ngIf="showObservable61">
+            <app69-observable61></app69-observable61>       <!-- user generated observable -->
+        </div>
+        <div class="child-component-element" *ngIf="showObservable21">
+            <app69-observable41></app69-observable41>       <!-- auth refresh token - testing -->
+        </div>
+        <div class="child-component-element" *ngIf="showObservable2">
+            <app69-observable2></app69-observable2>         <!-- forkJoin-->
+        </div>
+        <div class="child-component-element" *ngIf="showSwitchMap">
+            <app69-switch-map></app69-switch-map>
+        </div>
+        <div class="child-component-element" *ngIf="showMerge">
+            <app69-merge></app69-merge>
+        </div>
+    </div>    
+</div>

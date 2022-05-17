@@ -1,7 +1,8 @@
-<div class="template-driven-forms-container">
+<div class="template-driven-forms-container" fxLayout="row" fxLayoutGap="20px">
     <div class="ng-model-direcrive">
         <form #templateForm1="ngForm" (ngSubmit)="submitForm1()">
             <!-- in input if [(ngModel)] is used... name & #name attributes = mandatory -->
+            <!-- name attribute in template forms ====> formControl name/key in reactive forms -->
             <input ngModel name="clubName_name_attr" placeholder="clubName" value="jc-club" required>
             <input ngModel name="stadiumName_name_attr" placeholder="stadiumName">
             <!-- button type must button... otherwise form will be submitted -->
@@ -14,12 +15,25 @@
     </div>
     <div class="ng-model-two-way-binding">
         <form #templateForm2="ngForm" (ngSubmit)="submitForm2()">
+            <!-- both iplClubName1 & iplClubName2 are same... [(nggModel)] translates to ===> [ngModel] (ngModelChange) -->
             <input [(ngModel)]="iplClubName1" name="iplClub_Name1" placeholder="ipl club name1">
             <input [ngModel]="iplClubName2" (ngModelChange)="iplClubName2=$event" name="iplClub_Name2" 
                 placeholder="ipl club name2 - another way">            
             <button><span style="font-weight:800">SUBMIT 2</span></button>
         </form>        
     </div>
+    <div class="angular-vs-dom">
+        <!-- ngModel outside of <form> tag -->
+        <input [value]="domInput" (change)="changeFnDOM($event)">
+        <input [ngModel]="angularInput" (ngModelChange)="changeFnAngular($event)">  
+            <!-- this ngModel doesnt have name attribute, bcoz, its not within <form> tag-->
+            <!--
+                [ngModel]="angularInput" =====================> ts to html binding
+                (ngModelChange)="changeFnAngular($event)" =======> html to ts binding
+                we must specifically assign event to angularInput in changeFnAngular() method
+                otherwise, in ts file, this.angularInput value doesnt get updated
+            -->
+    </div>    
     <div class="user-actions">
         <button (click)="changeFromTs()">changeFromTs for 1st input</button>
     </div>

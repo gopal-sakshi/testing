@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
 import { MergeObservableService } from '../../services/mergeObs.service';
 
 @Component({
@@ -15,9 +16,7 @@ export class MergeComponent implements OnInit {
 
   constructor(private mergeObservableService:MergeObservableService) { }
 
-  ngOnInit(): void {
-    this.searchString
-  }
+  ngOnInit(): void {}
 
   getPlayers() {
     this.mergeObservableService.getPlayersFiveAtOnce(0).pipe().subscribe(res => {
@@ -33,6 +32,19 @@ export class MergeComponent implements OnInit {
       this.offset = this.offset + res.length;
       this.realMadridPlayers.push(...res);
     });
+  }
+
+  searchBro(event) {    
+    this.searchString = event;
+    this.mergeObservableService.searchRMAPlayer(this.searchString);
+    this.mergeObservableService.searchPlayers(this.searchString).pipe(
+      map((res) => {
+        console.log(res); 
+        return res
+      }),
+      map(res => res)).subscribe(res => {
+        console.log('jing chak...');
+      })
   }
 
 }

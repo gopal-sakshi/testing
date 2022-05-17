@@ -1,7 +1,7 @@
 <div class="merge-container" fxLayout="row">
-    <div class="user-actions" fxLayout="column">
+    <div class="user-actions" fxLayout="column" fxLayoutGap="10px">
         <button (click)="getPlayers()">get players</button>
-        <input [(ngModel)]="searchString" id="search-string" placeholder="search players" name="player">
+        <input [ngModel]="searchString" (ngModelChange)="searchBro($event)" id="search-string" placeholder="search players" name="player">
     </div>
     <div class="main-content-1">
         <span *ngFor="let player of realMadridPlayers">

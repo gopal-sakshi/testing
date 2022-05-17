@@ -16,6 +16,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { MergeObservableService } from './services/mergeObs.service';
 import { MergeComponent } from './components/merge/merge.component';
 import { FormsModule } from '@angular/forms';
+import { FutDbComponent } from './components/fut-db/fut-db.component';
+import { FutDbService } from './services/fut-db.service';
 
 const routes:Routes = [
   { path: '',  component: HomeObsComponent },
@@ -33,7 +35,8 @@ const routes:Routes = [
     Observable61Component,
     Observable62Component,
     SwitchMapComponent,
-    MergeComponent
+    MergeComponent,
+    FutDbComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +47,8 @@ const routes:Routes = [
   providers: [
     RxJsService,
     FakeJsonStats,
-    MergeObservableService
+    MergeObservableService,
+    FutDbService
   ]
 })
 export class Observables12Module { }

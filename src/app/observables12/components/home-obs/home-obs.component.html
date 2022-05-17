@@ -7,8 +7,12 @@
         <button mat-raised-button color="warning" (click)="showObservable61=!showObservable61">userGenObservable</button>
         <button mat-raised-button color="warning" (click)="showSwitchMap=!showSwitchMap">switch map</button>
         <button mat-raised-button color="warning" (click)="showMerge=!showMerge">merge</button>
+        <button mat-raised-button color="warning" (click)="showFutDb=!showFutDb">fut db</button>
     </div>
     <div class="child-components" fxLayout="column" fxLayoutGap="10px">
+        <div class="child-component-element" *ngIf="showFutDb">
+            <app69-fut-db></app69-fut-db>
+        </div>        
         <div class="child-component-element" *ngIf="showObservable61">
             <app69-observable61></app69-observable61>       <!-- user generated observable -->
         </div>

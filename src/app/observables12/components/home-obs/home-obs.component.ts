@@ -12,6 +12,7 @@ export class HomeObsComponent implements OnInit {
   showObservable21:boolean = false;
   showObservable61:boolean = false;
   showMerge:boolean = false;
+  showFutDb:boolean = false;
   
   constructor() { }
 

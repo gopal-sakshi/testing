@@ -1,12 +1,21 @@
 
-<div fxLayout="column" fxLayoutGap="20px" class="services-di-home">
-
-<a [routerLink]="['di']"> DI </a>
-<a [routerLink]="['no-di']"> No DI </a>
-<a [routerLink]="['di-inject']"> DI with @Inject, not @Injectable</a>
-<a [routerLink]="['token-types']"> Token Types</a>
-
+<div class="home-di-container" fxLayout="row" fxLayoutGap="10px">
+    <div class="links" fxLayout="column" fxLayoutGap="20px">
+        <a [routerLink]="['di']"> DI </a>
+        <a [routerLink]="['no-di']"> No DI </a>
+        <a [routerLink]="['di-inject']"> DI with @Inject, not @Injectable</a>
+        <a [routerLink]="['token-types']"> Token Types</a>        
+    </div>
+    <div class="user-actions" fxLayout="column">
+        <button (click)="showForwardRef=!showForwardRef">forwardRef</button>
+    </div>
+    <div class="child-components" fxLayout="column">
+        <div *ngIf="showForwardRef">
+            <app69-forward-ref></app69-forward-ref>
+        </div>        
+    </div>
 </div>
+
 
 
 

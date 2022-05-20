@@ -42,7 +42,7 @@ const routes:Routes = [
     CommonModule,
     FlexLayoutModule,
     RouterModule.forChild(routes),
-    FormsModule
+    FormsModule    
   ],
   providers: [
     RxJsService,

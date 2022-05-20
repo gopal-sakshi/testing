@@ -3,7 +3,7 @@ import { of } from "rxjs";
 import players from '../classes/footballPlayers.json'                       // this will Wooooo0000OOOrrrrRRRRkkkkkkKKKKKKKkkkkkK
 // import { players } from '../classes/footballPlayers.json'                   // this will throw ERROR
 // import * as players from '../classes/footballPlayers.json'              // this will WORK
-
+import nobelWinners from '../classes/nobelWinners.json'
 @Injectable()
 export class MergeObservableService {
     
@@ -12,6 +12,7 @@ export class MergeObservableService {
     oldSquad:string[] = ['Casillas', 'Arbeloa', 'Pepe', 'Ramos', 'Marcelo12', 'Khedira', 'Alonso', 'Ozil', 'Dimaria', 'Benz9', 'CR7','Kaka', 'Higuain', 'Callejon', 'Granero', 'Essien', 'Antonio Adan', 'Albiol', 'Coentrao', 'Essien', 'Morata']
 
     footballPlayers:any = players;
+    nobelWinners:any = nobelWinners;
 
     constructor() {
         console.log(this.realMadridPlayers.length);
@@ -72,6 +73,20 @@ export class MergeObservableService {
         var searchResults = this.footballPlayers.filter(player => (player.first_name.match(regexey) != null) || (player.last_name.match(regexey) != null));
 
         return of(searchResults);
+    }
+
+    searchNobelPlayers(keyword:string) {
+        var nobelSearchResults = [];
+        var regex21 = new RegExp(keyword, 'gi');
+        for(let i=0; i<this.nobelWinners.length; i++) {
+            if(this.nobelWinners[i].laureates) {
+                this.nobelWinners[i].laureates.forEach((winner, index) => {
+                    let fullName = winner?.firstname + '_' + winner?.surname;
+                    fullName.match(regex21) != null ? nobelSearchResults.push({fullName: fullName, year: this.nobelWinners[i].year}) : '';
+                })
+            }
+        }
+        return nobelSearchResults;
     }
 
 }

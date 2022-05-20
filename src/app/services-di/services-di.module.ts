@@ -14,6 +14,9 @@ import { LoggerTwiceService } from './classes/loggerTwice.service';
 import { factoryFunction, factoryFunctionUseValue, someClassTokenByInjectionToken, someStringTokenByInjectionToken } from './types/tokens';
 import { TokenTypesComponent } from './components/token-types/token-types.component';
 import { ClassManuallyInjected } from './classes/class-manually-injected';
+import { ForwardRefComponent } from './components/forward-ref/forward-ref.component';
+import { ForRefChild1Component } from './components/for-ref-child1/for-ref-child1.component';
+import { ForwardRefService } from './services/forward-ref.service';
 
 function usingFunction456() {
   return true;
@@ -24,7 +27,9 @@ function usingFunction456() {
     ProductNoDiComponent,
     HomeDiComponent,
     ProductDiInjectComponent,
-    TokenTypesComponent
+    TokenTypesComponent,
+    ForwardRefComponent,
+    ForRefChild1Component
   ],
   imports: [
     CommonModule,
@@ -53,6 +58,7 @@ function usingFunction456() {
     { provide: 'myFunctionUseValue', useValue: factoryFunctionUseValue('Sakshi')},
     //{ provide: 'bhale bhale', useClass:ClassManuallyInjected},
     { provide: someClassTokenByInjectionToken, useClass:ClassManuallyInjected},
+    ForwardRefService
   ]
   /*
    multi:true that the provider is a multi provider. 

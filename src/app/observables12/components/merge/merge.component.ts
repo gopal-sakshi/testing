@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { map, merge } from 'rxjs/operators';
 import { MergeObservableService } from '../../services/mergeObs.service';
 
 @Component({
@@ -9,14 +9,18 @@ import { MergeObservableService } from '../../services/mergeObs.service';
 })
 export class MergeComponent implements OnInit {
 
+  @ViewChild('templateForm23') templateForm23:any;
   realMadridPlayers:string[] = [];
   offset:number = 0;
   morePlayers:boolean = true;
   searchString:any;
+  heroInputObs:any;
 
   constructor(private mergeObservableService:MergeObservableService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.heroInputObs = this.templateForm23.valueChanges().pipe();    
+  }
 
   getPlayers() {
     this.mergeObservableService.getPlayersFiveAtOnce(0).pipe().subscribe(res => {
@@ -36,7 +40,11 @@ export class MergeComponent implements OnInit {
 
   searchBro(event) {    
     this.searchString = event;
-    this.mergeObservableService.searchRMAPlayer(this.searchString);
+    // this.mergeObservableService.searchRMAPlayer(this.searchString);
+    this.doStuffBeforeSearch(this.searchString);
+  }
+
+  doStuffBeforeSearch(searchWord:string) {
     this.mergeObservableService.searchPlayers(this.searchString).pipe(
       map((res) => {
         console.log(res); 
@@ -45,6 +53,13 @@ export class MergeComponent implements OnInit {
       map(res => res)).subscribe(res => {
         console.log('jing chak...');
       })
+  }
+
+  submitNobelHero() {
+    console.log(this.templateForm23);
+    const searchName = this.templateForm23.form.value.hero_name;
+    const result = this.mergeObservableService.searchNobelPlayers(searchName);
+    console.log(result);
   }
 
 }

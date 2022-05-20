@@ -1,26 +1,34 @@
-<div fxLayout="row" fxLayoutGap="20px" class="custom-validator12-container">
-    <div class="custom-validator-1">
-        <form [formGroup]="formGroup1">
-            <div fxLayout="column" fxLayoutGap="10px" class="form-group-1">
-                <input formControlName="firstName" placeholder="first name">
-                <input formControlName="lastName" placeholder="last name">
-                <input formControlName="mobile" placeholder="mobile">
-            </div>
-            <button mat-raised-button (click)="onSubmit1()" [disabled]=formGroup1?.invalid>submit1</button>
-            &nbsp;&nbsp;
-            <button mat-raised-button (click)="onSubmit1()">submit1</button>
-        </form>
-    </div>
-    <div class="custom-validator-2">
-        <form [formGroup]="formGroup2">
-            <div fxLayout="column" fxLayoutGap="10px" class="form-group-2">
-                <input formControlName="age" placeholder="age">
-                <input formControlName="city" placeholder="ciy">
-                <input formControlName="country" placeholder="country">
-            </div>
-            <button mat-raised-button (click)="onSubmit2()" [disabled]=formGroup2?.invalid>submit2</button>
-            &nbsp;&nbsp;
-            <button mat-raised-button (click)="onSubmit2()">submit2</button>
-        </form>
+<div fxLayout="column" fxLayoutGap="5px" class="custom-validator12-container">
+    <div>custom-val-12</div>
+    <div class="validators-list"  fxLayout="row">
+        <div class="custom-validator-1" fxLayout="column">
+            <div>at least 2 formcontrols must be filled</div>
+            <div>firstname mustnt contain 'a'</div>
+            <div>not working though</div>
+            <form [formGroup]="formGroup1">
+                <div fxLayout="column" fxLayoutGap="10px" class="form-group-1">
+                    <input formControlName="firstName" placeholder="first name">
+                    <input formControlName="lastName" placeholder="last name">
+                    <input formControlName="mobile" placeholder="mobile">
+                </div>
+                <button mat-raised-button (click)="onSubmit1()" [disabled]=formGroup1?.invalid>submit1</button>
+                &nbsp;&nbsp;
+                <button title="submit to check form validity" mat-raised-button (click)="onSubmit1()">checkForm</button>
+            </form>
+        </div>
+        <div class="custom-validator-2">
+            <div>at least 1 formcontrols must be filled</div>
+            <div>if age, it must be at least 3 char long</div>
+            <form [formGroup]="formGroup2">
+                <div fxLayout="column" fxLayoutGap="10px" class="form-group-2">
+                    <input formControlName="age" placeholder="age">
+                    <input formControlName="city" placeholder="ciy">
+                    <input formControlName="country" placeholder="country">
+                </div>
+                <button mat-raised-button (click)="onSubmit2()" [disabled]=formGroup2?.invalid>submit2</button>
+                &nbsp;&nbsp;
+                <button title="submit to check form validity" mat-raised-button (click)="onSubmit2()">checkForm</button>
+            </form>
+        </div>
     </div>
 </div>

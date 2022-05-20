@@ -18,7 +18,7 @@ export class CustomValidator12Component implements OnInit {
     
     this.formGroup1 = this.fb.group({
       // Asynchronous validators should be specified as a third argument
-      firstName: ['', [], [this.customValidator22]],
+      firstName: ['', [], [this.customValidator22, this.firstNameValidator23]],
       lastName: [''],
       mobile: ['']
     }, { validators: this.atleastOneValidator1 });
@@ -28,7 +28,9 @@ export class CustomValidator12Component implements OnInit {
       city: [''],
       country: ['']
     });
-    this.formGroup2.setValidators(this.atleastOneValidator());
+
+    // Note: setValidators() overrides existing validators... use addValidators instead if u dont want to disturb existing ones
+    this.formGroup2.setValidators(this.atleastOneValidator());    
   }
 
   private atleastOneValidator = () => {

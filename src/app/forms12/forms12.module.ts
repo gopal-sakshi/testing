@@ -21,6 +21,7 @@ import { MatInputModule } from '@angular/material/input';
 import { DateValidator2Component } from './components/date-validator2/date-validator2.component';
 import { Template12Component } from './components/template12/template12.component';
 import { Reactive12Component } from './components/reactive12/reactive12.component';
+import { CustomValidator14Component } from './components/custom-validator14/custom-validator14.component';
 
 const routes: Routes = [
   {
@@ -41,7 +42,8 @@ const routes: Routes = [
     DateValidatorComponent,
     DateValidator2Component,
     Template12Component,
-    Reactive12Component
+    Reactive12Component,
+    CustomValidator14Component
   ],
   imports: [
     CommonModule,

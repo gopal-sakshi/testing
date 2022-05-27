@@ -1,19 +1,24 @@
-.app-header {
-    /* position:absolute; */
-    top: 5px;
-    .logged-in-details {       
-        background-color:var(--gopal-success);
+.app-home-container {
+    .app-header {
+        /* position:absolute; */
+        top: 5px;
+        .logged-in-details {       
+            background-color:var(--gopal-success);
+        }
     }
-}
-.home-sections {
-    background-color:var(--gopal-info);
-    color:chocolate
-}
-
-.main-content {
-    margin:20px;
-}
-.app-footer {
-    /* position:absolute; */
-    bottom:0px;
+    .home-sections {
+        background-color:var(--gopal-info);
+        color:chocolate;
+        a {
+            margin: 10px;
+        }
+    }
+    
+    .main-content {
+        margin:20px;
+    }
+    .app-footer {
+        /* position:absolute; */
+        bottom:0px;
+    }
 }

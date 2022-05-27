@@ -8,10 +8,19 @@
     </div>
     <div class="user-actions" fxLayout="column">
         <button (click)="showForwardRef=!showForwardRef">forwardRef</button>
+        <button (click)="showServices11=!showServices11 && showServices12=!showServices12 ">services11</button>
     </div>
     <div class="child-components" fxLayout="column">
         <div *ngIf="showForwardRef">
             <app69-forward-ref></app69-forward-ref>
+        </div>
+        <div class="child-components" *ngIf="showServices11 && showServices12" fxLayout="column">
+            <div>each component getting its own instance of serv121 service</div>
+            <div>all components getting their own instance of service</div>
+            <div fxLayout="row" fxLayoutGap="10px">
+                <app69-service11></app69-service11>
+                <app69-service12></app69-service12>
+            </div>            
         </div>        
     </div>
 </div>

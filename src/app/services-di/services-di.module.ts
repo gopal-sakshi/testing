@@ -17,6 +17,9 @@ import { ClassManuallyInjected } from './classes/class-manually-injected';
 import { ForwardRefComponent } from './components/forward-ref/forward-ref.component';
 import { ForRefChild1Component } from './components/for-ref-child1/for-ref-child1.component';
 import { ForwardRefService } from './services/forward-ref.service';
+import { Service11Component } from './components/service11/service11.component';
+import { Service12Component } from './components/service12/service12.component';
+import { Serv144 } from './services/serv144.service';
 
 function usingFunction456() {
   return true;
@@ -29,7 +32,9 @@ function usingFunction456() {
     ProductDiInjectComponent,
     TokenTypesComponent,
     ForwardRefComponent,
-    ForRefChild1Component
+    ForRefChild1Component,
+    Service11Component,
+    Service12Component
   ],
   imports: [
     CommonModule,
@@ -58,7 +63,8 @@ function usingFunction456() {
     { provide: 'myFunctionUseValue', useValue: factoryFunctionUseValue('Sakshi')},
     //{ provide: 'bhale bhale', useClass:ClassManuallyInjected},
     { provide: someClassTokenByInjectionToken, useClass:ClassManuallyInjected},
-    ForwardRefService
+    ForwardRefService,
+    Serv144
   ]
   /*
    multi:true that the provider is a multi provider. 

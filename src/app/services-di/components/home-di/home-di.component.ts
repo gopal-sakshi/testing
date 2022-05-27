@@ -10,7 +10,10 @@ export class HomeDiComponent implements OnInit {
   count:number = 0;
   constructor() { }
   showForwardRef:boolean = false;
+  showServices11:boolean = false;
+  showServices12:boolean = false;
   
+
   ngOnInit(): void {
   }
 

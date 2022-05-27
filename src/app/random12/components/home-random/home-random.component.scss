@@ -1,5 +1,16 @@
 .services-di-home-container {
-    .services-di-home-links {
+    .home-links {
         max-width:fit-content
+    }
+    .user-actions-buttons {
+        max-width: fit-content;
+    }
+    .child-components {
+        .child-component {
+            border: 1px dotted rgb(218, 104, 104);
+            padding: 10px;
+            max-width: 400px;
+            min-width: 400px;
+        }
     }
 }

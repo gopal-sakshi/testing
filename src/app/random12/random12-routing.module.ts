@@ -60,7 +60,7 @@ const routes: Routes = [
     component: DynamicImports23Component
   },
   {
-    path: 'direct-swal',
+    path: 'swal-12',
     component: SweetAlert12Component
   }
   

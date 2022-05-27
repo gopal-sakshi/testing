@@ -9,13 +9,12 @@ import { EnvironmentService } from 'src/config/environment.service';
 })
 export class HomeRandomComponent implements OnInit {
 
-  showTypescript:boolean = true;
+  showTypescript:boolean = false;
+  showDecorators:boolean = false;
   constructor(public env:EnvironmentService, private titleService: Title) { }
 
   ngOnInit(): void {
-    console.log("testing git");
-    console.log("testing git 2.0");
-    console.log("testing 3.0");
+    
     console.log("My environment is ");
     console.log(this.env.APP_NAME, this.env.envName, this.env.production);
 

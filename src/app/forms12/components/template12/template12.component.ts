@@ -41,11 +41,22 @@ export class Template12Component implements OnInit {
     console.log(this.templateForm2);    
   }
 
-  changeFnAngular(event) {    
+  checkValuesAngularDom() {    
+    console.log(this.domInput);
+    console.log(this.angularInput);
+  }
+
+  changeFnAngular(event) {
+    console.log('event will be assigned to angularInput = ', event)
     this.angularInput = event;    
   }
 
-  changeFnDOM(event) {
+  changeFnDOM1(event) {    
+    console.log(event);
+  }
+
+  // onchange() may not work... because, we are using angular framework and not regular html with javascript
+  changeFnDOM2(event) {
     console.log(event);
   }
 }

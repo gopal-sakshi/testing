@@ -1,5 +1,8 @@
 <div class="template-driven-forms-container" fxLayout="row" fxLayoutGap="20px">
-    <div class="ng-model-direcrive">
+    
+    <!-- NgModel        AS DIRECTIVE -->
+    <div class="ng-model-direcrive" fxLayout="column" fxLayoutGap="10px">
+        <div>ngModel as DIRECTIVE</div>
         <form #templateForm1="ngForm" (ngSubmit)="submitForm1()">
             <!-- in input if [(ngModel)] is used... name & #name attributes = mandatory -->
             <!-- name attribute in template forms ====> formControl name/key in reactive forms -->
@@ -13,18 +16,32 @@
             <button><span style="font-weight:800">SUBMIT 1</span></button>
         </form>
     </div>
-    <div class="ng-model-two-way-binding">
+    <!-- /NgModel        AS DIRECTIVE -->
+
+
+    <!-- NgModel            TWO WAY BINDING -->
+    <div class="ng-model-two-way-binding" fxLayout="column" fxLayoutGap="10px">
+        <div>ngModel as 2-way binding</div>
         <form #templateForm2="ngForm" (ngSubmit)="submitForm2()">
             <!-- both iplClubName1 & iplClubName2 are same... [(nggModel)] translates to ===> [ngModel] (ngModelChange) -->
             <input [(ngModel)]="iplClubName1" name="iplClub_Name1" placeholder="ipl club name1">
             <input [ngModel]="iplClubName2" (ngModelChange)="iplClubName2=$event" name="iplClub_Name2" 
-                placeholder="ipl club name2 - another way">            
+                placeholder="ipl club name2 - another way">
+            <button (click)="iplClubName1='RealMadrid23'">update iplClubName1</button>
+            <button (click)="iplClubName2='RealMadrid24'">update iplClubName2</button>
+            <button (click)="changeFromTs()">changeFromTs for iplClubName1</button>
             <button><span style="font-weight:800">SUBMIT 2</span></button>
         </form>        
     </div>
-    <div class="angular-vs-dom">
+    <!-- /NgModel            TWO WAY BINDING -->
+
+    <!-- ANGULAR vs DOM -->
+    <div class="angular-vs-dom" fxLayout="column" fxLayoutGap="10px">
+        <div>angular-vs-dom</div>
         <!-- ngModel outside of <form> tag -->
-        <input [value]="domInput" (change)="changeFnDOM($event)">
+        <input title="executes only after control moves to next input field" placeholder="type smthng & press tab" [value]="domInput" (change)="changeFnDOM1($event)" (onchange)="changeFnDOM2($event)">
+            <!-- the change event doesn't fire until the control loses focus -->
+
         <input [ngModel]="angularInput" (ngModelChange)="changeFnAngular($event)">  
             <!-- this ngModel doesnt have name attribute, bcoz, its not within <form> tag-->
             <!--
@@ -33,10 +50,15 @@
                 we must specifically assign event to angularInput in changeFnAngular() method
                 otherwise, in ts file, this.angularInput value doesnt get updated
             -->
-    </div>    
-    <div class="user-actions">
-        <button (click)="changeFromTs()">changeFromTs for 1st input</button>
+        <button (click)="checkValuesAngularDom()">check values</button>
     </div>
+    <!-- /ANGULAR vs DOM -->
+
+    <div class="user-actions">
+        empty as of now
+        <!-- empty as of now -->
+    </div>
+
 </div>
 
 <!--

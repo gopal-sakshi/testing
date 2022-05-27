@@ -13,17 +13,12 @@ export class CustomDecorator12Component implements OnInit {
   ngOnInit(): void {
   }
 
-  // @Confirmable
-  // deleteItem() {
-  //   console.log("An item was deleted");
-  // }
-
   @Confirmable({
-    title: 'Are you sureeeeeeeeeeeeeeeeeeeeeeeee - customised', 
+    title: 'Are you sureeey23 - customised', 
     html: 'Do you want to delete this item?', 
     icon: 'warning'
   })
-  deleteItem(): void {
+  deleteItem1(): void {
     console.log("An item was deleted");
   }
 

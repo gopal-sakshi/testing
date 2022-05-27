@@ -7,11 +7,12 @@ import { SubjectsModule } from './subjects/subjects.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductGuardService } from './route-guards/classes/ProductGuardService';
-import { HttpInterceptor23 } from './classes/http-interceptor23';
+
 import { Common23Module } from './common23/common23.module';
 import { HttpInterceptor24 } from './classes/http-interceptor24';
 import { AuthInterceptor23 } from './auth23/classes/authInterceptor23';
 import { AuthInterceptor24 } from './auth23/classes/authInterceptor24';
+import { PincodeInterceptor23 } from './classes/http-interceptor23';
 
 
 
@@ -31,11 +32,11 @@ import { AuthInterceptor24 } from './auth23/classes/authInterceptor24';
   ],
   providers: [
     ProductGuardService,
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: HttpInterceptor23,
-    //   multi: true,
-    // },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: PincodeInterceptor23,
+      multi: true,
+    },
     // {
     //   provide: HTTP_INTERCEPTORS,
     //   useClass: HttpInterceptor24,

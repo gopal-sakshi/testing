@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
 })
 
-export class HttpInterceptor23 implements HttpInterceptor {
+export class PincodeInterceptor23 implements HttpInterceptor {
 
     constructor(private router:Router,
       private activatedRoute:ActivatedRoute) {}

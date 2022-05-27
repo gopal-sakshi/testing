@@ -14,9 +14,9 @@ import { UserResolver } from './resolvers/user.resolver';
 import { DisplayUsersComponent } from './components/display-users/display-users.component';
 import { Decorator12Component } from './components/decorator12/decorator12.component';
 import { CustomDecorator12Component } from './components/custom-decorator12/custom-decorator12.component';
-import { CustomComp12Component } from './components/custom-comp12/custom-comp12.component';
+
 import { AngularSyntax12Component } from './components/angular-syntax12/angular-syntax12.component';
-import { CustomFormcontrol12Component } from './components/custom-formcontrol12/custom-formcontrol12.component';
+
 import { MatIconModule } from '@angular/material/icon';
 import { DynamicImports23Component } from './components/dynamic-imports23/dynamic-imports23.component';
 import { CustomDecorator13Component } from './components/custom-decorator13/custom-decorator13.component';
@@ -34,8 +34,7 @@ import { FormsModule } from '@angular/forms';
     DisplayUsersComponent,
     Decorator12Component,
     CustomDecorator12Component,
-    AngularSyntax12Component,
-    CustomFormcontrol12Component,
+    AngularSyntax12Component,    
     DynamicImports23Component,
     CustomDecorator13Component,
     SweetAlert12Component,

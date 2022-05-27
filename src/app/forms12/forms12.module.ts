@@ -22,6 +22,8 @@ import { DateValidator2Component } from './components/date-validator2/date-valid
 import { Template12Component } from './components/template12/template12.component';
 import { Reactive12Component } from './components/reactive12/reactive12.component';
 import { CustomValidator14Component } from './components/custom-validator14/custom-validator14.component';
+import { CustomFormcontrol12Component } from './components/custom-formcontrol12/custom-formcontrol12.component';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
   {
@@ -43,7 +45,8 @@ const routes: Routes = [
     DateValidator2Component,
     Template12Component,
     Reactive12Component,
-    CustomValidator14Component
+    CustomValidator14Component,
+    CustomFormcontrol12Component
   ],
   imports: [
     CommonModule,
@@ -55,7 +58,8 @@ const routes: Routes = [
     MatDatepickerModule,
     MatNativeDateModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule,
   ],
   providers: [
     EmailBlackList12Service

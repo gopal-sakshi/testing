@@ -5,7 +5,6 @@ import { AngularSyntax12Component } from './components/angular-syntax12/angular-
 import { Cors23Component } from './components/cors23/cors23.component';
 import { CustomComp12Component } from './components/custom-comp12/custom-comp12.component';
 import { CustomDecorator12Component } from './components/custom-decorator12/custom-decorator12.component';
-import { CustomFormcontrol12Component } from './components/custom-formcontrol12/custom-formcontrol12.component';
 import { Decorator12Component } from './components/decorator12/decorator12.component';
 import { DisplayUsersComponent } from './components/display-users/display-users.component';
 import { DynamicImports23Component } from './components/dynamic-imports23/dynamic-imports23.component';
@@ -50,10 +49,6 @@ const routes: Routes = [
   {
     path: 'angular-syntax12',
     component: AngularSyntax12Component
-  },
-  {
-    path: 'custom-formcontrol12',
-    component: CustomFormcontrol12Component
   },
   {
     path: 'dynamic-imports23',

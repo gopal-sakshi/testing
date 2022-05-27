@@ -4,6 +4,7 @@
         <button style="max-width:fit-content" (click)="showCustomValidator=!showCustomValidator">Custom Validator</button>
         <button style="max-width:fit-content" (click)="showTemplateForm=!showTemplateForm">show Template Form</button>
         <button style="max-width:fit-content" (click)="showReactiveForm=!showReactiveForm">show Reactive Form</button>
+        <button style="max-width:fit-content" (click)="showCustomFormControl=!showCustomFormControl">custom form control</button>
     </div>
     <div class="child-components-container" fxLayout="row" fxLayoutGap="10px">
         <div style="font-size:12px;color:rgb(179, 122, 233)">it seems, we can apply classes to child components</div>
@@ -20,6 +21,9 @@
         </div>
         <div *ngIf="showReactiveForm">
             <app69-reactive12 class="child-component"></app69-reactive12>
-        </div>        
+        </div>
+        <div *ngIf="showCustomFormControl">
+            <app-custom-formcontrol12></app-custom-formcontrol12>
+        </div> 
     </div>    
 </div>

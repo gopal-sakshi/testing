@@ -14,6 +14,7 @@ import { Common23Module } from '../common23/common23.module';
 import { Animate12Component } from './components/animate12/animate12.component';
 import { MatTheme23Component } from './components/mat-theme23/mat-theme23.component';
 import { MatTheme24Component } from './components/mat-theme24/mat-theme24.component';
+import { Styling13Component } from './components/styling13/styling13.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { MatTheme24Component } from './components/mat-theme24/mat-theme24.compon
     NgClass12Component,
     Animate12Component,
     MatTheme23Component,
-    MatTheme24Component          // comment and see the magic............
+    MatTheme24Component,
+    Styling13Component          // comment and see the magic............
                                     // what happens if a component is in a module, but not included in declarations[] array
   ],
   imports: [

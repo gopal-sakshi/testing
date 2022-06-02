@@ -8,6 +8,10 @@ import { fromEvent, Observable, Subscription } from 'rxjs';
 export class HomeStylingComponent implements OnInit {
 
   showAnimate12:boolean = false;
+  showStyling13:boolean = false;
+  showStylingSection:boolean = false;
+  showMatThemes:boolean = false;
+  
   resizeObservable23$: Observable<any>
   resizeSubscription33: Subscription
 

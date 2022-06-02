@@ -1,0 +1,18 @@
+.styling13-container {
+    .main-content {
+        .topic {
+            border: 1px dotted rgb(116, 116, 219);
+            padding:10px;
+            max-width: fit-content;
+            
+            .hover23-css-thingy {
+                color:rgb(20, 226, 12);
+            }
+            .hover23-css-thingy:hover {
+                color:rgb(46, 34, 212);
+                font-size: larger;
+                text-decoration: underline;
+            }
+        }
+    }
+}

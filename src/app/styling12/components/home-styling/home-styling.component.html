@@ -5,19 +5,30 @@
         <a [routerLink]="['html-styling12']"> html-styling12 </a>
         <a [routerLink]="['input-element12']"> input element?? </a>
         <button (click)="showAnimate12=!showAnimate12">show animation</button>
-    </div>
-    <div *ngIf="showAnimate12">
-        <app69-animate12></app69-animate12>
+        <button (click)="showStyling13=!showStyling13">styling 13</button>
+        <button (click)="showStylingSection=!showStylingSection">styling section</button>
+        <button (click)="showMatThemes=!showMatThemes">mat themes</button>
     </div>
 
-    <!-- we need to wrap our entire page with the CSS-class ‘mat-app-background’. -->
-    <div class="mat-app-background">
-        <app69-mat-theme23></app69-mat-theme23>
+    <div class="child-components" fxLayout="column" fxLayoutGap="10px">
+        <div class="child-component" *ngIf="showAnimate12">
+            <app69-animate12></app69-animate12>
+        </div>
+        <div class="child-component" *ngIf="showStyling13">
+            <app69-styling13></app69-styling13>
+        </div>
     </div>
-    <div>
-        <app69-mat-theme24></app69-mat-theme24>
+
+    <div *ngIf="showMatThemes">
+        <!-- we need to wrap our entire page with the CSS-class ‘mat-app-background’. -->
+        <div class="mat-app-background">
+            <app69-mat-theme23></app69-mat-theme23>
+        </div>
+        <div>
+            <app69-mat-theme24></app69-mat-theme24>
+        </div>
     </div>
-    <div class="styling-section" fxLayout="row" fxLayoutGap="20px">
+    <div *ngIf="showStylingSection" class="styling-section" fxLayout="row" fxLayoutGap="20px">
         <div class="success-section">
             <div>show some success content</div>
         </div>

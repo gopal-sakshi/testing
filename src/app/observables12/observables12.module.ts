@@ -18,6 +18,8 @@ import { MergeComponent } from './components/merge/merge.component';
 import { FormsModule } from '@angular/forms';
 import { FutDbComponent } from './components/fut-db/fut-db.component';
 import { FutDbService } from './services/fut-db.service';
+import { Observable71Component } from './components/observable71/observable71.component';
+import { Observable72Component } from './components/observable72/observable72.component';
 
 const routes:Routes = [
   { path: '',  component: HomeObsComponent },
@@ -36,7 +38,9 @@ const routes:Routes = [
     Observable62Component,
     SwitchMapComponent,
     MergeComponent,
-    FutDbComponent
+    FutDbComponent,
+    Observable71Component,
+    Observable72Component
   ],
   imports: [
     CommonModule,

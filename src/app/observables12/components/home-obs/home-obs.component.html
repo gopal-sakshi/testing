@@ -5,9 +5,12 @@
         <button mat-raised-button color="warning" (click)="showObservable2=!showObservable2">Observable 2</button>
         <button mat-raised-button color="warning" (click)="showObservable21=!showObservable21">observable21-KalugdiAuth</button>
         <button mat-raised-button color="warning" (click)="showObservable61=!showObservable61">userGenObservable</button>
-        <button mat-raised-button color="warning" (click)="showSwitchMap=!showSwitchMap">switch map</button>
+        <button mat-raised-button color="warning" (click)="showSwitchMap1=!showSwitchMap1">switch map</button>
+        <button mat-raised-button color="warning" (click)="showSwitchMap2=!showSwitchMap2">switchMap2</button>
         <button mat-raised-button color="warning" (click)="showMerge=!showMerge">merge</button>
         <button mat-raised-button color="warning" (click)="showFutDb=!showFutDb">fut db</button>
+        <button mat-raised-button color="warning" (click)="showUserObs=!showUserObs">userObs</button>
+        
     </div>
     <div class="child-components" fxLayout="column" fxLayoutGap="10px">
         <div class="child-component-element" *ngIf="showFutDb">
@@ -22,11 +25,17 @@
         <div class="child-component-element" *ngIf="showObservable2">
             <app69-observable2></app69-observable2>         <!-- forkJoin-->
         </div>
-        <div class="child-component-element" *ngIf="showSwitchMap">
+        <div class="child-component-element" *ngIf="showSwitchMap1">
             <app69-switch-map></app69-switch-map>
+        </div>
+        <div class="child-component-element" *ngIf="showSwitchMap2">
+            <app69-observable72></app69-observable72>
         </div>
         <div class="child-component-element" *ngIf="showMerge">
             <app69-merge></app69-merge>
+        </div>
+        <div class="child-component-element" *ngIf="showUserObs">
+            <app69-observable71></app69-observable71>
         </div>
     </div>    
 </div>

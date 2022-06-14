@@ -8,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class HomeObsComponent implements OnInit {
 
   showObservable2:boolean = false;
-  showSwitchMap:boolean = false;
+  showSwitchMap1:boolean = false;
+  showSwitchMap2:boolean = false;
   showObservable21:boolean = false;
   showObservable61:boolean = false;
   showMerge:boolean = false;
   showFutDb:boolean = false;
+  showUserObs:boolean = false;
   
   constructor() { }
 

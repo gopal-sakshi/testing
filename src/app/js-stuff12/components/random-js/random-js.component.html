@@ -6,7 +6,8 @@
                         this.value=this.value.slice(0, this.value.indexOf('.')+4);"
             name="htmlInput" 
             placeholder="only numbers with 3 decimals">
-        <input #inputValue type="text" name="angularInput" (input)="processInput(inputValue.value)">        
+        <input #inputValue1 type="text1" name="angularInput1" (input)="processInput1(inputValue1.value)">
+        <input id="input23" #inputValue2 type="text2" name="angularInput2" (input)="processInput2(inputValue2.value)">
         <input processDecimal [firstParam]="firstParam" [secondParam]="secondParam" value="23">
     </div>
 

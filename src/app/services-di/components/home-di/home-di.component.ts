@@ -12,7 +12,7 @@ export class HomeDiComponent implements OnInit {
   showForwardRef:boolean = false;
   showServices11:boolean = false;
   showServices12:boolean = false;
-  
+  showInject23:boolean = false;
 
   ngOnInit(): void {
   }

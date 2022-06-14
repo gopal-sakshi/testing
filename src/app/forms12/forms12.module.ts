@@ -24,6 +24,7 @@ import { Reactive12Component } from './components/reactive12/reactive12.componen
 import { CustomValidator14Component } from './components/custom-validator14/custom-validator14.component';
 import { CustomFormcontrol12Component } from './components/custom-formcontrol12/custom-formcontrol12.component';
 import { MatIconModule } from '@angular/material/icon';
+import { NestedFormComponent } from './components/nested-form/nested-form.component';
 
 const routes: Routes = [
   {
@@ -46,7 +47,8 @@ const routes: Routes = [
     Template12Component,
     Reactive12Component,
     CustomValidator14Component,
-    CustomFormcontrol12Component
+    CustomFormcontrol12Component,
+    NestedFormComponent
   ],
   imports: [
     CommonModule,

@@ -12,6 +12,7 @@ export class HomeForms12Component implements OnInit {
   showTemplateForm:boolean = false;
   showReactiveForm:boolean = false; 
   showCustomFormControl:boolean = false; 
+  showNestedForm:boolean = false;
 
   constructor() { }
 

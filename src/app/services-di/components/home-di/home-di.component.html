@@ -4,24 +4,28 @@
         <a [routerLink]="['di']"> DI </a>
         <a [routerLink]="['no-di']"> No DI </a>
         <a [routerLink]="['di-inject']"> DI with @Inject, not @Injectable</a>
-        <a [routerLink]="['token-types']"> Token Types</a>        
+        <a [routerLink]="['token-types']"> Token Types</a>
     </div>
     <div class="user-actions" fxLayout="column">
         <button (click)="showForwardRef=!showForwardRef">forwardRef</button>
         <button (click)="showServices11=!showServices11 && showServices12=!showServices12 ">services11</button>
+        <button (click)="showInject23=!showInject23">inject23</button>
     </div>
     <div class="child-components" fxLayout="column">
-        <div *ngIf="showForwardRef">
+        <div *ngIf="showForwardRef" class="child-component">
             <app69-forward-ref></app69-forward-ref>
         </div>
-        <div class="child-components" *ngIf="showServices11 && showServices12" fxLayout="column">
+        <div class="child-component" *ngIf="showServices11 && showServices12" fxLayout="column">
             <div>each component getting its own instance of serv121 service</div>
             <div>all components getting their own instance of service</div>
             <div fxLayout="row" fxLayoutGap="10px">
                 <app69-service11></app69-service11>
                 <app69-service12></app69-service12>
-            </div>            
-        </div>        
+            </div>
+        </div>
+        <div class="child-component" *ngIf="showInject23">
+            <app69-inject23></app69-inject23>            
+        </div>
     </div>
 </div>
 

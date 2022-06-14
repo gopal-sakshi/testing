@@ -1,0 +1,13 @@
+<div class="nested-form-container">
+    <form [formGroup]="productForm" fxLayout="column">        
+        <input type="text" formControlName="product" placeholder="Select product">
+        <input type="text" formControlName="harvestedYear" placeholder="Select harvested year">
+        <div fxLayout="column" formGroupName="smartElements">
+            <div formGroupName="weight">
+                <input placeholder="Enter Quantity" type="text" formControlName="value">
+                <input placeholder="Enter units" type="text" formControlName="unit">
+            </div>
+        </div>        
+    </form>
+    <button (click)="submit()">submit</button>
+</div>

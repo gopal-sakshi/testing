@@ -40,9 +40,18 @@ export class RandomJsComponent implements OnInit {
     console.table(this.obj24);
   }
 
-  processInput(value) {    
+  processInput1(value) {    
     console.log(value);
     value = value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');    
+  }
+
+  processInput2(value) {
+    console.log(value);
+    if((+value) > 100) {
+      console.log('gr');
+      var htmlElem = <HTMLInputElement>document.getElementById('input23');
+      htmlElem.value = '3434343';
+    }    
   }
 
 }

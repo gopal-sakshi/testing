@@ -20,6 +20,7 @@ import { ForwardRefService } from './services/forward-ref.service';
 import { Service11Component } from './components/service11/service11.component';
 import { Service12Component } from './components/service12/service12.component';
 import { Serv144 } from './services/serv144.service';
+import { Inject23Component } from './components/inject23/inject23.component';
 
 function usingFunction456() {
   return true;
@@ -34,7 +35,8 @@ function usingFunction456() {
     ForwardRefComponent,
     ForRefChild1Component,
     Service11Component,
-    Service12Component
+    Service12Component,
+    Inject23Component
   ],
   imports: [
     CommonModule,
@@ -64,7 +66,23 @@ function usingFunction456() {
     //{ provide: 'bhale bhale', useClass:ClassManuallyInjected},
     { provide: someClassTokenByInjectionToken, useClass:ClassManuallyInjected},
     ForwardRefService,
-    Serv144
+    Serv144,
+    // { provide: 'GopAL23', useValue: {name: 'gopal2323', age: 32} },
+    { provide: 'GopAL23', useValue: 'plain string' },
+    // { provide: 'GopAL23', useValue: {name: 'gopal2323', age: '32'} },   // this throws error... because GopAL23 expects an object with
+                                                                          // dataTypes - string & number
+                                                                          // but we provided - string & string
+
+                                                                          // BUT FOR SOME REASON... NO ERROR THROWN
+                                                                          // may be, during build --> error will be thrown, but not in dev
+                                                                          // because build errors happened in assistant portal kalgudi
+                                                                          // sunnith, product sku select component
+                                          // @Inject(MAT_DIALOG_DATA) protected data23: { initialSearchWord: string }
+                                          // here, data23 is supposed to be an object - with single key = initialSearchWord
+
+    // { provide: 'SakShi23', useValue: 24 },
+    { provide: 'SakShi23', useValue: 'I can give string instead of number 24' },
+    // { provide: 'SakShi23', useValue: { info: 'me giving obj instead of string or number', club: 'Real Madrid'} }
   ]
   /*
    multi:true that the provider is a multi provider. 

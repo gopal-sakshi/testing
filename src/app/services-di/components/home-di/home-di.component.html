@@ -10,6 +10,13 @@
         <button (click)="showForwardRef=!showForwardRef">forwardRef</button>
         <button (click)="showServices11=!showServices11 && showServices12=!showServices12 ">services11</button>
         <button (click)="showInject23=!showInject23">inject23</button>
+        <button (click)="showInject24=!showInject24">inject24</button>&nbsp;
+        <div style="color: brown; font-size: small; max-width: 100px;" *ngIf="showInject24">
+            <span>NOTICE: inject24 class/service has no @injectable decorator..</span>&nbsp;&nbsp;
+            <span>we manually injected this 'inject24 class/service' </span>
+        </div>
+        <button (click)="showInject25=!showInject25">inject25</button>
+        <button (click)="showInject26=!showInject26">inject26</button>
     </div>
     <div class="child-components" fxLayout="column">
         <div *ngIf="showForwardRef" class="child-component">
@@ -24,7 +31,16 @@
             </div>
         </div>
         <div class="child-component" *ngIf="showInject23">
-            <app69-inject23></app69-inject23>            
+            <app69-inject23></app69-inject23>
+        </div>
+        <div class="child-component" *ngIf="showInject24">
+            <app69-inject24></app69-inject24>
+        </div>
+        <div class="child-component" *ngIf="showInject25">
+            <app69-inject25></app69-inject25>
+        </div>
+        <div class="child-component" *ngIf="showInject26">
+            <app69-inject26></app69-inject26>
         </div>
     </div>
 </div>

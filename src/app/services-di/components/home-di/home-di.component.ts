@@ -13,6 +13,9 @@ export class HomeDiComponent implements OnInit {
   showServices11:boolean = false;
   showServices12:boolean = false;
   showInject23:boolean = false;
+  showInject24:boolean = false;
+  showInject25:boolean = false;
+  showInject26:boolean = false;
 
   ngOnInit(): void {
   }

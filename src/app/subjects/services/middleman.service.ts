@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { AsyncSubject, BehaviorSubject, Observable, ReplaySubject, Subject } from "rxjs";
-import { AnonymousSubject } from "rxjs/internal/Subject";
+import { AnonymousSubject } from "rxjs/internal/Subject";       // some CommonJS, AMD dependencies can cause optimization bailouts 'warning'
 
 @Injectable({
     providedIn: 'root'

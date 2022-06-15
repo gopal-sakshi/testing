@@ -40,7 +40,8 @@ export class SwitchMapComponent implements OnInit {
             console.log(res)
             return res;
           })
-        )
+        ).subscribe(res => { console.log(res); })
+        return res;
       })
     ).subscribe(res => {
       console.log(res)

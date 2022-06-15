@@ -1,28 +1,33 @@
-<!-- 
+<!--
 
-    screen capture, web share --------- junk, so not using anymore 
+    screen capture, web share --------- junk, so not using anymore
 
 <a [routerLink]="['screen_capture']">Screen Capture</a><br>
 <a [routerLink]="['web_share_2']">Web Share 2 </a> <br>
-<a [routerLink]="['web_share_3']">Web Share 3 </a> <br> 
+<a [routerLink]="['web_share_3']">Web Share 3 </a> <br>
 
 -->
 
-<div class="home-subjects-container" fxLayout="row" fxLayoutGap="50px">    
+<div class="home-subjects-container" fxLayout="row" fxLayoutGap="50px">
 
     <div fxLayout="column" fxLayoutGap="10px" class="links-and-buttons">
         <a [routerLink]="['obs23']"> subject23 </a> <br>
-        <a [routerLink]="['observable1']"> Observable1 </a> <br> 
+        <a [routerLink]="['observable1']"> Observable1 </a> <br>
         <button mat-raised-button color="warning" (click)="showObservable2=!showObservable2">Observable 2</button>
         <button mat-raised-button color="warning" (click)="showSwitchMap=!showSwitchMap">switch map</button>
         <button mat-raised-button color="warning" (click)="showSubjects=!showSubjects">show subjects</button>
         <button mat-raised-button color="warning" (click)="showReplaySubjects=!showReplaySubjects">replay/beh subjects</button>
         <button mat-raised-button color="warning" (click)="showObservable21=!showObservable21">observable21</button>
+        <button mat-raised-button color="warning" (click)="showInfiniteScroll=!showInfiniteScroll">InfiniteScroll - not working</button>
+
     </div>
-    
+
     <div fxLayout="column" fxLayoutGap="50px" class="child-components">
         <div *ngIf="showObservable21">
             <app69-observable41></app69-observable41>
+        </div>
+        <div *ngIf="showInfiniteScroll">
+          <app69-infinite-scroller></app69-infinite-scroller>
         </div>
         <div *ngIf="showObservable2">
             <app69-observable2></app69-observable2>
@@ -41,7 +46,7 @@
                     <app69-subjects45></app69-subjects45>
                     <app69-subjects46></app69-subjects46>
                     <app69-subjects47></app69-subjects47>
-                </div>                
+                </div>
             </div>
         </div>
     </div>

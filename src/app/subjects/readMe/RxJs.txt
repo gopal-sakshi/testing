@@ -1,0 +1,35 @@
+See package.json...
+  my current rxjs version = 6.6.0
+
+rxjs introduced breaking changes from rxjs version 6.
+
+SOME CHANGES
+  import { Observable } from "rxjs/Observable"; -------------------> import { Observable } from "rxjs";
+  import 'rxjs/add/operator/do' ------------------------> import { do } from "rxjs/operators";
+  Renamed Operators
+    Some operators have also been renamed due to name collisions with JavaScript reserved words. They are
+    do => tap
+    catch => catchError
+    switch => switchAll
+    finally => finalize
+  No Operator Chaining
+    we can't chain our operators anymore you need to use the pipe operator
+
+    source
+      .map(x => x + x)
+      .mergeMap(n => of(n + 1, n + 2)
+        .filter(x => x % 1 == 0)
+        .scan((acc, x) => acc + x, 0)
+      )
+      .catch(err => of('error found'))
+      .subscribe(printResult);
+
+    source.pipe(
+      map(x => x + x),
+      mergeMap(n => of(n + 1, n + 2).pipe(
+        filter(x => x % 1 == 0),
+        scan((acc, x) => acc + x, 0),
+      )),
+      catchError(err => of('error found')),
+    ).subscribe(printResult);
+

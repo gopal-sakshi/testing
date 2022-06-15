@@ -12,6 +12,7 @@ export class HomeSubjectsComponent implements OnInit {
   showSubjects:boolean = false;
   showReplaySubjects:boolean = false;
   showObservable21:boolean = false;
+  showInfiniteScroll:boolean = false;
 
   constructor() { }
 

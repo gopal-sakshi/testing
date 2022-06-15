@@ -2,10 +2,10 @@
 
 @import "~ag-grid-community/dist/styles/ag-grid.css";
 @import "~ag-grid-community/dist/styles/ag-theme-balham.css";
-@import '../src/styles/mat23.theme.scss';
+// @import '../src/styles/mat23.theme.scss';
 @import "../src/styles/variables.scss";
 
 html, body {
     font-size: 20px;
-    background-color: var(--gopal-background-color);    
+    background-color: var(--gopal-background-color);
 }

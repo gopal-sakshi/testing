@@ -19,10 +19,12 @@ import { Subjects45Component } from './components/subjects45/subjects45.componen
 import { Subjects46Component } from './components/subjects46/subjects46.component';
 import { Subjects47Component } from './components/subjects47/subjects47.component';
 import { Observable41Component } from './components/observable41/observable41.component';
+import { InfiniteScrollerComponent } from './components/infinite-scroller/infinite-scroller.component';
+import { HackerNewsService } from './services/infinite-scroll.service';
 
 
 @NgModule({
-  declarations: [    
+  declarations: [
     Observable1Component,
     Observable2Component,
     HomeSubjectsComponent,
@@ -34,7 +36,8 @@ import { Observable41Component } from './components/observable41/observable41.co
     Subjects45Component,
     Subjects46Component,
     Subjects47Component,
-    Observable41Component
+    Observable41Component,
+    InfiniteScrollerComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +48,8 @@ import { Observable41Component } from './components/observable41/observable41.co
   ],
   providers: [
     FakeJsonStats,
-    RxJsService
+    RxJsService,
+    HackerNewsService
   ]
 })
 export class SubjectsModule { }

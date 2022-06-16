@@ -15,11 +15,13 @@ import { SwitchMapComponent } from './components/switch-map/switch-map.component
 import { RouterModule, Routes } from '@angular/router';
 import { MergeObservableService } from './services/mergeObs.service';
 import { MergeComponent } from './components/merge/merge.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FutDbComponent } from './components/fut-db/fut-db.component';
 import { FutDbService } from './services/fut-db.service';
 import { Observable71Component } from './components/observable71/observable71.component';
 import { Observable72Component } from './components/observable72/observable72.component';
+import { SwitchMap22Component } from './components/switch-map22/switch-map22.component';
+import { SwitchMap22Service } from './services/switch-map-22.service';
 
 const routes:Routes = [
   { path: '',  component: HomeObsComponent },
@@ -40,19 +42,22 @@ const routes:Routes = [
     MergeComponent,
     FutDbComponent,
     Observable71Component,
-    Observable72Component
+    Observable72Component,
+    SwitchMap22Component
   ],
   imports: [
     CommonModule,
     FlexLayoutModule,
     RouterModule.forChild(routes),
-    FormsModule    
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     RxJsService,
     FakeJsonStats,
     MergeObservableService,
-    FutDbService
+    FutDbService,
+    SwitchMap22Service
   ]
 })
 export class Observables12Module { }

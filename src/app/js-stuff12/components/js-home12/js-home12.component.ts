@@ -14,6 +14,7 @@ export class JsHome12Component implements OnInit {
   showFunctions12:boolean = false;
   showTwoWayBinding:boolean = false;
   showRandomJS:boolean = false;
+  showCallback22:boolean = false;
   
   inputToConsole:string = 'Input from parent';
   format23:string = 'ODI';

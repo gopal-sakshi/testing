@@ -11,6 +11,7 @@
         <button mat-raised-button color="primay" (click)="showFunctions12 = !showFunctions12">click for Functions</button>
         <button mat-raised-button color="primay" (click)="showTwoWayBinding = !showTwoWayBinding">Two way binding</button>
         <button mat-raised-button color="primay" (click)="showRandomJS = !showRandomJS">Random JS</button>
+        <button mat-raised-button color="primay" (click)="showCallback22 = !showCallback22">Callback22</button>
     </div>
 
     <div fxLayout="column" fxLayoutGap="20px">
@@ -36,6 +37,9 @@
         </div>
         <div *ngIf="showFunctions12">
             <app69-functions12></app69-functions12>
+        </div>
+        <div *ngIf="showCallback22">
+            <app69-callback22></app69-callback22>
         </div>
     </div>
 </div>

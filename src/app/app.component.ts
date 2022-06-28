@@ -26,7 +26,7 @@ export class AppComponent {
 
   ngOnInit() {
     console.log('ngOnInit');
-    this.userName = localStorage.getItem('userName') ? localStorage.getItem('userName') : '';
+    // this.userName = localStorage.getItem('userName') ? localStorage.getItem('userName') : '';
     this.subscription44 = this.commonService.getMessage().subscribe(
       res => {
         this.processLogin(res);        
@@ -36,9 +36,9 @@ export class AppComponent {
   processLogin(payload:any) {    
     console.log(payload);
     this.userName = payload.userName;
-    localStorage.setItem('userName', payload.userName);
-    localStorage.setItem('password', payload.password);
-    localStorage.setItem('token', payload.token ? payload.token : 'token ledu babai');
+    // localStorage.setItem('userName', payload.userName);
+    // localStorage.setItem('password', payload.password);
+    // localStorage.setItem('token', payload.token ? payload.token : 'token ledu babai');
   }
 
 }

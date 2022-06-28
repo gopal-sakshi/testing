@@ -13,6 +13,7 @@ import { HttpInterceptor24 } from './classes/http-interceptor24';
 import { AuthInterceptor23 } from './auth23/classes/authInterceptor23';
 import { AuthInterceptor24 } from './auth23/classes/authInterceptor24';
 import { PincodeInterceptor23 } from './classes/http-interceptor23';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -21,14 +22,15 @@ import { PincodeInterceptor23 } from './classes/http-interceptor23';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     AppRoutingModule,
     SubjectsModule,
     FlexLayoutModule,
 
     BrowserAnimationsModule,
-    Common23Module
+    Common23Module,
+    RouterModule
   ],
   providers: [
     ProductGuardService,

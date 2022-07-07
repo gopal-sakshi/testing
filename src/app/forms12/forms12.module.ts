@@ -25,6 +25,10 @@ import { CustomValidator14Component } from './components/custom-validator14/cust
 import { CustomFormcontrol12Component } from './components/custom-formcontrol12/custom-formcontrol12.component';
 import { MatIconModule } from '@angular/material/icon';
 import { NestedFormComponent } from './components/nested-form/nested-form.component';
+import { FormArrayComponent } from './components/form-array/form-array.component';
+import { MatSelectModule } from '@angular/material/select';
+import { RatingInputComponent } from './components/rating-input/rating-input.component';
+import { Reactive13Component } from './components/reactive13/reactive13.component';
 
 const routes: Routes = [
   {
@@ -48,7 +52,10 @@ const routes: Routes = [
     Reactive12Component,
     CustomValidator14Component,
     CustomFormcontrol12Component,
-    NestedFormComponent
+    NestedFormComponent,
+    FormArrayComponent,
+    RatingInputComponent,
+    Reactive13Component
   ],
   imports: [
     CommonModule,
@@ -62,6 +69,7 @@ const routes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    MatSelectModule
   ],
   providers: [
     EmailBlackList12Service

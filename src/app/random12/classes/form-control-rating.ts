@@ -56,7 +56,7 @@ export abstract class FormControlRating implements ControlValueAccessor {
      * Adding rating to the form control
      */
     addRating(ratingIndex) {
-
+        console.log('rating changed to ', ratingIndex)
         this.rating.patchValue(ratingIndex + 1);
         this.notifyValueChange();
 

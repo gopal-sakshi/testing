@@ -3,12 +3,14 @@
         <button style="max-width:fit-content" (click)="showDateValidator=!showDateValidator">Date Validator</button>
         <button style="max-width:fit-content" (click)="showCustomValidator=!showCustomValidator">Custom Validator</button>
         <button style="max-width:fit-content" (click)="showTemplateForm=!showTemplateForm">show Template Form</button>
-        <button style="max-width:fit-content" (click)="showReactiveForm=!showReactiveForm">show Reactive Form</button>
+        <button style="max-width:fit-content" (click)="showReactiveForm12=!showReactiveForm12">show Reactive 12</button>
+        <button style="max-width:fit-content" (click)="showReactiveForm13=!showReactiveForm13">show Reactive 13</button>        
         <button style="max-width:fit-content" (click)="showCustomFormControl=!showCustomFormControl">custom form control</button>
         <button style="max-width:fit-content" (click)="showNestedForm=!showNestedForm">nested form</button>
+        <button style="max-width:fit-content" (click)="showFormArray=!showFormArray">show form array</button>
     </div>
     <div class="child-components-container" fxLayout="row" fxLayoutGap="10px">
-        <div style="font-size:12px;color:rgb(179, 122, 233)">it seems, we can apply classes to child components</div>
+        <!-- <div style="font-size:12px;color:rgb(179, 122, 233)">it seems, we can apply classes to child components</div> -->
         <div *ngIf="showDateValidator" fxLayout="column" fxLayoutGap="40px">
             <app69-date-validator class="child-component"></app69-date-validator>
             <app69-date-validator2 class="child-component"></app69-date-validator2>
@@ -20,8 +22,15 @@
         <div *ngIf="showTemplateForm">
             <app69-template12 class="child-component"></app69-template12>
         </div>
-        <div *ngIf="showReactiveForm">
+        <div *ngIf="showReactiveForm12">
             <app69-reactive12 class="child-component"></app69-reactive12>
+        </div>
+        <!-- this reactive 13 shows us how to use custom inputs as form controls... like we can call valueChanges on those custom inputs -->
+        <div *ngIf="showReactiveForm13">
+            <app69-reactive13 class="child-component"></app69-reactive13>
+        </div>
+        <div *ngIf="showFormArray">
+            <app69-form-array class="child-component"></app69-form-array>
         </div>
         <div *ngIf="showCustomFormControl">
             <app-custom-formcontrol12></app-custom-formcontrol12>

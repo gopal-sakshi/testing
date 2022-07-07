@@ -12,6 +12,7 @@ export class Reactive13Component implements OnInit {
   reactiveForm13:FormGroup;
   input1Subscription:Subscription;
   input2Subscription:Subscription;
+  input3Subscription:Subscription;
 
   constructor(private formBuilder:FormBuilder) { }
 
@@ -19,6 +20,7 @@ export class Reactive13Component implements OnInit {
     this.reactiveForm13 = this.formBuilder.group({
       input1: [''],
       input2: [''],
+      input3: [''],
     });
 
     this.input1Subscription = this.reactiveForm13.get('input1').valueChanges.subscribe(res => {
@@ -29,6 +31,9 @@ export class Reactive13Component implements OnInit {
       console.log(res);
     });
 
+    this.input3Subscription = this.reactiveForm13.get('input3').valueChanges.subscribe(res => {
+      console.log(res);
+    });
   }
 
   onSubmit() {
@@ -39,6 +44,7 @@ export class Reactive13Component implements OnInit {
     console.log('unsubscribed');
     this.input1Subscription.unsubscribe();
     this.input2Subscription.unsubscribe();
+    this.input3Subscription.unsubscribe();
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, forwardRef, OnInit } from '@angular/core';
-import { FormControlRating } from '../../../random12/classes/form-control-rating';
+
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { FormControlRating } from '../../classes/form-control-rating';
 
 const FORM_CONTROL_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,

@@ -1,4 +1,3 @@
-import { Input } from '@angular/core';
 import { ControlValueAccessor, FormControl } from '@angular/forms';
 
 
@@ -55,11 +54,10 @@ export abstract class FormControlRating implements ControlValueAccessor {
     /**
      * Adding rating to the form control
      */
-    addRating(ratingIndex) {
-        console.log('rating changed to ', ratingIndex)
+    addRating(ratingIndex) {        
         this.rating.patchValue(ratingIndex + 1);
+        console.log('rating changed to ', this.rating?.value)
         this.notifyValueChange();
-
     }
 
 }

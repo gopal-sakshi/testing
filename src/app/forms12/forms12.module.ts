@@ -29,6 +29,7 @@ import { FormArrayComponent } from './components/form-array/form-array.component
 import { MatSelectModule } from '@angular/material/select';
 import { RatingInputComponent } from './components/rating-input/rating-input.component';
 import { Reactive13Component } from './components/reactive13/reactive13.component';
+import { AddMinusComponent } from './components/add-minus/add-minus.component';
 
 const routes: Routes = [
   {
@@ -55,7 +56,8 @@ const routes: Routes = [
     NestedFormComponent,
     FormArrayComponent,
     RatingInputComponent,
-    Reactive13Component
+    Reactive13Component,
+    AddMinusComponent
   ],
   imports: [
     CommonModule,

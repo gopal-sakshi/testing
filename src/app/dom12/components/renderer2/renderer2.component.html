@@ -1,0 +1,16 @@
+<div class="renderer2-container">
+    <div class="info">
+        lets see how renderer2 works
+    </div>
+    <div class="main-content1" id="mainContent">
+        <small> main stuff is enclosed in smaller border... any content gets added here </small>
+        <div> ------------------------------- </div>
+    </div>
+    <!-- because it has renderer2 directive... wild23 class & border-left styling will be applied on this div -->
+    <div class="main-content2">
+        <div renderer2>this is a div on which 'renderer2' directive is applied</div>
+    </div>
+    <div class="user-actions">
+        <button (click)="doStuff1()">do stuff</button>
+    </div>
+</div>

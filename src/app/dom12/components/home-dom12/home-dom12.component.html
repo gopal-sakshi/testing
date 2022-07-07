@@ -1,15 +1,27 @@
 <div fxLayout="column" fxLayoutGap="20px" class="home-dom12-container">
 
-    <a [routerLink]="['dom-query']"> dom query </a>
-    <a [routerLink]="['parent-dom']"> parent-dom </a>
-    <a [routerLink]="['ng-template11']"> ng-template11 </a>
-    <a [routerLink]="['ng-container11']"> ng-container11 </a>
-    <a [routerLink]="['ng-template-outlet11']"> ng-template-outlet11 </a>
-    <a [routerLink]="['ng-template-outlet12']"> ng-template-outlet12 </a>
-    <a [routerLink]="['au-ng-content33']"> au-ng-content33 </a>
-    <a [routerLink]="['embed-view11']"> embed-view11 </a>
-    <a [routerLink]="['host-view11']"> host-view11 </a>
-    <a [routerLink]="['view-encapsulation12']"> view encapsulation12 </a>
+    <div class="links" fxLayout="row wrap" style="max-width:500px" fxLayoutGap="30px">
+        <a [routerLink]="['dom-query']"> dom query </a>
+        <a [routerLink]="['parent-dom']"> parent-dom </a>
+        <a [routerLink]="['ng-template11']"> ng-template11 </a>
+        <a [routerLink]="['ng-container11']"> ng-container11 </a>
+        <a [routerLink]="['ng-template-outlet11']"> ng-template-outlet11 </a>
+        <a [routerLink]="['ng-template-outlet12']"> ng-template-outlet12 </a>
+        <a [routerLink]="['au-ng-content33']"> au-ng-content33 </a>
+        <a [routerLink]="['embed-view11']"> embed-view11 </a>
+        <a [routerLink]="['host-view11']"> host-view11 </a>
+        <a [routerLink]="['view-encapsulation12']"> view encapsulation12 </a>
+    </div>
+    
+
+    <div class="user-actions">        
+        <button (click)="showRenderer2=!showRenderer2">show renderer2</button>
+    </div>
+
+    <div *ngIf="showRenderer2">
+        <app69-renderer2></app69-renderer2>
+    </div>
+
     <h1>some h1 element to test view encapsulation feature </h1>
     <button mat-raised-button color="primary" title="click to enable/disable encapsulation" 
         (click)="showEncapsulation=!showEncapsulation" style="max-width: fit-content;"> click</button>

@@ -8,7 +8,8 @@ import { Title } from '@angular/platform-browser';
 })
 export class HomeDom12Component implements OnInit {
 
-  showEncapsulation:boolean = false
+  showEncapsulation:boolean = false;
+  showRenderer2:boolean = false;
   constructor(private titleService:Title) { }
 
   ngOnInit(): void {

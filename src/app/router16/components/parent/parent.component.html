@@ -1,0 +1,8 @@
+<h1>Parent Component</h1>
+<ul class="nav nav-tabs">
+    <li class="nav-item" *ngFor="let random of randoms">
+        <a class="nav-link" [routerLink]="['detail', random]" routerLinkActive="active">Go to {{random}}</a>
+    </li>
+</ul>
+<!-- all child routes relative to parent component, will be rendered in this router-outlet component -->
+<router-outlet></router-outlet>

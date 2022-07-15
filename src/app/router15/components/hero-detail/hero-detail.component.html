@@ -1,0 +1,13 @@
+<div class="hero-detail-router15-container">
+    <div class="go-back-via-routing">
+        <a routerLink="/router15/heroes">Go Back</a>
+        <div> every time, we go back ---> heroes component is <span style="color:red;">NOT</span> initialised again </div>
+        <div> constructor, ngOnInit - NOTTTT called again... service calls WONTTTT happen again </div>
+        <div style="color:rgb(206, 121, 121);text-decoration: underline;"> NOT WORKING THOUGH </div>
+    </div>
+    <div class="book-details">
+        <div>{{heroDetails?.name}}</div>
+        <div>{{heroDetails?.title}}</div>
+        <div>{{heroDetails?.hitMovies}}</div>        
+    </div>
+</div>

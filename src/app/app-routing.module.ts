@@ -37,6 +37,14 @@ const routes: Routes = [
     loadChildren: () => import('./router14/router14.module').then(m=>m.Router14Module)
   },
   {
+    path: 'router15',
+    loadChildren: () => import('./router15/router15.module').then(m=>m.Router15Module)
+  },
+  {
+    path: 'router16',
+    loadChildren: () => import('./router16/router16.module').then(m=>m.Router16Module)
+  },
+  {
     path: 'services-di',
     loadChildren: () => import('./services-di/services-di.module').then(m => m.ServicesDIModule)
   },

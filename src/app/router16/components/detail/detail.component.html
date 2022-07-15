@@ -1,0 +1,10 @@
+<div class="alert alert-primary" role="alert">
+    <strong>Detail ID:</strong> {{routeParam}}
+</div>
+
+<div>
+    <div style="text-decoration: underline;">even though detail component changes... random value is retained </div>
+    <strong>Random value:</strong> {{randomVal}}
+</div>
+
+<button class="btn btn-danger" (click)="clearStoredRoute()">Clear Search</button> 

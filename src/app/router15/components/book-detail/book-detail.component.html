@@ -1,0 +1,13 @@
+<div class="book-detail-router15-container">
+    <div class="go-back-via-routing">
+        <a routerLink="/router15/books">Go Back</a>
+        <div> every time, we go back ---> books component is initialised again </div>
+        <div> constructor, ngOnInit - called again... service calls happen again </div>
+    </div>
+    <div class="book-details">
+        <div>{{bookDetails?.title}}</div>
+        <div>{{bookDetails?.info}}</div>
+        <div>{{bookDetails?.scholars}}</div>
+        <div>{{bookDetails?.subTopics}}</div>
+    </div>
+</div>

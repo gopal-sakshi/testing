@@ -13,6 +13,9 @@ import { HttpInterceptor24 } from './classes/http-interceptor24';
 import { AuthInterceptor23 } from './auth23/classes/authInterceptor23';
 import { AuthInterceptor24 } from './auth23/classes/authInterceptor24';
 import { PincodeInterceptor23 } from './classes/http-interceptor23';
+import { RouteReuseStrategy } from '@angular/router';
+import { RouteReuse23Service } from './router15/services/route-reuse23.service';
+import { RouteReuse23 } from './classes/route-reuse23';
 
 
 
@@ -52,6 +55,11 @@ import { PincodeInterceptor23 } from './classes/http-interceptor23';
     //   useClass: AuthInterceptor24,
     //   multi: true
     // }
+
+    // { provide: RouteReuseStrategy, useClass: RouteReuse23Service }
+    // did not work... need to understand MOREEEEEEEE
+
+    { provide: RouteReuseStrategy, useClass: RouteReuse23}
   ],
   bootstrap: [AppComponent]
 })

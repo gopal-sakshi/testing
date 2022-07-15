@@ -1,0 +1,8 @@
+<div class="clubs-router15-container">
+    <div fxLayout="column" fxLayoutGap="10px" class="child-clubs" *ngFor="let club of clubs">
+        <a routerLink="{{club?.id}}">{{club?.name}}</a>
+    </div>
+    <div class="child-component">
+        <router-outlet></router-outlet>
+    </div>
+</div>

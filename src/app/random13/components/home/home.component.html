@@ -1,0 +1,15 @@
+<div class="home-random13-container"  fxLayout="row" fxLayoutGap="20px">
+    <div fxLayout="column" fxLayoutGap="10px" class="user-buttons">
+        <button (click)="showCircle12=!showCircle12">circle12</button>
+        <button (click)="showCircle13=!showCircle13">circle13</button>
+        <button (click)="time = time - 180">change time</button>
+    </div>
+    <div class="child-components">
+        <div *ngIf="showCircle12">
+            <app69-circle12 [time]="time"></app69-circle12>
+        </div>
+        <div *ngIf="showCircle13">
+            <app69-circle13></app69-circle13>
+        </div>
+    </div>
+</div>

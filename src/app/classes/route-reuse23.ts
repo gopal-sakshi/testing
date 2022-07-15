@@ -60,7 +60,7 @@ export class RouteReuse23 extends RouteReuseStrategy {
     }
 
     getRouteKey(route):string {
-        console.log(route);
+        // console.log(route);
         return route.pathFromRoot.filter(u => u.url).map(u => u.url).join('/');        
     }
 

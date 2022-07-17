@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col">
+        <app69-search-form [default]="init" (search)="search($event)"></app69-search-form>
+    </div>
+
+    <div class="col">
+        <div *ngIf="items">
+            <app69-search-results [items]="items"></app69-search-results>
+        <div>
+
+        <div *ngIf="searching" class="spinner-border"></div>
+    </div>
+</div>

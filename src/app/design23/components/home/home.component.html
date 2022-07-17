@@ -1,0 +1,18 @@
+<div class="home-design23-container">
+    <div class="info">
+        <div>search44 is <span style="color:rgb(83, 83, 204)">bad design</span> - whole logic wrapped in single component</div>
+        <div>search44 ===> search results page (search string is part of query Params</div>
+        <div>this search44 component is already large - even without display search results, form validation, etc</div>
+        <div>------------------------------------------</div>
+        <div>compare this with 
+            <span style="text-decoration: solid underline;">search45</span>
+            component - 
+            <span style="color:blue">good design</span>
+        </div>
+        <div>its like a wrapper component - with these child elements (item, search-results, search-form)</div>
+    </div>
+    <div class="userLinks" fxLayout="column" fxLayoutGap="5px">
+        <a routerLink="search44" [queryParams]="{'searchTerm': 'mango'}">search44 mango</a>
+        <a routerLink="search45" [queryParams]="{'searchTerm': 'mango'}">search45 mango</a>
+    </div>
+</div>

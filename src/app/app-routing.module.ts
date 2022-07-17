@@ -25,24 +25,28 @@ const routes: Routes = [
     loadChildren: () => import('./route-guards/route-guards.module').then(m => m.RouteGuardsModule)
   },
   {
+    path: 'design23',
+    loadChildren: () => import('./design23/design23.module').then(m => m.Design23Module)
+  },
+  {
     path: 'router-12',
     loadChildren: () => import('./router12/router12.module').then(m => m.Router12Module)
   },
   {
     path: 'router13',
-    loadChildren: () => import('./router13/router13.module').then(m=>m.Router13Module)
+    loadChildren: () => import('./router13/router13.module').then(m => m.Router13Module)
   },
   {
     path: 'router14',
-    loadChildren: () => import('./router14/router14.module').then(m=>m.Router14Module)
+    loadChildren: () => import('./router14/router14.module').then(m => m.Router14Module)
   },
   {
     path: 'router15',
-    loadChildren: () => import('./router15/router15.module').then(m=>m.Router15Module)
+    loadChildren: () => import('./router15/router15.module').then(m => m.Router15Module)
   },
   {
     path: 'router16',
-    loadChildren: () => import('./router16/router16.module').then(m=>m.Router16Module)
+    loadChildren: () => import('./router16/router16.module').then(m => m.Router16Module)
   },
   {
     path: 'services-di',
@@ -57,6 +61,10 @@ const routes: Routes = [
     loadChildren: () => import('./observables12/observables12.module').then(m => m.Observables12Module)
   },
   {
+    path: 'observables15',
+    loadChildren: () => import('./observables15/observables15.module').then(m => m.Observables15Module)
+  },
+  {
     path: 'styling12',
     loadChildren: () => import('./styling12/styling12.module').then(m => m.Styling12Module)
   },
@@ -66,7 +74,7 @@ const routes: Routes = [
   },
   {
     path: 'service-calls',
-    loadChildren: () => import('./service-calls/service-calls.module').then(m=>m.ServiceCallsModule)
+    loadChildren: () => import('./service-calls/service-calls.module').then(m => m.ServiceCallsModule)
   },
   {
     path: 'forms12',
@@ -102,11 +110,11 @@ const routes: Routes = [
   },
   {
     path: 'auth23',
-    loadChildren: () => import('./auth23/auth23.module').then(m=>m.Auth23Module)
+    loadChildren: () => import('./auth23/auth23.module').then(m => m.Auth23Module)
   },
   {
     path: 'web-sockets',
-    loadChildren: () => import('./web-sockets/web-sockets.module').then(m=>m.WebSocketsModule)
+    loadChildren: () => import('./web-sockets/web-sockets.module').then(m => m.WebSocketsModule)
   }
 ];
 

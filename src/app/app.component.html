@@ -5,37 +5,48 @@
         <app-header12></app-header12>
         <div class="logged-in-details" *ngIf="userName">{{userName}}</div>
     </div>
-    <div class="home-sections" fxLayout="row wrap" fxLayoutGap="40px">
-        <a [routerLink]="['home']"> Home </a>       
-        <a routerLink="auth23"> auth23 </a>           <!-- one way to use routerLink in html file -->
-        <a [routerLink]="['AgGrid34']"> AgGrid34 </a>       <!-- another way to use routerLink (using square arrays & binding)-->
-        <a [routerLink]="['dom12']"> DOM </a>
-        <a [routerLink]="['forms12']"> forms12 </a>
-        <a [routerLink]="['js-stuff12']"> javascript stuff </a>
-        <a [routerLink]="['life-cycle-hooks11']"> life-cycle-hooks11 </a>
-        <a [routerLink]="['material23']"> material Stuff </a>
-        <a [routerLink]="['observables23']"> observable Stuff </a>
-        <a [routerLink]="['random12']"> random12 </a>
-        <a [routerLink]="['routeGuards']"> route guards </a>
-        <a [routerLink]="['router-12']"> router-12 </a>
-        <a [routerLink]="['router13']"> router-13 </a>
-        <a [routerLink]="['router14']"> router-14 </a>
-        <a [routerLink]="['router15']"> router-15 </a>
-        <a [routerLink]="['router16/parent']"> router-16 </a>
-        <a [routerLink]="['subjects']"> subjects </a>
-        <a [routerLink]="['services-di']"> services-di </a>
-        <a [routerLink]="['serverless123']"> serverless123 </a>
-        <a [routerLink]="['service-calls']"> service calls </a>
-        <a [routerLink]="['styling12']"> styling12 </a>
-        <a [routerLink]="['web-sockets']"> web-sockets </a>
+    <div class="home-sections" fxLayout="row" fxLayoutGap="20px">
+        <div class="home-sections-1" fxLayout="row wrap" style="max-width:500px" fxLayoutGap="40px">
+            <a [routerLink]="['home']"> Home </a>
+            <a routerLink="auth23"> auth23 </a> <!-- one way to use routerLink in html file -->
+            <a [routerLink]="['AgGrid34']"> AgGrid34 </a>
+            <!-- another way to use routerLink (using square arrays & binding)-->
+            <a [routerLink]="['dom12']"> DOM </a>
+            <a [routerLink]="['forms12']"> forms12 </a>
+            <a [routerLink]="['js-stuff12']"> javascript stuff </a>
+            <a [routerLink]="['life-cycle-hooks11']"> life-cycle-hooks11 </a>
+            <a [routerLink]="['material23']"> material Stuff </a>
+            <a [routerLink]="['observables23']"> observable Stuff </a>
+            <a [routerLink]="['random12']"> random12 </a>
+            <a [routerLink]="['subjects']"> subjects </a>
 
-        <!-- <a [routerLink]="['displayUsers']"> displayUsers </a> -->
-        <!--
-            we just created a displayUsers link here... bcoz, we want to understand the difference between
-            [routerLink] = "['displayUsers']"
-            [routerLink] = "['/displayUsers']"
-    -->
+            <!-- <a [routerLink]="['displayUsers']"> displayUsers </a> -->
+            <!--
+                we just created a displayUsers link here... bcoz, we want to understand the difference between
+                [routerLink] = "['displayUsers']"
+                [routerLink] = "['/displayUsers']"
+        -->
+        </div>
+        <div title="https://www.intertech.com/angular-development-article-series-preview/" class="home-sections-2" fxLayout="column wrap" style="max-width:500px" fxLayoutGap="40px">
+            <div>Angular tech articles</div>
+            <a [routerLink]="['design23']"> design23 </a>
+            <a [routerLink]="['router16/parent']"> router-16 </a>
+            <a [routerLink]="['observables15']"> observables </a>
+        </div>
+        <div class="home-sections-3" fxLayout="row wrap" style="max-width:500px" fxLayoutGap="40px">
+            <a [routerLink]="['routeGuards']"> route guards </a>
+            <a [routerLink]="['router-12']"> router-12 </a>
+            <a [routerLink]="['router13']"> router-13 </a>
+            <a [routerLink]="['router14']"> router-14 </a>
+            <a [routerLink]="['router15']"> router-15 </a>
+            <a [routerLink]="['services-di']"> services-di </a>
+            <a [routerLink]="['serverless123']"> serverless123 </a>
+            <a [routerLink]="['service-calls']"> service calls </a>
+            <a [routerLink]="['styling12']"> styling12 </a>
+            <a [routerLink]="['web-sockets']"> web-sockets </a>
+        </div>
     </div>
+
     <div class="main-content">
         <router-outlet></router-outlet>
     </div>

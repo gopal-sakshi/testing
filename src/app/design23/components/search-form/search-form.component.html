@@ -1,0 +1,8 @@
+<form [formGroup]="searchForm" [ngClass]="{'was-validated': attemptSearch}">
+    <div class="form-group">
+        <label for="searchTerm">Search</label>
+        <input type="text" class="form-control" id="searchTerm" formControlName="searchTerm" required />
+    </div>
+
+    <button class="btn btn-primary" type="submit" (click)="searchClick()">Search</button>
+</form>

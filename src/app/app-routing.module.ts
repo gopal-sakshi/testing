@@ -61,8 +61,8 @@ const routes: Routes = [
     loadChildren: () => import('./random12/random12.module').then(m => m.Random12Module)
   },
   {
-    path: 'random13',
-    loadChildren: () => import('./random13/random13.module').then(m => m.Random13Module)
+    path: 'random14',
+    loadChildren: () => import('./random14/random14.module').then(m => m.Random14Module)
   },
   {
     path: 'observables23',

@@ -22,4 +22,4 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ]
 })
-export class Random13Module { }
+export class Random14Module { }

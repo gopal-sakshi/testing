@@ -9,6 +9,9 @@ export class HomeComponent implements OnInit {
 
   showCircle12:boolean = false;
   showCircle13:boolean = false;
+  showCircle14:boolean = false;
+  showCircle15:boolean = false;
+
   time:number = 60;
 
   constructor() { }

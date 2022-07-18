@@ -2,6 +2,8 @@
     <div fxLayout="column" fxLayoutGap="10px" class="user-buttons">
         <button (click)="showCircle12=!showCircle12">circle12</button>
         <button (click)="showCircle13=!showCircle13">circle13</button>
+        <button (click)="showCircle14=!showCircle14">circle14</button>
+        <button (click)="showCircle15=!showCircle15">circle15</button>
         <button (click)="time = time - 180">change time</button>
     </div>
     <div class="child-components">
@@ -10,6 +12,12 @@
         </div>
         <div *ngIf="showCircle13">
             <app69-circle13></app69-circle13>
+        </div>
+        <div *ngIf="showCircle14">
+            <app69-circle14></app69-circle14>
+        </div>
+        <div *ngIf="showCircle15">
+            <app69-circle15></app69-circle15>
         </div>
     </div>
 </div>

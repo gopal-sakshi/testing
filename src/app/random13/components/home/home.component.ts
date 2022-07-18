@@ -19,4 +19,14 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  modifyTime() {
+    var time = (<HTMLInputElement>document.getElementById('modifyTime')).value;
+    console.log(time)
+    this.time = Number(time);
+  }
+
+  timerCompleted() {
+    console.log('timer completed');
+  }
+
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app69-circle13',
@@ -7,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Circle13Component implements OnInit {
   
+  @Input() time:any;
+  @Output() timerCompleted = new EventEmitter();
+
   FULL_DASH_ARRAY = 283;      // 2 * 3.14 * 45    // 45 is radius of circle
   WARNING_THRESHOLD = 10;
   ALERT_THRESHOLD = 5;
-
+  intervalInstance:any;
+  displayTimeLeft:any
   COLOR_CODES = {
     info: {
       color: "green"
@@ -27,22 +31,38 @@ export class Circle13Component implements OnInit {
   remainingPathColor = this.COLOR_CODES.info.color;
 
   TIME:number = 55;
-  timeLeft:string;
+  timeLeft:any;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.startTimer();
+    // this.startTimer();
   }
+
+  ngOnChanges() {
+    console.log('ngOnChanges');
+    if(this.time) {
+      this.TIME = this.time;                  // this.TIME = 120 seconds
+                                                // this.time = 120, 119, 118, 117, so on....
+      clearInterval(this.intervalInstance);
+      this.startTimer();
+    }
+  }
+
 
   startTimer() {
     let timePassed = 0;
     let timeLeft = this.TIME;
-    setInterval(() => {
+    this.intervalInstance = setInterval(() => {
       timePassed = timePassed + 1;
       // console.log(timePassed);
       timeLeft = this.TIME - timePassed;
       // console.log(timeLeft);
+      this.timeLeft = timeLeft;
+      if(timeLeft == 1) {
+        this.clearInterval();
+      }
+      console.log(this.timeLeft);
       this.formatTime(timeLeft);
       this.setCircleDasharray();
       this.setRemainingPathColor(timeLeft);
@@ -56,25 +76,25 @@ export class Circle13Component implements OnInit {
     if (seconds < 10) {
       seconds = `0${seconds}`;
     }
-    this.timeLeft = `${minutes}.${seconds}`;
-    console.log(this.timeLeft);
+    this.displayTimeLeft = `${minutes}.${seconds}`;
+    // console.log(this.timeLeft);
   }
 
   calculateTimeFraction() {
-    console.log(this.timeLeft);
-    console.log(Number(this.timeLeft));    
+    // console.log(this.timeLeft);
+    // console.log(Number(this.timeLeft));    
     const rawTimeFraction = (Number(this.timeLeft) / this.TIME);    
-    console.log(rawTimeFraction);
+    console.log(rawTimeFraction); 
     var blah = rawTimeFraction - (1 / this.TIME) * (1 - rawTimeFraction);
-    console.log(blah);
+    // console.log(blah);
     // return blah;
-    // return rawTimeFraction
-    return (Number(this.timeLeft) / Number(`0.${this.TIME}`));
+    return rawTimeFraction
+    // return (Number(this.timeLeft) / Number(`0.${this.TIME}`));
   }
     
   setCircleDasharray() {
     var blah = (this.calculateTimeFraction() * this.FULL_DASH_ARRAY).toFixed(0);
-    console.log(blah);
+    // console.log(blah);
     const circleDasharray = `${blah} 283`;
     // const circleDasharray = `140 283`;
     console.log(circleDasharray);
@@ -83,7 +103,7 @@ export class Circle13Component implements OnInit {
   }
 
   setRemainingPathColor(timeLeft) {
-    console.log('remaining color');
+    // console.log('remaining color');
     const { alert, warning, info } = this.COLOR_CODES;
     
     if (timeLeft <= alert.threshold) {
@@ -101,5 +121,10 @@ export class Circle13Component implements OnInit {
   //   const circleDasharray = `${(this.calculateTimeFraction() * this.FULL_DASH_ARRAY).toFixed(0)} 283`;
   //   document.getElementById("base-timer-path-remaining").setAttribute("stroke-dasharray", circleDasharray);
   // }
+
+  clearInterval() {
+    clearInterval(this.intervalInstance);
+    this.timerCompleted.emit();
+  }
 
 }

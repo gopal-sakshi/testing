@@ -1,7 +1,12 @@
 <div class="home-random13-container"  fxLayout="row" fxLayoutGap="20px">
     <div fxLayout="column" fxLayoutGap="10px" class="user-buttons">
         <button (click)="showCircle12=!showCircle12">circle12</button>
-        <button (click)="showCircle13=!showCircle13">circle13</button>
+        <div class="circle13">
+            <button (click)="showCircle13=!showCircle13">circle13</button>
+            <input id="modifyTime" placeholder="enter time">
+            <button (click)="modifyTime()">modify time</button>
+        </div>
+        
         <button (click)="showCircle14=!showCircle14">circle14</button>
         <button (click)="showCircle15=!showCircle15">circle15</button>
         <button (click)="time = time - 180">change time</button>
@@ -11,7 +16,7 @@
             <app69-circle12 [time]="time"></app69-circle12>
         </div>
         <div *ngIf="showCircle13">
-            <app69-circle13></app69-circle13>
+            <app69-circle13 [time]="time" (timerCompleted)="timerCompleted()"></app69-circle13>
         </div>
         <div *ngIf="showCircle14">
             <app69-circle14></app69-circle14>

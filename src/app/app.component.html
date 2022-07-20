@@ -6,7 +6,7 @@
         <div class="logged-in-details" *ngIf="userName">{{userName}}</div>
     </div>
     <div class="home-sections" fxLayout="row" fxLayoutGap="20px">
-        <div class="home-sections-1" fxLayout="row wrap" style="max-width:500px" fxLayoutGap="40px">
+        <div class="home-sections-1" fxLayout="row wrap" style="max-width:500px" >
             <a [routerLink]="['home']"> Home </a>
             <a routerLink="auth23"> auth23 </a> <!-- one way to use routerLink in html file -->
             <a [routerLink]="['AgGrid34']"> AgGrid34 </a>
@@ -29,15 +29,15 @@
                 [routerLink] = "['/displayUsers']"
         -->
         </div>
-        <div title="https://www.intertech.com/angular-development-article-series-preview/" class="home-sections-2" fxLayout="column wrap" style="max-width:500px" fxLayoutGap="40px">
+        <div title="https://www.intertech.com/angular-development-article-series-preview/" class="home-sections-2" fxLayout="column wrap" style="max-width:500px">
             <div>Angular tech articles</div>
             <a [routerLink]="['design23']"> design23 </a>
             <a [routerLink]="['router16/parent']"> router-16 </a>
-            <a [routerLink]="['observables15']"> observables </a>
+            <a [routerLink]="['observables15']"> observables15 </a>
             <a [routerLink]="['projection23']"> projection23 </a>
             
         </div>
-        <div class="home-sections-3" fxLayout="row wrap" style="max-width:500px" fxLayoutGap="40px">
+        <div class="home-sections-3" fxLayout="row wrap" style="max-width:500px">
             <a [routerLink]="['routeGuards']"> route guards </a>
             <a [routerLink]="['router-12']"> router-12 </a>
             <a [routerLink]="['router13']"> router-13 </a>

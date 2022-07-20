@@ -8,6 +8,7 @@
         <button style="max-width:fit-content" (click)="showCustomFormControl=!showCustomFormControl">custom form control</button>
         <button style="max-width:fit-content" (click)="showNestedForm=!showNestedForm">nested form</button>
         <button style="max-width:fit-content" (click)="showFormArray=!showFormArray">show form array</button>
+        <button style="max-width:fit-content" (click)="showAddressForms=!showAddressForms">show address form</button>
     </div>
     <div class="child-components-container" fxLayout="row" fxLayoutGap="10px">
         <!-- <div style="font-size:12px;color:rgb(179, 122, 233)">it seems, we can apply classes to child components</div> -->
@@ -37,6 +38,9 @@
         </div>
         <div *ngIf="showNestedForm">
             <app69-nested-form></app69-nested-form>
-        </div> 
+        </div>
+        <div *ngIf="showAddressForms">
+            <app69-address12></app69-address12>
+        </div>
     </div>    
 </div>

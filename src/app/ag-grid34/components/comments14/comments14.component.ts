@@ -13,10 +13,13 @@ export class Comments14Component implements ICellRendererAngularComp {
   cellValue1!: string;
   cellValue2!: string;
   cellValue3!: string;
-  constructor() { }
+  constructor() { 
+    // console.log('nannu puttinchaaru');     // this got printed 17 times
+  }
 
   refresh(params: ICellRendererParams): boolean {
-    console.log('refresh happened');
+    console.log('refresh happened ',params);
+    this.agInit(params);
     return true;
   }
   agInit(params: ICellRendererParams): void {

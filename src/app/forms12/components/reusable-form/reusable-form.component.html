@@ -1,0 +1,5 @@
+<ng-container [formGroup]="userForm">
+    <input id="firstName" type="text" class="form-control" formControlName="firstName" (blur)="formTouchFn()">
+    <input id="lastName" type="text" class="form-control" formControlName="lastName" required (blur)="formTouchFn()">
+    <input id="email" type="email" class="form-control" formControlName="email" (blur)="formTouchFn()">
+</ng-container>

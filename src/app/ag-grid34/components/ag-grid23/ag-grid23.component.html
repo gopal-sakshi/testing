@@ -1,4 +1,9 @@
-<div *ngIf="true">         <!-- using custom pagination -->
+<div class="ag-grid23-container">
+    <button (click)="showOlympicData=!showOlympicData">Olympic data</button>
+    <button (click)="showCarData=!showCarData">Cars data</button>
+    <button (click)="updateComments()">updateComments</button>
+</div>
+<div *ngIf="showOlympicData">         <!-- using custom pagination -->
     <ag-grid-angular style="width: 100%; height: 300px;" class="ag-theme-balham" [rowData]="rowData2"
         [columnDefs]="columnDefs2" [paginationAutoPageSize]="paginationAutoPageSize"
         [paginationPageSize]="paginationPageSize" [pagination]="pagination"
@@ -10,10 +15,10 @@
 
     <div class="pagination-section">
         <div>
-            Page {{currentPage}}
+            Page {{ currentPage+1 }}
         </div>
         <div>
-            Showing {{(currentPage*100 - 100)}}
+            Showing {{ currentPage*100 + 1 }} - {{ (currentPage+1) * 100 }}
         </div>
         <div>
             <button (click)="previousFivePages()"> &lt;&lt; </button>
@@ -30,11 +35,13 @@
     </div>
 </div>
 
-<div *ngIf="false">         <!-- using ag-grid pagination -->
-    <ag-grid-angular style="width: 100%; height: 300px;" class="ag-theme-balham" [rowData]="rowData2"
-        [columnDefs]="columnDefs2" [paginationAutoPageSize]="paginationAutoPageSize"
+<div *ngIf="showCarData">         <!-- using ag-grid pagination -->
+    <ag-grid-angular style="width: 100%; height: 300px;" class="ag-theme-balham" [rowData]="rowData1"
+        [columnDefs]="columnDefs1" [paginationAutoPageSize]="paginationAutoPageSize"
         [paginationPageSize]="paginationPageSize" [pagination]="pagination"
-        (paginationChanged)="paginationHappened($event)" (gridReady)="onGridReady($event)">        
+        (paginationChanged)="paginationHappened($event)" (gridReady)="onGridReady($event)" 
+        (cellClicked)="onCellClicked($event)"
+        (columnResized)="onColumnSized($event)">
         <!-- use rowData2 & columnDefs2 for large olympic medal winners json -->
     </ag-grid-angular>
 </div>

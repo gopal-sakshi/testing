@@ -11,6 +11,7 @@ export class HomeAgGridComponent implements OnInit {
   showAgGrid22: boolean = false;
   showAgGrid23: boolean = false;
   showAgGrid24: boolean = false;
+  showAgGrid25: boolean = false;
   
   constructor() { }
 

@@ -16,7 +16,9 @@ export class AgGrid23Component implements OnInit {
   pages = [5,10,20];
   currentPage:number = 1;
   showOlympicData:boolean = false;
-  showCarData:boolean = false;
+  showCarData1:boolean = false;
+  
+
   rowData1 = [
     { make: "Toyota", model: "Celica", price: 35000, comments44: {india: "toyota car", USA: "decent toyota in US"} },
     { make: "Ford", model: "Mondeo", price: 32000, comments44: {india: "ford car stopped", USA: "good going ford in US"} },
@@ -42,7 +44,7 @@ export class AgGrid23Component implements OnInit {
     { headerName: "company", field: "make", resizable: true, pinned:"left"},
     { field: "model" },
     { headerName: "price-fixedWidth", field: "price", sortable: true, width: 180 },
-    { field: "comments44", cellRenderer: Comments14Component, resizable: true}    
+    { field: "comments44", cellRenderer: Comments14Component, resizable: true}
   ];
   columnDefs2 = [
     { headerName: "Row", valueGetter: "node.rowIndex + 1" }, 
@@ -57,6 +59,7 @@ export class AgGrid23Component implements OnInit {
     { field: 'bronze', width: 100 },
     { field: 'total', width: 100 },
   ];
+
   
 
   private gridApi!: GridApi;
@@ -114,7 +117,7 @@ export class AgGrid23Component implements OnInit {
   }
 
   updateComments() {
-    if(!this.showCarData) {
+    if(!this.showCarData1) {
       console.log('bhaKKKK');
     }
     var rowCount = this.gridApi.getDisplayedRowCount();

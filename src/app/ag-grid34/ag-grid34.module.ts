@@ -11,6 +11,7 @@ import { AgGrid21Component } from './components/ag-grid21/ag-grid21.component';
 import { AgGrid23Component } from './components/ag-grid23/ag-grid23.component';
 import { Comments14Component } from './components/comments14/comments14.component';
 import { AgGrid24Component } from './components/ag-grid24/ag-grid24.component';
+import { AgGrid25Component } from './components/ag-grid25/ag-grid25.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AgGrid24Component } from './components/ag-grid24/ag-grid24.component';
     AgGrid21Component,
     AgGrid23Component,
     Comments14Component,
-    AgGrid24Component
+    AgGrid24Component,
+    AgGrid25Component
   ],
   imports: [
     CommonModule,

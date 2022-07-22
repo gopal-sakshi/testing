@@ -1,47 +1,56 @@
-<div class="ag-grid23-container">
-    <button (click)="showOlympicData=!showOlympicData">Olympic data</button>
-    <button (click)="showCarData=!showCarData">Cars data</button>
-    <button (click)="updateComments()">updateComments</button>
-</div>
-<div *ngIf="showOlympicData">         <!-- using custom pagination -->
-    <ag-grid-angular style="width: 100%; height: 300px;" class="ag-theme-balham" [rowData]="rowData2"
-        [columnDefs]="columnDefs2" [paginationAutoPageSize]="paginationAutoPageSize"
-        [paginationPageSize]="paginationPageSize" [pagination]="pagination"
-        (paginationChanged)="paginationHappened($event)" [suppressPaginationPanel]="true"
-        [suppressScrollOnNewData]="true" (gridReady)="onGridReady($event)">
-        <!-- suppresssPaginationPanel = so that we can implement our own pagination thingy -->
-        <!-- use rowData2 & columnDefs2 for large olympic medal winners json -->
-    </ag-grid-angular>
-
-    <div class="pagination-section">
-        <div>
-            Page {{ currentPage+1 }}
+<div fxLayout="column" fxLayoutGap="10px" class="ag-grid23-container">
+    <div fxLayout="row" fxLayoutGap="20px">
+        <div class="info">
+            Olympic data uses - custom pagination<br>
+            Cars data 1 --> uses single component for single cell (see comments44 field)<br>            
         </div>
-        <div>
-            Showing {{ currentPage*100 + 1 }} - {{ (currentPage+1) * 100 }}
+        <div fxLayout="column" fxLayoutGap="10px" class="user-actions">
+            <button (click)="showOlympicData=!showOlympicData">Olympic data</button>
+            <button (click)="showCarData1=!showCarData1">Cars data 1</button>            
+            <button (click)="updateComments()">updateComments</button>
         </div>
-        <div>
-            <button (click)="previousFivePages()"> &lt;&lt; </button>
-            <button (click)="previousPage()"> previous</button>
-            <button (click)="nextPage()"> next</button>
-            <button (click)="nextFivePages()"> &gt;&gt;</button>
-            <button (click)="getCurrentPage()">current page</button>
-            <select (change)="onPageSelect($event)">
-                <!-- <option *ngFor="page of pages" [value]="page">{{page}}</option> -->
-                <option *ngFor="let page of [5,10,20]" [value]="paginationPageSize">{{page}}</option>
-            </select>
-        </div>
-        
     </div>
-</div>
-
-<div *ngIf="showCarData">         <!-- using ag-grid pagination -->
-    <ag-grid-angular style="width: 100%; height: 300px;" class="ag-theme-balham" [rowData]="rowData1"
-        [columnDefs]="columnDefs1" [paginationAutoPageSize]="paginationAutoPageSize"
-        [paginationPageSize]="paginationPageSize" [pagination]="pagination"
-        (paginationChanged)="paginationHappened($event)" (gridReady)="onGridReady($event)" 
-        (cellClicked)="onCellClicked($event)"
-        (columnResized)="onColumnSized($event)">
-        <!-- use rowData2 & columnDefs2 for large olympic medal winners json -->
-    </ag-grid-angular>
+    <div *ngIf="showOlympicData">         <!-- using custom pagination -->
+        <ag-grid-angular style="width: 100%; height: 300px;" class="ag-theme-balham" [rowData]="rowData2"
+            [columnDefs]="columnDefs2" [paginationAutoPageSize]="paginationAutoPageSize"
+            [paginationPageSize]="paginationPageSize" [pagination]="pagination"
+            (paginationChanged)="paginationHappened($event)" [suppressPaginationPanel]="true"
+            [suppressScrollOnNewData]="true" (gridReady)="onGridReady($event)">
+            <!-- suppresssPaginationPanel = so that we can implement our own pagination thingy -->
+            <!-- use rowData2 & columnDefs2 for large olympic medal winners json -->
+        </ag-grid-angular>
+    
+        <div class="pagination-section">
+            <div>
+                Page {{ currentPage+1 }}
+            </div>
+            <div>
+                Showing {{ currentPage*100 + 1 }} - {{ (currentPage+1) * 100 }}
+            </div>
+            <div>
+                <button (click)="previousFivePages()"> &lt;&lt; </button>
+                <button (click)="previousPage()"> previous</button>
+                <button (click)="nextPage()"> next</button>
+                <button (click)="nextFivePages()"> &gt;&gt;</button>
+                <button (click)="getCurrentPage()">current page</button>
+                <select (change)="onPageSelect($event)">
+                    <!-- <option *ngFor="page of pages" [value]="page">{{page}}</option> -->
+                    <option *ngFor="let page of [5,10,20]" [value]="paginationPageSize">{{page}}</option>
+                </select>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div *ngIf="showCarData1">         <!-- using ag-grid pagination -->
+        <ag-grid-angular style="width: 100%; height: 300px;" class="ag-theme-balham" [rowData]="rowData1"
+            [columnDefs]="columnDefs1" [paginationAutoPageSize]="paginationAutoPageSize"
+            [paginationPageSize]="paginationPageSize" [pagination]="pagination"
+            (paginationChanged)="paginationHappened($event)" (gridReady)="onGridReady($event)" 
+            (cellClicked)="onCellClicked($event)"
+            (columnResized)="onColumnSized($event)">
+            <!-- use rowData2 & columnDefs2 for large olympic medal winners json -->
+        </ag-grid-angular>
+    </div>
+    
 </div>

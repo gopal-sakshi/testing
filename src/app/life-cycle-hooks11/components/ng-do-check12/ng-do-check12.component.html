@@ -1,8 +1,27 @@
-<div fxLayout="column" fxLayoutGap="20px">
-    <div>{{input1.name}}, {{input1.age}}</div>
-    <div>{{input2.city}}, {{input2.country}}</div>
-    <div>{{input3.football.clubName}}, {{input3.football.stadium}}, {{input3.football.captain}}</div>
+<div class="ng-do-check12-container" fxLayoutGap="20px" fxLayout="row">
+    <div fxLayout="column" fxLayoutGap="20px">
+        <div><span class="inputStyle">input1 </span>{{input1.name}}, {{input1.age}}</div>
+        <div><span class="inputStyle">input2 </span>{{input2.city}}, {{input2.country}}</div>
+        <div><span class="inputStyle">input3 </span>{{input3.football.clubName}}, {{input3.football.stadium}}, {{input3.football.captain}}</div>
+    </div>
+    <div class="applyBorder">
+        <div>if you use onPush </div>
+        <div>==> only input1 changes (primitive values)</div>
+        <div>==> input2 & input3 wont change</div>
+    </div>
+    <div>
+        <div>Original Value 1 = {{originalValue1}}</div>
+        <button (click)="startTimeout()">setTimeout</button>
+        <div> even though, after 2 seconds, originalValue1 is updated in ts</div>
+        <div> ==> we still see only old value, as change detection wont run</div>
+    </div>
+    <div>
+        <button (click)="trigger1()">trigger1</button>
+        <button (click)="trigger2()">trigger2</button>
+        <button (click)="trigger3()">trigger3</button>
+    </div>
 </div>
+
 
 <!--
 a) each component has its own change detector which is responsible for checking the component

@@ -3,7 +3,7 @@ import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core'
 @Component({
   selector: 'app-zone11-outside-angular',
   templateUrl: './zone11-outside-angular.component.html',
-  styleUrls: ['./zone11-outside-angular.component.css']
+  styleUrls: ['./zone11-outside-angular.component.scss']
 })
 export class Zone11OutsideAngularComponent implements OnInit {
 

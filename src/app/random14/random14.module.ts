@@ -6,6 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { Child12Component } from './components/child12/child12.component';
 import { HomeR13Component } from './components/home/home.component';
 import { ParentR13Component } from './components/parent/parent.component';
+import { JoinArrayComponent } from './components/join-array/join-array.component';
+import { Common23Module } from '../common23/common23.module';
 
 const routes: Routes = [
     { path: '', component: HomeR13Component}
@@ -15,11 +17,13 @@ const routes: Routes = [
   declarations: [
     HomeR13Component,
     ParentR13Component,
-    Child12Component
+    Child12Component,
+    JoinArrayComponent
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    Common23Module
   ]
 })
 export class Random14Module { }

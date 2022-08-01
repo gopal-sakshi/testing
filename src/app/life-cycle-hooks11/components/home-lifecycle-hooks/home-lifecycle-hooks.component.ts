@@ -13,6 +13,10 @@ export class HomeLifecycleHooksComponent extends ChangeDetection11 implements On
   input2:any;
   input3:any;
 
+  showChangeInputs:boolean = false
+  showCd1:boolean = false;
+  showCd2:boolean = false;
+  showZone:boolean = false;
   /*
 
   Constructor

@@ -1,18 +1,29 @@
+// MODULES
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { Common23RoutingModule } from './common23-routing.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+// COMPONENTS
 import { Header12Component } from './components/header12/header12.component';
 import { Footer12Component } from './components/footer12/footer12.component';
+
+// PIPES
+import { NumberConverterPipe } from './Pipes/num-converter.pipe';
+import { JoinArrayPipe } from './Pipes/join-array.pipe';
+import { ThreeDecimalsPipe } from './Pipes/threeDecimals.pipe';
+
+// DIRECTIVES
 import { RedHighlightDirective } from './directives/red-highlight.directive';
 import { DelayRenderingDirective } from './directives/delay-rendering.directive';
-import { NumberConverterPipe } from './Pipes/num-converter.pipe';
 import { NoPaste23Directive } from './directives/no-paste23.directive';
-import { Common23Service } from './services/common23.service';
-import { NoCopy23Directive } from './directives/no-copy23.directive';
-import { ThreeDecimalsPipe } from './Pipes/threeDecimals.pipe';
 import { ProcessDecimalDirective } from './directives/processDecimal.directive';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { NoCopy23Directive } from './directives/no-copy23.directive';
+
+// SERVICES
+import { Common23Service } from './services/common23.service';
+
+
 
 
 
@@ -26,7 +37,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     NoPaste23Directive,
     NoCopy23Directive,
     ThreeDecimalsPipe,
-    ProcessDecimalDirective
+    ProcessDecimalDirective,
+    JoinArrayPipe
   ],
   imports: [
     CommonModule,
@@ -42,7 +54,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     NoPaste23Directive,
     NoCopy23Directive,
     ThreeDecimalsPipe,
-    ProcessDecimalDirective
+    ProcessDecimalDirective,
+    JoinArrayPipe
   ],
   providers: [
     // Common23Service      

@@ -11,6 +11,7 @@ import { Zone11OutsideAngularComponent } from './components/zone11-outside-angul
 import { ChangeDetection12Component } from './components/change-detection12/change-detection12.component';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatIconModule } from '@angular/material/icon';
+import { Change23Component } from './components/change23/change23.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MatIconModule } from '@angular/material/icon';
     ChangeDetection11Component,
     Zone12Component,
     Zone11OutsideAngularComponent,
-    ChangeDetection12Component
+    ChangeDetection12Component,
+    Change23Component
   ],
   imports: [
     CommonModule,

@@ -1,9 +1,14 @@
 <div class="home-random13-container">
-    <div class="parent-component">
-        <app69-parent-r13></app69-parent-r13>
-    </div>
     <div>
-        <app69-join-array [join23]="items | joinArray"></app69-join-array>
-        <!-- <app69-join-array [join23]="items | joinArray"></app69-join-array> -->
+        <button (click)="dynamicComponentCreation = !dynamicComponentCreation"> dynamic comp creation</button>
+        <button (click)="showJoinArray = !showJoinArray">order of comp, classes creation </button>
+    </div>
+    <div *ngIf="dynamicComponentCreation">
+        <div class="parent-component">
+            <app69-parent-r13></app69-parent-r13>
+        </div>
+    </div>    
+    <div *ngIf="showJoinArray">
+        <app69-join-array [join23]="items2" [name23]="'chiranjeevi'"></app69-join-array>
     </div>
 </div>

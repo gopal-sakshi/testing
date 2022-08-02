@@ -8,11 +8,15 @@ import { FileMimeTypes } from '../../classes/types23';
 })
 export class HomeR13Component implements OnInit {
 
-  items:any = FileMimeTypes;
+  showJoinArray:boolean = false;
+  dynamicComponentCreation:boolean = false;
+
+  items1:any = FileMimeTypes;
+  items2:string = 'Nayan';
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.items);
+    // console.log(this.items1);
   }
 
 }

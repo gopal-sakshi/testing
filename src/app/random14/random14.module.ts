@@ -8,6 +8,7 @@ import { HomeR13Component } from './components/home/home.component';
 import { ParentR13Component } from './components/parent/parent.component';
 import { JoinArrayComponent } from './components/join-array/join-array.component';
 import { Common23Module } from '../common23/common23.module';
+import { Child23Component } from './components/child23/child23.component';
 
 const routes: Routes = [
     { path: '', component: HomeR13Component}
@@ -18,7 +19,8 @@ const routes: Routes = [
     HomeR13Component,
     ParentR13Component,
     Child12Component,
-    JoinArrayComponent
+    JoinArrayComponent,
+    Child23Component
   ],
   imports: [
     CommonModule,

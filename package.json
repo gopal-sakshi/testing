@@ -8,7 +8,8 @@
     "start_with_kroos": "node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng serve -c kroosServe",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "test23":"ng serve --sourceMap=true --vendorSourceMap=true"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +30,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "ag-grid-angular": "27.1.1",
     "ag-grid-community": "27.1.0",
+    "gopal612-lib-two": "0.0.1",
+    "gopal612-testing-library": "0.1.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.6.0",
     "sweetalert2": "^11.3.0",

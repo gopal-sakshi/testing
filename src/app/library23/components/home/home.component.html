@@ -1,0 +1,17 @@
+<div class="home-library23-container">
+    <div>
+        <button (click)="showTest1=!showTest1">test1</button>
+        <button (click)="showTest2=!showTest2">test2</button>
+    </div>
+    
+    <!-- test1 = just check the functionality of gopal612-testing-library -->
+    <div *ngIf="showTest1">
+        <app69-test1></app69-test1>
+    </div>
+
+
+    <!-- test2 = check image upload functionality-->
+    <div *ngIf="showTest2">        
+        <app69-test2></app69-test2>
+    </div>
+</div>

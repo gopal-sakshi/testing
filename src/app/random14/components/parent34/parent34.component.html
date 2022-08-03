@@ -1,0 +1,17 @@
+<div fxLayout="row" fxLayoutGap="20px" class="parent34-container">
+    <div class="child-component">
+        <app69-child34 
+            [input1]="input1" 
+            [input2]="input2" 
+            [input3]="input3">
+        </app69-child34>
+    </div>
+    <div class="do-styling">
+        <div>Values in Parent</div>
+        <div>String --> {{input1}}</div>
+        <div>Number --> {{input2}}</div>
+        <div>Object --> {{input3?.clubName}}, {{input3?.stadiumName}}</div>
+    </div>    
+</div>
+
+<!-- https://blog.profanis.me/blog/reactive-forms-in-parent-child-components -->

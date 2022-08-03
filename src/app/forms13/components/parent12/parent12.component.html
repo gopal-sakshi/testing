@@ -1,0 +1,7 @@
+<div>
+    <ng-container [formGroup]="userForm">
+        <app69-basic-info formGroupName="basicInfo"></app69-basic-info>
+        <app69-address formGroupName="address"></app69-address>
+    </ng-container>
+    <button (click)="submitForm()">submit</button>
+</div>

@@ -9,6 +9,9 @@ import { ParentR13Component } from './components/parent/parent.component';
 import { JoinArrayComponent } from './components/join-array/join-array.component';
 import { Common23Module } from '../common23/common23.module';
 import { Child23Component } from './components/child23/child23.component';
+import { Parent34Component } from './components/parent34/parent34.component';
+import { Child34Component } from './components/child34/child34.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
     { path: '', component: HomeR13Component}
@@ -20,12 +23,15 @@ const routes: Routes = [
     ParentR13Component,
     Child12Component,
     JoinArrayComponent,
-    Child23Component
+    Child23Component,
+    Parent34Component,
+    Child34Component
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    Common23Module
+    Common23Module,
+    FlexLayoutModule
   ]
 })
 export class Random14Module { }

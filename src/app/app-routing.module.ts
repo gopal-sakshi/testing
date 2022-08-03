@@ -97,6 +97,10 @@ const routes: Routes = [
     loadChildren: () => import('./forms12/forms12.module').then(m => m.Forms12Module)
   },
   {
+    path: 'forms13',
+    loadChildren: () => import('./forms13/forms13.module').then(m => m.Forms13Module)
+  },
+  {
     path: 'AgGrid34',
     loadChildren: () => import('./ag-grid34/ag-grid34.module').then(m => m.AgGrid34Module)
   },

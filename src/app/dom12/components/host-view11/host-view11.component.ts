@@ -55,13 +55,14 @@ export class HostView11Component implements OnInit {
       // Here, we use the "injector of the parent component" for the dynamically created components.
       // Parent Component = HostView11Component.... Dynamically Created Component = HostViewExample1Component
     this.componentRef = this.hostViewExample1ComponentFactory.create(this.injector);
-    this.container4.insert(this.componentRef.hostView);   
-
+    this.container4.insert(this.componentRef.hostView);
 
 
     // OPTION 2    
-    this.container5.createComponent(this.hostViewExample1ComponentFactory)   
+    const dynamicComponent = this.container5.createComponent(this.hostViewExample1ComponentFactory);
+    dynamicComponent.instance['data1']= 'hello doctor';
       // directly using createComponent() method on containerRef... earlier, we saw ----> insert(), createEmbeddedView() methods
+    
 
     // OPTION 3
     this.someComponent23 = HostViewExample1Component;       

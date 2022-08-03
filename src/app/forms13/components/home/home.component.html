@@ -1,0 +1,8 @@
+<div class="home-container">
+    <div>
+        <button (click)="showParent12 = !showParent12">parent12</button>
+    </div>
+    <div *ngIf="showParent12" class="child-components">
+        <app69-parent12></app69-parent12>
+    </div>
+</div>

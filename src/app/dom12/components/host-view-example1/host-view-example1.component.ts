@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-host-view-example1',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HostViewExample1Component implements OnInit {
 
+  @Input() data1 = 'default value';
   constructor() { }
 
   ngOnInit(): void {

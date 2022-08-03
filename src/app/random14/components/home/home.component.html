@@ -2,6 +2,7 @@
     <div>
         <button (click)="dynamicComponentCreation = !dynamicComponentCreation"> dynamic comp creation</button>
         <button (click)="showJoinArray = !showJoinArray">order of comp, classes creation </button>
+        <button (click)="showParent34 = !showParent34">showParent34</button>
     </div>
     <div *ngIf="dynamicComponentCreation">
         <div class="parent-component">
@@ -10,5 +11,8 @@
     </div>    
     <div *ngIf="showJoinArray">
         <app69-join-array [join23]="items2" [name23]="'chiranjeevi'"></app69-join-array>
+    </div>
+    <div *ngIf="showParent34">
+        <app69-parent34></app69-parent34>
     </div>
 </div>

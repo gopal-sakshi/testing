@@ -22,7 +22,7 @@
       "dom"
     ],
     "types": [
-      "node",
+      "node", "jest"
     ],
     "resolveJsonModule" : true,
     "esModuleInterop": true,              // this one

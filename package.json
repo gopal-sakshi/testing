@@ -4,12 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 9999",
+    "server": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
     "start_with_luka": "node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng serve -c lukaServe --base-href jc/version1/ ",
     "start_with_kroos": "node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng serve -c kroosServe",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test23":"ng serve --sourceMap=true --vendorSourceMap=true"
+    "test23": "ng serve --sourceMap=true --vendorSourceMap=true"
   },
   "private": true,
   "dependencies": {
@@ -50,6 +51,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "ts-node": "^10.9.1",
     "typescript": "~4.3.5"
   }
 }

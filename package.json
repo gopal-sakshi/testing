@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 9999",
+    "start_testing": "ng serve --port 9999 --proxy-config ./proxy.json",
     "server": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
     "start_with_luka": "node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng serve -c lukaServe --base-href jc/version1/ ",
     "start_with_kroos": "node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng serve -c kroosServe",

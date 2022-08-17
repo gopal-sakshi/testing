@@ -28,3 +28,18 @@ d) Angular tests should use dependency injection as much as possible
 e) disable
     adding a x before describe ===> disables entire test suite
     adding a x before it() =======> disables that particular spec
+-----------------------------------------------------------------------------------------
+
+# Presentational Components
+- These type of components just take input data & display them
+- Due to their simplistic nature... many projects just dont test presentational components
+- CourseCardListComponent is a presentational Component
+    It gets input... 
+    it doesnt use any services to retrieve data
+    It uses a dialog service... to open a dialog whenever we click view courses
+-----------------------------------------------------------------------------------------
+
+
+# Some Errors
+- mat-form-field must contain a MatFormFieldControl
+    you imported MatFormFieldModule at my main module, but forgot to add MatInputModule

@@ -12,6 +12,7 @@ import { Child23Component } from './components/child23/child23.component';
 import { Parent34Component } from './components/parent34/parent34.component';
 import { Child34Component } from './components/child34/child34.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { GoogleSearch13Component } from './components/google-search13/google-search13.component';
 
 const routes: Routes = [
     { path: '', component: HomeR13Component}
@@ -25,7 +26,8 @@ const routes: Routes = [
     JoinArrayComponent,
     Child23Component,
     Parent34Component,
-    Child34Component
+    Child34Component,
+    GoogleSearch13Component
   ],
   imports: [
     CommonModule,

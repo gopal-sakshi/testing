@@ -11,6 +11,7 @@ export class HomeR13Component implements OnInit {
   showJoinArray:boolean = false;
   dynamicComponentCreation:boolean = false;
   showParent34:boolean = false;
+  googleSearch:boolean = false;
   
   items1:any = FileMimeTypes;
   items2:string = 'Nayan';

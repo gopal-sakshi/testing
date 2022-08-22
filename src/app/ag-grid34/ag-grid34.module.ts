@@ -12,6 +12,8 @@ import { AgGrid23Component } from './components/ag-grid23/ag-grid23.component';
 import { Comments14Component } from './components/comments14/comments14.component';
 import { AgGrid24Component } from './components/ag-grid24/ag-grid24.component';
 import { AgGrid25Component } from './components/ag-grid25/ag-grid25.component';
+import { AgGrid26Component } from './components/ag-grid26/ag-grid26.component';
+import { AgGrid26Service } from './services/ag-grid26.service';
 
 
 @NgModule({
@@ -22,13 +24,17 @@ import { AgGrid25Component } from './components/ag-grid25/ag-grid25.component';
     AgGrid23Component,
     Comments14Component,
     AgGrid24Component,
-    AgGrid25Component
+    AgGrid25Component,
+    AgGrid26Component
   ],
   imports: [
     CommonModule,
     AgGridModule,
     AgGrid34RoutingModule,
     FlexLayoutModule
+  ],
+  providers: [
+    AgGrid26Service
   ]
 })
 export class AgGrid34Module { }

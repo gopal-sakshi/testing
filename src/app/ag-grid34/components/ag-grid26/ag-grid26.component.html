@@ -1,0 +1,30 @@
+<div class="ag-grid26-container">
+
+    <!-- kalgudi one 
+
+    <ag-grid-angular 
+        #agGrid 
+        style="width: 100%; height: 600px" class="ag-theme-balham"
+        [rowData]="agGridOptions?.results" 
+        [columnDefs]="agGridOptions?.columnDefs" 
+        [animateRows]="animateRows"
+        [rowGroupPanelShow]="'always'" 
+        [floatingFilter]="agGridOptions?.floatingFilter"
+        [paginationAutoPageSize]="paginationAutoPageSize" 
+        [paginationPageSize]="paginationPageSize"
+        [pagination]="pagination" 
+        (rowClicked)="onRowClicked($event)">
+    </ag-grid-angular>
+
+    -->
+
+    <!-- GopAL's -->
+    
+    <ag-grid-angular 
+        style="width: 50%; height: 500px" class="ag-theme-balham" 
+        [rowData]="agGridOptions?.rowDefs"
+        [columnDefs]="agGridOptions?.columnDefs" 
+        [pagination]="pagination">
+    </ag-grid-angular>
+
+</div>

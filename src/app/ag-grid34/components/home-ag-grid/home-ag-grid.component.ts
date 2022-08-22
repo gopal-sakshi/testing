@@ -12,7 +12,7 @@ export class HomeAgGridComponent implements OnInit {
   showAgGrid23: boolean = false;
   showAgGrid24: boolean = false;
   showAgGrid25: boolean = false;
-  
+  showAgGrid26: boolean = false;
   constructor() { }
 
   ngOnInit(): void {

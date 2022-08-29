@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuNgContent33Component } from './components/au-ng-content33/au-ng-content33.component';
+import { DomContentLoadedComponent } from './components/dom-content-loaded/dom-content-loaded.component';
 import { DomQueryComponent } from './components/dom-query/dom-query.component';
 import { EmbedView11Component } from './components/embed-view11/embed-view11.component';
 import { HomeDom12Component } from './components/home-dom12/home-dom12.component';
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'ng-container11',
     component: NgContainer11Component
+  },
+  {
+    path: 'dom-content-loaded' ,
+    component: DomContentLoadedComponent
   },
   {
     path: 'ng-template-outlet11',

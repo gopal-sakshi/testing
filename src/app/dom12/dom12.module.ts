@@ -23,6 +23,7 @@ import { NgContent14Component } from './components/ng-content14/ng-content14.com
 import { HostViewExample2Component } from './components/host-view-example2/host-view-example2.component';
 import { Renderer2Component } from './components/renderer2/renderer2.component';
 import { Renderer2Directive } from './directives/renderer2.directive';
+import { DomContentLoadedComponent } from './components/dom-content-loaded/dom-content-loaded.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { Renderer2Directive } from './directives/renderer2.directive';
     NgContent14Component,
     HostViewExample2Component,
     Renderer2Component,
-    Renderer2Directive
+    Renderer2Directive,
+    DomContentLoadedComponent
   ],
   imports: [
     CommonModule,

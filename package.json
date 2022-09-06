@@ -32,6 +32,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "ag-grid-angular": "27.1.1",
     "ag-grid-community": "27.1.0",
+    "aws-amplify": "^4.3.34",
+    "aws-sdk": "2.1209.0",
     "gopal612-lib-two": "0.0.1",
     "gopal612-testing-library": "0.1.1",
     "reflect-metadata": "^0.1.13",

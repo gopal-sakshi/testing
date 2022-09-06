@@ -2,11 +2,14 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { cognito } from "config/aws-cognito";
+
 export const environment = {
 
   production: false,
   envName: 'normal',
-  APP_NAME: 'testing_normal'
+  APP_NAME: 'testing_normal',
+  cognito: cognito
 };
 
 /*

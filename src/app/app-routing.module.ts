@@ -89,6 +89,10 @@ const routes: Routes = [
     loadChildren: () => import('./serverless123/serverless123.module').then(m => m.Serverless123Module)
   },
   {
+    path: 'cognito23',
+    loadChildren: () => import('./cognito23/cognito23.module').then(m => m.Cognito23Module)
+  },
+  {
     path: 'service-calls',
     loadChildren: () => import('./service-calls/service-calls.module').then(m => m.ServiceCallsModule)
   },

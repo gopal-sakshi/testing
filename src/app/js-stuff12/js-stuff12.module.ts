@@ -19,6 +19,7 @@ import { Common23Module } from '../common23/common23.module';
 import { TwoWayBindingComponent } from './components/two-way-binding/two-way-binding.component';
 import { RandomJsComponent } from './components/random-js/random-js.component';
 import { Callback22Component } from './components/callback22/callback22.component';
+import { AwsStuff1Component } from './components/aws-stuff1/aws-stuff1.component';
 
 
 
@@ -35,7 +36,8 @@ import { Callback22Component } from './components/callback22/callback22.componen
     Functions12Component,
     TwoWayBindingComponent,
     RandomJsComponent,
-    Callback22Component    
+    Callback22Component,
+    AwsStuff1Component    
   ],
   imports: [
     CommonModule,

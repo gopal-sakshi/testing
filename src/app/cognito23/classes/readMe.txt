@@ -6,6 +6,6 @@ Amplify Command Line Interface (CLI)
 - a unified toolchain to create, integrate, manage the AWS cloud services for your app.
 
 
-user-pool Id:       us-east-1_fJnjgvQUe
-client Id:          4kjd5vjp1u213ngc2mu2ermoia
+user-pool Id:       see config folder
+client Id:          see config folder
 

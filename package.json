@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 9999",
+    "start2": "node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng serve --port 9999",
     "start_testing": "ng serve --port 9999 --proxy-config ./proxy.json",
     "server": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
     "start_with_luka": "node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng serve -c lukaServe --base-href jc/version1/ ",
@@ -11,7 +12,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test23": "ng serve --sourceMap=true --vendorSourceMap=true"
+    "test23": "ng serve --sourceMap=true --vendorSourceMap=true"    
   },
   "private": true,
   "dependencies": {
@@ -32,6 +33,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "ag-grid-angular": "27.1.1",
     "ag-grid-community": "27.1.0",
+    "amazon-cognito-identity-js": "^5.2.10",
     "aws-amplify": "^4.3.34",
     "aws-sdk": "2.1209.0",
     "gopal612-lib-two": "0.0.1",

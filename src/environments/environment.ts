@@ -9,7 +9,8 @@ export const environment = {
   production: false,
   envName: 'normal',
   APP_NAME: 'testing_normal',
-  cognito: cognito
+  cognito: cognito,
+  identityPoolId: 'us-east-1:725bcf26-29f7-48ae-a9e0-1c7d19875da3'
 };
 
 /*

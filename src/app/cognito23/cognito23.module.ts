@@ -6,12 +6,14 @@ import { CognitoProfileComponent } from './components/cognito-profile/cognito-pr
 import { CognitoSignUpComponent } from './components/cognito-sign-up/cognito-sign-up.component';
 import { CognitoSignInComponent } from './components/cognito-sign-in/cognito-sign-in.component';
 import { FormsModule } from '@angular/forms';
+import { CognitoSignInCustomComponent } from './components/cognito-sign-in-custom/cognito-sign-in-custom.component';
 
 const routes:Routes = [
   { path: '', component: CognitoHomeComponent },
   { path: 'profile', component: CognitoProfileComponent },
   { path: 'signIn', component: CognitoSignInComponent },
   { path: 'signUp', component: CognitoSignUpComponent },
+  { path: 'custom-signin', component: CognitoSignInCustomComponent },
   { path: '**', redirectTo: 'signIn' },
 ]
 
@@ -20,7 +22,8 @@ const routes:Routes = [
     CognitoHomeComponent,
     CognitoProfileComponent,
     CognitoSignUpComponent,
-    CognitoSignInComponent
+    CognitoSignInComponent,
+    CognitoSignInCustomComponent
   ],
   imports: [
     CommonModule,

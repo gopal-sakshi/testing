@@ -1,0 +1,605 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20220908.173401.6190.0.001.json",
+    "dumpEventTime": "2022-09-08T17:34:01Z",
+    "dumpEventTimeStamp": "1662638641768",
+    "processId": 6190,
+    "cwd": "/home/vsspl/Desktop/frontEnd/testing",
+    "commandLine": [
+      "node",
+      "/home/vsspl/Desktop/frontEnd/testing/node_modules/.bin/ng",
+      "serve",
+      "--port",
+      "9999"
+    ],
+    "nodejsVersion": "v12.14.0",
+    "glibcVersionRuntime": "2.33",
+    "glibcVersionCompiler": "2.17",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "linux",
+    "componentVersions": {
+      "node": "12.14.0",
+      "v8": "7.7.299.13-node.16",
+      "uv": "1.33.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.39.2",
+      "napi": "5",
+      "llhttp": "1.1.4",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.14.0/node-v12.14.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.14.0/node-v12.14.0.tar.gz"
+    },
+    "osName": "Linux",
+    "osRelease": "5.11.0-49-generic",
+    "osVersion": "#55-Ubuntu SMP Wed Jan 12 17:36:34 UTC 2022",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "AMD FX(tm)-6300 Six-Core Processor",
+        "speed": 1400,
+        "user": 25084000,
+        "nice": 183000,
+        "sys": 6018100,
+        "idle": 286484900,
+        "irq": 0
+      },
+      {
+        "model": "AMD FX(tm)-6300 Six-Core Processor",
+        "speed": 3008,
+        "user": 26397600,
+        "nice": 185000,
+        "sys": 7158600,
+        "idle": 283640900,
+        "irq": 0
+      },
+      {
+        "model": "AMD FX(tm)-6300 Six-Core Processor",
+        "speed": 1400,
+        "user": 26274400,
+        "nice": 193000,
+        "sys": 7166000,
+        "idle": 283631400,
+        "irq": 0
+      },
+      {
+        "model": "AMD FX(tm)-6300 Six-Core Processor",
+        "speed": 1400,
+        "user": 25747800,
+        "nice": 162100,
+        "sys": 6738100,
+        "idle": 284596000,
+        "irq": 0
+      },
+      {
+        "model": "AMD FX(tm)-6300 Six-Core Processor",
+        "speed": 1406,
+        "user": 25669200,
+        "nice": 172600,
+        "sys": 6485800,
+        "idle": 285035100,
+        "irq": 0
+      },
+      {
+        "model": "AMD FX(tm)-6300 Six-Core Processor",
+        "speed": 1400,
+        "user": 26355600,
+        "nice": 155000,
+        "sys": 7307400,
+        "idle": 283210500,
+        "irq": 0
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "lo",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "enp3s0",
+        "internal": false,
+        "mac": "74:d4:35:0b:7e:a8",
+        "address": "192.168.1.120",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "lo",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "enp3s0",
+        "internal": false,
+        "mac": "74:d4:35:0b:7e:a8",
+        "address": "fe80::259a:1f24:a9f5:3d48",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 2
+      }
+    ],
+    "host": "vsspl-GA-78LMT-USB3"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x0000000000b04935",
+      "symbol": "report::TriggerNodeReport(v8::Isolate*, node::Environment*, char const*, char const*, std::string const&, v8::Local<v8::String>) [ng serve --port 9999]"
+    },
+    {
+      "pc": "0x00000000009db9e3",
+      "symbol": "node::OnFatalError(char const*, char const*) [ng serve --port 9999]"
+    },
+    {
+      "pc": "0x0000000000b39f1e",
+      "symbol": "v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [ng serve --port 9999]"
+    },
+    {
+      "pc": "0x0000000000b3a299",
+      "symbol": "v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [ng serve --port 9999]"
+    },
+    {
+      "pc": "0x0000000000ce5635",
+      "symbol": " [ng serve --port 9999]"
+    },
+    {
+      "pc": "0x0000000000ce5cc6",
+      "symbol": "v8::internal::Heap::RecomputeLimits(v8::internal::GarbageCollector) [ng serve --port 9999]"
+    },
+    {
+      "pc": "0x0000000000cf1b5a",
+      "symbol": "v8::internal::Heap::PerformGarbageCollection(v8::internal::GarbageCollector, v8::GCCallbackFlags) [ng serve --port 9999]"
+    },
+    {
+      "pc": "0x0000000000cf2a65",
+      "symbol": "v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [ng serve --port 9999]"
+    },
+    {
+      "pc": "0x0000000000cf5478",
+      "symbol": "v8::internal::Heap::AllocateRawWithRetryOrFail(int, v8::internal::AllocationType, v8::internal::AllocationAlignment) [ng serve --port 9999]"
+    },
+    {
+      "pc": "0x0000000000cbbda7",
+      "symbol": "v8::internal::Factory::NewFillerObject(int, bool, v8::internal::AllocationType) [ng serve --port 9999]"
+    },
+    {
+      "pc": "0x0000000000ff1e0b",
+      "symbol": "v8::internal::Runtime_AllocateInYoungGeneration(int, unsigned long*, v8::internal::Isolate*) [ng serve --port 9999]"
+    },
+    {
+      "pc": "0x0000000001374fd9",
+      "symbol": " [ng serve --port 9999]"
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 2179715072,
+    "totalCommittedMemory": 2175807736,
+    "usedMemory": 2106387432,
+    "availableMemory": 51173432,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 32568,
+        "capacity": 261872,
+        "used": 32296,
+        "available": 229576
+      },
+      "new_space": {
+        "memorySize": 33554432,
+        "committedMemory": 30410672,
+        "capacity": 16759808,
+        "used": 1184576,
+        "available": 15575232
+      },
+      "old_space": {
+        "memorySize": 1813098496,
+        "committedMemory": 1812996336,
+        "capacity": 1788276064,
+        "used": 1787767472,
+        "available": 508592
+      },
+      "code_space": {
+        "memorySize": 10387456,
+        "committedMemory": 10158368,
+        "capacity": 8728352,
+        "used": 8728352,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 18092032,
+        "committedMemory": 17889280,
+        "capacity": 5534000,
+        "used": 5534000,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 303697920,
+        "committedMemory": 303697920,
+        "capacity": 302590080,
+        "used": 302590080,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 622592,
+        "committedMemory": 622592,
+        "capacity": 550656,
+        "used": 550656,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 16759808,
+        "used": 0,
+        "available": 16759808
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 679.952,
+    "kernelCpuSeconds": 18.3987,
+    "cpuConsumptionPercent": 2.23358,
+    "maxRss": 2630533120,
+    "pageFaults": {
+      "IORequired": 42,
+      "IONotRequired": 2615585
+    },
+    "fsActivity": {
+      "reads": 375816,
+      "writes": 0
+    }
+  },
+  "uvthreadResourceUsage": {
+    "userCpuSeconds": 271.768,
+    "kernelCpuSeconds": 9.28709,
+    "cpuConsumptionPercent": 0.898916,
+    "fsActivity": {
+      "reads": 238248,
+      "writes": 0
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "GJS_DEBUG_TOPICS": "JS ERROR;JS LOG",
+    "npm_package_devDependencies__types_node": "^12.20.37",
+    "npm_package_devDependencies_ts_node": "^10.9.1",
+    "npm_config_cache_lock_stale": "60000",
+    "npm_config_ham_it_up": "",
+    "npm_package_dependencies__angular_animations": "~12.2.0",
+    "npm_config_legacy_bundling": "",
+    "npm_config_sign_git_tag": "",
+    "LANGUAGE": "en_IN:en",
+    "USER": "vsspl",
+    "npm_package_scripts_start_with_kroos": "node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng serve -c kroosServe",
+    "npm_config_user_agent": "npm/6.13.4 node/v12.14.0 linux x64",
+    "npm_config_always_auth": "",
+    "npm_config_bin_links": "true",
+    "npm_config_key": "",
+    "XDG_SESSION_TYPE": "wayland",
+    "GIT_ASKPASS": "/snap/code/106/usr/share/code/resources/app/extensions/git/dist/askpass.sh",
+    "npm_package_dependencies__angular_common": "~12.2.0",
+    "npm_config_allow_same_version": "",
+    "npm_config_description": "true",
+    "npm_config_fetch_retries": "2",
+    "npm_config_heading": "npm",
+    "npm_config_if_present": "",
+    "npm_config_init_version": "1.0.0",
+    "npm_config_user": "1000",
+    "npm_node_execpath": "/home/vsspl/.nvm/versions/node/v12.14.0/bin/node",
+    "SHLVL": "1",
+    "npm_package_dependencies__angular_flex_layout": "^12.0.0-beta.35",
+    "npm_package_dependencies__fortawesome_angular_fontawesome": "^0.10.1",
+    "npm_package_dependencies_rxjs": "~6.6.0",
+    "npm_config_prefer_online": "",
+    "npm_config_noproxy": "",
+    "HOME": "/home/vsspl",
+    "CHROME_DESKTOP": "code-url-handler.desktop",
+    "npm_config_force": "",
+    "TERM_PROGRAM_VERSION": "1.71.0",
+    "DESKTOP_SESSION": "ubuntu",
+    "NVM_BIN": "/home/vsspl/.nvm/versions/node/v12.14.0/bin",
+    "npm_package_scripts_server": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
+    "npm_package_dependencies__angular_material": "^13.0.2",
+    "npm_config_only": "",
+    "npm_config_read_only": "",
+    "NVM_INC": "/home/vsspl/.nvm/versions/node/v12.14.0/include/node",
+    "GIO_LAUNCHED_DESKTOP_FILE": "/var/lib/snapd/desktop/applications/code_code.desktop",
+    "npm_package_devDependencies_jasmine_core": "~3.8.0",
+    "npm_config_cache_min": "10",
+    "npm_config_init_license": "ISC",
+    "APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL": "true",
+    "GNOME_SHELL_SESSION_MODE": "ubuntu",
+    "GRADLE_HOME": "/opt/gradle/gradle-5.0",
+    "GTK_MODULES": "gail:atk-bridge",
+    "VSCODE_GIT_ASKPASS_MAIN": "/snap/code/106/usr/share/code/resources/app/extensions/git/dist/askpass-main.js",
+    "npm_package_devDependencies__types_jasmine": "~3.8.0",
+    "npm_config_editor": "vi",
+    "npm_config_rollback": "true",
+    "npm_config_tag_version_prefix": "v",
+    "VSCODE_GIT_ASKPASS_NODE": "/snap/code/106/usr/share/code/code",
+    "MANAGERPID": "1749",
+    "npm_package_scripts_test23": "ng serve --sourceMap=true --vendorSourceMap=true",
+    "npm_package_dependencies_reflect_metadata": "^0.1.13",
+    "npm_package_devDependencies_karma": "~6.3.0",
+    "npm_config_cache_max": "Infinity",
+    "npm_config_timing": "",
+    "npm_config_userconfig": "/home/vsspl/.npmrc",
+    "IM_CONFIG_CHECK_ENV": "1",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/bus",
+    "npm_package_devDependencies__angular_compiler_cli": "~12.2.0",
+    "npm_package_devDependencies_karma_chrome_launcher": "~3.1.0",
+    "npm_config_engine_strict": "",
+    "npm_config_init_author_name": "",
+    "npm_config_init_author_url": "",
+    "npm_config_preid": "",
+    "npm_config_tmp": "/tmp",
+    "COLORTERM": "truecolor",
+    "LIBVIRT_DEFAULT_URI": "qemu:///system",
+    "GIO_LAUNCHED_DESKTOP_FILE_PID": "4367",
+    "npm_package_dependencies__angular_cdk": "^13.0.2",
+    "npm_package_dependencies__fortawesome_free_solid_svg_icons": "^5.15.4",
+    "npm_package_devDependencies_typescript": "~4.3.5",
+    "npm_package_description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.4.",
+    "npm_config_depth": "Infinity",
+    "npm_config_package_lock_only": "",
+    "npm_config_save_dev": "",
+    "npm_config_usage": "",
+    "NVM_DIR": "/home/vsspl/.nvm",
+    "npm_package_devDependencies_karma_coverage": "~2.0.3",
+    "npm_package_readmeFilename": "README.md",
+    "npm_config_metrics_registry": "https://registry.npmjs.org/",
+    "npm_config_cafile": "",
+    "npm_config_otp": "",
+    "npm_config_package_lock": "true",
+    "npm_config_progress": "true",
+    "npm_config_https_proxy": "",
+    "npm_config_save_prod": "",
+    "IM_CONFIG_PHASE": "1",
+    "WAYLAND_DISPLAY": "wayland-0",
+    "npm_package_dependencies__angular_core": "~12.2.0",
+    "npm_package_dependencies_tslib": "^2.3.0",
+    "npm_config_audit": "true",
+    "npm_config_cidr": "",
+    "npm_config_onload_script": "",
+    "npm_config_sso_type": "oauth",
+    "LOGNAME": "vsspl",
+    "npm_config_rebuild_bundle": "true",
+    "npm_config_save_bundle": "",
+    "npm_config_shell": "/bin/bash",
+    "JOURNAL_STREAM": "8:31444",
+    "_": "/home/vsspl/.nvm/versions/node/v12.14.0/bin/npm",
+    "npm_package_private": "true",
+    "npm_package_dependencies__angular_platform_browser_dynamic": "~12.2.0",
+    "npm_package_dependencies_ag_grid_angular": "27.1.1",
+    "npm_config_dry_run": "",
+    "npm_config_format_package_lock": "true",
+    "npm_config_prefix": "/home/vsspl/.nvm/versions/node/v12.14.0",
+    "XDG_SESSION_CLASS": "user",
+    "npm_config_scope": "",
+    "npm_config_registry": "https://registry.npmjs.org/",
+    "npm_config_browser": "",
+    "npm_config_cache_lock_wait": "10000",
+    "npm_config_ignore_prepublish": "",
+    "npm_config_save_optional": "",
+    "npm_config_searchopts": "",
+    "npm_config_versions": "",
+    "USERNAME": "vsspl",
+    "TERM": "xterm-256color",
+    "npm_package_devDependencies_karma_jasmine_html_reporter": "~1.7.0",
+    "npm_config_cache": "/home/vsspl/.npm",
+    "npm_config_proxy": "",
+    "npm_config_send_metrics": "",
+    "GNOME_DESKTOP_SESSION_ID": "this-is-deprecated",
+    "npm_package_scripts_start": "ng serve --port 9999",
+    "npm_package_dependencies__angular_compiler": "~12.2.0",
+    "npm_config_global_style": "",
+    "npm_config_ignore_scripts": "",
+    "npm_config_version": "",
+    "npm_config_local_address": "",
+    "npm_config_viewer": "man",
+    "npm_config_node_gyp": "/home/vsspl/.nvm/versions/node/v12.14.0/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js",
+    "PATH": "/home/vsspl/.nvm/versions/node/v12.14.0/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/home/vsspl/Desktop/frontEnd/testing/node_modules/.bin:/opt/gradle/gradle-5.0/bin:/home/vsspl/.nvm/versions/node/v12.14.0/bin:/opt/gradle/gradle-5.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin",
+    "SESSION_MANAGER": "local/vsspl-GA-78LMT-USB3:@/tmp/.ICE-unix/2096,unix/vsspl-GA-78LMT-USB3:/tmp/.ICE-unix/2096",
+    "INVOCATION_ID": "c041c4d8a17b4b5a8979e7ad8fb16df4",
+    "npm_package_name": "testing",
+    "npm_config_audit_level": "low",
+    "npm_config_prefer_offline": "",
+    "NODE": "/home/vsspl/.nvm/versions/node/v12.14.0/bin/node",
+    "XDG_MENU_PREFIX": "gnome-",
+    "BAMF_DESKTOP_FILE_HINT": "/var/lib/snapd/desktop/applications/code_code.desktop",
+    "GNOME_SETUP_DISPLAY": ":1",
+    "XDG_RUNTIME_DIR": "/run/user/1000",
+    "GDK_BACKEND": "x11",
+    "npm_package_scripts_start_testing": "ng serve --port 9999 --proxy-config ./proxy.json",
+    "npm_config_color": "true",
+    "npm_config_sign_git_commit": "",
+    "DISPLAY": ":0",
+    "npm_package_dependencies__angular_forms": "~12.2.0",
+    "npm_config_fetch_retry_mintimeout": "10000",
+    "npm_config_maxsockets": "50",
+    "npm_config_offline": "",
+    "npm_config_sso_poll_frequency": "500",
+    "LANG": "en_GB.UTF-8",
+    "XDG_CURRENT_DESKTOP": "Unity",
+    "npm_config_umask": "0002",
+    "XMODIFIERS": "@im=ibus",
+    "XDG_SESSION_DESKTOP": "ubuntu",
+    "XAUTHORITY": "/run/user/1000/.mutter-Xwaylandauth.8MQBS1",
+    "VSCODE_GIT_IPC_HANDLE": "/run/user/1000/vscode-git-ce4cb64a99.sock",
+    "TERM_PROGRAM": "vscode",
+    "npm_package_scripts_ng": "ng",
+    "npm_package_dependencies_aws_sdk": "2.1209.0",
+    "npm_package_dependencies_sweetalert2": "^11.3.0",
+    "npm_package_gitHead": "d84c1e141a185c801d13cd3b517b383f443ec943",
+    "npm_config_fund": "true",
+    "npm_config_fetch_retry_maxtimeout": "60000",
+    "npm_config_loglevel": "notice",
+    "npm_config_logs_max": "10",
+    "npm_config_message": "%s",
+    "npm_lifecycle_script": "ng serve --port 9999",
+    "SSH_AGENT_LAUNCHER": "gnome-keyring",
+    "SSH_AUTH_SOCK": "/run/user/1000/keyring/ssh",
+    "GSETTINGS_SCHEMA_DIR": "/snap/code/106/usr/share/glib-2.0/schemas",
+    "ORIGINAL_XDG_CURRENT_DESKTOP": "ubuntu:GNOME",
+    "npm_package_scripts_test": "ng test",
+    "npm_config_ca": "",
+    "npm_config_cert": "",
+    "npm_config_global": "",
+    "npm_config_link": "",
+    "SHELL": "/bin/bash",
+    "npm_package_version": "0.0.0",
+    "npm_config_access": "",
+    "npm_config_also": "",
+    "npm_config_save": "true",
+    "npm_config_unicode": "true",
+    "npm_lifecycle_event": "start",
+    "QT_ACCESSIBILITY": "1",
+    "GDMSESSION": "ubuntu",
+    "npm_package_scripts_build": "ng build",
+    "npm_package_dependencies__angular_router": "~12.2.0",
+    "npm_package_dependencies__flxng_circle_timer": "^1.1.5",
+    "npm_package_dependencies_aws_amplify": "^4.3.34",
+    "npm_package_dependencies_gopal612_lib_two": "0.0.1",
+    "npm_config_argv": "{\"remain\":[],\"cooked\":[\"run\",\"start\"],\"original\":[\"run\",\"start\"]}",
+    "npm_config_before": "",
+    "npm_config_long": "",
+    "npm_config_production": "",
+    "npm_config_searchlimit": "20",
+    "npm_config_unsafe_perm": "true",
+    "npm_config_update_notifier": "true",
+    "npm_package_scripts_start_with_luka": "node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng serve -c lukaServe --base-href jc/version1/ ",
+    "npm_package_devDependencies_karma_jasmine": "~4.0.0",
+    "npm_config_auth_type": "legacy",
+    "npm_config_node_version": "12.14.0",
+    "npm_config_tag": "latest",
+    "npm_config_git_tag_version": "true",
+    "npm_config_commit_hooks": "true",
+    "npm_config_script_shell": "",
+    "npm_config_shrinkwrap": "true",
+    "GJS_DEBUG_OUTPUT": "stderr",
+    "npm_config_fetch_retry_factor": "10",
+    "npm_config_save_exact": "",
+    "npm_config_strict_ssl": "true",
+    "VSCODE_GIT_ASKPASS_EXTRA_ARGS": "--ms-enable-electron-run-as-node",
+    "QT_IM_MODULE": "ibus",
+    "npm_package_devDependencies__angular_cli": "~12.2.4",
+    "npm_config_dev": "",
+    "npm_config_globalconfig": "/home/vsspl/.nvm/versions/node/v12.14.0/etc/npmrc",
+    "npm_config_init_module": "/home/vsspl/.npm-init.js",
+    "npm_config_parseable": "",
+    "PWD": "/home/vsspl/Desktop/frontEnd/testing",
+    "npm_package_dependencies_ag_grid_community": "27.1.0",
+    "npm_config_globalignorefile": "/home/vsspl/.nvm/versions/node/v12.14.0/etc/npmignore",
+    "npm_execpath": "/home/vsspl/.nvm/versions/node/v12.14.0/lib/node_modules/npm/bin/npm-cli.js",
+    "XDG_CONFIG_DIRS": "/etc/xdg/xdg-ubuntu:/etc/xdg",
+    "NVM_CD_FLAGS": "",
+    "XDG_DATA_DIRS": "/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop",
+    "npm_config_cache_lock_retries": "10",
+    "npm_config_searchstaleness": "900",
+    "npm_package_scripts_watch": "ng build --watch --configuration development",
+    "npm_config_node_options": "",
+    "npm_config_save_prefix": "^",
+    "npm_config_scripts_prepend_node_path": "warn-only",
+    "npm_package_dependencies_gopal612_testing_library": "0.1.1",
+    "npm_config_group": "1000",
+    "npm_config_init_author_email": "",
+    "npm_config_searchexclude": "",
+    "npm_package_dependencies__fortawesome_fontawesome_svg_core": "^1.2.36",
+    "npm_package_dependencies_zone_js": "~0.11.4",
+    "npm_package_devDependencies__angular_devkit_build_angular": "~12.2.4",
+    "npm_config_git": "git",
+    "npm_config_optional": "true",
+    "npm_package_dependencies__angular_platform_browser": "~12.2.0",
+    "npm_config_json": "",
+    "INIT_CWD": "/home/vsspl/Desktop/frontEnd/testing",
+    "BROWSERSLIST_IGNORE_OLD_DATA": "1",
+    "WEBPACK_DEV_SERVER": "true"
+  },
+  "userLimits": {
+    "core_file_size_blocks": {
+      "soft": 0,
+      "hard": "unlimited"
+    },
+    "data_seg_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "file_size_blocks": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_locked_memory_bytes": {
+      "soft": 2554574848,
+      "hard": 2554574848
+    },
+    "max_memory_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "open_files": {
+      "soft": 1048576,
+      "hard": 1048576
+    },
+    "stack_size_bytes": {
+      "soft": 8388608,
+      "hard": "unlimited"
+    },
+    "cpu_time_seconds": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_user_processes": {
+      "soft": 77413,
+      "hard": 77413
+    },
+    "virtual_memory_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    }
+  },
+  "sharedObjects": [
+    "linux-vdso.so.1",
+    "/lib/x86_64-linux-gnu/libdl.so.2",
+    "/lib/x86_64-linux-gnu/libstdc++.so.6",
+    "/lib/x86_64-linux-gnu/libm.so.6",
+    "/lib/x86_64-linux-gnu/libgcc_s.so.1",
+    "/lib/x86_64-linux-gnu/libpthread.so.0",
+    "/lib/x86_64-linux-gnu/libc.so.6",
+    "/lib64/ld-linux-x86-64.so.2",
+    "/lib/x86_64-linux-gnu/libnss_files.so.2",
+    "/lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2",
+    "/lib/x86_64-linux-gnu/libresolv.so.2",
+    "/lib/x86_64-linux-gnu/libnss_dns.so.2"
+  ]
+}

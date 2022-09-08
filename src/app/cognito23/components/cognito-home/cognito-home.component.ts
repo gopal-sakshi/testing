@@ -27,7 +27,7 @@ export class CognitoHomeComponent implements OnInit {
   public signOut(): void {
     this.cognitoService.signOut()
     .then(() => {
-      this.router.navigate(['/signIn']);
+      this.router.navigate(['/cognito23/signIn']);
     });
   }
 

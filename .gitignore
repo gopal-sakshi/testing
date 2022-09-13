@@ -9,7 +9,7 @@
 
 # dependencies
 /node_modules
-
+.parcel-cache
 
 # config & settings
 /config

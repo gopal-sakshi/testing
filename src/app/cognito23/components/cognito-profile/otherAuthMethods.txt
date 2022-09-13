@@ -1,0 +1,66 @@
+AuthOptions {
+    userPoolId?: string;
+    userPoolWebClientId?: string;
+    identityPoolId?: string;
+    region?: string;
+    mandatorySignIn?: boolean;
+    cookieStorage?: ICookieStorageData;
+    oauth?: OAuthOpts;
+    refreshHandlers?: object;
+    storage?: ICognitoStorage;
+    authenticationFlowType?: string;
+    identityPoolRegion?: string;
+    clientMetadata?: any;
+    endpoint?: string;
+    signUpVerificationMethod?: 'code' | 'link';
+}
+
+Auth:AuthClass              // Auth object is a type of AuthClass ---> not string (or) boolean
+
+export class AuthClass {
+
+    consturctor(options: AuthOptions) { }
+    getModuleName() 
+    configure(config?: any): AuthOptions;
+    signUp()
+    confirmSignUp()
+    resendSignUp()
+    signIn()
+    getMFAOptions()
+    getPreferredMFA()
+    setPreferredMFA()
+    disableSMS()
+    enableSMS()
+    setupTOTP()
+    verifyTotpToken()
+    confirmSignIn()
+    completeNewPassword()
+    sendCustomChallengeAnswer()
+    deleteUserAttributes()
+    deleteUser()
+    updateUserAttributes()
+    userAttributes()
+    verifiedContact()
+    currentUserPoolUser()
+    currentAuthenticatedUser()
+    currentSession()
+    userSession()
+    currentUserCredentials()
+    currentCredentials()
+    verifyUserAttribute()
+    verifyUserAttributeSubmit()
+    verifyCurrentUserAttribute()
+    verifyCurrentUserAttributeSubmit()
+    signOut()
+    changePassword()
+    forgotPassword()
+    forgotPasswordSubmit()
+    currentUserInfo()
+    federatedSignIn()
+    federatedSignIn()
+    federatedSignIn()
+    essentialCredentials()
+    rememberDevice()
+    forgetDevice()
+    fetchDevices()
+}

@@ -15,7 +15,7 @@ export class CognitoSignInCustom1Component implements OnInit {
 
   navigateToSignIn() {
     var customDomain:string = 'gopal612-domain23.auth.us-east-1.amazoncognito.com';
-    var clientId:string = environment.cognito.userPoolWebClientId;
+    var clientId:string = environment.cognito.userPoolWebClientId1;
     var redirect_url1:string = 'http://localhost:9999/random12';
     var redirect_url2:string = 'http://localhost:9999/cognito23/profile';
     const url1 =`https://${customDomain}/login?response_type=code&client_id=${clientId}&redirect_uri=${redirect_url2}`;

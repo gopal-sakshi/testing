@@ -19,6 +19,7 @@ export class CognitoSignInComponent {
   }
 
   public signIn(): void {
+    console.log('gili gili');
     this.loading = true;
     this.cognitoService.signIn(this.user)
     .then(() => {
@@ -28,4 +29,11 @@ export class CognitoSignInComponent {
     });
   }
   
+  public federatedSignIn():void {
+    this.cognitoService.federatedSignIn().then(res => { console.log(res)} ).catch(err => { console.log(err) });
+  }
+
+  someSignout() {
+    
+  }
 }

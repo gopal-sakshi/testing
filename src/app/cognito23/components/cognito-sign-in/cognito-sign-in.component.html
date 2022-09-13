@@ -8,8 +8,6 @@
         {{ !user.showPassword ? 'show': 'hide'}}
     </button>
 </div>
-<button type="button" (click)="signIn()" class="btn btn-sm btn-success" [disabled]="loading">
-    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
-        *ngIf="loading"></span>
-    Sign in
-</button>
+<div><button type="button" (click)="signIn()" [disabled]="loading">Sign In</button></div>
+<div><button type="button" (click)="federatedSignIn()" [disabled]="loading">federated</button></div>
+<div><button type="button" (click)="someSignout()" [disabled]="loading">some Signout</button></div>

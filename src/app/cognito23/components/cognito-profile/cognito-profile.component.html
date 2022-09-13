@@ -19,13 +19,12 @@
     <div>
         <button (click)="getTokens()">get tokens</button>
     </div>
-    <div>
-        <button (click)="doStuff()">doStuff</button>
-    </div>
 </div>
 
 <div *ngIf="responseCode">
     <h3>response code</h3>
-    {{responseCode}}
-    <button (click)="getJwtToken()">get jwt token</button>
+    {{responseCode}}    
+    <div>
+        <button (click)="getTokens()">get tokens</button>
+    </div>
 </div>

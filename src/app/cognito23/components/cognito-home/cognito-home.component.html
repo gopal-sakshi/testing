@@ -19,7 +19,11 @@
                 <span *ngIf="!isAuthenticated">Sign out</span>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['custom-signin']" routerLinkActive="active" *ngIf="!isAuthenticated">custom sign in</a>
+                <a class="nav-link" [routerLink]="['custom-signin1']" routerLinkActive="active" *ngIf="!isAuthenticated">custom sign in 1</a>
+                <span *ngIf="isAuthenticated">custom signin</span>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['custom-signin2']" routerLinkActive="active" *ngIf="!isAuthenticated">custom sign in 2</a>
                 <span *ngIf="isAuthenticated">custom signin</span>
             </li>
         </ul>

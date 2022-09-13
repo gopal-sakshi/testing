@@ -6,14 +6,17 @@ import { CognitoProfileComponent } from './components/cognito-profile/cognito-pr
 import { CognitoSignUpComponent } from './components/cognito-sign-up/cognito-sign-up.component';
 import { CognitoSignInComponent } from './components/cognito-sign-in/cognito-sign-in.component';
 import { FormsModule } from '@angular/forms';
-import { CognitoSignInCustomComponent } from './components/cognito-sign-in-custom/cognito-sign-in-custom.component';
+
+import { CognitoSignInCustom2Component } from './components/cognito-sign-in-custom2/cognito-sign-in-custom2.component';
+import { CognitoSignInCustom1Component } from './components/cognito-sign-in-custom1/cognito-sign-in-custom1.component';
 
 const routes:Routes = [
   { path: '', component: CognitoHomeComponent },
   { path: 'profile', component: CognitoProfileComponent },
   { path: 'signIn', component: CognitoSignInComponent },
   { path: 'signUp', component: CognitoSignUpComponent },
-  { path: 'custom-signin', component: CognitoSignInCustomComponent },
+  { path: 'custom-signin1', component: CognitoSignInCustom1Component },
+  { path: 'custom-signin2', component: CognitoSignInCustom2Component },
   { path: '**', redirectTo: 'signIn' },
 ]
 
@@ -23,7 +26,8 @@ const routes:Routes = [
     CognitoProfileComponent,
     CognitoSignUpComponent,
     CognitoSignInComponent,
-    CognitoSignInCustomComponent
+    CognitoSignInCustom1Component,
+    CognitoSignInCustom2Component
   ],
   imports: [
     CommonModule,

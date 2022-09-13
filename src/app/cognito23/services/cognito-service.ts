@@ -80,4 +80,13 @@ export class CognitoService {
     });
   }
 
+  public getTokens() {
+    Auth.currentSession().then(res => {
+      let accessToken = res.getAccessToken();
+      let jwtToken = accessToken.getJwtToken();
+      console.log(accessToken);
+      console.log(jwtToken);
+    })
+  }
+
 }

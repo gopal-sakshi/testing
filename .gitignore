@@ -7,6 +7,10 @@
 # Only exists if Bazel was run
 /bazel-out
 
+/parcel23/.parcel-cache
+/parcel23/dist
+/parcel23/node_modules
+
 # dependencies
 /node_modules
 .parcel-cache

@@ -10,6 +10,10 @@
         <button (click)="showCircle14=!showCircle14">circle14</button>
         <button (click)="showUpload180Mb=!showUpload180Mb">upload180Mb</button>
         <button (click)="showCircle15=!showCircle15">circle15</button>
+        <div>
+            <button (click)="showWaterMeter12=!showWaterMeter12">waterMeter</button>
+            <button (click)="modifyWaters()">modify water levels</button>
+        </div>        
         <button (click)="time = time - 180">change time</button>
     </div>
     <div class="child-components">
@@ -28,6 +32,8 @@
         <div *ngIf="showUpload180Mb">
             <app69-upload180-mb></app69-upload180-mb>
         </div>
-        
+        <div *ngIf="showWaterMeter12">
+            <app69-water-meter12 [lengths]="lengths"></app69-water-meter12>
+        </div>
     </div>
 </div>

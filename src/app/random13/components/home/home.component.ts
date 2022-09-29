@@ -12,8 +12,9 @@ export class HomeComponent implements OnInit {
   showCircle14:boolean = false;
   showCircle15:boolean = false;
   showUpload180Mb:boolean = false;
+  showWaterMeter12:boolean = false;
   time:number = 60;
-
+  lengths:number[] = [3,6,12];
   constructor() { }
 
   ngOnInit(): void {
@@ -29,4 +30,7 @@ export class HomeComponent implements OnInit {
     console.log('timer completed');
   }
 
+  modifyWaters() {
+    this.lengths = [2,4,1];
+  }
 }

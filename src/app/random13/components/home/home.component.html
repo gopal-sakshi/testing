@@ -8,6 +8,7 @@
         </div>
         
         <button (click)="showCircle14=!showCircle14">circle14</button>
+        <button (click)="showUpload180Mb=!showUpload180Mb">upload180Mb</button>
         <button (click)="showCircle15=!showCircle15">circle15</button>
         <button (click)="time = time - 180">change time</button>
     </div>
@@ -24,5 +25,9 @@
         <div *ngIf="showCircle15">
             <app69-circle15></app69-circle15>
         </div>
+        <div *ngIf="showUpload180Mb">
+            <app69-upload180-mb></app69-upload180-mb>
+        </div>
+        
     </div>
 </div>

@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   showCircle13:boolean = false;
   showCircle14:boolean = false;
   showCircle15:boolean = false;
-
+  showUpload180Mb:boolean = false;
   time:number = 60;
 
   constructor() { }

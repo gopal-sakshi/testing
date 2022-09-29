@@ -10,6 +10,9 @@
 # dependencies
 /node_modules
 
+/parcel23/.parcel-cache
+/parcel23/dist
+/parcel23/node_modules
 
 # config & settings
 /config

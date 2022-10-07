@@ -9,7 +9,8 @@ export class HomeForms12Component implements OnInit {
 
   showDateValidator:boolean = false;
   showCustomValidator:boolean = false;  
-  showTemplateForm:boolean = false;
+  showTemplate12:boolean = false;
+  showTemplate13:boolean = false;
   showReactiveForm12:boolean = false;
   showReactiveForm13:boolean = false;
   showFormArray:boolean = false; 

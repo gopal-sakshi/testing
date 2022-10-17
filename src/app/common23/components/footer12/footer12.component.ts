@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Footer12Component implements OnInit {
 
+  clubName:string = 'Real Madrid';
   constructor() { }
 
   ngOnInit(): void {

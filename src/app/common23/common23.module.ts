@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Common23RoutingModule } from './common23-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { TranslateModule } from '@ngx-translate/core';
 
 // COMPONENTS
 import { Header12Component } from './components/header12/header12.component';
@@ -43,7 +44,8 @@ import { Common23Service } from './services/common23.service';
   imports: [
     CommonModule,
     Common23RoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    TranslateModule
   ],
   exports: [
     Header12Component,

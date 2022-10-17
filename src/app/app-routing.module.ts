@@ -56,10 +56,10 @@ const routes: Routes = [
     path: 'projection23',
     loadChildren: () => import('./projection23/projection23.module').then(m => m.Projection23Module)
   },
-  {
-    path: 'library23',
-    loadChildren:() => import('./library23/library23.module').then(m=>m.Library23Module)
-  },
+  // {
+  //   path: 'library23',
+  //   loadChildren:() => import('./library23/library23.module').then(m=>m.Library23Module)
+  // },
   {
     path: 'random12',
     loadChildren: () => import('./random12/random12.module').then(m => m.Random12Module)

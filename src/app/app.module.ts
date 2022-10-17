@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SubjectsModule } from './subjects/subjects.module';
@@ -16,6 +16,8 @@ import { PincodeInterceptor23 } from './classes/http-interceptor23';
 import { RouteReuseStrategy } from '@angular/router';
 import { RouteReuse23Service } from './router15/services/route-reuse23.service';
 import { RouteReuse23 } from './classes/route-reuse23';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { i18Loader } from './i18Loader';
 
 
 
@@ -31,7 +33,16 @@ import { RouteReuse23 } from './classes/route-reuse23';
     FlexLayoutModule,
 
     BrowserAnimationsModule,
-    Common23Module
+    Common23Module,
+
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (i18Loader),
+        deps: [ HttpClient ]
+      }
+    }),
   ],
   providers: [
     ProductGuardService,

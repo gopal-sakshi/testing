@@ -8,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class Header12Component implements OnInit {
 
   todayDate: Date = new Date();
+  selectedLang: string;
+  
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  changeLanguage() {
+    this.selectedLang = language;
+    this.translate.updateActiveLanguage(language);    
   }
 
 }

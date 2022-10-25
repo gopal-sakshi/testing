@@ -33,7 +33,7 @@
     "ag-grid-angular": "27.1.1",
     "ag-grid-community": "27.1.0",
     "gopal612-testing-library": "2.1.0",
-    "@ngx"
+    "@ngx-pwa/local-storage": "^12.1.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.6.0",
     "sweetalert2": "^11.3.0",

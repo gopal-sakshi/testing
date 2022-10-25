@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
+import { TestForms12Component } from './components/test-forms12/test-forms12.component';
 
 const routes:Routes = [
   { path:  '', component: HomeComponent }
@@ -19,7 +20,8 @@ const routes:Routes = [
     HomeComponent,
     Parent12Component,
     BasicInfoComponent,
-    AddressComponent
+    AddressComponent,
+    TestForms12Component
   ],
   imports: [
     CommonModule,

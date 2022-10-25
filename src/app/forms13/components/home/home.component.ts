@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   showParent12:boolean = false;
+  showTestForms12:boolean = false;
   constructor() { }
 
   ngOnInit(): void {

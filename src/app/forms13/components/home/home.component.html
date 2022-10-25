@@ -1,8 +1,13 @@
 <div class="home-container">
     <div>
         <button (click)="showParent12 = !showParent12">parent12</button>
+        <button (click)=" showTestForms12 = ! showTestForms12">show test forms</button>
     </div>
     <div *ngIf="showParent12" class="child-components">
         <app69-parent12></app69-parent12>
     </div>
+    <div *ngIf="showTestForms12" class="child-components">
+        <app69-test-forms12></app69-test-forms12>
+    </div>
+    
 </div>

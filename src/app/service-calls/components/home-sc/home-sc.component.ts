@@ -10,6 +10,7 @@ export class HomeScComponent implements OnInit {
   
   showVideo11:boolean = false;
   showSimpleExpress:boolean = false;
+  showSoap14:boolean = false;
   
   constructor() { }
 

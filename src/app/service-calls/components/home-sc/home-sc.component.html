@@ -2,6 +2,7 @@
     <div class="buttons" fxLayout="column" fxLayoutGap="10px">
         <button (click)="showVideo11=!showVideo11">video11</button>
         <button (click)="showSimpleExpress=!showSimpleExpress">simple Express</button>
+        <button (click)="showSoap14=!showSoap14">SOAP protocol</button>        
     </div>
     <div class="components" fxLayout="column">
         <div class="video-component" *ngIf="showVideo11">
@@ -9,6 +10,9 @@
         </div>
         <div class="simple-express-component" *ngIf="showSimpleExpress">
             <app69-simple-express></app69-simple-express>
+        </div>
+        <div class="simple-express-component" *ngIf="showSoap14">
+            <app69-soap14></app69-soap14>
         </div>
     </div>    
 </div>

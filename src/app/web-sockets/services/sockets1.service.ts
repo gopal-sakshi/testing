@@ -4,7 +4,7 @@ import { AnonymousSubject, Subject } from "rxjs/internal/Subject";
 import { map } from "rxjs/operators";
 import { Message } from "../classes/message";
 
-const CHAT_URL = "ws://localhost:3054";
+const CHAT_URL = "ws://localhost:3064";
 
 
 @Injectable({

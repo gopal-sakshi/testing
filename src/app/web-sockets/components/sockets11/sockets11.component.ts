@@ -21,17 +21,16 @@ export class Sockets11Component {
   constructor(private websocketService: WebsocketService) { 
     websocketService.messages.subscribe(msg => {
       this.received.push(msg);
-      console.log("Response from websocket: " + msg);
+      console.log("Response from websocket: ",msg);
     });
   }
 
   sendMsg() {
     let message = {
-      source: '',
-      content: ''
-    };
-    message.source = 'localhost';
-    message.content = this.content;
+      sender: 'angular repo',
+      content: this.content,
+      timeStamp: new Date()
+    };    
 
     this.sent.push(message);
     this.websocketService.messages.next(message);

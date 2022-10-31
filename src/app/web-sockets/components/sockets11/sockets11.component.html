@@ -6,12 +6,12 @@
     <div class="chat-box">
         <div class="sent-messages">
             <ul>
-                <li *ngFor="let item of sent">Source: {{item.source}} -> Content {{item.content}}</li>
+                <li *ngFor="let item of sent">Sender: {{item.sender}} -> Content {{item.content}}</li>
               </ul>
         </div>
         <div class="received-messages">
             <ul>
-                <li *ngFor="let item of received">Source: {{item.source}} -> Content {{item.content}}</li>
+                <li *ngFor="let item of received">Sender: {{item.sender}} -> Content {{item.content}}</li>
               </ul>
         </div>
     </div>    

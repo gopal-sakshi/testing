@@ -1,4 +1,5 @@
 export interface Message {
-    source: string;
+    sender: string;
     content: string;
+    timeStamp:any
 }

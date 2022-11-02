@@ -8,11 +8,16 @@ export class VideoStreamingService {
 
     constructor(private httpClient:HttpClient) {}
 
-    fetchVideo() {
-        let videoUrl = this.url + '/2';
+    // https://blog.logrocket.com/build-video-streaming-server-node/
+    fetchVideo(videoName:string = 'tiger') {
+        let videoUrl = this.url + `/${videoName}`;
         let headers = new HttpHeaders();
-        headers = headers.append('range', '1000');
+        headers = headers.append('range', '10000000');
         return this.httpClient.get(videoUrl, {headers, responseType: 'blob' as const});
+    }
+
+    uploadVideo() {
+        
     }
 
 }

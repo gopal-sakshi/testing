@@ -9,6 +9,7 @@ import { WebsocketService } from '../../services/sockets1.service';
 export class Sockets11Component {
 
   title = 'socketrv';
+  sender:string = '';
   content:any = '';
   received = [];
   sent = [];
@@ -27,9 +28,9 @@ export class Sockets11Component {
 
   sendMsg() {
     let message = {
-      sender: 'angular repo',
+      sender: this.sender,
       content: this.content,
-      timeStamp: new Date()
+      timeStamp: (new Date()).toISOString()
     };    
 
     this.sent.push(message);

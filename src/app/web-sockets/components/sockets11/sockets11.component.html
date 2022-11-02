@@ -1,6 +1,7 @@
 <div class="sockets11-container">
-    <div class="send-input" fxLayout="row" fxLayoutAlign="start center">
-        <textarea [(ngModel)]="content" name="contentInput" cols="40" rows="2"></textarea>
+    <div class="send-input" fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="10px">
+        <input [(ngModel)]="sender" name="senderInput" placeholder="sender's name">
+        <textarea [(ngModel)]="content" name="contentInput" placeholder="type your message here" cols="40" rows="2"></textarea>
         <button (click)="sendMsg()">Send Message</button>
     </div>
     <div class="chat-box">

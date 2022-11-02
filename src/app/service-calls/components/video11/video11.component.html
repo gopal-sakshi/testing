@@ -1,6 +1,8 @@
-<div class="video11-container" fxLayout="row" fxLayoutGap="20px">
-    <div fxLayout="column" fxLayoutGap="10px" class="buttons">
+<div class="video11-container" fxLayout="column" fxLayoutGap="20px">
+    <div fxLayout="row" fxLayoutGap="10px" class="buttons">
         <button (click)="fetchVideo()">fetch video</button>
+        <input id="video23" type="file" name="video23" accept="video/*" (change)="handleFileInput23($event)">
+        <button (click)="uploadVideo()">upload video</button>
     </div>
     <div fxLayout="row" fxLayoutGap="10px" class="components">
         <!-- <video controls id="video-id-23" width="200px" height="200px" src="assets/videos/defaultVideo1.mp4"></video> -->

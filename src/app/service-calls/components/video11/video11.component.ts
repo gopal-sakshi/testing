@@ -12,6 +12,8 @@ export class Video11Component implements OnInit {
   showVideoBox:boolean = false;
   constructor(private videoStreamingService:VideoStreamingService) { }
 
+  fileToUpload: File | null = null;
+
   ngOnInit(): void {
   }
 
@@ -21,11 +23,11 @@ export class Video11Component implements OnInit {
       this.showVideoBox = true;
       const htmlVideoElement = <HTMLVideoElement>document.getElementById('video-id-23');
       console.log(htmlVideoElement);
-      this.processResponse(res, htmlVideoElement);
+      this.processResponse1(res, htmlVideoElement);
     });
   }
 
-  processResponse(response:Blob, htmlElement) {
+  processResponse1(response:Blob, htmlElement) {
 
     if( !( response instanceof Blob ) ) { console.log('blob kaadanta baabu'); }
     if( !( htmlElement instanceof HTMLVideoElement ) ) { console.log('video element kadanta baabu') } 
@@ -45,5 +47,18 @@ export class Video11Component implements OnInit {
       console.log('error happened ',err);
     });
 
+  }
+
+  processResponse2() {}
+
+  handleFileInput23(files:any) {
+    console.log(files);
+    // this.fileToUpload = files.item(0);
+    // console.log(this.fileToUpload);
+  }
+
+  uploadVideo() { 
+    var blah = (<HTMLInputElement>document.getElementById('video23'))?.value;
+    console.log(blah);
   }
 }

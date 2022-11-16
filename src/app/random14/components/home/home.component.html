@@ -4,6 +4,7 @@
         <button (click)="showJoinArray = !showJoinArray">order of comp, classes creation </button>
         <button (click)="showParent34 = !showParent34">showParent34</button>
         <button (click)="googleSearch = !googleSearch">google Search</button>
+        <button (click)="showFocusDirective = !showFocusDirective">focus directives</button>
     </div>
     <div *ngIf="dynamicComponentCreation">
         <div class="parent-component">
@@ -19,5 +20,7 @@
     <div *ngIf="googleSearch">
         <app69-google-search13></app69-google-search13>
     </div>
-
+    <div *ngIf="showFocusDirective">
+        <app69-focus-directive11></app69-focus-directive11>
+    </div>
 </div>

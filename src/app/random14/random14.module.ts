@@ -13,6 +13,7 @@ import { Parent34Component } from './components/parent34/parent34.component';
 import { Child34Component } from './components/child34/child34.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { GoogleSearch13Component } from './components/google-search13/google-search13.component';
+import { FocusDirective11Component } from './components/focus-directive11/focus-directive11.component';
 
 const routes: Routes = [
     { path: '', component: HomeR13Component}
@@ -27,7 +28,8 @@ const routes: Routes = [
     Child23Component,
     Parent34Component,
     Child34Component,
-    GoogleSearch13Component
+    GoogleSearch13Component,
+    FocusDirective11Component
   ],
   imports: [
     CommonModule,

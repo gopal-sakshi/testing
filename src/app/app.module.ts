@@ -16,6 +16,7 @@ import { PincodeInterceptor23 } from './classes/http-interceptor23';
 import { RouteReuseStrategy } from '@angular/router';
 import { RouteReuse23Service } from './router15/services/route-reuse23.service';
 import { RouteReuse23 } from './classes/route-reuse23';
+import { ErrorIntereptorService } from './common23/services/error-interceptor';
 
 
 
@@ -54,7 +55,12 @@ import { RouteReuse23 } from './classes/route-reuse23';
     //   provide: HTTP_INTERCEPTORS,
     //   useClass: AuthInterceptor24,
     //   multi: true
-    // }
+    // },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorIntereptorService,
+      multi: true
+    },
 
     // { provide: RouteReuseStrategy, useClass: RouteReuse23Service }
     // did not work... need to understand MOREEEEEEEE

@@ -12,6 +12,7 @@ export class HomeR13Component implements OnInit {
   dynamicComponentCreation:boolean = false;
   showParent34:boolean = false;
   googleSearch:boolean = false;
+  showFocusDirective:boolean = false;
   
   items1:any = FileMimeTypes;
   items2:string = 'Nayan';

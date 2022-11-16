@@ -22,6 +22,7 @@ import { NoCopy23Directive } from './directives/no-copy23.directive';
 
 // SERVICES
 import { Common23Service } from './services/common23.service';
+import { OnReturnDirective } from './directives/enter23.directive';
 
 
 
@@ -38,7 +39,8 @@ import { Common23Service } from './services/common23.service';
     NoCopy23Directive,
     ThreeDecimalsPipe,
     ProcessDecimalDirective,
-    JoinArrayPipe
+    JoinArrayPipe,
+    OnReturnDirective
   ],
   imports: [
     CommonModule,
@@ -55,7 +57,8 @@ import { Common23Service } from './services/common23.service';
     NoCopy23Directive,
     ThreeDecimalsPipe,
     ProcessDecimalDirective,
-    JoinArrayPipe
+    JoinArrayPipe,
+    OnReturnDirective
   ],
   providers: [
     // Common23Service      

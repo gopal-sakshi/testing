@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
-import { CircleTimerComponent } from '@flxng/circle-timer';
+// import { CircleTimerComponent } from '@flxng/circle-timer';
 
 @Component({
   selector: 'app69-circle12',
@@ -9,7 +9,7 @@ import { CircleTimerComponent } from '@flxng/circle-timer';
 export class Circle12Component implements OnInit, AfterViewInit {
 
   @Input() time:any;  
-  @ViewChild('timer', { static: false }) timer: CircleTimerComponent;
+  @ViewChild('timer', { static: false }) timer: any;
   duration:number = 120 * 1000;  
   viewInitialised:boolean = false;
 

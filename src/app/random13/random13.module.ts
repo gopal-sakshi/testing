@@ -4,7 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { Circle12Component } from './components/circle12/circle12.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { CircleTimerModule } from '@flxng/circle-timer';
+// import { CircleTimerModule } from '@flxng/circle-timer';
 import { Circle13Component } from './components/circle13/circle13.component';
 import { Circle14Component } from './components/circle14/circle14.component';
 import { Circle15Component } from './components/circle15/circle15.component';
@@ -29,7 +29,7 @@ const routes:Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     FlexLayoutModule,
-    CircleTimerModule
+    // CircleTimerModule
   ]
 })
 export class Random13Module { }

@@ -2,14 +2,25 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-import { cognito } from "config/aws-cognito";
+// import { cognito } from "config/aws-cognito";
 
 export const environment = {
 
   production: false,
   envName: 'normal',
   APP_NAME: 'testing_normal',
-  cognito: cognito
+  // cognito: cognito,
+
+  firebaseConfig: {
+    apiKey: "AIzaSyDk8xLeJ8OYP-7TIwu-qpuADPJBnYalOrQ",
+    authDomain: "gopal61288-01.firebaseapp.com",
+    projectId: "gopal61288-01",
+    storageBucket: "gopal61288-01.appspot.com",
+    messagingSenderId: "299268567166",
+    appId: "1:299268567166:web:d0e8f532c81fc689cfe82f",
+    measurementId: "G-HXLPCBYY2M"
+  }
+  
 };
 
 /*

@@ -17,6 +17,8 @@ import { RouteReuseStrategy } from '@angular/router';
 import { RouteReuse23Service } from './router15/services/route-reuse23.service';
 import { RouteReuse23 } from './classes/route-reuse23';
 import { ErrorIntereptorService } from './common23/services/error-interceptor';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
 
 
 
@@ -32,7 +34,9 @@ import { ErrorIntereptorService } from './common23/services/error-interceptor';
     FlexLayoutModule,
 
     BrowserAnimationsModule,
-    Common23Module
+    Common23Module,
+    // start angular fire module only if firebase22 module is loaded... didnt work, so starting in app.module.ts itself
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [
     ProductGuardService,
@@ -56,11 +60,11 @@ import { ErrorIntereptorService } from './common23/services/error-interceptor';
     //   useClass: AuthInterceptor24,
     //   multi: true
     // },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: ErrorIntereptorService,
-      multi: true
-    },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: ErrorIntereptorService,
+    //   multi: true
+    // },
 
     // { provide: RouteReuseStrategy, useClass: RouteReuse23Service }
     // did not work... need to understand MOREEEEEEEE

@@ -17,6 +17,10 @@ const routes: Routes = [
     loadChildren: () => import('./subjects/subjects.module').then(m => m.SubjectsModule)
   },
   {
+    path: 'firebase22',
+    loadChildren: () => import('./firebase22/firebase22.module').then(m => m.Firebase22Module)
+  },
+  {
     path: 'material23',
     loadChildren: () => import('./material23/material23.module').then(m => m.Material23Module)
   },

@@ -1,0 +1,10 @@
+<div class="home-firebase-container" fxLayout="row" fxLayoutGap="10px">    
+    <div class="buttons-section" fxLayout="column" fxLayoutGap="5px">
+        <button (click)="showChats=!showChats">chats</button>
+    </div>
+    <div class="child-components"  fxLayout="column" fxLayoutGap="5px">
+        <div *ngIf="showChats">
+            <app69-chat-firebase></app69-chat-firebase>
+        </div>
+    </div>    
+</div>

@@ -13,6 +13,7 @@
         <button mat-raised-button color="primay" (click)="showRandomJS = !showRandomJS">Random JS</button>
         <button mat-raised-button color="primay" (click)="showCallback22 = !showCallback22">Callback22</button>
         <button mat-raised-button color="primay" (click)="showAWS1 = !showAWS1">AWS 1</button>
+        <button mat-raised-button color="primay" (click)="showConsoleTypes = !showConsoleTypes">Console types</button>        
     </div>
 
     <div fxLayout="column" fxLayoutGap="20px">
@@ -45,5 +46,8 @@
         <div *ngIf="showAWS1">
             <app69-aws-stuff1></app69-aws-stuff1>
         </div>
+        <div *ngIf="showConsoleTypes">
+            <app69-console-types></app69-console-types>
+        </div>        
     </div>
 </div>

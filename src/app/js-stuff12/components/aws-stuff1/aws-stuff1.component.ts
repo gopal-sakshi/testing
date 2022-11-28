@@ -13,6 +13,8 @@ export class AwsStuff1Component implements OnInit {
   ngOnInit(): void {
     // DynamoDB.DocumentClient.
     // moved to cognito23 module...
+
+    // cognito module is deleted it seems - Nov 28, 2022 update
   }
 
 }

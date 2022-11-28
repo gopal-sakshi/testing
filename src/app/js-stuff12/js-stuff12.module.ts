@@ -20,6 +20,7 @@ import { TwoWayBindingComponent } from './components/two-way-binding/two-way-bin
 import { RandomJsComponent } from './components/random-js/random-js.component';
 import { Callback22Component } from './components/callback22/callback22.component';
 import { AwsStuff1Component } from './components/aws-stuff1/aws-stuff1.component';
+import { ConsoleTypesComponent } from './components/console-types/console-types.component';
 
 
 
@@ -37,7 +38,8 @@ import { AwsStuff1Component } from './components/aws-stuff1/aws-stuff1.component
     TwoWayBindingComponent,
     RandomJsComponent,
     Callback22Component,
-    AwsStuff1Component    
+    AwsStuff1Component,
+    ConsoleTypesComponent    
   ],
   imports: [
     CommonModule,

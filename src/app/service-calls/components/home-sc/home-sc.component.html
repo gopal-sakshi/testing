@@ -2,7 +2,9 @@
     <div class="buttons" fxLayout="column" fxLayoutGap="10px">
         <button (click)="showVideo11=!showVideo11">video11</button>
         <button (click)="showSimpleExpress=!showSimpleExpress">simple Express</button>
-        <button (click)="showSoap14=!showSoap14">SOAP protocol</button>        
+        <button (click)="showSoap14=!showSoap14">SOAP protocol</button>
+        <button (click)="showStaticResource()">static resource</button>
+        <button (click)="showUploadFile=!showUploadFile">uploadFile</button>
     </div>
     <div class="components" fxLayout="column">
         <div class="video-component" *ngIf="showVideo11">
@@ -13,6 +15,10 @@
         </div>
         <div class="simple-express-component" *ngIf="showSoap14">
             <app69-soap14></app69-soap14>
+        </div>
+        <div class="simple-express-component" *ngIf="showUploadFile">
+            <input id="inputFile23" type="file" name="file" size="50">
+            <button (click)="uploadFile23()">upload</button>
         </div>
     </div>    
 </div>

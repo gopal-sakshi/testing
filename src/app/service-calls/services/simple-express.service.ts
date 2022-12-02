@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 
 @Injectable()
 export class SimpleExpressService {
@@ -22,5 +23,18 @@ export class SimpleExpressService {
         let soapUrl = this.url+'/soap14/soap1';
         const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8').set('token', '22');
         return this.httpClient.get(soapUrl, {headers, responseType: 'text' as const});
+    }
+
+    openImage() {
+        // let url = this.url+'/images44/bear.jpg';
+        let url = this.url+'/pdf22/football-manager.pdf';
+        window.open(url);
+    }
+
+    // LOOK INTO IT... IT'S NOT WORKING
+    uploadFile23(payload:FileList | File):Observable<any> {        
+        console.log(payload);
+        let url = this.url + `/fileUpload23`;
+        return this.httpClient.post(url, payload);
     }
 }

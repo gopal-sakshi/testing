@@ -14,7 +14,8 @@ export class HomeScComponent implements OnInit {
   showSimpleExpress:boolean = false;
   showSoap14:boolean = false;
   showUploadFile:boolean = false;
-
+  showAxiosFetch:boolean = false;
+  
   constructor(private simpleExpressService:SimpleExpressService) { }
 
   ngOnInit(): void {

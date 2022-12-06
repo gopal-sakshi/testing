@@ -33,6 +33,7 @@
     "@ngx-pwa/local-storage": "^12.1.0",
     "ag-grid-angular": "27.1.1",
     "ag-grid-community": "27.1.0",
+    "axios": "^1.2.1",
     "firebase": "9.8.4",
     "gopal612-testing-library": "2.1.0",
     "reflect-metadata": "^0.1.13",

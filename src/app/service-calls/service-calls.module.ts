@@ -9,6 +9,7 @@ import { SimpleExpressComponent } from './components/simple-express/simple-expre
 import { SimpleExpressService } from './services/simple-express.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { Soap14Component } from './components/soap14/soap14.component';
+import { AxiosFetchComponent } from './components/axios-fetch/axios-fetch.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { Soap14Component } from './components/soap14/soap14.component';
     HomeScComponent,
     Video11Component,
     SimpleExpressComponent,
-    Soap14Component
+    Soap14Component,
+    AxiosFetchComponent
   ],
   imports: [
     CommonModule,

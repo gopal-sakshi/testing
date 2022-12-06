@@ -5,6 +5,7 @@
         <button (click)="showSoap14=!showSoap14">SOAP protocol</button>
         <button (click)="showStaticResource()">static resource</button>
         <button (click)="showUploadFile=!showUploadFile">uploadFile</button>
+        <button (click)="showAxiosFetch=!showAxiosFetch">axios_vs_fetch</button>
     </div>
     <div class="components" fxLayout="column">
         <div class="video-component" *ngIf="showVideo11">
@@ -15,6 +16,9 @@
         </div>
         <div class="simple-express-component" *ngIf="showSoap14">
             <app69-soap14></app69-soap14>
+        </div>
+        <div class="simple-express-component" *ngIf="showAxiosFetch">
+            <app69-axios-fetch></app69-axios-fetch>
         </div>
         <div class="simple-express-component" *ngIf="showUploadFile">
             <input id="inputFile23" type="file" name="file" size="50">

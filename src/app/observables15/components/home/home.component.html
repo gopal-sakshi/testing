@@ -1,5 +1,12 @@
 <div class="home-observables15-container">
-    <div class="userActions">
+    <div class="user-buttons">
+        <button (click)="showAppGreeting=!showAppGreeting">greeting</button>
+        <button (click)="showFilter23=!showFilter23">filter23</button>
+    </div>
+    <div class="userActions" *ngIf="showAppGreeting">
         <app69-greeting></app69-greeting>
+    </div>
+    <div *ngIf="showFilter23">
+        <app69-filter23-operator></app69-filter23-operator>
     </div>
 </div>

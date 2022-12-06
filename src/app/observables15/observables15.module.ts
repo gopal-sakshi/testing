@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { GreetingComponent } from './components/greeting/greeting.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { Filter23OperatorComponent } from './components/filter23-operator/filter23-operator.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }
@@ -11,7 +12,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     GreetingComponent,
-    HomeComponent
+    HomeComponent,
+    Filter23OperatorComponent    
   ],
   imports: [
     CommonModule,

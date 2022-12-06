@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  showAppGreeting:boolean = false;
+  showFilter23:boolean = false;
+  
   constructor() { }
 
   ngOnInit(): void {

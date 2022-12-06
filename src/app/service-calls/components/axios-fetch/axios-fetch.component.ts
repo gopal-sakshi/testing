@@ -11,6 +11,13 @@ export class AxiosFetchComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    // joke-api working here... but not in simpleExpress
+    // In browser, you dont need to add headers...
+    // But if u use axios in nodeJs, u need to explicitly add headerss
+    axios.get('https://official-joke-api.appspot.com/random_joke').then(res => {
+      console.log(res);
+    });
   }
 
   simpleGet() {

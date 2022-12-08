@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { SimpleExpressService } from '../../services/simple-express.service';
@@ -15,8 +16,12 @@ export class HomeScComponent implements OnInit {
   showSoap14:boolean = false;
   showUploadFile:boolean = false;
   showAxiosFetch:boolean = false;
-  
-  constructor(private simpleExpressService:SimpleExpressService) { }
+  localServerUrl:string = 'http://localhost:9000'
+
+  constructor(
+    private simpleExpressService:SimpleExpressService,
+    private http:HttpClient
+  ) { }
 
   ngOnInit(): void {
   }
@@ -45,6 +50,11 @@ export class HomeScComponent implements OnInit {
         })
       }
     })
+  }
+
+  fetchLocalServerData() {
+    var coursesUrl = this.localServerUrl + '/api/courses'
+    this.http.get(coursesUrl).subscribe(res => { console.log(res) });    
   }
 
 }

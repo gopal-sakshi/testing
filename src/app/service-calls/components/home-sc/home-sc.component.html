@@ -6,6 +6,7 @@
         <button (click)="showStaticResource()">static resource</button>
         <button (click)="showUploadFile=!showUploadFile">uploadFile</button>
         <button (click)="showAxiosFetch=!showAxiosFetch">axios_vs_fetch</button>
+        <button (click)="fetchLocalServerData()">local server (do "npm run server" first)</button>
     </div>
     <div class="components" fxLayout="column">
         <div class="video-component" *ngIf="showVideo11">

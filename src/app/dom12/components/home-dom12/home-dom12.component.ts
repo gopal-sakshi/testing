@@ -13,7 +13,27 @@ export class HomeDom12Component implements OnInit {
   constructor(private titleService:Title) { }
 
   ngOnInit(): void {
-    this.titleService.setTitle('dom12');
+    this.titleService.setTitle('dom12_anta');
+    var link = <HTMLLinkElement>document.querySelector("link[rel~='icon']");
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'icon';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    }
+    // link.href = 'https://stackoverflow.com/favicon.ico';
+    link.href = 'rm_favicon.ico';
+  }
+
+  ngOnDestroy() {
+    this.titleService.setTitle('Testing');
+    var link = <HTMLLinkElement>document.querySelector("link[rel~='icon']");
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'icon';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    }
+    // link.href = 'https://stackoverflow.com/favicon.ico';
+    link.href = 'gopal612_favicon.ico';
   }
 
 }

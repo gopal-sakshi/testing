@@ -1,0 +1,19 @@
+{
+  "name": "parcel23",
+  "version": "1.0.0",
+  "description": "testing-parcel-jc",
+  "scripts": {
+    "start": "npm run start_parcel & npm run start_express",
+    "start_parcel": "parcel serve ./src/index.html --port 9966",
+    "start_express": "node ./server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "parcel": "2.5.0",
+    "http-proxy-middleware": "2.0.1"
+  },
+  "author": "GopAL",
+  "license": "ISC"
+}

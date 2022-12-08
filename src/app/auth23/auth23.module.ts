@@ -45,7 +45,7 @@ const routes:Routes = [
     Auth23Service,
     AuthGuard23,
     AuthInterceptor23,
-    AuthInterceptor24
+    AuthInterceptor24    
   ]
 })
 export class Auth23Module { }

@@ -7,7 +7,8 @@ import { Observable, Subject } from "rxjs";
 export class Common23Service {
     
     subject23 = new Subject<any>();
-
+    signInAgainSubject23 = new Subject<any>();
+    isSignInHappening:boolean = false;
     constructor() {}
 
     sendMessage(payload) {
@@ -17,5 +18,15 @@ export class Common23Service {
 
     getMessage():Observable<any> {
         return this.subject23.asObservable();
+    }
+
+    signInAgain(payload) {
+        console.log(payload);
+        this.isSignInHappening = true;
+        this.signInAgainSubject23.next(payload);
+    }
+
+    getSignInDetails() {
+        return this.signInAgainSubject23.asObservable();
     }
 }

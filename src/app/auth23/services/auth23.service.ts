@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
+import { map } from "rxjs/operators";
+import { Common23Service } from "src/app/common23/services/common23.service";
 
 @Injectable()
 export class Auth23Service {
@@ -8,7 +10,20 @@ export class Auth23Service {
     private url = 'http://localhost:3044/auth';
     
 
-    constructor(private httpClient:HttpClient) {}
+    constructor(private httpClient:HttpClient, 
+        private commonService:Common23Service) {
+            this.commonService.getSignInDetails().pipe(
+                map(res => {
+                    console.log(res);
+                    return res;
+                })
+            ).subscribe(res => {
+                this.signIn(res).subscribe(res => {
+                    this.commonService.sendMessage(res);
+                    this.commonService.isSignInHappening = false;
+                });
+            })
+        }
 
     signIn(payload:any):Observable<any> {
         console.log(payload);
@@ -35,14 +50,15 @@ export class Auth23Service {
 
     seeArticles():Observable<any> {
         let seeArticlesUrl = this.url + '/secretArticles';
-        
-        // let headers44 = new HttpHeaders();        // we will send token as part of http request headers for this service
-        // headers44.append('token', localStorage.getItem('token'));
-        // return this.httpClient.get(seeArticlesUrl, {headers: headers44});
+        let httpHeaders = new HttpHeaders();
+        httpHeaders = httpHeaders.append('token', localStorage.getItem('token'));
+        return this.httpClient.get(seeArticlesUrl, {headers: httpHeaders});
+    }
 
-        let headers = new HttpHeaders();        // we will send token as part of http request headers for this service
-        // headers = headers.append('token', '123');
-        headers = headers.append('token', localStorage.getItem('token'));
-        return this.httpClient.get(seeArticlesUrl, {headers});
+    seeRumours():Observable<any> {
+        let seeRumoursUrl = this.url + '/seeRumours';        
+        let httpHeaders = new HttpHeaders();
+        httpHeaders = httpHeaders.append('token', localStorage.getItem('token'));
+        return this.httpClient.get(seeRumoursUrl, {headers: httpHeaders});
     }
 }

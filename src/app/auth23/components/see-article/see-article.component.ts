@@ -9,7 +9,8 @@ import { Auth23Service } from '../../services/auth23.service';
 })
 export class SeeArticleComponent implements OnInit {
 
-  showSecretArticle:boolean = false;
+  secretArticle:string = '';
+  secretRumour:string = '';
   constructor(private auth23Service:Auth23Service) { }
 
   ngOnInit(): void {
@@ -26,12 +27,19 @@ export class SeeArticleComponent implements OnInit {
     return of('gopal').toPromise();
   }
 
+  // this fetchSecretArticle will make multiple service calls... 
+    // all of them will fail, because after 1 min from loggin in, token expires...
+    // now, we have to regenerate token... make all the service calls again
   fetchSecretArticle() {
-    this.showSecretArticle = !this.showSecretArticle;
   
     this.auth23Service.seeArticles().subscribe(res => {
       console.log(res);
+      this.secretArticle = res.data;
     });
+    this.auth23Service.seeRumours().subscribe(res => {
+      console.log(res);
+      this.secretRumour = res.data;
+    })
   
   }
 }

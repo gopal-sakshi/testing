@@ -3,27 +3,28 @@
 
     <div class="app-header" fxLayoutAlign="row" fxLayoutGap="80px">
         <app-header12></app-header12>
+        <button (click)="showingSweetAlert()">show sweet alert</button>
         <div class="logged-in-details" *ngIf="userName">{{userName}}</div>
     </div>
     <div class="home-sections" fxLayout="row" fxLayoutGap="20px">
         <div class="home-sections-1" fxLayout="row wrap" style="max-width:500px" >
-            <a [routerLink]="['home']"> Home </a>
-            <a routerLink="auth23"> auth23 </a> <!-- one way to use routerLink in html file -->
-            <a [routerLink]="['AgGrid34']"> AgGrid34 </a>
+            <a translate [routerLink]="['home']"> Home </a>
+            <a translate routerLink="auth23"> auth23 </a> <!-- one way to use routerLink in html file -->
+            <a translate [routerLink]="['AgGrid34']"> AgGrid34 </a>
             <!-- another way to use routerLink (using square arrays & binding)-->
-            <a [routerLink]="['dom12']"> DOM </a>
-            <a [routerLink]="['forms12']"> forms12 </a>
-            <a [routerLink]="['forms13']"> forms13 </a>
-            <a [routerLink]="['js-stuff12']"> javascript stuff </a>
-            <a [routerLink]="['life-cycle-hooks11']"> life-cycle-hooks11 </a>
-            <a [routerLink]="['library23']"> library23 </a>
-            <a [routerLink]="['material23']"> material Stuff </a>
-            <a [routerLink]="['observables23']"> observable Stuff </a>
-            <a [routerLink]="['random12']"> random12 </a>
-            <a [routerLink]="['random13']"> random13 </a>
-            <a [routerLink]="['random14']"> random14 </a>
-            <a [routerLink]="['subjects']"> subjects </a>
-            <a [routerLink]="['jasmine34']"> jasmine34 </a>
+            <a translate [routerLink]="['dom12']"> DOM </a>
+            <a translate [routerLink]="['forms12']"> forms12 </a>
+            <a translate [routerLink]="['forms13']"> forms13 </a>
+            <a translate [routerLink]="['js-stuff12']"> javascript stuff </a>
+            <a translate [routerLink]="['life-cycle-hooks11']"> life-cycle-hooks11 </a>
+            <a translate [routerLink]="['library23']"> library23 </a>
+            <a translate [routerLink]="['material23']"> material Stuff </a>
+            <a translate [routerLink]="['observables23']"> observable Stuff </a>
+            <a translate [routerLink]="['random12']"> random12 </a>
+            <a translate [routerLink]="['random13']"> random13 </a>
+            <a translate [routerLink]="['random14']"> random14 </a>
+            <a translate [routerLink]="['subjects']"> subjects </a>
+            <a translate [routerLink]="['jasmine34']"> jasmine34 </a>
 
             <!-- <a [routerLink]="['displayUsers']"> displayUsers </a> -->
             <!--

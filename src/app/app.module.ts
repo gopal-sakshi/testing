@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SubjectsModule } from './subjects/subjects.module';
@@ -16,9 +16,8 @@ import { PincodeInterceptor23 } from './classes/http-interceptor23';
 import { RouteReuseStrategy } from '@angular/router';
 import { RouteReuse23Service } from './router15/services/route-reuse23.service';
 import { RouteReuse23 } from './classes/route-reuse23';
-import { ErrorIntereptorService } from './common23/services/error-interceptor';
-import { environment } from 'src/environments/environment';
-import { AngularFireModule } from '@angular/fire/compat';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { i18Loader } from './i18Loader';
 
 
 
@@ -35,8 +34,15 @@ import { AngularFireModule } from '@angular/fire/compat';
 
     BrowserAnimationsModule,
     Common23Module,
-    // start angular fire module only if firebase22 module is loaded... didnt work, so starting in app.module.ts itself
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (i18Loader),
+        deps: [ HttpClient ]
+      }
+    }),
   ],
   providers: [
     ProductGuardService,

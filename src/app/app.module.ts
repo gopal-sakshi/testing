@@ -19,6 +19,7 @@ import { RouteReuse23 } from './classes/route-reuse23';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { i18Loader } from './i18Loader';
 import { AuthInterceptor22 } from './auth23/classes/authInterceptor22';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -27,7 +28,7 @@ import { AuthInterceptor22 } from './auth23/classes/authInterceptor22';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     AppRoutingModule,
     SubjectsModule,
@@ -44,6 +45,7 @@ import { AuthInterceptor22 } from './auth23/classes/authInterceptor22';
         deps: [ HttpClient ]
       }
     }),
+    RouterModule
   ],
   providers: [
     ProductGuardService,

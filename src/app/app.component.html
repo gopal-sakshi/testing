@@ -4,6 +4,7 @@
     <div class="app-header" fxLayoutAlign="row" fxLayoutGap="80px">
         <app-header12></app-header12>
         <button (click)="showingSweetAlert()">show sweet alert</button>
+        <div>{{ isTesting ? ('Yes' | translate) : ('No' | translate) }} </div>
         <div class="logged-in-details" *ngIf="userName">{{userName}}</div>
     </div>
     <div class="home-sections" fxLayout="row" fxLayoutGap="20px">

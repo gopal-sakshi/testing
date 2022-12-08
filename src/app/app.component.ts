@@ -11,6 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
 
+  isTesting:boolean = Date.now() % 2 == 0 ? true : false;         // isTesting will be true (or) false
   subscription44:Subscription;
   isConnected:boolean;  
   userName:string = '';

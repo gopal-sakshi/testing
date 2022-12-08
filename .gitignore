@@ -9,7 +9,7 @@
 
 # dependencies
 /node_modules
-
+package-lock.json
 /parcel23/.parcel-cache
 /parcel23/dist
 /parcel23/node_modules

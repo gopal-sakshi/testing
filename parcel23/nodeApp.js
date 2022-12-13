@@ -9,5 +9,5 @@ module.exports = function(baseUrl, app) {
     app.get('players23/addPlayer', (req, res) => {
         console.log(req);
         res.send('add player request received');
-    })
+    });
 }

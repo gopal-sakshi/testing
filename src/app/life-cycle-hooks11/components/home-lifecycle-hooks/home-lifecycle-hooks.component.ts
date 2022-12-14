@@ -68,7 +68,15 @@ export class HomeLifecycleHooksComponent extends ChangeDetection11 implements On
   changeInput2() {
 
     this._ngZone.runOutsideAngular(() => {
-      this.input2.city = "vijayawada";
+      
+      // nested property change is not detected
+      // this.input2.city = "vijayawada";
+
+      // run outside angular change got detected ???      
+      this.input2 = {
+        city: "madrid",
+        country: "spain"
+      }
     });
   }
 

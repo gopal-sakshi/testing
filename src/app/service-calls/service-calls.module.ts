@@ -10,6 +10,7 @@ import { SimpleExpressService } from './services/simple-express.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { Soap14Component } from './components/soap14/soap14.component';
 import { AxiosFetchComponent } from './components/axios-fetch/axios-fetch.component';
+import { XssAttacks12Component } from './components/xss-attacks12/xss-attacks12.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AxiosFetchComponent } from './components/axios-fetch/axios-fetch.compon
     Video11Component,
     SimpleExpressComponent,
     Soap14Component,
-    AxiosFetchComponent
+    AxiosFetchComponent,
+    XssAttacks12Component
   ],
   imports: [
     CommonModule,

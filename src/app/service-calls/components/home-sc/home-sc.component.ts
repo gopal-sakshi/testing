@@ -17,7 +17,8 @@ export class HomeScComponent implements OnInit {
   showUploadFile:boolean = false;
   showAxiosFetch:boolean = false;
   localServerUrl:string = 'http://localhost:9000'
-
+  showXssAttacks12:boolean = false;
+  
   constructor(
     private simpleExpressService:SimpleExpressService,
     private http:HttpClient

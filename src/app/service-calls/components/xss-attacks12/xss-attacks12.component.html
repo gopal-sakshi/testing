@@ -1,0 +1,13 @@
+<div class="xss-attacks12-container">
+    <button (click)="domXss()"> simulate dom xss</button>
+    
+    <div class="dom-xss">
+        <label>enter bad script input</label> &nbsp;&nbsp;&nbsp;
+        <input id="badScript" placeholder="enter bad script here">
+        <div>--------------------------------</div>
+        <label>script appears here</label>
+        <div id="scriptPlacedHere1"></div>
+        <div #scriptPlacedHere2></div>
+    </div>    
+
+</div>

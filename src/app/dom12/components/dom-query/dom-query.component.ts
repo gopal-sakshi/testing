@@ -39,5 +39,12 @@ export class DomQueryComponent implements OnInit {
     plus, it creates tight coupling between your application and rendering layers 
     which makes is difficult to run an app on multiple platforms.
 
+
+    Directly Accessing DOM Elements
+    - using native web APIs 
+    - you won't get the in-built secure functionalities when native APIs are used. 
+    - You should use the Angular patterns to safely access view elements and input values.
+    - see xss-attacks-12
+
    */
 }

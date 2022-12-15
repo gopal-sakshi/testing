@@ -7,6 +7,7 @@
         <button (click)="showUploadFile=!showUploadFile">uploadFile</button>
         <button (click)="showAxiosFetch=!showAxiosFetch">axios_vs_fetch</button>
         <button (click)="fetchLocalServerData()">local server (do "npm run server" first)</button>
+        <button (click)="showXssAttacks12=!showXssAttacks12">XssAttacks12</button>        
     </div>
     <div class="components" fxLayout="column">
         <div class="video-component" *ngIf="showVideo11">
@@ -25,5 +26,9 @@
             <input id="inputFile23" type="file" name="file" size="50">
             <button (click)="uploadFile23()">upload</button>
         </div>
+        <div class="simple-express-component" *ngIf="showXssAttacks12">
+            <app69-xss-attacks12></app69-xss-attacks12>
+        </div>
+        
     </div>    
 </div>

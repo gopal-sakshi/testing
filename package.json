@@ -11,7 +11,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test23": "ng serve --sourceMap=true --vendorSourceMap=true"
+    "test23": "ng serve --sourceMap=true --vendorSourceMap=true",
+    "app-shell23": "not working... so, removed entirely... ng run testing:app-shell --configuration production"
   },
   "private": true,
   "dependencies": {

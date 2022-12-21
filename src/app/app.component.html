@@ -6,6 +6,7 @@
         <button (click)="showingSweetAlert()">show sweet alert</button>
         <div>{{ isTesting ? ('Yes' | translate) : ('No' | translate) }} </div>
         <div class="logged-in-details" *ngIf="userName">{{userName}}</div>
+        <button (click)="testingWebWorker()">test Web Worker</button>
     </div>
     <div class="home-sections" fxLayout="row" fxLayoutGap="20px">
         <div class="home-sections-1" fxLayout="row wrap" style="max-width:500px" >

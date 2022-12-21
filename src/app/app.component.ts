@@ -32,9 +32,16 @@ export class AppComponent {
     console.log('ngOnInit');
     // this.userName = localStorage.getItem('userName') ? localStorage.getItem('userName') : '';
     this.subscription44 = this.commonService.getMessage().subscribe(
-      res => {
-        this.processLogin(res);        
-      });
+      res => { this.processLogin(res); },
+      err => { console.log(err); },
+      () => { console.log('observable completed'); }
+    );
+
+    if(navigator && typeof navigator !== 'undefined') {
+      if(navigator.onLine) {
+        console.log('you are connected to internet');
+      }
+    }
   }
 
   processLogin(payload:any) {    
@@ -63,16 +70,17 @@ export class AppComponent {
     // localStorage.setItem('token', payload.token ? payload.token : 'token ledu babai');
   }
 
+  testingWebWorker() {
+    if (typeof Worker !== 'undefined') {
+      // Create a new
+      const worker = new Worker(new URL('./app.worker', import.meta.url));
+      worker.postMessage('hello');      
+      worker.onmessage = workerResponse => { console.log(`page got message: ${workerResponse.data}`); };      
+    } else {
+      // Web Workers are not supported in this environment.
+      // You should add a fallback so that your program still executes correctly.
+    }
+  }
+
 }
 
-if (typeof Worker !== 'undefined') {
-  // Create a new
-  const worker = new Worker(new URL('./app.worker', import.meta.url));
-  worker.onmessage = ({ data }) => {
-    console.log(`page got message: ${data}`);
-  };
-  worker.postMessage('hello');
-} else {
-  // Web Workers are not supported in this environment.
-  // You should add a fallback so that your program still executes correctly.
-}

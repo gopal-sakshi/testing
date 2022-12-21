@@ -42,6 +42,7 @@ export class AppComponent {
         console.log('you are connected to internet');
       }
     }
+    
   }
 
   processLogin(payload:any) {    

@@ -127,3 +127,6 @@ PASS – Detail view is a unique URL
 PASS – Detail view initialization runs and gives a new random value 
 PASS – Detail component is cleaned up between detail views
 
+-------------------------------------------------------------------------------------------------------------------------------
+
+just modified here for git purposes... delete this later

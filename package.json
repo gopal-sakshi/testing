@@ -11,12 +11,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test23": "ng serve --sourceMap=true --vendorSourceMap=true",
-    "app-shell23": "not working... so, removed entirely... ng run testing:app-shell --configuration production",
-    "dev:ssr": "ng run testing:serve-ssr",
-    "serve:ssr": "node dist/testing/server/main.js",
-    "build:ssr": "ng build && ng run testing:server",
-    "prerender": "ng run testing:prerender"
+    "test23": "ng serve --sourceMap=true --vendorSourceMap=true"
   },
   "private": true,
   "dependencies": {

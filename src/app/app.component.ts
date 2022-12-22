@@ -37,12 +37,34 @@ export class AppComponent {
       () => { console.log('observable completed'); }
     );
 
+    this.useBrowserGlobalObjects();
+    
+  }
+
+  useBrowserGlobalObjects() {
+    
+    if(navigator.onLine) {
+      console.log('you are connected to internet');
+    }
+
+    // using navigator object
     if(navigator && typeof navigator !== 'undefined') {
       if(navigator.onLine) {
         console.log('you are connected to internet');
       }
     }
+
+    // using window object
+    if(window && typeof window !== 'undefined') {
+      window.setTimeout(() => { console.log('window setTimeout exectuted after 2 seconds')}, 2000);
+    }
     
+    // using document object
+    if(document && typeof document !== 'undefined') {
+      document.getElementById('')
+    }
+
+    // using location object
   }
 
   processLogin(payload:any) {    

@@ -17,7 +17,8 @@ ng add @nguniversal/express-engine
 
 https://blog.angular-university.io/angular-app-shell/
 
-
+ng generate universal ngu-app-shell --client-project <project name>
+ng generate universal ngu-app-shell --client-project testing
 
 --------------------------------------------------------------------------------
 Because a Universal application doesn't execute in the browser
@@ -25,4 +26,12 @@ Because a Universal application doesn't execute in the browser
 - For example, server-side applications can't reference browser-only global objects 
     window, document, navigator, location.
 - Angular provides some injectable abstractions over these objects, such as Location or DOCUMENT; it might substitute adequately for these APIs. If Angular doesn't provide it, it's possible to write new abstractions that delegate to the browser APIs while in the browser and to an alternative implementation while on the server (also known as shimming).
+--------------------------------------------------------------------------------
+
+variation in performance in different PCs
+outputs, inputs ===> app-shell hardcoded.... no authentication needed to test
+core ==============> 
+    authentication needed; 
+    navigator used at many places... navigator not defined ERRORs
+
 --------------------------------------------------------------------------------

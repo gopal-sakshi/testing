@@ -43,9 +43,9 @@ export class AppComponent {
 
   useBrowserGlobalObjects() {
     
-    if(navigator.onLine) {
-      console.log('you are connected to internet');
-    }
+    // if(navigator.onLine) {
+    //   console.log('you are connected to internet');
+    // }
 
     // using navigator object
     if(navigator && typeof navigator !== 'undefined') {

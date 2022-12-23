@@ -1,0 +1,9 @@
+.the-whole-content {
+    .footer-flex-class {
+        bottom: 0;
+    }
+}
+body html {
+    // height: 100%;            // sometimes may not work (becuase its always relative to something)
+    height: 100vh            // use this
+}

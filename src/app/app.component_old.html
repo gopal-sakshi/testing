@@ -1,0 +1,67 @@
+<div class="app-home-container" fxLayout="column" fxLayoutGap="40px">
+    <div class="app-header" fxLayoutAlign="row" fxLayoutGap="80px">
+        <app-header12></app-header12>
+        <button (click)="showingSweetAlert()">show sweet alert</button>
+        <div>{{ isTesting ? ('Yes' | translate) : ('No' | translate) }} </div>
+        <div class="logged-in-details" *ngIf="userName">{{userName}}</div>
+        <button (click)="testingWebWorker()">test Web Worker</button>
+    </div>
+    <div class="home-sections" fxLayout="row" fxLayoutGap="20px">
+        <div class="home-sections-1" fxLayout="row wrap" style="max-width:500px" >
+            <a translate [routerLink]="['home']"> Home </a>
+            <a translate routerLink="auth23"> auth23 </a> <!-- one way to use routerLink in html file -->
+            <a translate [routerLink]="['AgGrid34']"> AgGrid34 </a>
+            <!-- another way to use routerLink (using square arrays & binding)-->
+            <a translate [routerLink]="['dom12']"> DOM </a>
+            <a translate [routerLink]="['forms12']"> forms12 </a>
+            <a translate [routerLink]="['forms13']"> forms13 </a>
+            <a translate [routerLink]="['js-stuff12']"> javascript stuff </a>
+            <a translate [routerLink]="['life-cycle-hooks11']"> life-cycle-hooks11 </a>
+            <a translate [routerLink]="['library23']"> library23 </a>
+            <a translate [routerLink]="['material23']"> material Stuff </a>
+            <a translate [routerLink]="['observables23']"> observable Stuff </a>
+            <a translate [routerLink]="['random12']"> random12 </a>
+            <a translate [routerLink]="['random13']"> random13 </a>
+            <a translate [routerLink]="['random14']"> random14 </a>
+            <a translate [routerLink]="['subjects']"> subjects </a>
+            <a translate [routerLink]="['jasmine34']"> jasmine34 </a>
+
+            <!-- <a [routerLink]="['displayUsers']"> displayUsers </a> -->
+            <!--
+                we just created a displayUsers link here... bcoz, we want to understand the difference between
+                [routerLink] = "['displayUsers']"
+                [routerLink] = "['/displayUsers']"
+        -->
+        </div>
+        <div title="https://www.intertech.com/angular-development-article-series-preview/" class="home-sections-2" fxLayout="column wrap" style="max-width:500px">
+            <div>Angular tech articles</div>
+            <a [routerLink]="['design23']"> design23 </a>
+            <a [routerLink]="['router16/parent']"> router-16 </a>
+            <a [routerLink]="['observables15']"> observables15 </a>
+            <a [routerLink]="['projection23']"> projection23 </a>
+            
+        </div>
+        <div class="home-sections-3" fxLayout="row wrap" style="max-width:500px">
+            <a [routerLink]="['routeGuards']"> route guards </a>
+            <a [routerLink]="['router-12']"> router-12 </a>
+            <a [routerLink]="['router13']"> router-13 </a>
+            <a [routerLink]="['router14']"> router-14 </a>
+            <a [routerLink]="['router15']"> router-15 </a>
+            <a [routerLink]="['services-di']"> services-di </a>
+            <a [routerLink]="['serverless123']"> serverless123 </a>
+            <a [routerLink]="['service-calls']"> service calls </a>
+            <a [routerLink]="['styling12']"> styling12 </a>
+            <a [routerLink]="['bootstrap23']"> bootstrap23 </a>
+            <a [routerLink]="['web-sockets']"> web-sockets </a>
+            <a [routerLink]="['firebase22']"> firebase chat </a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="app-footer">
+        <app-footer12></app-footer12>
+    </div>
+
+</div>

@@ -53,7 +53,8 @@
               // "./node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": [
-              "./node_modules/bootstrap/dist/js/bootstrap.js"
+              // use it either here (or) in index.html
+              // "./node_modules/bootstrap/dist/js/bootstrap.js"
             ],
             "webWorkerTsConfig": "tsconfig.worker.json"
           },

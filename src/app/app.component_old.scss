@@ -1,0 +1,64 @@
+.app-home-container {
+    .app-header {
+        /* position:absolute; */
+        top: 5px;
+
+        .logged-in-details {
+            background-color: var(--gopal-success);
+        }
+    }
+
+    .home-sections {
+        .home-sections-1 {
+            // background-color:var(--gopal-info);
+            // color:chocolate;
+            // a {
+            //     margin: 10px;
+            // }
+            border: 1px dotted red;
+            padding: 5px;
+            margin: 5px;
+            max-width: fit-content;
+            a {
+                margin: 5px;
+            }
+        }
+
+        .home-sections-2 {
+            // background-color: var(--gopal-info);
+            // color: chocolate;
+
+            // a {
+            //     margin: 10px;
+            // }
+            border: 1px dotted red;
+            padding: 10px;
+            margin: 10px;
+            max-width: fit-content;
+
+            a {
+                margin: 10px;
+            }
+        }
+
+        .home-sections-3 {
+            border: 1px dotted red;
+            padding: 10px;
+            margin: 10px;
+            max-width: fit-content;
+
+            a {
+                margin: 10px;
+            }
+        }
+    }
+
+    .main-content {
+        margin: 20px;
+    }
+
+    .app-footer {
+        /* position:absolute; */
+        bottom: 0px;
+    }
+}

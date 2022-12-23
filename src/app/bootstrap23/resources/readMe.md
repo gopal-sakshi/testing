@@ -32,3 +32,6 @@ d) Adding bootstrap files to angular.json
 
 
 ---------------------------------------------------------------------------
+# cosmos
+
+Responsive Admin Dashboard Template

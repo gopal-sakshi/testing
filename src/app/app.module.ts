@@ -28,7 +28,7 @@ import { RouterModule } from '@angular/router';
     AppComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     SubjectsModule,

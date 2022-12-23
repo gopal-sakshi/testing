@@ -1,18 +1,50 @@
 <div class="bootstrap-container">
     <div class="buttons">
         <button (click)="showBootstrapButtons=!showBootstrapButtons">buttons</button>
+        <button (click)="showCosmos12=!showCosmos12">cosmos12</button>
+        <button (click)="showFlex12=!showFlex12">flex12</button>
+        <button (click)="showFullWebsite12=!showFullWebsite12">full website</button>
         <button (click)="showLayout12=!showLayout12">Layout12</button>        
-        <button (click)="showLayout13=!showLayout13">Layout13</button>        
+        <button (click)="showLayout13=!showLayout13">Layout13</button>
+        <button (click)="showLayout14=!showLayout14">Layout14</button>
+        <button (click)="showLayout15=!showLayout15">Layout15</button>
+        <button (click)="showLayout16=!showLayout16">Layout16</button>
+        <button (click)="showLayout17=!showLayout17">Layout17</button>
+        <button (click)="showProgressBar=!showProgressBar">progress-bar</button>
     </div>
     <div class="child-elements">
         <div *ngIf="showBootstrapButtons">
             <app69-buttons12></app69-buttons12>
+        </div>
+        <div *ngIf="showCosmos12">
+            <app69-cosmos12></app69-cosmos12>
+        </div>
+        <div *ngIf="showFlex12">
+            <app69-flex12></app69-flex12>
+        </div>
+        <div *ngIf="showFullWebsite12">
+            <app69-full-website12></app69-full-website12>
         </div>
         <div *ngIf="showLayout12">            
             <app69-layout12></app69-layout12>
         </div>
         <div *ngIf="showLayout13">
             <app69-layout13></app69-layout13>
+        </div>
+        <div *ngIf="showLayout14">
+            <app69-layout14></app69-layout14>
+        </div>
+        <div *ngIf="showLayout15">
+            <app69-layout15></app69-layout15>
+        </div>
+        <div *ngIf="showLayout16">
+            <app69-layout16></app69-layout16>
+        </div>
+        <div *ngIf="showLayout17">
+            <app69-layout17></app69-layout17>
+        </div>
+        <div *ngIf="showProgressBar">
+            <app69-progress-bar></app69-progress-bar>
         </div>
     </div>
 </div>

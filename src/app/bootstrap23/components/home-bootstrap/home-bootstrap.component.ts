@@ -10,6 +10,14 @@ export class HomeBootstrapComponent implements OnInit {
   showBootstrapButtons:boolean = false;
   showLayout12:boolean = false;
   showLayout13:boolean = false;
+  showLayout14:boolean = false;
+  showLayout15:boolean = false;
+  showLayout16:boolean = false;
+  showLayout17:boolean = false;
+  showCosmos12:boolean = false;
+  showFlex12:boolean = false;
+  showFullWebsite12:boolean = false;
+  showProgressBar:boolean = false;
 
   constructor() { }
 

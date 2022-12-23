@@ -1,0 +1,18 @@
+<div class="bootstrap-container">
+    <div class="buttons">
+        <button (click)="showBootstrapButtons=!showBootstrapButtons">buttons</button>
+        <button (click)="showLayout12=!showLayout12">Layout12</button>        
+        <button (click)="showLayout13=!showLayout13">Layout13</button>        
+    </div>
+    <div class="child-elements">
+        <div *ngIf="showBootstrapButtons">
+            <app69-buttons12></app69-buttons12>
+        </div>
+        <div *ngIf="showLayout12">            
+            <app69-layout12></app69-layout12>
+        </div>
+        <div *ngIf="showLayout13">
+            <app69-layout13></app69-layout13>
+        </div>
+    </div>
+</div>

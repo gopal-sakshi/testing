@@ -8,6 +8,21 @@ if (environment.production) {
   enableProdMode();
 }
 
+/********************************************** */
+  // USE THIS
+
+  platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
+  
+/********************************************** */
+
+/************************************************************** 
+
+// THIS IS ALL THE JUNK THAT GOT ADDED
+  // when I uninstalled, installed nguniversal, app-shell to try again & again
+  // with this all I am getting is blank page...
+
+
 function bootstrap() {
   function bootstrap() {
     function bootstrap() {
@@ -40,3 +55,4 @@ if (document.readyState === 'complete') {
   document.addEventListener('DOMContentLoaded', bootstrap);
 }
 
+************************************************************** */

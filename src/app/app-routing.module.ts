@@ -13,6 +13,10 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'bootstrap23',
+    loadChildren: () => import('./bootstrap23/bootstrap23.module').then(m => m.Bootstrap23Module)
+  },
+  {
     path: 'subjects',
     loadChildren: () => import('./subjects/subjects.module').then(m => m.SubjectsModule)
   },

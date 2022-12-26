@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
+import { Preload23Service } from './preload23.service';
 import { DisplayUsersComponent } from './random12/components/display-users/display-users.component';
 
 const routes: Routes = [
@@ -17,11 +18,16 @@ const routes: Routes = [
     loadChildren: () => import('./bootstrap23/bootstrap23.module').then(m => m.Bootstrap23Module)
   },
   {
-    path: 'subjects',
+    path: 'subjects',    
     loadChildren: () => import('./subjects/subjects.module').then(m => m.SubjectsModule)
   },
   {
+    path: 'webpack23',
+    loadChildren: () => import('./webpack23/webpack23.module').then(m => m.Webpack23Module)
+  },
+  {
     path: 'firebase22',
+    data: { preload22: true },
     loadChildren: () => import('./firebase22/firebase22.module').then(m => m.Firebase22Module)
   },
   {
@@ -81,7 +87,7 @@ const routes: Routes = [
     loadChildren: () => import('./random13/random13.module').then(m => m.Random13Module)
   },
   {
-    path: 'observables23',
+    path: 'observables12',
     loadChildren: () => import('./observables12/observables12.module').then(m => m.Observables12Module)
   },
   {
@@ -154,7 +160,8 @@ const routes: Routes = [
   // imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   //enableTracing flag = we can see the events emitted during router navigation
   imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled'
+    initialNavigation: 'enabled', 
+    preloadingStrategy: Preload23Service
 })],
   exports: [RouterModule]
 })

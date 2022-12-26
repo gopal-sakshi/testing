@@ -34,9 +34,18 @@
       "prefix": "app69",
       "architect": {
         "build": {
+          // uses default Configuration
           "builder": "@angular-devkit/build-angular:browser",
+
+          // while building; use custom webpack ===> webpack-config23.js
+          // "builder": "@angular-builders/custom-webpack:browser",
+
           "options": {
-            "outputPath": "dist/browser",
+            // "customWebpackConfig": {
+            //   "path": "./webpack-config23.js",
+            //   "replaceDuplicatePlugins": true
+            // },
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -108,7 +117,13 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+
+          
           "builder": "@angular-devkit/build-angular:dev-server",
+
+          // even while serving (developing locally)... use customWebpack only
+          // "builder": "@angular-builders/custom-webpack:dev-server",
+
           "configurations": {
             "production": {
               "browserTarget": "testing:build:production"
@@ -127,6 +142,8 @@
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
+
+          // "builder": "@angular-builders/custom-webpack:extract-i18n",
           "options": {
             "browserTarget": "testing:build"
           }

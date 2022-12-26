@@ -11,10 +11,15 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test23": "ng serve --sourceMap=true --vendorSourceMap=true"
+    "test23": "ng serve --sourceMap=true --vendorSourceMap=true",
+    "build-dev-stats": "ng run testing:serve --stats-json --------------------> not working for dev mode ???",
+    "analyze-dev-stats": "webpack-bundle-analyzer dist/stats.json -----------> not working for dev mode ???",
+    "build-prod-stats": "ng build --configuration production --stats-json",
+    "analyze-prod-stats": "webpack-bundle-analyzer dist/stats.json"
   },
   "private": true,
   "dependencies": {
+    "@angular-builders/custom-webpack": "^12.1.0",
     "@angular/animations": "~12.2.0",
     "@angular/cdk": "^12.2.0",
     "@angular/common": "~12.2.0",
@@ -38,14 +43,17 @@
     "@ngx-translate/http-loader": "6.0.0",
     "ag-grid-angular": "27.1.1",
     "ag-grid-community": "27.1.0",
-    "axios": "^1.2.1",    
+    "axios": "^1.2.1",
+    "bootstrap": "^5.2.3",
     "express": "^4.15.2",
     "firebase": "9.8.4",
     "gopal612-testing-library": "2.1.0",
+    "moment": "^2.29.4",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.6.0",
     "sweetalert2": "^11.3.0",
     "tslib": "^2.3.0",
+    "webpack-bundle-analyzer": "^4.7.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -62,8 +70,10 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "moment-locales-webpack-plugin": "^1.2.0",
     "parcel": "^2.7.0",
     "ts-node": "^10.9.1",
-    "typescript": "~4.3.5"
+    "typescript": "~4.3.5",
+    "webpack-notifier": "^1.15.0"
   }
 }

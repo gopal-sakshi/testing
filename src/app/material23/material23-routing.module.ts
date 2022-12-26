@@ -8,20 +8,13 @@ import { Sidenav2Component } from './components/sidenav2/sidenav2.component';
 const routes: Routes = [
     {
         path: '',
-        component: MatHome12Component
+        component: MatHome12Component,
+        children: [
+            { path:'mat-forms23', component: MatForms23Component },
+            { path: 'sidenav2', component: Sidenav2Component },
+            { path: 'mat-table12', component: MatTable12Component }
+        ]
     },
-    {
-        path:'mat-forms23',
-        component: MatForms23Component
-    },
-    {
-        path: 'sidenav2',
-        component: Sidenav2Component
-    },
-    {
-        path: 'mat-table12',
-        component: MatTable12Component
-    }
 ]
 
 @NgModule({

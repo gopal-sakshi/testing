@@ -1,5 +1,6 @@
 import { Component, Injector, NgZone, OnInit } from '@angular/core';
 import { ChangeDetection11 } from '../../classes/change-detection';
+import { ChangeDetection12Component } from '../change-detection12/change-detection12.component';
 
 @Component({
   selector: 'app-home-lifecycle-hooks',
@@ -13,10 +14,16 @@ export class HomeLifecycleHooksComponent extends ChangeDetection11 implements On
   input2:any;
   input3:any;
 
-  showChangeInputs:boolean = false
-  showCd1:boolean = false;
-  showCd2:boolean = false;
+  playerName:string[] = ['Benzema', 'Alaba', 'Courtois', 'Militao'];
+  club:string[] = ['RealMadrid', 'Los Blancos', 'Los Galacticos', 'The Whites'];
+
+  ngDoCheck:boolean = false
+  showCd11:boolean = false;
+  showCd12:boolean = false;
+  change23:boolean = false;
   showZone:boolean = false;
+  zone11OutsideAngular:boolean = false;
+
   /*
 
   Constructor
@@ -39,30 +46,17 @@ export class HomeLifecycleHooksComponent extends ChangeDetection11 implements On
   ngOnInit(): void {
 
     console.log('inside ngOnIniti of life cycle hooks home');
-    this.input1 = {
-      name: "gopal",
-      age: 33,
-    }
+    this.input1 = { name: "gopal", age: 33 }
 
-    this.input2 = {
-      city: "hyderabad",
-      country: "India"
-    }
+    this.input2 = { city: "hyderabad", country: "India" }
 
     this.input3 = {
-      football: {
-        clubName: 'Real Madrid',
-        captain: 'Benzema',
-        stadium: 'Santiago Bernabeu'
-      }
+      football: { clubName: 'Real Madrid', captain: 'Benzema', stadium: 'Santiago Bernabeu' }
     }
   }
 
   changeInput1() {
-    this.input1 = {
-      name: "sakshi",
-      age: 34
-    }
+    this.input1 = { name: "sakshi", age: 34 }
   }
 
   changeInput2() {
@@ -73,14 +67,25 @@ export class HomeLifecycleHooksComponent extends ChangeDetection11 implements On
       // this.input2.city = "vijayawada";
 
       // run outside angular change got detected ???      
-      this.input2 = {
-        city: "madrid",
-        country: "spain"
-      }
-    });
+        // but I think, it should be async operation for change not to be detected
+      setTimeout(() => {
+        this.input2 = { city: "madrid", country: "spain" } }, 1000)      
+      });
   }
 
   changeInput3() {
     this.input3.football.captain = 'Luka'
   }
+
+  openBottomSheet1() {
+    this.bottomSheet.open(ChangeDetection12Component, 
+      { data: { playerName: this.playerName[0], club: this.club[0]}, }
+    );
+  }
+
+  modifyBottomSheetInputs() {
+    // this.playerName = 'Modric';
+    // this.club = 'RM';
+  }
+
 }

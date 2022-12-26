@@ -15,7 +15,7 @@ export class ChangeDetection11 {
     this.bottomSheet = this.injector.get(MatBottomSheet)
   }
 
-  openSomeComponent() {
+  openBottomSheet2() {
     this.bottomSheet.open(ChangeDetection12Component, {
       panelClass: 'p-0',
       data: {

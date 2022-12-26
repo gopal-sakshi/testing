@@ -9,18 +9,6 @@ const routes: Routes = [
   {
     path:'',
     component: HomeLifecycleHooksComponent
-  },
-  {
-    path: 'change-detection-11',
-    component: ChangeDetection11Component
-  },
-  {
-    path: 'zone12',
-    component: Zone12Component
-  },
-  {
-    path: 'zone11-outside-angular',
-    component: Zone11OutsideAngularComponent
   }
 ];
 

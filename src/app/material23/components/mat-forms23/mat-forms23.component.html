@@ -1,5 +1,15 @@
+<!--
+    Angular CDK
+    - a library built by the Angular Material team at Google. 
+    - CDK itself is independent of any CSS styling, which means it is designed to be agnostic
+        and you can use it without Angular Material.
+    - Angular CDK (Component Development Kit) 
+        to create an overlay that renders some content on top of other content.
+    - 
+
+-->
 <!-- <form [formGroup]="editEventId"> -->
-<div *ngIf="!false" class="mat-forms23-container">
+<div *ngIf="false" class="mat-forms23-container">
     <h4>Select event Id</h4>
     <form [formGroup]="event23Form">        
         <mat-form-field appearance="outline" class="mat-forms23-form-field">
@@ -15,8 +25,17 @@
         </mat-form-field>
     </form>
 </div>
-
-
+<mat-form-field appearance="outline" class="mat-forms23-form-field">
+    <mat-label>Favorite food</mat-label>
+    
+    <mat-select *ngFor="let eventId of eventIds" formControlName="eventId">
+        <!-- <mat-option>{{eventId}}</mat-option> -->
+        <mat-option>event id 1</mat-option>
+        <mat-option>event id 2</mat-option>
+        <mat-option>event id 3</mat-option>
+        <mat-option>event id 4</mat-option>
+    </mat-select>
+</mat-form-field>
 
 <div *ngIf="false">
     <label for="cars">Choose a car:&nbsp;</label>

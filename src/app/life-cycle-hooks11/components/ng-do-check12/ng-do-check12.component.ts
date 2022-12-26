@@ -5,6 +5,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } 
   templateUrl: './ng-do-check12.component.html',
   styleUrls: ['./ng-do-check12.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.Default
 })
 export class NgDoCheck12Component implements OnInit {
 
@@ -21,6 +22,7 @@ export class NgDoCheck12Component implements OnInit {
   startTimeout() {
     setTimeout(() => {
       this.originalValue1 = 'new Value';
+      console.log(`change detection strategy must be set to "OnPush"`);
       console.log('now originalValue1 updated to ',this.originalValue1);
     },2000)
   }

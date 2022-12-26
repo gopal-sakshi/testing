@@ -1,29 +1,42 @@
 <div class="life-cycle-hooks-container" fxLayout="column" fxLayoutGap="20px">
     
     <div>
-        <button (click)="showChangeInputs=!showChangeInputs">change inputs</button>
-        <button (click)="showCd1=!showCd1">cd1</button>
-        <button (click)="showCd2=!showCd2">cd2</button>
-        <button (click)="showZone=!showZone">zone</button>
+        <button (click)="showCd11=!showCd11">cd11</button>
+        <button (click)="showCd12=!showCd12; openBottomSheet1()">cd12</button>
+        <button (click)="openBottomSheet2()">cd12 via class</button>
+        <button (click)="change23=!change23">change23</button>
+        <button (click)="ngDoCheck=!ngDoCheck">change inputs</button>
+        <button (click)="zone11OutsideAngular=!zone11OutsideAngular">color changing div</button>        
+        <button (click)="showZone=!showZone">zone</button>        
     </div>
 
-    <div *ngIf="showChangeInputs" class="change-detection-1">
+    <div *ngIf="showCd11" class="change-detection-2">    
+        <app-change-detection11></app-change-detection11>
+    </div>
+    <!-- this is wrong way to instantiate this component; no provider for Mat_bottom_sheet_data error-->
+    <div *ngIf="showCd12">
+        <!-- <button (click)="modifyBottomSheetInputs()">modify bottomsheet inputs</button> -->
+        <!-- <app-change-detection12></app-change-detection12> -->        
+    </div>
+
+    <div *ngIf="change23">
+        <app69-change23></app69-change23>
+    </div>
+
+    <div *ngIf="ngDoCheck" class="change-detection-1">
         <button (click)="changeInput1()">change input 1</button>
         <button (click)="changeInput2()">change input 2</button>
         <button (click)="changeInput3()">change input 3</button>
         <app-ng-do-check12 [input1]="input1" [input2]="input2" [input3]="input3"></app-ng-do-check12>
         <!-- https://angular-change-detection-demo.netlify.app/expression-changed-demo -->
     </div>
+    <div *ngIf="zone11OutsideAngular">
+        <app-zone11-outside-angular></app-zone11-outside-angular>
+    </div>
 
-    <div *ngIf="showCd1" class="change-detection-2">    
-        <app-change-detection11></app-change-detection11>
-    </div>
-    <div *ngIf="showCd2">
-        <app69-change23></app69-change23>
-    </div>
     <div *ngIf="showZone">
-        <a [routerLink]="['zone12']">Zone12</a>        
+        <app-zone12></app-zone12>
+        <!-- <a [routerLink]="['zone12']">Zone12</a>         -->
     </div>
-    <button mat-raised-button color="primary" (click)="openSomeComponent()">detect changes?</button>
 </div>
 

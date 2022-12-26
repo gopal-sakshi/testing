@@ -29,31 +29,22 @@ export class ChangeDetection12Component implements OnInit {
 
   async doStuff() {
 
-    // setTimeout(() => {
-    //   this.isLoaded12 = true;
-    // }, 1000);
-    const img12 = 'https://en.wikipedia.org/wiki/Elephant#/media/File:Loxodontacyclotis.jpg'
-    const response = await fetch(img12);
-    await this.someAsyncFunction();
+    this.ngZone.runOutsideAngular(async ()=> {
+      await this.someAsyncFunction();          // view not updated... because, its run outside Angular
+                                                  // plus, its async operation
+      console.log('isLoaded set to true; but it remains as not Benzema until user clicks something ');
+    });
 
-    this.ngZone.runOutsideAngular(()=> {
-     // this.isLoaded12 = true;                 // view not updated... because, its run outside Angular
-    });                                           // we show "not Modric"
-
-    this.isLoaded12 = true;                // view updated... we show "Modric"
-    console.log(this.isLoaded12);
+    // this.isLoaded12 = true;                // view updated... we show "Modric"
+    // console.log(this.isLoaded12);
   }
 
   someAsyncFunction() {
-    var count = 10000;
-
-    setTimeout(()=> {
-      console.log("waited 5 seconds");
-    }, 5000)
-
     return new Promise( resolve => {
       setTimeout(()=> {
         console.log("promise resolved after 2 seconds");
+        this.isLoaded12 = true;
+        resolve('blah');
       },2000);
     })
   }

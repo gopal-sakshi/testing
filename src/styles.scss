@@ -5,6 +5,13 @@
 @import '../src/styles/mat23.theme.scss';
 @import "../src/styles/variables.scss";
 
+/*** Added these for mat-forms23 dropdown to work... but didnt work ***/
+// @import '~@angular/cdk/overlay-prebuilt.css';
+
+// .cdk-overlay-container {
+//     z-index: 999 !important;
+// }
+/****************************************/
 html, body {
     font-size: 20px;
     background-color: var(--gopal-background-color);    

@@ -20,7 +20,7 @@ export class Zone11OutsideAngularComponent implements OnInit {
     return ['red', 'orange', 'yellow', 'green', 'blue', 'purple'][Math.random() * 6 | 0];
   }
   private changeColor() {
-    setInterval(_ => this.div.nativeElement.style.background = this.setRandomColor(), 50)
+    setInterval(_ => this.div.nativeElement.style.background = this.setRandomColor(), 2000)
   }
 
   /*

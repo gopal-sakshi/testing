@@ -1,13 +1,18 @@
 <div class="change-detection12-container" fxLayout="column" fxLayoutGap="20px">
 
   <div class="dialog-header overflow-hidden" fxLayout="row" fxLayoutAlign="space-between center">
-    <h1 class="header-title" mat-dialog-title translate>This is frustrating</h1>
+    <h1 class="header-title" mat-dialog-title translate>frustrating; view updated only when user clicks</h1>      
       <button class="close-dialog-btn outline-none" mat-icon-button (click)="cancel()">
           <mat-icon>clear</mat-icon>
       </button>
   </div>
-
   <div class="main-content" fxLayout="column" style="max-width: fit-content;">
+    <div class="description">
+      <div>It'll remain not Benzema forever; bcoz Angular doesnt run changeDetection</div>
+      <div>isLoaded is set to true; but its outside angular</div>
+      <div>it will only change to Benzema, only when userClicks as Angular's change detection runs again </div>
+    </div>
+
     <span *ngIf="isLoaded12">player = {{playerName}}</span>
     <span *ngIf="!isLoaded12">player = not {{playerName}}</span>
     <span>club = {{club}}</span>

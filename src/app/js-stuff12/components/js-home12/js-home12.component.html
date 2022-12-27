@@ -12,6 +12,7 @@
         <button mat-raised-button color="primay" (click)="showTwoWayBinding = !showTwoWayBinding">Two way binding</button>
         <button mat-raised-button color="primay" (click)="showRandomJS = !showRandomJS">Random JS</button>
         <button mat-raised-button color="primay" (click)="showCallback22 = !showCallback22">Callback22</button>
+        <button mat-raised-button color="primay" (click)="showBubble23 = !showBubble23">bubble23</button>
         <button mat-raised-button color="primay" (click)="showAWS1 = !showAWS1">AWS 1</button>
         <button mat-raised-button color="primay" (click)="showConsoleTypes = !showConsoleTypes">Console types</button>        
     </div>
@@ -19,6 +20,9 @@
     <div fxLayout="column" fxLayoutGap="20px">
         <div *ngIf="showRandomJS">
             <app69-random-js></app69-random-js>
+        </div>
+        <div *ngIf="showBubble23">
+            <app69-bubble23></app69-bubble23>
         </div>
         <div *ngIf="showTwoWayBinding">
             <app69-two-way-binding></app69-two-way-binding>

@@ -1,0 +1,28 @@
+<div class="bubble23-container">
+
+    <!-- rect-1 section-->
+    <div (click)="rect1Handler($event)" class="rect-1">
+        <h1>this is rect-1</h1>
+
+        <!-- rect-2 section-->
+        <div (click)="rect2Handler()" class="rect-2">
+            <h2>this is rect-2</h2>
+
+            <div fxLayout="row" fxLayoutGap="10px">
+                <!-- rect-3a section -->
+                <div (click)="rect3aHandler()" class="rect-3" id="rect3a">
+                    <h3>this is rect-3a</h3>
+                </div>
+                <!-- end of rect-3a -->
+
+                <!-- rect-3b section -->
+                <div (click)="rect3bHandler()" class="rect-3" id="rect3b">
+                    <h3>this is rect-3b</h3>
+                </div>
+                <!-- end of rect-3b -->
+            </div>
+        </div>
+        <!-- end of rect-2 -->
+    </div>
+    <!-- end of rect-1 -->
+</div>

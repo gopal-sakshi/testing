@@ -1,21 +1,24 @@
-<div class="flex12-container" fxLayout="row" fxLayoutGap="60px">
-    <div class="stadium-details">
-        The capacity of Santiago Bernabeu stadium is {{santiagoBernabeuCapacity | numConverter}}
+<div class="flex12-container" fxLayout="column" fxLayoutGap="20px">
+    <div fxLayout="row" fxLayoutGap="20px">
+        <div class="stadium-details">
+            The capacity of Santiago Bernabeu stadium is {{santiagoBernabeuCapacity | numConverter}}
+        </div>
+        <div class="defenders">
+            <div redHighlight>Carvajal, Militao, Alaba, Mendy</div>
+            <div blueHighlight> Casillas, Ramos, Pepe (mouse over to see blue)</div>
+        </div>
     </div>
-    <div class="goal-keeper">
-        <span>Courtoius</span>
-    </div>
-    <div class="defenders">
-        <span redHighlight>Carvajal, Militao, Alaba, Mendy</span>
-    </div>
-    <div class="midfielders">
-        <span> Modric, Casemiro, Kroos</span>
-    </div>
-    <div *delayRendering="5000" class="attackers">
-        <span>Rodrygo, Benzema, Vinicius</span>
-    </div>
-    
-    <div fxLayout="column" fxLayoutGap="20px">
+    <div fxLayout="row" fxLayoutGap="20px">
+        <div class="midfielders">
+            <div>Instantly delivered</div>
+            <div> Modric, Casemiro, Kroos</div>        
+        </div>
+        <div class="attackers" *delayRendering="5000">
+            <div>rendered after 5 seconds</div>
+            <div>Rodrygo, Benzema, Vinicius</div>
+        </div>
+    </div>    
+    <div fxLayout="row" fxLayoutGap="20px">
         <textarea noPasteInput id="textarea-id1" name="no-paste" placeholder="cant paste content" rows="5" style="max-width:700px"></textarea>
         <textarea noCopyInput id="textarea-id2" name="no-copy" placeholder="cant copy content" rows="5" style="max-width:700px"></textarea>
         <textarea id="textarea-id3" name="default" placeholder="do anything" rows="5" style="max-width:700px"></textarea>

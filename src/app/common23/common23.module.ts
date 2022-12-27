@@ -15,7 +15,8 @@ import { JoinArrayPipe } from './Pipes/join-array.pipe';
 import { ThreeDecimalsPipe } from './Pipes/threeDecimals.pipe';
 
 // DIRECTIVES
-import { RedHighlightDirective } from './directives/red-highlight.directive';
+import { RedHighlightDirective } from './directives/highlight-red.directive';
+import { BlueHighlightDirective } from './directives/highlight-blue.directive';
 import { DelayRenderingDirective } from './directives/delay-rendering.directive';
 import { NoPaste23Directive } from './directives/no-paste23.directive';
 import { ProcessDecimalDirective } from './directives/processDecimal.directive';
@@ -34,6 +35,7 @@ import { OnReturnDirective } from './directives/enter23.directive';
     Header12Component,
     Footer12Component,
     RedHighlightDirective,
+    BlueHighlightDirective,
     DelayRenderingDirective,
     NumberConverterPipe,
     NoPaste23Directive,
@@ -53,6 +55,7 @@ import { OnReturnDirective } from './directives/enter23.directive';
     Header12Component,
     Footer12Component,
     RedHighlightDirective,
+    BlueHighlightDirective,
     DelayRenderingDirective,
     NumberConverterPipe,
     NoPaste23Directive,

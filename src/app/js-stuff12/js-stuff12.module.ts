@@ -21,6 +21,7 @@ import { RandomJsComponent } from './components/random-js/random-js.component';
 import { Callback22Component } from './components/callback22/callback22.component';
 import { AwsStuff1Component } from './components/aws-stuff1/aws-stuff1.component';
 import { ConsoleTypesComponent } from './components/console-types/console-types.component';
+import { Bubble23Component } from './components/bubble23/bubble23.component';
 
 
 
@@ -39,7 +40,8 @@ import { ConsoleTypesComponent } from './components/console-types/console-types.
     RandomJsComponent,
     Callback22Component,
     AwsStuff1Component,
-    ConsoleTypesComponent    
+    ConsoleTypesComponent,
+    Bubble23Component    
   ],
   imports: [
     CommonModule,

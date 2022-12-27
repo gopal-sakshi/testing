@@ -16,15 +16,8 @@ import { AuthInterceptor24 } from './classes/authInterceptor24';
 
 
 const routes:Routes = [
-  {
-    path: '',
-    component: AuthHomeComponent
-  },
-  {
-    path: 'seeArticles',
-    component: SeeArticleComponent,
-    canActivate: [AuthGuard23],
-  }
+  { path: '', component: AuthHomeComponent },
+  { path: 'seeArticles', component: SeeArticleComponent, canActivate: [AuthGuard23] }
 ]
 
 @NgModule({

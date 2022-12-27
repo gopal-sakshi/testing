@@ -12,10 +12,17 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test23": "ng serve --sourceMap=true --vendorSourceMap=true",
+
     "build-dev-stats": "ng run testing:serve --stats-json --------------------> not working for dev mode ???",
     "analyze-dev-stats": "webpack-bundle-analyzer dist/stats.json -----------> not working for dev mode ???",
+
+
     "build-prod-stats": "ng build --configuration production --stats-json",
-    "analyze-prod-stats": "webpack-bundle-analyzer dist/stats.json"
+    "analyze-prod-stats1": "webpack-bundle-analyzer dist/stats.json",
+    "NOTE___________": "angular team strongly recommends `source-map-explorer` instead of webpack-bundle-analyzer",
+
+    "build-prod-sourceMap": "ng build --sourceMap=true --namedChunks=true",
+    "analyze-prod-stats2": "source-map-explorer dist/*.js"
   },
   "private": true,
   "dependencies": {
@@ -72,6 +79,7 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "moment-locales-webpack-plugin": "^1.2.0",
     "parcel": "^2.7.0",
+    "source-map-explorer": "^2.5.3",
     "ts-node": "^10.9.1",
     "typescript": "~4.3.5",
     "webpack-notifier": "^1.15.0"

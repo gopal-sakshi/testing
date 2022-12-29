@@ -1,16 +1,22 @@
 <div class="app-header">
     <div fxLayout="row" fxLayoutGap="10px">
-        <span> This is the header component</span>
-        <div>{{ todayDate | date: 'dd MMM HH:mm' }}</div>
-        <!-- <div>{{ todayDate | date: 'dd MMM-yyyy HH:mm' }}</div>
-        <div>{{ todayDate | date: 'dd-MMM-yyyy hh:mm a' }}</div>
-        <div>{{ todayDate | date: 'dd MMM' }}</div>
-        <div>{{ todayDate | date: 'dd MMM-yyyy' }}</div>
-        <div>{{ todayDate | date: 'dd MMM yy' }}</div>
-        <div>{{ todayDate | date: 'dd MMM YY' }}</div>
-        <div>{{ todayDate | date: 'dd MMMYY' }}</div> -->
-        <button (click)="changeLanguage('te')"> telugu </button>
-        <button (click)="changeLanguage('en')"> english </button>
+        <span>header {{ todayDate | date: 'dd MMM' }} </span>
+        <!--
+            <div>{{ todayDate | date: 'dd MMM HH:mm' }}</div> 
+            <div>{{ todayDate | date: 'dd MMM-yyyy HH:mm' }}</div>
+            <div>{{ todayDate | date: 'dd-MMM-yyyy hh:mm a' }}</div>
+            <div>{{ todayDate | date: 'dd MMM' }}</div>
+            <div>{{ todayDate | date: 'dd MMM-yyyy' }}</div>
+            <div>{{ todayDate | date: 'dd MMM yy' }}</div>
+            <div>{{ todayDate | date: 'dd MMM YY' }}</div>
+            <div>{{ todayDate | date: 'dd MMMYY' }}</div> 
+        -->
+
+
+        <!-- 
+            <button (click)="changeLanguage('te')"> telugu </button>
+            <button (click)="changeLanguage('en')"> english </button> 
+        -->
     </div>    
     <!-- <span>
         <button (click)="changeLanguage('te')"> telugu </button>

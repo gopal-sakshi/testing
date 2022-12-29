@@ -8,7 +8,6 @@ import { HomeRouter13Component } from './components/home-router13/home-router13.
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { Message00Component } from './components/message00/message00.component';
-import { MultipleOutletsComponent } from '../router12/components/multiple-outlets/multiple-outlets.component';
 import { CheckSnapshotService } from './services/check-snapshot.service';
 
 export const router13Routes:Routes = [
@@ -51,8 +50,7 @@ export const router13Routes:Routes = [
     Conversation11Component,
     Messages11Component,
     HomeRouter13Component,
-    Message00Component,
-    MultipleOutletsComponent
+    Message00Component
   ],
   imports: [
     CommonModule,

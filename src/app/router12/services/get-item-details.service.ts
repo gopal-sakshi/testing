@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
-import { itemDetail } from "../components/classes/item-detail";
+import { itemDetail } from "../classes/item-detail";
 
 @Injectable()
 export class GetItemDetailsService {
@@ -12,13 +12,20 @@ export class GetItemDetailsService {
         {id: 4, name: 'papaya'},
         {id: 5, name: 'guava'}        
     ];
-    itemsListFull: [
-        {id: 1, name: 'banana', img: '', price:100},
-        {id: 2, name: 'apple', img: '', price:400},
-        {id: 3, name: 'mango', img: '', price:900},
-        {id: 4, name: 'papaya', img: '', price:950},
-        {id: 5, name: 'guava', img: '', price:990}
+    itemsListFull:any = [
+        {id: 1, name: 'banana', img: 'assets/itemDetails/banana.jpg', price:100},
+        {id: 2, name: 'apple', img: 'assets/itemDetails/apple.jpeg', price:400},
+        {id: 3, name: 'mango', img: 'assets/itemDetails/mango.jpeg', price:900},
+        {id: 4, name: 'papaya', img: 'assets/itemDetails/papaya.jpeg', price:950},
+        {id: 5, name: 'guava', img: 'assets/itemDetails/guava.jpg', price:990}
     ];
+
+    getItemById(id:number) {
+        console.log(id);
+        return of(this.itemsListFull.find(item => item.id == id));
+        // return of({id: 5, name: 'guava', img: 'assets/itemDetails/guava.jpg', price:990});
+        
+    }
 
     getAllItemsFull() {
         return of(this.itemsListFull);

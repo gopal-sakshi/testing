@@ -1,3 +1,11 @@
 .item-detail-container {
     max-width: fit-content;
+    .navigate-2-levels {
+        border: 1px dotted rgb(139, 139, 231);
+        padding: 5px
+    }
+    .info-about-component {
+        border: 2px double rgb(236, 85, 110);
+        padding: 5px   
+    }
 }

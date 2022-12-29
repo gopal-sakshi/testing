@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationExtras, Router, RouterState } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-router12',
@@ -8,51 +8,52 @@ import { ActivatedRoute, NavigationExtras, Router, RouterState } from '@angular/
 })
 export class HomeRouter12Component implements OnInit {
 
-  constructor(private router:Router, private activatedRoute:ActivatedRoute, private routerState:RouterState) { }
+  constructor(private router:Router, private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
-  itemDetail() {
+  navigateToApple() {
     let navigationExtras:NavigationExtras = {
       queryParams: {player1: 'Luka', player2: 'Casemiro'}
     }
     // this.router.navigate(['router-12', 'itemDetail'], navigationExtras);
     // this throws error.... Error: Cannot match any routes. URL Segment: 'router-12/itemDetail'
-
+    //      URL segment should be 'router-12/itemDetail/22' 
+    //      NOT 'router-12/itemDetail'
 
     this.router.navigate(['router-12', 'itemDetail', '2'], navigationExtras);
     // this works fine... because, we have a route URL Segment: 'router-12/itemDetail/2'
     // this is absolute navigation...
   }
 
-  goBack() {
-    this.router.navigate(['./']);
+  navigateToParams12() {
+    this.router.navigate(['/router-12/params12']);
+    // this.router.navigate(['params12']);
+
+    // this.router.navigateByUrl('router-12/params12');    
   }
 
   goToHome() {
-    console.log('not implemented');
+    
+    // APPROACH I
+    this.router.navigate(['./']);
+
+    // // APPROACH II
+    // this.router.navigateByUrl('./');
+
+    // // APROACH III
+    // this.router.navigate(['../']);
+
     /*
-      router.navigate         = 1st argument must be ARRAY
-      router.navigateByUrl    = 1st argument must be string
+      router.navigate         = 1st argument must be ARRAY... both absolute & relative
+      router.navigateByUrl    = 1st argument must be string... only absolute URLs
     */
 
   }
 
-  goToRandom12() {
-    this.router.navigateByUrl('/random12');
-  }
-
-  goToRandom12Component() {
-    // absolute navigation
-    this.router.navigateByUrl('/random12/decorator12');
-
-    // relative navigation
-    this.router.navigateByUrl('snapshot12');
-  }
-
-  multipleOutlets() {
-    this.router.navigate(['router-12','multipleOutlets']);
+  goToBootstrap23() {
+    this.router.navigateByUrl('/bootstrap23');
   }
 
   /*

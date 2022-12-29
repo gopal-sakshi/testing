@@ -41,6 +41,10 @@ export class AppComponent {
     
   }
 
+  changeLang() {
+    this.translate.use('te')
+  }
+
   useBrowserGlobalObjects() {
     
     // if(navigator.onLine) {

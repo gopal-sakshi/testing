@@ -10,15 +10,9 @@
 
 -->
 <div class="params12-container">
-    <div fxLayout="column" fxLayoutGap="20px">
-        <div *ngFor="let element of products44, index as index" fxLayout="row" fxLayoutGap="50px">
-            <!-- this approach looks for child routes -->
-            <!-- <span>{{element.id}} {{element.name}}</span> -->
-
-            <!-- this approach looks for absolute routes -->
-            <span>{{element.id}} {{element.name}}</span>
-
-            <button [routerLink]="['/router-12/itemDetail', index]" mat-flat-button color="primary">click me</button>
+    <div fxLayout="column" fxLayoutGap="10px">
+        <div *ngFor="let element of products44, index as index">
+            <button [routerLink]="['/router-12/itemDetail', index+1]">{{element.id}} {{element.name}}</button>
         </div>
         <a [routerLink]="['/router-12']"> Go Back </a>
     </div>

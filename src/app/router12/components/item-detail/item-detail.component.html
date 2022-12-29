@@ -1,7 +1,17 @@
 <div class="item-detail-container">
     <div fxLayout="column" fxLayoutGap="20px">
-        <button [routerLink]="['/router-12/params12']">Go Back</button>
-        <div>Welcome to item {{this.itemId}}</div>
+        <button [routerLink]="['/router-12/snapshot12']">absolute navigation to snapshot12</button>
+        <button [routerLink]="['../../snapshot12']">relative navigation to snapshot12 (A)</button>
+        <button [routerLink]="['../5']">sibling navigation to item 5</button>
+        <div class="navigate-2-levels">
+            <a [routerLink]="['../../snapshot12']">Go up 2 levels</a>
+            <div>navigates from "router-12/itemDetail/2" ===> "router-12/snapshot12" </div>
+        </div>
+        <div class="info-about-component">
+            <div>Welcome to {{this.itemId}}</div>
+            <div>cost == {{ item?.price }} </div>
+            <img [src]="item?.img" width="150px" height="150px">
+        </div>        
     </div>
 </div>
 

@@ -10,25 +10,27 @@ import { CanActivate } from '@angular/router';
 })
 export class MatForms23Component implements OnInit {
 
-  eventIds: Array<Number> = [1234, 2345, 3456, 4567];
+  dontUseMaterial:boolean = false;
+  useModelForms:boolean = false;
+  useReactiveForms:boolean = false;
+  useFormGroup:boolean = false;
+
+  eventIds: Array<string> = ['1234', '2345', '3456', '4567'];
   countries: any = [
     { full: "Great Britain", short: "GB" },
     { full: "United States", short: "US" },
     { full: "Canada", short: "CA" }
   ];
   selectedCountry: string = "GB";
-
   event23Form:FormGroup;
-
   selectedCountryControl = new FormControl(this.selectedCountry);
-  constructor(
-    private fb: FormBuilder,
-  ) { }
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     
     this.event23Form = this.fb.group({
-      eventId: ['', Validators.required],
+      eventId: ['1122', Validators.required],
       eventName: ['', Validators.required]
     })
 

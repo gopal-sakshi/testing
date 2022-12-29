@@ -28,13 +28,13 @@ export class MatTable12Component implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     const todos: ToDo23[] = [
-      { id: '13', description: 'Apple', complete: false },
-      { id: '14', description: 'Banana', complete: false },
-      { id: '25', description: 'Chikoo', complete: false },
-      { id: '16', description: 'Dates', complete: false },
-      { id: '19', description: 'Eateries', complete: false },
-      { id: '11', description: 'Fruits', complete: false },
-      { id: '26', description: 'Grapes', complete: false },
+      { id: '13', description: 'Apple', info: 'an apple a day keeps doctor away',  complete: false },
+      { id: '14', description: 'Banana', info: 'aratipandu in telugu', complete: false },
+      { id: '25', description: 'Chikoo', info: 'priya likes sapota',  complete: false },
+      { id: '16', description: 'Dates', info: 'grown in middle east', complete: false },
+      { id: '19', description: 'Eateries', info: 'generic term', complete: false },
+      { id: '11', description: 'Fruits', info: 'not veggies', complete: false },
+      { id: '26', description: 'Grapes', info: 'whiskey is made from grapes ??', complete: false },
     ]
     this.dataSource = new MatTableDataSource(todos)
   }

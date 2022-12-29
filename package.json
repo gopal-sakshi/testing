@@ -12,15 +12,11 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test23": "ng serve --sourceMap=true --vendorSourceMap=true",
-
     "build-dev-stats": "ng run testing:serve --stats-json --------------------> not working for dev mode ???",
     "analyze-dev-stats": "webpack-bundle-analyzer dist/stats.json -----------> not working for dev mode ???",
-
-
     "build-prod-stats": "ng build --configuration production --stats-json",
     "analyze-prod-stats1": "webpack-bundle-analyzer dist/stats.json",
     "NOTE___________": "angular team strongly recommends `source-map-explorer` instead of webpack-bundle-analyzer",
-
     "build-prod-sourceMap": "ng build --sourceMap=true --namedChunks=true",
     "analyze-prod-stats2": "source-map-explorer dist/*.js"
   },

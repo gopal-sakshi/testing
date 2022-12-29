@@ -1,26 +1,33 @@
-<div class="home-router12-container" fxLayout="row" fxLayoutGap="40px">
-    <div fxLayout="column" fxLayoutGap="40px" class="router-links">
+<div class="home-router12-container" fxLayout="row" fxLayoutGap="10px">
+    <div fxLayout="column" fxLayoutGap="10px" class="router-links">
+        <h3>using router Links</h3>
+
+        <!-- pass routes as arguments -->
+        <a [routerLink]="['itemDetail', '2']">navigate to apple</a>
+
+        <!-- route starts with /         so, look at root of the app -->
+        <a [routerLink]="['/bootstrap23']">bootstrap23</a>
+        
+
+        <!-- route doesnt start with / (or) ./ (or) ..          so, look child routes I -->
         <a [routerLink]="['params12']"> Params12 </a>
-        <a [routerLink]="['snapshot12']"> snapshot12 </a>
+
+        <!-- route starts with ./                               so, look child routes II -->
+        <a [routerLink]="['./snapshot12']"> snapshot12 </a>
 
         <!-- queryParams is another input of routerLink where they can be passed like -->
         <a [routerLink]="['itemDetail', '2']" [queryParams]="{player1: 'Luka', player2: 'Casemiro'}"> Pass Query Param </a>
-        <a [routerLink]="['itemDetail', '2']"> Pass Query Param </a>
+        
     </div>
 
-    <div fxLayout="column" fxLayoutGap="40px" class="button-links">
-        <button mat-raised-button color="primary" (click)="itemDetail()">Item Detail 2</button>
-        <button mat-raised-button color="primary" (click)="goBack()">Go Back (TS)</button>
-        <button mat-raised-button color="primary" (click)="goToHome()">Go to home</button>
-        <button mat-raised-button color="primary" (click)="goToRandom12()">Random12 module</button>
-        <button mat-raised-button color="primary" (click)="goToRandom12Component()">random12 decorator</button>
-        <button mat-raised-button color="primary" (click)="multipleOutlets()">multiple-outlets</button>
+    <div fxLayout="column" fxLayoutGap="10px" class="button-links">
+        <h3>using router.navigate()</h3>
+        <button mat-raised-button color="primary" (click)="navigateToApple()">navigateToApple</button>
+        <button mat-raised-button color="primary" (click)="goToHome()">Go to home (or) bootstrap</button>
+        <button mat-raised-button color="primary" (click)="navigateToParams12()">navigateToParams12</button>
+        <button mat-raised-button color="primary" (click)="goToBootstrap23()">Random12 module</button>
     </div>
-    <div>
-        <div>jing</div>
-        <router-outlet  name="multiple23"></router-outlet>
-        <div>chak</div>
-    </div>
+
 </div>
 
 

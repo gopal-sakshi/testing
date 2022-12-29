@@ -10,14 +10,9 @@ export class HomeRouter13Component implements OnInit {
 
   constructor(private router:Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
-  navigateToInbox() {
-    this.router.navigate(['/router13', 'inbox']);
-  }
+  navigateToInbox() { this.router.navigate(['/router13', 'inbox']); }
 
-  navigateToOutbox() {
-    this.router.navigate(['/router13', 'outbox']);
-  }
+  navigateToOutbox() { this.router.navigate(['/router13', 'outbox']); }
 }

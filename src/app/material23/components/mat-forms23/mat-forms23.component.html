@@ -8,38 +8,38 @@
     - 
 
 -->
-<!-- <form [formGroup]="editEventId"> -->
-<div *ngIf="false" class="mat-forms23-container">
+
+<div style="padding:10px; margin: 10px" class="buttons">
+    <button (click)="useFormGroup=!useFormGroup">form group</button>
+    <button (click)="dontUseMaterial=!dontUseMaterial">no Material</button>
+    <button (click)="useModelForms=!useModelForms">model forms</button>
+    <button (click)="useReactiveForms=!useReactiveForms">reactive forms</button>
+    <button (click)="selectedCountry='CA';">reset country</button>
+</div>
+
+<div *ngIf="useFormGroup" class="mat-forms23-container">
     <h4>Select event Id</h4>
-    <form [formGroup]="event23Form">        
+    <form [formGroup]="event23Form">
+        <input placeholder="enter event name" formControlName="eventName">
         <mat-form-field appearance="outline" class="mat-forms23-form-field">
-            <mat-label>Favorite food</mat-label>
-            
-            <mat-select *ngFor="let eventId of eventIds" formControlName="eventId">
-                <!-- <mat-option>{{eventId}}</mat-option> -->
-                <mat-option>event id 1</mat-option>
-                <mat-option>event id 2</mat-option>
-                <mat-option>event id 3</mat-option>
-                <mat-option>event id 4</mat-option>
+            <mat-label>event Id anta</mat-label>
+            <mat-select formControlName="eventId">
+                <!-- APPROACH I -->
+                <!-- earlier, I used *ngFor on mat-select, but *ngFor should be used on mat-option -->
+                <mat-option *ngFor="let eventId of eventIds" [value]="eventId">{{eventId}}</mat-option>
+
+                <!-- APPROACH II -->
+                <mat-option [value]="8787">8787</mat-option>
+                <mat-option [value]="9876">9876</mat-option>
+                <mat-option [value]="3232">3232</mat-option>
+                <mat-option [value]="3200">3200</mat-option>
             </mat-select>
         </mat-form-field>
     </form>
 </div>
-<mat-form-field appearance="outline" class="mat-forms23-form-field">
-    <mat-label>Favorite food</mat-label>
-    
-    <mat-select *ngFor="let eventId of eventIds" formControlName="eventId">
-        <!-- <mat-option>{{eventId}}</mat-option> -->
-        <mat-option>event id 1</mat-option>
-        <mat-option>event id 2</mat-option>
-        <mat-option>event id 3</mat-option>
-        <mat-option>event id 4</mat-option>
-    </mat-select>
-</mat-form-field>
 
-<div *ngIf="false">
+<div *ngIf="dontUseMaterial">
     <label for="cars">Choose a car:&nbsp;</label>
-    
     <select name="cars" id="cars">
         <option value="volvo">Volvo</option>
         <option value="saab">Saab</option>
@@ -48,85 +48,38 @@
     </select>
 </div>
 
-<div *ngIf="false">
-    <mat-toolbar color="primary">
-        Angular Material - mat-select examples
-    </mat-toolbar>
-    
-    <div style="padding: 20px;">
-    
-        <h1>Model Forms</h1>
-    
-        <div style="padding: 0 0 20px 20px">
-    
-            <h3>Value string</h3>
-    
-            <mat-form-field>
-                <mat-select name="countryString" [(value)]="selectedCountry" placeholder="Country">
-                    <mat-option [value]="'GB'">Great Britain</mat-option>
-                    <mat-option [value]="'US'">United States</mat-option>
-                    <mat-option [value]="'CA'">Canada</mat-option>
-                </mat-select>
-            </mat-form-field>
-    
-            &nbsp;&nbsp;
-            Selected = {{selectedCountry}}
-    
-        </div>
-    
-        <div style="padding: 20px">
-    
-            <h3>Value variable</h3>
-    
-            <mat-form-field>
-                <mat-select name="countryVaraible" [(value)]="selectedCountry" placeholder="Country">
-                    <mat-option *ngFor="let country of countries" [value]="country.short">
-                        {{country.full}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-    
-            &nbsp;&nbsp;
-            Selected = {{selectedCountry}}
-    
-        </div>
-    
-    
-    
-        <h1>Reactive Forms</h1>
-    
-        <div style="padding: 0 0 20px 20px">
-    
-            <h3>Value string</h3>
-    
-            <mat-form-field>
-                <mat-select name="countryReactiveString" [formControl]="selectedCountryControl" placeholder="Country">
-                    <mat-option [value]="'GB'">Great Britain</mat-option>
-                    <mat-option [value]="'US'">United States</mat-option>
-                    <mat-option [value]="'CA'">Canada</mat-option>
-                </mat-select>
-            </mat-form-field>
-    
-            &nbsp;&nbsp;
-            Selected = {{selectedCountryControl.value}}
-    
-        </div>
-    
-        <div style="padding: 20px">
-    
-            <h3>Value variable</h3>
-    
-            <mat-form-field>
-                <mat-select name="countryReactiveVaraible" [formControl]="selectedCountryControl" placeholder="Country">
-                    <mat-option *ngFor="let country of countries" [value]="country.short">
-                        {{country.full}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-    
-            &nbsp;&nbsp;
-            Selected = {{selectedCountryControl.value}}
-        </div>
-    
+<div *ngIf="useModelForms">
+    <mat-toolbar color="primary">Model Forms</mat-toolbar>
+    <div style="padding: 0 0 20px 20px">
+        <mat-form-field>
+            <mat-select name="countryString" [(value)]="selectedCountry" placeholder="Country">
+                <mat-option [value]="'ESP'">spain</mat-option>
+                <mat-option [value]="'POR'">Portugal</mat-option>
+                <mat-option [value]="'CRO'">Croatia</mat-option>
+                <mat-option *ngFor="let country of countries" [value]="country.short">
+                    {{country.full}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        &nbsp;&nbsp;
+        Selected = {{selectedCountry}}
+    </div>
+</div>
+
+<div *ngIf="useReactiveForms">
+    <mat-toolbar color="primary">Reactive Forms</mat-toolbar>
+    <div style="padding: 0 0 20px 20px">
+        <mat-form-field>
+            <mat-select name="countryReactiveString" [formControl]="selectedCountryControl" placeholder="Country">
+                <mat-option [value]="'GER'">Germany</mat-option>
+                <mat-option [value]="'BRA'">Brazil</mat-option>
+                <mat-option [value]="'RUS'">RUssIa</mat-option>
+                <mat-option *ngFor="let country of countries" [value]="country.short">
+                    {{country.full}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        &nbsp;&nbsp;
+        Selected = {{selectedCountryControl.value}}
     </div>
 </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetItemDetailsService } from '../../services/get-item-details.service';
-import { itemDetail } from '../classes/item-detail';
+import { itemDetail } from '../../classes/item-detail';
 
 @Component({
   selector: 'app-params12',

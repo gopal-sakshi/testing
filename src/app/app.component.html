@@ -1,17 +1,28 @@
 <div class='container-fluid'>
     <div class="row p-3">
-        <div class="col-4">
-            <div class="column">
-                <app-header12></app-header12>
-                <div class="row">
-                    <button class="col" (click)="showingSweetAlert()">show sweet alert</button>
-                    <div class="col">{{ isTesting ? ('Yes' | translate) : ('No' | translate) }} </div>
-                    <div class="logged-in-details col" *ngIf="userName">{{userName}}</div>
-                    <button class="col" (click)="testingWebWorker()">test Web Worker</button>
-                </div>
-            </div>
+        <div class="col-5">
+            <nav class="navbar navbar-expand-xl navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/"><app-header12></app-header12></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarHeader23" aria-controls="navbarHeader23"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarHeader23">
+                        <ul style="font-size: small;" class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <button class="col" (click)="showingSweetAlert()">sweet alert</button>
+                            <button (click)="changeLang()">change Lang</button>
+                            <div class="col">{{ isTesting ? ('Yes' | translate) : ('No' | translate) }} </div>
+                            <div class="logged-in-details col" *ngIf="userName">{{userName}}</div>
+                            <button class="col" (click)="testingWebWorker()">Web Worker</button>
+                        </ul>
+                    </div>
+                </div>    
+            </nav>
+            
         </div>
-        <div class="col-8">
+        <div class="col-7">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/">Testing</a>

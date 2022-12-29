@@ -27,7 +27,7 @@
         </ng-container>
         <ng-container matColumnDef="complete">              <!-- this is column 3 -->
             <mat-header-cell class="header-cell-class" *matHeaderCellDef mat-sort-header>Complete</mat-header-cell>
-            <mat-cell *matCellDef="let row;">{{row}}A{{row.complete}}</mat-cell>
+            <mat-cell *matCellDef="let row;">{{row?.info}}_A_{{row.complete}}</mat-cell>
         </ng-container>                
         <mat-header-row *matHeaderRowDef="displayedColumns">
         </mat-header-row>

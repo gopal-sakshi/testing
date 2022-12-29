@@ -15,6 +15,7 @@ export class RouteOneComponent implements OnInit {
   }
 
   goToRouteTwo() {
-    this.router.navigate(['route-two'], { relativeTo: this.route });
+    // this.router.navigate(['route-two'], { relativeTo: this.route });
+    this.router.navigate(['/router14', 'route-two']);
   }
 }

@@ -11,34 +11,25 @@ import { Message00Component } from './components/message00/message00.component';
 import { CheckSnapshotService } from './services/check-snapshot.service';
 
 export const router13Routes:Routes = [
-  {
-    path: '',
-    component: HomeRouter13Component
-  },
-  {
-    path: ':folder',
+
+  // localhost:9999/router13/                                       // HomeRouter13Component
+  // localhost:9999/router13/outbox                                 // Conversation11Component
+  // localhost:9999/router13/outbox/2022                            // Conversation11Component
+  // localhost:9999/router13/outbox/2022/messages                   // Messages11Component
+  // localhost:9999/router13/outbox/2022/messages/1                 // Message00Component
+
+  // localhost:9999/router13/outbox/2022/messages/1  
+    // outbox (or) inbox        =========> :folder 
+    // 2022                     =========> :year
+    // 1                        =========> :id
+  { path: '', component: HomeRouter13Component },
+  { path: ':folder',
     children: [
-      {
-        path: '',
-        component: Conversation11Component          
-            //    localhost:9999/router13/outbox     (OR)      localhost:9999/router13/inbox
-      },
-      {
-        path: ':year',
-        component: Conversation11Component,       
-            //    localhost:9999/router13/outbox/2022         (OR)            localhost:9999/router13/inbox/2021
+      { path: '', component: Conversation11Component },
+      { path: ':year', component: Conversation11Component, 
         children: [
-          {
-            path: 'messages',
-            component: Messages11Component      
-          },
-          {
-            path: 'messages/:id',
-            component: Message00Component,
-            resolve: {
-              message_stored_here: Message13Resolver
-            }
-          }
+          { path: 'messages', component: Messages11Component },
+          { path: 'messages/:id', component: Message00Component, resolve: { msg23: Message13Resolver } }
         ]
       }
     ]

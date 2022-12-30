@@ -23,7 +23,7 @@ export class BookService {
     }
 
     getBookList() {
-        console.log('book list served for ',++this.count);
+        console.log('book list served for ',++this.count, 'time');
         return this.bookList;
     }
 }       

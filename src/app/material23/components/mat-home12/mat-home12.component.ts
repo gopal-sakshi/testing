@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatHome12Component implements OnInit {
 
+  random23:any;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.random23 = (10 + (Math.random()) * 50);
   }
 
 }

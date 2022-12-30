@@ -20,7 +20,7 @@ export class DetailComponent implements OnInit, OnDestroy {
         console.log('constructor(), ngOnInit(), ngOnDestroy() ---> they will not be invoked');
         this.routeParam = p.detailId;
       });
-
+      console.log('this is printed only once...')
       this.randomVal = Math.floor(Math.random() * 100);
   }
 

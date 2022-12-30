@@ -1,4 +1,10 @@
 <div fxLayout="row" fxLayoutGap="20px">
+    <!-- 
+        when we navigate from parent to child & come back to parent; 
+        we want to know if parent component is initialised again...
+        if ngOnInit() of parent component is called again
+    -->
+    <div>some random value ===> {{random23}}</div>
     <a [routerLink]="['sidenav2']">Side nav</a>
     <a [routerLink]="['mat-forms23']">mat forms</a>
     <a [routerLink]="['mat-table12']">mat table</a>

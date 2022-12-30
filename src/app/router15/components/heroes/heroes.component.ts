@@ -17,6 +17,7 @@ export class HeroesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // because routeReuseStrategy
     this.heroList = this.heroService.getHeroList();
   }
   

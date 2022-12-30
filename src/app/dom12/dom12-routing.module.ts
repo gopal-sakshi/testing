@@ -14,54 +14,18 @@ import { ParentDomComponent } from './components/parent-dom/parent-dom.component
 import { ViewEncapsulation12Component } from './components/view-encapsulation12/view-encapsulation12.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeDom12Component
-  },
-  {
-    path: 'dom-query',
-    component: DomQueryComponent
-  },
-  {
-    path: 'parent-dom',
-    component: ParentDomComponent
-  },
-  {
-    path: 'ng-template11',
-    component: NgTemplate11Component
-  },
-  {
-    path: 'ng-container11',
-    component: NgContainer11Component
-  },
-  {
-    path: 'dom-content-loaded' ,
-    component: DomContentLoadedComponent
-  },
-  {
-    path: 'ng-template-outlet11',
-    component: NgTemplateOutlet11Component
-  },
-  {
-    path: 'ng-template-outlet12',
-    component: NgTemplateOutlet12Component
-  },
-  {
-    path: 'au-ng-content33',
-    component: AuNgContent33Component
-  },
-  {
-    path: 'embed-view11',
-    component: EmbedView11Component
-  },
-  {
-    path: 'host-view11',
-    component: HostView11Component
-  },
-  {
-    path: 'view-encapsulation12',
-    component: ViewEncapsulation12Component
-  }
+  { path: '', component: HomeDom12Component },
+  { path: 'dom-query', component: DomQueryComponent },          // access a HTML element from DOM
+  { path: 'parent-dom', component: ParentDomComponent },
+  { path: 'ng-template11', component: NgTemplate11Component },
+  { path: 'ng-container11', component: NgContainer11Component },
+  { path: 'dom-content-loaded' , component: DomContentLoadedComponent },
+  { path: 'ng-template-outlet11', component: NgTemplateOutlet11Component },
+  { path: 'ng-template-outlet12', component: NgTemplateOutlet12Component },
+  { path: 'au-ng-content33', component: AuNgContent33Component },
+  { path: 'embed-view11', component: EmbedView11Component },
+  { path: 'host-view11', component: HostView11Component },
+  { path: 'view-encapsulation12', component: ViewEncapsulation12Component }
 ];
 
 @NgModule({

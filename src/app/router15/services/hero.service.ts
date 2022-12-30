@@ -14,7 +14,7 @@ export class HeroService {
     constructor() { }
 
     getHeroList() {
-        console.log('hero list served for ',++this.count);
+        console.log('hero list served for ',++this.count, 'time');
         return this.heroList;
     }
 

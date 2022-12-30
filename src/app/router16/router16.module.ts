@@ -13,9 +13,7 @@ const routes: Routes = [
       {
         path: 'detail/:detailId',
         component: DetailComponent,
-        data: {
-          alwaysRefresh: true
-        }
+        data: { alwaysRefresh: true }   // see "route-reuse23.ts" in "app/classes"
       }
     ]
   },
@@ -25,9 +23,7 @@ const routes: Routes = [
        {
           path: '',
           component: SearchComponent,
-          data: {
-            saveComponent: true
-          }
+          data: { saveComponent: true }
        },
        {
           path: 'detail/:detailId',

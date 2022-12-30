@@ -1,7 +1,7 @@
 <div class="parent-dom-container">
     <!-- 
         parent dom uses these components
-        - child-dom
+        - child-dom                         ViewChild examples
         - ng-content11
         - ng-content14
         - ng-template-outlet12
@@ -15,7 +15,7 @@
     <!-- /ViewChild examples -->
     
     
-    <!-- this is example of ng-content -->
+    <!-- this is example of ng-content11 -->
     <div>
         <app-ng-content11>      <!-- "parent-dom component" provides content to "app-ng-content11 component" -->
             <h6>this is h6 element</h6>
@@ -24,6 +24,8 @@
             <p>this is a paragraph (p element)</p>
         </app-ng-content11>
     </div>
+    <!--- /this is example of ng-content11 -->
+    
     <!-- here we use "app69-ng-content14 component" twice - each time with different content -->
     <div fxLayout="row" fxLayoutGap="30px" class="using-ngContent-twice">   
         <app69-ng-content14>
@@ -35,10 +37,9 @@
             <div class="second-div">hello hospital</div>
         </app69-ng-content14>
     </div>
-    <!--- /this is example of ng-content -->
     
-    <!--ngTemplateOutlet customisable components -->
     
+    <!--ngTemplateOutlet customisable components -->    
     <div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="start center">
         <div class="customised1-component">
             <app-ng-template-outlet12 [headerTemplate]="header1" [bodyTemplate]="body1" [footerTemplate]="footer1">
@@ -55,11 +56,10 @@
             <!--shows default header/body/footer -->
         </div>
     </div>
+    <!-- END of ngTemplateOutlet customisable components -->
+
 </div>
 
-    
-
-<!--/ngTemplateOutlet customisable components -->
 
 <!-- section defining ng-templates -->
 <ng-template #header1><div>this is header1</div></ng-template>

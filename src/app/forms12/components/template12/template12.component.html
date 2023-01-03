@@ -1,5 +1,5 @@
-<div class="template-driven-forms-container" fxLayout="row" fxLayoutGap="20px">
-    
+<div class="template-driven-forms-container" fxLayout="column" fxLayoutGap="20px">
+
     <!-- NgModel        AS DIRECTIVE -->
     <div class="ng-model-direcrive" fxLayout="column" fxLayoutGap="10px">
         <div>ngModel as DIRECTIVE</div>
@@ -11,7 +11,8 @@
             <!-- button type must button... otherwise form will be submitted -->
             <button type="button" (click)="addPlayers=!addPlayers">add players</button>
             <div *ngIf="addPlayers" class="add-players-section">
-                <textarea width="100px" height="40px" placeholder="enter players" ngModel name="clubPlayers_name_attr"></textarea>
+                <textarea width="100px" height="40px" placeholder="enter players" ngModel
+                    name="clubPlayers_name_attr"></textarea>
             </div>
             <button><span style="font-weight:800">SUBMIT 1</span></button>
         </form>
@@ -25,26 +26,29 @@
         <form #templateForm2="ngForm" (ngSubmit)="submitForm2()">
             <!-- both iplClubName1 & iplClubName2 are same... [(nggModel)] translates to ===> [ngModel] (ngModelChange) -->
             <input [(ngModel)]="iplClubName1" name="iplClub_Name1" placeholder="ipl club name1">
-            <input [ngModel]="iplClubName2" (ngModelChange)="iplClubName2=$event" name="iplClub_Name2" 
+            <input [ngModel]="iplClubName2" (ngModelChange)="iplClubName2=$event" name="iplClub_Name2"
                 placeholder="ipl club name2 - another way">
             <button (click)="iplClubName1='RealMadrid23'">update iplClubName1</button>
             <button (click)="iplClubName2='RealMadrid24'">update iplClubName2</button>
             <button (click)="changeFromTs()">changeFromTs for iplClubName1</button>
             <button><span style="font-weight:800">SUBMIT 2</span></button>
-        </form>        
+        </form>
     </div>
     <!-- /NgModel            TWO WAY BINDING -->
+
+
 
     <!-- ANGULAR vs DOM -->
     <div class="angular-vs-dom" fxLayout="column" fxLayoutGap="10px">
         <div>angular-vs-dom</div>
         <!-- ngModel outside of <form> tag -->
-        <input title="executes only after control moves to next input field" placeholder="type smthng & press tab" [value]="domInput" (change)="changeFnDOM1($event)" (onchange)="changeFnDOM2($event)">
-            <!-- the change event doesn't fire until the control loses focus -->
+        <input title="executes only after control moves to next input field" placeholder="type smthng & press tab"
+            [value]="domInput" (change)="changeFnDOM1($event)" (onchange)="changeFnDOM2($event)">
+        <!-- the change event doesn't fire until the control loses focus -->
 
-        <input [ngModel]="angularInput" (ngModelChange)="changeFnAngular($event)">  
-            <!-- this ngModel doesnt have name attribute, bcoz, its not within <form> tag-->
-            <!--
+        <input [ngModel]="angularInput" (ngModelChange)="changeFnAngular($event)">
+        <!-- this ngModel doesnt have name attribute, bcoz, its not within <form> tag-->
+        <!--
                 [ngModel]="angularInput" =====================> ts to html binding
                 (ngModelChange)="changeFnAngular($event)" =======> html to ts binding
                 we must specifically assign event to angularInput in changeFnAngular() method
@@ -54,17 +58,20 @@
     </div>
     <!-- /ANGULAR vs DOM -->
 
+    <!-- empty as of now -->
     <div class="user-actions">
         empty as of now
-        <!-- empty as of now -->
     </div>
+    <!-- / empty as of now -->
+
+
+
 
 </div>
 
 <!--
 
     we dont need to add ngForm directive explicitly... 
-    If Forms module is imported in any custom23 module ===> angualar looks for <forms> tag and adds ngForm directive automatically
-    
+    If Forms module is imported in any custom23 module ===> angualar looks for <forms> tag and adds ngForm directive automatically   
 
 -->

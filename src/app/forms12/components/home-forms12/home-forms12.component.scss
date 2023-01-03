@@ -4,12 +4,13 @@
         border: 1px dotted red;
         padding: 5px;
         margin: 5px;
-        width: 500px;
-        height: 300px;
+        width: fit-content;
+        height: fit-content;
     }
     .child-components-container {
-        .child-component {
-            min-width: 500px
-        }
+        // .child-component {
+        //     min-width: 500px
+        // }
+        width: fit-content;
     }
 }

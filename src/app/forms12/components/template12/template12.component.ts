@@ -52,11 +52,12 @@ export class Template12Component implements OnInit {
   }
 
   changeFnDOM1(event) {    
-    console.log(event);
+    console.log('changeFnDOM1 ====> ', event);
+    this.domInput = event.target.value;
   }
 
   // onchange() may not work... because, we are using angular framework and not regular html with javascript
   changeFnDOM2(event) {
-    console.log(event);
+    console.log('changeFnDOM1 ====> ', event);
   }
 }

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 9999",
+    "start": "ng serve --port 9999 --hmr",
     "start_testing": "ng serve --port 9999 --proxy-config ./proxy.json",
     "server": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
     "start_with_luka": "node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng serve -c lukaServe --base-href jc/version1/ ",
@@ -79,5 +79,8 @@
     "ts-node": "^10.9.1",
     "typescript": "~4.3.5",
     "webpack-notifier": "^1.15.0"
+  },
+  "resolutions": {
+    "webpack": "5.4.0"
   }
 }

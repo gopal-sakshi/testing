@@ -28,7 +28,7 @@ export class SwitchMap22Component implements OnInit {
     this.stadiumInputChangedObs = this.form22.get('stadiumName').valueChanges;        // doesnt USE switchMap
 
     merge(this.clubInputChangedObs).pipe(
-      map(res => {console.log('valueChanged'); return res}),
+      map(res => {/* console.log('valueChanged'); */ return res}),
       switchMap(_=>this.switchMap22service.searchClubs1(this.clubNameSearchKeyword))
     ).subscribe(res => { console.log(res)});
 

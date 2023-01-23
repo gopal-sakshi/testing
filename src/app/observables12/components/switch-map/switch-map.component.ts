@@ -24,8 +24,8 @@ export class SwitchMapComponent implements OnInit {
     this.clicks$
     .pipe(
       switchMap(() => {
-        // return of(['rm', 'bar', 'atl', 'sevilla', 'valencia', 'espanyol']);
-        return interval(1000);
+        return of(['rm', 'bar', 'atl', 'sevilla', 'valencia', 'espanyol']);
+        // return interval(1000);
       })
     )
     .subscribe( val => console.log(val));
@@ -68,8 +68,8 @@ export class SwitchMapComponent implements OnInit {
 
     let obsMap= of(1,2,3,4);
     obsMap.pipe(
-      map(res => {return res*2})
-    ).subscribe(res => {console.log('map = ',res)});
+      map(res => { return res*2 })
+    ).subscribe(res => { console.log('map = ', res); });
 
     let obsSwitchMap = of(1,2,3,4);
     obsSwitchMap.pipe(

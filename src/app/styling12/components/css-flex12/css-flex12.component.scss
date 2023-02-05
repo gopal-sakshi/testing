@@ -1,0 +1,28 @@
+.flex-container23 {
+    .flexbox-1 {
+        display: flex;        
+        margin: 30px;
+    }
+    .child-div1 { border: 1px solid black; padding: 5px; }
+    
+    .flexbox-2 {
+        display:flex;
+        flex-wrap: wrap;
+        margin: 30px;
+    }
+    .child-div2 { border: 1px solid black; padding: 5px; min-width: 100px; }
+
+    .flexbox-3 {
+        display:flex;
+        flex-wrap: nowrap;
+        margin: 30px;
+    }
+    .child-div3 { border: 1px solid rgb(25, 187, 39); padding: 5px; min-width: 100px; }
+
+    .flexbox-4 {
+        display: flex;
+        justify-content: flex-end;
+        margin: 30px;
+    }
+    .child-div4 { border: 1px solid black; padding: 5px; }
+}

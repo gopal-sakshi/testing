@@ -1,4 +1,5 @@
 <div class="home-styling-container">
+
     <div fxLayout="row" fxLayoutGap="20px" class="services-di-home">
         <a [routerLink]="['ng-class12']"> ngClass </a>
         <a [routerLink]="['flex12']"> flex 12 </a>
@@ -8,16 +9,17 @@
         <button (click)="showStyling13=!showStyling13">styling 13</button>
         <button (click)="showStylingSection=!showStylingSection">styling section</button>
         <button (click)="showMatThemes=!showMatThemes">mat themes</button>
+        <button (click)="showCSSFlex=!showCSSFlex">CSS Flex</button>
+        <button (click)="showCSSGrid=!showCSSGrid">CSS Grid</button>
     </div>
 
-    <div class="child-components" fxLayout="column" fxLayoutGap="10px">
-        <div class="child-component" *ngIf="showAnimate12">
-            <app69-animate12></app69-animate12>
-        </div>
-        <div class="child-component" *ngIf="showStyling13">
-            <app69-styling13></app69-styling13>
-        </div>
+    <div *ngIf="showAnimate12">
+        <app69-animate12></app69-animate12>
     </div>
+
+    <div *ngIf="showStyling13">
+        <app69-styling13></app69-styling13>
+    </div>    
 
     <div *ngIf="showMatThemes">
         <!-- we need to wrap our entire page with the CSS-class ‘mat-app-background’. -->
@@ -28,6 +30,7 @@
             <app69-mat-theme24></app69-mat-theme24>
         </div>
     </div>
+
     <div *ngIf="showStylingSection" class="styling-section" fxLayout="row" fxLayoutGap="20px">
         <div class="success-section">
             <div>show some success content</div>
@@ -38,5 +41,13 @@
         <div class="warn-section">
             <div> show warning content</div>
         </div>
+    </div>
+
+    <div *ngIf="showCSSFlex">
+        <app69-css-flex12></app69-css-flex12>
+    </div>
+
+    <div *ngIf="showCSSGrid">
+        <app69-css-grid12></app69-css-grid12>
     </div>
 </div>

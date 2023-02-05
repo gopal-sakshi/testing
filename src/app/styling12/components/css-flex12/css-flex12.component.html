@@ -1,0 +1,19 @@
+<div class="flex-container23">
+    <div class="flexbox-1">
+        <div class="child-div1" style="order:2; flex-grow: 1;">tiger</div>
+        <div class="child-div1" style="order:3">lion</div>
+        <div class="child-div1" style="order:1">elephant</div>
+        <div class="child-div1" style="order:4; flex-grow: 1;">giraffee</div>
+        <div class="child-div1" style="order:5">deer</div>
+        <div class="child-div1" style="order:6">hippo</div>
+    </div>
+    <div class="flexbox-2">     <!-- with wrap -->
+        <div *ngFor="let city of cities" class="child-div2">{{city}}</div>
+    </div>
+    <div class="flexbox-3">     <!-- with nowrap -->
+        <div *ngFor="let city of cities" class="child-div3">{{city}}</div>
+    </div>
+    <div class="flexbox-4">     <!-- with nowrap -->
+        <div *ngFor="let fruit of fruits" class="child-div4">{{fruit}}</div>
+    </div>
+</div>

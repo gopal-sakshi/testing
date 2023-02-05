@@ -14,6 +14,9 @@ import { Layout14Component } from './components/layout14/layout14.component';
 import { Layout15Component } from './components/layout15/layout15.component';
 import { Layout16Component } from './components/layout16/layout16.component';
 import { Layout17Component } from './components/layout17/layout17.component';
+import { Footer44Component } from './components/footer44/footer44.component';
+import { Classes23Component } from './components/classes23/classes23.component';
+import { Flex13Component } from './components/flex13/flex13.component';
 
 
 const routes:Routes = [
@@ -33,7 +36,10 @@ const routes:Routes = [
     Layout14Component,
     Layout15Component,
     Layout16Component,
-    Layout17Component,    
+    Layout17Component,
+    Footer44Component,
+    Classes23Component,
+    Flex13Component,    
   ],
   imports: [
     CommonModule,

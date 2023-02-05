@@ -34,3 +34,16 @@
     We can't write an if statement in ngClass, due to the fact that it is a statement.
     but we can use a ? ternary operator... since its an expression
 -->
+
+<!--
+    ngClass SYNTAX
+
+    <some-element [ngClass]="'first second'"></some-element>                                        Applies first, second classes
+    <some-element [ngClass]="['first', 'second']"></some-element>                                   Applies first, second classes
+    <some-element [ngClass]="{'first': true, 'second': true, 'third': false}"></some-element>       Applies first, second class... not third class
+    <some-element [ngClass]="stringExp|arrayExp|objExp"></some-element>
+    <some-element [ngClass]="{'class1 class2 class3' : true}"></some-element>
+
+
+
+-->

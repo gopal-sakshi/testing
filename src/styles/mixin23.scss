@@ -1,5 +1,5 @@
 @mixin gopalTheme {
-    float: left;
+    // float: left;
     background-color: rgb(156, 95, 95);
     font-family: 'Courier New', Courier, monospace;
     font-weight: 900;
@@ -7,7 +7,7 @@
 }
 
 @mixin priyaTheme {
-    float: right;
+    // float: right;
     background-color:rgb(158, 224, 35);    
     font-weight:lighter;
     color:rgb(64, 46, 68);

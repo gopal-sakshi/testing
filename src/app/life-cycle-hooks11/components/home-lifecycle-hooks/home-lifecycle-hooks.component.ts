@@ -23,7 +23,7 @@ export class HomeLifecycleHooksComponent extends ChangeDetection11 implements On
   change23:boolean = false;
   showZone:boolean = false;
   zone11OutsideAngular:boolean = false;
-
+  showContentInit:boolean = false;
   /*
 
   Constructor

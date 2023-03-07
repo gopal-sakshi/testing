@@ -7,7 +7,8 @@
         <button (click)="change23=!change23">change23</button>
         <button (click)="ngDoCheck=!ngDoCheck">change inputs</button>
         <button (click)="zone11OutsideAngular=!zone11OutsideAngular">color changing div</button>        
-        <button (click)="showZone=!showZone">zone</button>        
+        <button (click)="showZone=!showZone">zone</button>
+        <button (click)="showContentInit=!showContentInit">showContentInit</button>
     </div>
 
     <div *ngIf="showCd11" class="change-detection-2">    
@@ -37,6 +38,14 @@
     <div *ngIf="showZone">
         <app-zone12></app-zone12>
         <!-- <a [routerLink]="['zone12']">Zone12</a>         -->
+    </div>
+    <div *ngIf="showContentInit">
+        <app69-content-init>
+            <div #myContent>jing chak sarissaa </div>               <!-- ee 'div' mukka velli, direct ga child component lo kurchuntundi -->
+        </app69-content-init>
+        <!-- <app69-content-init>
+            edi pampite <strong>ade</strong> chupistaaa
+        </app69-content-init> -->
     </div>
 </div>
 

@@ -31,7 +31,18 @@ export const red23:Theme = {
         "--gopal-success": "#5ea564",
         "--gopal-info": "#ffff03",
         "--gopal-warn":"#571d1d",                   
-        "--gopal-font-weight": "500",        
+        "--gopal-font-weight": "700",        
         "--gopal-font-size":"30px"
     }
+}
+
+export const default23:Theme = {
+    name: "default23",
+    properties: {
+        "--gopal-success":"#43eb01",
+        "--gopal-info":"#ececa8",
+        "--gopal-warn":"#ff0000",        
+        "--gopal-font-weight":"500",
+        "--gopal-font-size":"20px"
+    }    
 }

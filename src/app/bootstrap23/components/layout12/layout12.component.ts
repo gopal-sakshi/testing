@@ -17,6 +17,12 @@ export class Layout12Component implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+      // card
+      // card-body
+      // card-title
+      // card-subtitle
+      // card-text
+      // card-link
   }
 
 }

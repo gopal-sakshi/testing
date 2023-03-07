@@ -1,0 +1,21 @@
+.section23 {
+    border: 1px solid black;
+}
+
+// class contains column-two... it may also contain other thingies... but if it contains column-two, these css will be applied
+[class~=column-two] { font-size: 50px; }
+
+.column-two, .column-four {
+    border: 1px solid green;
+}
+
+// one & one only class must be applied
+[class=only-one-class22] { color: red; }
+
+// all html elements that start with prefix
+[class^=prefix] { color: green }
+
+// all html elements that end with suffix
+[class$=suffix] { color: blue }
+
+

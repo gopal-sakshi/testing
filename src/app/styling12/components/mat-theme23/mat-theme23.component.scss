@@ -2,6 +2,8 @@
 
 .mat-theme23-container {
     max-width: fit-content;
+    display: flex;
+    flex-direction: row-reverse;
     .main-content-1 {
         margin:20px;        
         @include gopalTheme;
@@ -11,8 +13,15 @@
         @include priyaTheme;
     }
     .main-content-3 {        
-        margin:20px;
-        margin-left: 500px;
+        margin:20px;        
         @include withVariables23(rgb(212, 212, 71), rgb(77, 77, 197), 900);
+    }
+    .main-content-4 {
+        .success22 { background-color: var(--gopal-success); };
+        .info22 { background-color: var(--gopal-info); };
+        .warn22 { background-color: var(--gopal-warn); };
+        font-weight: var(--gopal-font-weight);
+        font-size: var(--gopal-font-size);
+        height: auto;
     }
 }

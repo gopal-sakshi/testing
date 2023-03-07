@@ -13,14 +13,14 @@ export class SwitchMap22Service {
     constructor() {}
 
     async searchClubs1(keyword:string) {
-        console.log('searching for ------> ',keyword);
+        // console.log('searching for ------> ',keyword);
 
         var searchResults = [];
         // searchResults = this.spanishClubs.filter(clubs => clubs.includes(keyword));     // case-sensitive
 
         var regexey = new RegExp(keyword, 'gi');
         searchResults = this.spanishClubs.filter(clubs => clubs.match(regexey))         // case-insensitive
-        console.log('searchResults in service side ----> ',searchResults);
+        // console.log('searchResults in service side ----> ',searchResults);
         await this.delay23(2000);
         return searchResults;
     }

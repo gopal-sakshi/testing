@@ -10,19 +10,11 @@ export class MatTheme24Component implements OnInit {
 
   constructor(private themeService:ThemeService44) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
-  changeIntoRed() {
-    this.themeService.setTheme('red23');
-  }
-
-  changeIntoLight() {
-    this.themeService.setTheme('light23');
-  }
-
-  changeIntoDark() {
-    this.themeService.setTheme('dark23');
-  }
+  changeIntoRed() { this.themeService.setTheme('red23'); }
+  changeIntoLight() { this.themeService.setTheme('light23'); }
+  changeIntoDark() { this.themeService.setTheme('dark23'); }
+  changeIntoDefault23() { this.themeService.setTheme('default23'); }
 
 }

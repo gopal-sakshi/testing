@@ -12,6 +12,7 @@ import { ChangeDetection12Component } from './components/change-detection12/chan
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatIconModule } from '@angular/material/icon';
 import { Change23Component } from './components/change23/change23.component';
+import { ContentInitComponent } from './components/content-init/content-init.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { Change23Component } from './components/change23/change23.component';
     Zone12Component,
     Zone11OutsideAngularComponent,
     ChangeDetection12Component,
-    Change23Component
+    Change23Component,
+    ContentInitComponent
   ],
   imports: [
     CommonModule,

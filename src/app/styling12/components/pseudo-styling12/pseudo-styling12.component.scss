@@ -1,0 +1,7 @@
+.pseudo-styling-container {
+    p::first-line { color: #ff0000; font-variant: small-caps; };
+    p::first-letter { color: #0000ff; font-variant: xx-large; };
+    h1::before { content: url("/assets/images/elephant23_50x50.jpeg"); };
+    ::marker { color: red; font-size: 23px; };
+    ::selection { color: red; background: green; }
+}

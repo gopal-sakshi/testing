@@ -1,65 +1,14 @@
-<div *ngIf="false">
-    <div fxLayout="column" fxLayoutGap="20px" class="custom-validator13-container">
-        <!-- The novalidate attribute in HTML is used to signify that the form won't get validated on submit -->
-        <!--
-            novalidate attribute on form element  (its HTML thingy... not angular)
-            - signify that the form won’t get validated on submit.
-            - If the form validation is disabled, the user can easily save the form and continue & submit the form later.
-        -->
-        <form novalidate>
-            <div fxLayout="column" fxLayoutGap="20px" class="custom-validator13-form">
-                <!-- <input formControlName="age" placeholder="enter age"> -->
-                <!-- <input formControlName="email" placeholder="enter email" ngModel validateEmail> -->
-                <input formControlName="email" placeholder="enter email">
-            </div>
-        </form>
-    </div>
-</div>
-
 <div class="custom-validator13-container">
-    <div>custom-val-13</div>
     <form #multipleEmailForm="ngForm" class="custom-validator13-form">
         <div fxLayout="column" fxLayoutGap="20px">
-            <input type="text" placeholder="email1" name="email1" ngModel>
-
-            <!-- validateEmail12 = only 'abc' is valid email -->
-            <input type="text" placeholder="email2...12" name="email2" ngModel validateEmail12>
-
-            <!-- validateEmail13 = not implemented yet -->
+            <input type="text" placeholder="no validator" name="email1" ngModel>
+            <input type="text" placeholder="only 'abc' allowed" name="email2" ngModel validateEmail12>
             <input type="text" placeholder="email2...13" name="email3" ngModel validateEmail13>
-
-            <!-- validateEmail14 = gopal612, ped (blacklisted)  APPROACH 1-->
-            <!-- <input type="text" placeholder="email2...14" name="email4" ngModel validateEmail14> -->            
-            <!--
-                in validateEmail12 directive, we used 'useValue'
-                but in validateEmail14 directive, we are forced to use 'useFactory'
-                because we dont return the factoryFunction... rather we return what the factoryFunction returns
-            -->
-
-            <!-- validateEmail14 = gopal612, ped (blacklisted)  APPROACH 2-->            
-            <!-- <input type="text" placeholder="email2...15" name="email5" ngModel validateEmail15> -->
+            <input type="text" placeholder="dont use 'gop@gmail', 'ped@gmail'" name="email4" ngModel validateEmail14>
+            <input type="text" placeholder="dont use 'gop@gmail', 'ped@gmail'" name="email5" ngModel validateEmail15>
         </div>
-        <button mat-raised-button [disabled]="isFormValid(multipleEmailForm)" (click)="onSubmit(multipleEmailForm)">Submit1</button>
-        <button mat-raised-button (click)="consoleForm(multipleEmailForm)">Submit2</button>
-
-        <!-- validateEmail is applied as an attribute to the <input> DOM element -->
-        <!--
-            we need to build a directive with a matching selector (meaning selector MUST also be "validateEmail")
-            so it will be executed on all input controls where the directive is applied
-        -->
-
-        <!--
-            a) Angular has an internal mechanism to execute validators on a form control
-            b) It maintains a multi provider for a dependency token called NG_VALIDATORS
-                    - Angular injects multiple values for a single token that is used for a multi provider.
-            c) It turns out that all built-in validators are already added to the NG_VALIDATORS token
-            d) So whenever Angular instantiates a form control and performs validation,
-                it basically injects the dependency for the NG_VALIDATORS token, which is a list of all validators,
-                and executes them one by one on that form control.
-            e) Since multi providers can be extended by adding more multi providers to a token,
-                we can consider NG_VALIDATORS as a hook to add our own validators.
-            f)
-        -->
+        <button [disabled]="isFormValid(multipleEmailForm)" (click)="onSubmit(multipleEmailForm)">Submit1</button>
+        <button (click)="consoleForm(multipleEmailForm)">Submit2</button>
     </form>
 </div>
 

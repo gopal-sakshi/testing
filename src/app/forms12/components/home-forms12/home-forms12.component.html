@@ -1,22 +1,18 @@
 <div class="home-forms12-container" fxLayout="row" fxLayoutGap="20px">
-    <div class="user-actions-buttons" fxLayout="column" fxLayoutGap="5px">
-        <button style="max-width:fit-content" (click)="showDateValidator=!showDateValidator">Date Validator</button>
-        <button style="max-width:fit-content" (click)="showCustomValidator=!showCustomValidator">Custom Validator</button>
-        <button style="max-width:fit-content" (click)="showTemplate12=!showTemplate12">show Template 12</button>
-        <button style="max-width:fit-content" (click)="showTemplate13=!showTemplate13">show Template 13</button>
-        <button style="max-width:fit-content" (click)="showReactiveForm12=!showReactiveForm12">show Reactive 12</button>
-        <button style="max-width:fit-content" (click)="showReactiveForm13=!showReactiveForm13">show Reactive 13</button>        
-        <button style="max-width:fit-content" (click)="showCustomFormControl=!showCustomFormControl">custom form control</button>
-        <button style="max-width:fit-content" (click)="showNestedForm=!showNestedForm">nested form</button>
-        <button style="max-width:fit-content" (click)="showFormArray=!showFormArray">show form array</button>
-        <button style="max-width:fit-content" (click)="showAddressForms=!showAddressForms">show address form</button>
+    <div class="user-actions-buttons" fxLayout="column" fxLayoutGap="5px">        
+        <button (click)="showCustomValidator=!showCustomValidator">Custom Validator</button>
+        <button (click)="showTemplate12=!showTemplate12">show Template 12</button>
+        <button (click)="showTemplate13=!showTemplate13">show Template 13</button>
+        <button (click)="showReactiveForm12=!showReactiveForm12">Form Array2</button>
+        <button (click)="showFormArray=!showFormArray">Form array1</button>
+        <button (click)="showReactiveForm13=!showReactiveForm13">customFormControl</button>
+        <button (click)="showCustomFormControl=!showCustomFormControl">custom form control</button>
+        <button (click)="showNestedForm=!showNestedForm">nested form</button>
+        
+        <button (click)="showAddressForms=!showAddressForms">show address form</button>
     </div>
     <div class="child-components-container" fxLayout="row" fxLayoutGap="10px">
-        <!-- <div style="font-size:12px;color:rgb(179, 122, 233)">it seems, we can apply classes to child components</div> -->
-        <div *ngIf="showDateValidator" fxLayout="column" fxLayoutGap="40px">
-            <app69-date-validator class="child-component"></app69-date-validator>
-            <app69-date-validator2 class="child-component"></app69-date-validator2>
-        </div>
+        <div style="font-size:12px;color:rgb(179, 122, 233)">it seems, we can apply classes to child components</div>
         <div *ngIf="showCustomValidator" fxLayout="column" fxLayoutGap="40px">
             <app-custom-validator12 class="child-component"></app-custom-validator12>
             <app-custom-validator13 class="child-component"></app-custom-validator13>

@@ -6,6 +6,9 @@
         margin: 5px;
         width: fit-content;
         height: fit-content;
+        button {
+            max-width:fit-content
+        }
     }
     .child-components-container {
         // .child-component {

@@ -1,20 +1,8 @@
+import { Injectable } from "@angular/core";
 
-export class EmailBlackList12Service {
-
-    isInvalidEmail(emailString:string):boolean {
-        if(emailString === 'gopal@gmail.com' || emailString === 'ped@gmail.com') {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    isValidEmail(emailString:string):boolean {
-        if(emailString === 'gopal@gmail.com' || emailString === 'ped@gmail.com') {
-            return false;
-        } else {
-            return true;
-        }
-    }
-
+@Injectable()
+export class EmailBlackList12Service {    
+    validEmails:string[] = ['gop@gmail', 'ped@gmail'];    
+    isInvalidEmail(emailString:string):boolean { return this.validEmails.includes(emailString) ? true : false };
+    // isValidEmail(emailString:string):boolean { return this.validEmails.includes(emailString) ? false : true };
 }

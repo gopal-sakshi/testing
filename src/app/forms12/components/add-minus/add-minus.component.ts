@@ -30,17 +30,11 @@ export class AddMinusComponent implements OnInit {
   }
 
   increase() {
-    if (typeof this.max === 'undefined' || this.value < this.max) {
-      this.value++;
-      this.onChange(this.value);
-    }
+    if (typeof this.max === 'undefined' || this.value < this.max) { this.value++; this.onChange(this.value); }
   }
 
   decrease() {
-    if (typeof this.min === 'undefined' || this.value > this.min) {
-      this.value--;
-      this.onChange(this.value);
-    }
+    if (typeof this.min === 'undefined' || this.value > this.min) { this.value--; this.onChange(this.value); }
   }
 
   writeValue(value: number): void { this.value = value; }

@@ -8,7 +8,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 })
 export class Reactive12Component implements OnInit {
 
-  reactiveForm1:FormGroup
+  clubDetails:FormGroup
   addresses:any[] = [
     { city: 'Madrid', country: 'Spain' },
     { city: 'Barcelona', country: 'Spain' },
@@ -18,7 +18,7 @@ export class Reactive12Component implements OnInit {
   constructor(private formBuilder:FormBuilder) { }
 
   ngOnInit(): void {
-    this.reactiveForm1 = this.formBuilder.group({
+    this.clubDetails = this.formBuilder.group({
       clubName: new FormControl('', [ Validators.required, Validators.pattern(/[^0-9]/)]),
       stadiumName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]],
       address: ['', Validators.required],
@@ -27,7 +27,7 @@ export class Reactive12Component implements OnInit {
   }
 
   get players() {    
-    return this.reactiveForm1.controls["players"] as FormArray;
+    return this.clubDetails.controls["players"] as FormArray;
   }
 
   addPlayer() {
@@ -38,8 +38,6 @@ export class Reactive12Component implements OnInit {
     this.players.push(player);
   }
 
-  submitForm() {
-    console.log(this.reactiveForm1);
-  }
+  submitForm() { console.log(this.clubDetails); }
 
 }

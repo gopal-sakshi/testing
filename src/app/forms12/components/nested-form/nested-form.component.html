@@ -4,9 +4,11 @@
         <input type="text" formControlName="harvestedYear" placeholder="Select harvested year">
         <div fxLayout="column" formGroupName="smartElements">
             <div formGroupName="weight">
-                <input placeholder="Enter Quantity" type="text" formControlName="value">
-                <input placeholder="Enter units" type="text" formControlName="unit">
+                <input placeholder="grams, kg, quintal, ton" type="text" formControlName="unit">
+                <input placeholder="Enter value" type="text" formControlName="value">
+                <input placeholder="solid | liquid | gas" type="text" formControlName="stateMatter">
             </div>
+            <input placeholder="Enter color" type="text" formControlName="color">
         </div>        
     </form>
     <button (click)="submit()">submit</button>

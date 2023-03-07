@@ -14,21 +14,12 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'bootstrap23',
-    loadChildren: () => import('./bootstrap23/bootstrap23.module').then(m => m.Bootstrap23Module)
-  },
-  {
     path: 'subjects',    
     loadChildren: () => import('./subjects/subjects.module').then(m => m.SubjectsModule)
   },
   {
     path: 'webpack23',
     loadChildren: () => import('./webpack23/webpack23.module').then(m => m.Webpack23Module)
-  },
-  {
-    path: 'firebase22',
-    data: { preload22: true },
-    loadChildren: () => import('./firebase22/firebase22.module').then(m => m.Firebase22Module)
   },
   {
     path: 'material23',
@@ -145,10 +136,6 @@ const routes: Routes = [
   {
     path: 'js-stuff12',
     loadChildren: () => import('./js-stuff12/js-stuff12.module').then(m => m.JsStuff12Module)
-  },
-  {
-    path: 'auth23',
-    loadChildren: () => import('./auth23/auth23.module').then(m => m.Auth23Module)
   },
   {
     path: 'web-sockets',

@@ -11,12 +11,17 @@
         <button (click)="showMatThemes=!showMatThemes">mat themes</button>
         <button (click)="showCSSFlex=!showCSSFlex">CSS Flex</button>
         <button (click)="showCSSGrid=!showCSSGrid">CSS Grid</button>
+        <button (click)="showPseudoStyling=!showPseudoStyling">pseudo Styling</button>
+        
     </div>
 
     <div *ngIf="showAnimate12">
         <app69-animate12></app69-animate12>
     </div>
-
+    <div *ngIf="showPseudoStyling">
+        <app69-pseudo-styling12></app69-pseudo-styling12>
+    </div>
+    
     <div *ngIf="showStyling13">
         <app69-styling13></app69-styling13>
     </div>    

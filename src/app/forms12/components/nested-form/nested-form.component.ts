@@ -18,38 +18,17 @@ export class NestedFormComponent implements OnInit {
       product:         [''],
       harvestedYear:   [''],      
       smartElements: this.fb.group({
-        weight: this.fb.group({
-          unit: [''],
-          value: [''],
-          enabled: [true]
-        }),
+        weight: this.fb.group({ unit: [''], value: [''], stateMatter: [''] }),
+        color: ['']
       }),
     });
 
-    this.productForm.get('smartElements.weight.unit').valueChanges.subscribe(res => {
-      console.log(res);
-      // this.productForm.get('smartElements.weight.unit').setValue(23);   // this line will take it infinite loop
-                                                                          // whenever 'unit' changes, observable triggers... 
-                                                                          // then again, you set the value of 'unit'
-                                                                          // now again, observable gets triggered...
-                                                                          // so, this goes into inifinite loop (or) 
-                                                                          // internally, angular uses a lock and you cant set value of 'unit'
-                                                                          // as long as observable isnt completed...
-                                                                          // max call stack size reached
-    });
-
-    // this.productForm['smartElements'].child['weight'].child['value'].valueChanges.subscribe(res => {
-    //   console.log(res);
-    // })
-
-    this.productForm.get(['smartElements', 'weight', 'value']).valueChanges.subscribe(res => {
-      console.log(res);
-    })
+    // Different ways to look for valueChanges
+    this.productForm.get('smartElements.weight.unit').valueChanges.subscribe(res => { console.log(res); });    
+    this.productForm.get(['smartElements', 'weight', 'stateMatter']).valueChanges.subscribe(res => { console.log(res); })
 
   }
 
-  submit() {
-    console.log(this.productForm);
-  }
+  submit() { console.log(this.productForm); }
 
 }

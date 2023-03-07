@@ -17,6 +17,7 @@ import { MatTheme24Component } from './components/mat-theme24/mat-theme24.compon
 import { Styling13Component } from './components/styling13/styling13.component';
 import { CssFlex12Component } from './components/css-flex12/css-flex12.component';
 import { CssGrid12Component } from './components/css-grid12/css-grid12.component';
+import { PseudoStyling12Component } from './components/pseudo-styling12/pseudo-styling12.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { CssGrid12Component } from './components/css-grid12/css-grid12.component
     MatTheme24Component,
     Styling13Component,
     CssFlex12Component,
-    CssGrid12Component          // comment and see the magic............
+    CssGrid12Component,
+    PseudoStyling12Component          // comment and see the magic............
                                     // what happens if a component is in a module, but not included in declarations[] array
   ],
   imports: [

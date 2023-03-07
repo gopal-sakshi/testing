@@ -13,6 +13,7 @@ export class HomeStylingComponent implements OnInit {
   showMatThemes:boolean = false;
   showCSSFlex:boolean = false;
   showCSSGrid:boolean = false; 
+  showPseudoStyling:boolean = false;
   
   resizeObservable23$: Observable<any>
   resizeSubscription33: Subscription

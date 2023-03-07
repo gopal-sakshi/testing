@@ -1,15 +1,14 @@
-<div fxLayout="column" fxLayoutGap="5px" class="custom-validator12-container">
-    <div>custom-val-12</div>
+<div fxLayout="column" fxLayoutGap="5px" class="custom-validator12-container">    
     <div class="validators-list"  fxLayout="row">
-        <div class="custom-validator-1" fxLayout="column">
-            <div>at least 2 formcontrols must be filled;</div>
-            <div>firstname mustnt contain 'a';</div>
-            <div>not working though</div>
+        <div class="custom-validator-1" fxLayout="column">            
             <form [formGroup]="formGroup1">
                 <div fxLayout="column" fxLayoutGap="10px" class="form-group-1">
-                    <input formControlName="firstName" placeholder="first name">
-                    <input formControlName="lastName" placeholder="last name">
-                    <input formControlName="mobile" placeholder="mobile">
+                    <div>name & any 2 of 4 Id proofs needed</div>
+                    <input formControlName="firstName" placeholder="only 5 characters, without 'a'">
+                    <input formControlName="panCard" placeholder="panCard">
+                    <input formControlName="aadhar" placeholder="aadhar">
+                    <input formControlName="drivingLicense" placeholder="drivingLicense">
+                    <input formControlName="voterCard" placeholder="voterCard">
                 </div>
                 <button mat-raised-button (click)="onSubmit1()" [disabled]=formGroup1?.invalid>submit1</button>
                 &nbsp;&nbsp;
@@ -17,11 +16,9 @@
             </form>
         </div>
         <div class="custom-validator-2">
-            <div>at least 1 formcontrols must be filled;</div>
-            <div>if age, it must be at least 3 char long;</div>
             <form [formGroup]="formGroup2">
                 <div fxLayout="column" fxLayoutGap="10px" class="form-group-2">
-                    <input formControlName="age" placeholder="age">
+                    <input formControlName="age" placeholder="unte, length min 3 undaali">
                     <input formControlName="city" placeholder="ciy">
                     <input formControlName="country" placeholder="country">
                 </div>

@@ -4,7 +4,7 @@ With TypeScript being a superset of JavaScript
 
 node server/server.ts ========> throws ERROR                // Cannot use import statement outside a module
 - Using Node to run TypeScript files returns an error.
----------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
 
 ts-node is an executable you can run
 - there’s nothing to import or require in your scripts.

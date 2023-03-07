@@ -15,20 +15,14 @@ export class Parent12Component implements OnInit {
     this.userForm = this.fb.group({
       basicInfo: this.fb.group({
         firstName: ['', [Validators.required, Validators.minLength(3)]],
-        lastName: [],
-        email: [],
-        age: []
+        lastName: [], email: [], age: []
       }),
       address: this.fb.group({
-        street: [],        
-        postal: [],
-        company: []
+        street: [], postal: [], company: []
       })
     });
   }
 
-  submitForm() {
-    console.log(this.userForm);
-  }
+  submitForm() { console.log(this.userForm); }
 
 }

@@ -36,11 +36,7 @@ export class RatingInputComponent {
     }, 0);
   }
 
-  rate(rating: number) {
-    if (!this.disabled) {
-      this.writeValue(rating);
-    }
-  }
+  rate(rating: number) { if (!this.disabled) { this.writeValue(rating); } }
 
   // Allows Angular to update the model (rating).
   // Update the model and changes needed for the view here.
@@ -51,19 +47,13 @@ export class RatingInputComponent {
 
   // Allows Angular to register a function to call when the model (rating) changes.
   // Save the function as a property to call later here.
-  registerOnChange(fn: (rating: number) => void): void {
-    this.onChange = fn;
-  }
+  registerOnChange(fn: (rating: number) => void): void { this.onChange = fn; }
 
   // Allows Angular to register a function to call when the input has been touched.
   // Save the function as a property to call later here.
-  registerOnTouched(fn: () => void): void {
-    this.onTouched = fn;
-  }
+  registerOnTouched(fn: () => void): void { this.onTouched = fn; }
 
   // Allows Angular to disable the input.
-  setDisabledState(isDisabled: boolean): void {
-    this.disabled = isDisabled;
-  }
+  setDisabledState(isDisabled: boolean): void { this.disabled = isDisabled; }
 
 }

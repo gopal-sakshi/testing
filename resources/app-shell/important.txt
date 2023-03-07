@@ -1,6 +1,0 @@
-My Understanding of app-shell may be wrong
-
-Read this article again & again
-https://blog.angular-university.io/angular-app-shell/
-
-I will be undoing all that I did in testing repo with respect to app-shell

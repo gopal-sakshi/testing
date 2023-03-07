@@ -46,20 +46,13 @@ export class ReusableFormComponent implements OnInit, ControlValueAccessor {
     this.userForm.patchValue(data);
   }
 
-  registerOnChange(fn: any): void {
-    this.userForm.valueChanges.subscribe(fn);
-  }
+  registerOnChange(fn: any): void { this.userForm.valueChanges.subscribe(fn); }
 
-  registerOnTouched(fn: any): void {
-    this.formTouchFn = fn;
-  }
+  registerOnTouched(fn: any): void { this.formTouchFn = fn; }
 
   setDisabledState?(isDisabled: boolean): void {
-    if (isDisabled) {
-      this.userForm.disable();
-    } else {
-      this.userForm.enable();
-    }
+    if (isDisabled) { this.userForm.disable(); } 
+    else { this.userForm.enable(); }
   }
 
 }

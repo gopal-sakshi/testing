@@ -1,24 +1,22 @@
 <div class="reactive-driven-forms-container">
-    <form name="reactiveForm1" [formGroup]="reactiveForm1" (ngSubmit)="submitForm()">
-        <input placeholder="club name" formControlName="clubName">          <!-- why formControlName & not [formControlName] -->
+    <form name="reactiveForm1" [formGroup]="clubDetails" (ngSubmit)="submitForm()">
+        <!-- why formControlName & not [formControlName] -->
+        <input placeholder="club name" formControlName="clubName">
         <input placeholder="stadium name" formControlName="stadiumName">
         <select formControlName="address">
-            <!-- 
-                here, we need to use ngValue & not value... 
-                value only captures string... but ngValue catches whole object
-                plus, in .ts file ====> we need to have just address object... no need to have city, country form controls
-            -->
+            <!-- value only captures string... but ngValue catches whole object-->
+            <option value = "" disabled>club is located in</option>
             <option [ngValue]="address" *ngFor="let address of addresses">{{address?.city}}</option>            
         </select>
         <div formArrayName="players">
             <div *ngFor = "let player of players?.controls; let i = index">
                 <div [formGroupName]="i">
-                    <input formControlName="playerName" placeholder="enter name">
-                    <input formControlName="position" placeholder="enter position">
+                    <input formControlName="playerName" placeholder="player's name">
+                    <input formControlName="position" placeholder="player's position">
                 </div>
             </div>
         </div>
     </form>
-    <button (click)="addPlayer()"> add player</button>
-    <button (click)="submitForm()" >submit</button>
+    <button (click)="addPlayer()"> add players to club </button>
+    <div><button (click)="submitForm()">submit</button></div>
 </div>

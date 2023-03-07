@@ -14,9 +14,7 @@ export class FormArrayComponent {
 
   constructor(private fb: FormBuilder) { }
 
-  get lessons() {
-    return this.form.controls["lessons"] as FormArray;
-  }
+  get lessons() { return this.form.controls["lessons"] as FormArray; }
 
   addLesson() {
     const lessonForm = this.fb.group({
@@ -26,8 +24,6 @@ export class FormArrayComponent {
     this.lessons.push(lessonForm);
   }
 
-  deleteLesson(lessonIndex: number) {
-    this.lessons.removeAt(lessonIndex);
-  }
-
+  deleteLesson(lessonIndex: number) { this.lessons.removeAt(lessonIndex); }
+  submitCourses() { console.log(this.form) }
 }

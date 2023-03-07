@@ -5,8 +5,6 @@ import { of } from "rxjs";
 export class ForwardRefService {
     
     constructor() {}
-
-    getPlayers() {
-        return of('benz', 'vini', 'rodrygo');
-    }
+    getPlayers() { return of('benz', 'vini', 'rodrygo'); }
+    
 }

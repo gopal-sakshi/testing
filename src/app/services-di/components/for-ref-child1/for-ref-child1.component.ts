@@ -8,16 +8,9 @@ import { ForwardRefClass } from '../../classes/forward-ref';
 })
 export class ForRefChild1Component extends ForwardRefClass implements OnInit {
 
-  constructor(protected injector: Injector) {
-    super(injector);
-  }
+  constructor(protected injector: Injector) { super(injector); }
 
-  ngOnInit(): void {
-  }
-
-  getPlayersComp() {
-    this.getPlayers().pipe().subscribe(res => {
-      console.log(res);
-    });    
-  }
+  ngOnInit(): void { }
+  getPlayersComp() { this.getPlayers().pipe().subscribe(res => { console.log(res); }); }
+  
 }

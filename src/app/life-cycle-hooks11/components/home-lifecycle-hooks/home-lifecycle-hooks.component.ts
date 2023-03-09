@@ -20,6 +20,7 @@ export class HomeLifecycleHooksComponent extends ChangeDetection11 implements On
   ngDoCheck:boolean = false
   showCd11:boolean = false;
   showCd12:boolean = false;
+  showCd13:boolean = false;
   change23:boolean = false;
   showZone:boolean = false;
   zone11OutsideAngular:boolean = false;

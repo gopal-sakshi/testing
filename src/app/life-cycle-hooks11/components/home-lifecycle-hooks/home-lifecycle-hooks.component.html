@@ -1,8 +1,9 @@
 <div class="life-cycle-hooks-container" fxLayout="column" fxLayoutGap="20px">
     
     <div>
-        <button (click)="showCd11=!showCd11">cd11</button>
+        <button (click)="showCd11=!showCd11">cd11</button>        
         <button (click)="showCd12=!showCd12; openBottomSheet1()">cd12</button>
+        <button (click)="showCd13=!showCd13">cd13</button>
         <button (click)="openBottomSheet2()">cd12 via class</button>
         <button (click)="change23=!change23">change23</button>
         <button (click)="ngDoCheck=!ngDoCheck">change inputs</button>
@@ -19,9 +20,13 @@
         <!-- <button (click)="modifyBottomSheetInputs()">modify bottomsheet inputs</button> -->
         <!-- <app-change-detection12></app-change-detection12> -->        
     </div>
+    <div *ngIf="showCd13">
+        <app69-change-detection13></app69-change-detection13>
+    </div>
+    
 
     <div *ngIf="change23">
-        <app69-change23></app69-change23>
+        this component is not needed anymore    
     </div>
 
     <div *ngIf="ngDoCheck" class="change-detection-1">

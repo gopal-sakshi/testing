@@ -30,31 +30,3 @@
 </div>
 
 
-<!--
-a) each component has its own change detector which is responsible for checking the component
-
-Modern web applications are interactive... 
-The state of an application can change anytime 
-    button click (or) request coming back from a server.
-
-https://indepth.dev/posts/1058/a-gentle-introduction-into-change-detection-in-angular
-https://indepth.dev/posts/1053/everything-you-need-to-know-about-change-detection-in-angular
-https://indepth.dev/posts/1131/if-you-think-ngdocheck-means-your-component-is-being-checked-read-this-article
-
-
-a) When Angular creates the DOM nodes to render the contents of the template on the screen, 
-    it needs a place to store the references to those DOM nodes. 
-b) For that purpose, internally there’s a data structure known as View. 
-    It’s also used to store the reference to the component instance and the previous values of binding expressions. 
-c) There’s a one to one relationship between a component and a view. Here’s the diagram that demonstrates the view:
-
-a) As the compiler analyzes the template, 
-    it identifies properties of the DOM elements that may need to be updated during change detection.
-b) For each such property, the compiler creates a binding.
-c) The binding defines the property name to update and the expression that Angular uses to obtain a new value.
-
-a) In change-detection-11 component, 
-    the property time is used in the expression for the property textContent. 
-    So Angular creates a binding and associates it with the span element:
-    
--->

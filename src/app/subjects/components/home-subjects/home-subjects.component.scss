@@ -5,14 +5,18 @@
     }
 
     .child-components {
-        button {
-            max-width: fit-content;
-        }   
+        button { max-width: fit-content; };
+        .subjects {
+            display: flex;
+            flex-direction: row;  
+        }
     }
 
     .replay-subjects {
         padding:10px;
-        border: 1px dotted rgb(95, 95, 187)
+        border: 1px dotted rgb(95, 95, 187);
+        display: flex;
+        flex-direction: row; 
     }
 
 }

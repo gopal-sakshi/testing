@@ -1,39 +1,10 @@
-<div class="home-random13-container"  fxLayout="row" fxLayoutGap="20px">
-    <div fxLayout="column" fxLayoutGap="10px" class="user-buttons">
-        <button (click)="showCircle12=!showCircle12">circle12</button>
-        <div class="circle13">
-            <button (click)="showCircle13=!showCircle13">circle13</button>
-            <input id="modifyTime" placeholder="enter time">
-            <button (click)="modifyTime()">modify time</button>
-        </div>
-        
-        <button (click)="showCircle14=!showCircle14">circle14</button>
+<div class="home-random13-container">
+    <div class="user-buttons">        
+        <button (click)="showCircle13=!showCircle13">circle13</button>        
         <button (click)="showUpload180Mb=!showUpload180Mb">upload180Mb</button>
-        <button (click)="showCircle15=!showCircle15">circle15</button>
-        <div>
-            <button (click)="showWaterMeter12=!showWaterMeter12">waterMeter</button>
-            <button (click)="modifyWaters()">modify water levels</button>
-        </div>        
-        <button (click)="time = time - 180">change time</button>
     </div>
     <div class="child-components">
-        <div *ngIf="showCircle12">
-            <app69-circle12 [time]="time"></app69-circle12>
-        </div>
-        <div *ngIf="showCircle13">
-            <app69-circle13 [time]="time" (timerCompleted)="timerCompleted()"></app69-circle13>
-        </div>
-        <div *ngIf="showCircle14">
-            <app69-circle14></app69-circle14>
-        </div>
-        <div *ngIf="showCircle15">
-            <app69-circle15></app69-circle15>
-        </div>
-        <div *ngIf="showUpload180Mb">
-            <app69-upload180-mb></app69-upload180-mb>
-        </div>
-        <div *ngIf="showWaterMeter12">
-            <app69-water-meter12 [lengths]="lengths"></app69-water-meter12>
-        </div>
+        <app69-circle13 *ngIf="showCircle13" [time]="time" (timerCompleted)="timerCompleted()"></app69-circle13>
+        <app69-upload180-mb *ngIf="showUpload180Mb"></app69-upload180-mb>        
     </div>
 </div>

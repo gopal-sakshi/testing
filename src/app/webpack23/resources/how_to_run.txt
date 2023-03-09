@@ -1,0 +1,14 @@
+modify the build, serve targets in angular.json
+then do npm run start
+
+"resolutions" property in package.json
+- only those versions of webpack should be kept in dependency tree
+- say there is a npmjs package "gopal612-js-lib" in dependency[] array of pacakge.json
+    {
+        "gopal612-js-lib": "1.2.0"
+    }
+- say "gopal612-js-lib" uses webpack 4.0.0 internally
+- Author of "gopal612-js-lib" didnt release new version that updated webpack to 5.0.0
+- so, instead of waiting for that author to release "gopal612-js-lib" 1.3.0
+    we use "resolutions" property of package.json
+- all versions of webpack in dependency tree will be 5.4.0

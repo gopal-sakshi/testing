@@ -16,17 +16,20 @@ export class Subjects43Component implements OnInit {
   constructor(private middlemanService: MiddleManService) { }
 
   ngOnInit(): void {
-    // this is one way to do it... but lets comment it out and see another way
-    // this.clubNameSubscription = this.middlemanService.getFootballMsg().subscribe(res => {      
-    //   this.clubNames.push(res.club);
-    // });
+    // APPROACH I
+    this.clubNameSubscription = this.middlemanService.getFootballMsg().subscribe(
+      res => { this.clubNames.push(res.club); },
+      err => { },
+      () => {} 
+    );
 
-    this.observer43 = {
-      next: (next) => { this.clubNames.push(next.club)},
-      errCallBack: (err) => { console.log('error anta ',err)},
-      completeCbDoesntHaveArgs: () => { console.log('subject finished emitting data') }
-    };
-    this.clubNameSubscription = this.middlemanService.getFootballMsg().subscribe(this.observer43);
+    // APPROACH II
+    // this.observer43 = {
+    //   next: (next) => { this.clubNames.push(next.club)},
+    //   errCallBack: (err) => { console.log('error anta ',err)},
+    //   completeCbDoesntHaveArgs: () => { console.log('subject finished emitting data') }
+    // };
+    // this.clubNameSubscription = this.middlemanService.getFootballMsg().subscribe(this.observer43);
 
   }
 

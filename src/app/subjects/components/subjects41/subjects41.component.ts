@@ -14,23 +14,24 @@ export class Subjects41Component implements OnInit {
     // Async Subjects ----> use subjects47 component
   constructor(private middlemanService: MiddleManService) { }
 
-  ngOnInit(): void {    
-  }
+  ngOnInit(): void { }
 
   broadcast23() {
     const clubElement = <HTMLInputElement>document.getElementById('inputClub');
-    const playerElement = <HTMLInputElement>document.getElementById('inputPlayer');    
-    console.log(clubElement.value);console.log(playerElement.value);
+    const playerElement = <HTMLInputElement>document.getElementById('inputPlayer');
+    // normal subjects
     this.middlemanService.sendFootballMsg({club: clubElement.value, player: playerElement.value});
   }
 
   broadcast24() {
     const countryElement = <HTMLInputElement>document.getElementById('inputCountry');
+    // replay subjects... after subscription, old trasmitted data is also shown
     this.middlemanService.sendCountryMsg({country:countryElement.value});
   }
 
   broadcast25() {
     const heroElement = <HTMLInputElement>document.getElementById('inputHero');
+
     this.middlemanService.sendHeroMsg({hero:heroElement.value});
   }
 

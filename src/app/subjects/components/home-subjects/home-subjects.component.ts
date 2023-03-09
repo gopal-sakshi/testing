@@ -15,8 +15,7 @@ export class HomeSubjectsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   subjectAsObservor() {
     const subject23 = new Subject<number>();
@@ -28,7 +27,18 @@ export class HomeSubjectsComponent implements OnInit {
     });
 
     const observable54 = from([1, 2, 3]);                 // this observable54 emits values... asynchronously...
-    observable54.subscribe(subject23);                    // subject23 is being an observer now... 
+
+    observable54.subscribe(res => { console.log(res+'anon') });     // only next() cb is provided... that too anonymous 
+    observable54.subscribe({next: res => { console.log(res+'named') }});    // only next() cb is provided... but namedFn
+    observable54.subscribe(
+      { 
+        next: (res) => console.log(`${res}_all_3_cbs`),
+        error: (error) => {},
+        complete: () => { console.log('overeeeeeeyyyyyyyyyyy')}
+      }
+    );      // all 3 callbacks provided with named Functions... but the observor itself has no name...
+
+    observable54.subscribe(subject23);                    // we provided an observor... with name "subject23"
   }
 
 }

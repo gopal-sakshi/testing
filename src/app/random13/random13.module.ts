@@ -1,15 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
-import { Circle12Component } from './components/circle12/circle12.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FlexLayoutModule } from '@angular/flex-layout';
-// import { CircleTimerModule } from '@flxng/circle-timer';
 import { Circle13Component } from './components/circle13/circle13.component';
-import { Circle14Component } from './components/circle14/circle14.component';
-import { Circle15Component } from './components/circle15/circle15.component';
 import { Upload180MbComponent } from './components/upload180-mb/upload180-mb.component';
-import { WaterMeter12Component } from './components/water-meter12/water-meter12.component';
+
 
 const routes:Routes = [
   { path: '', component: HomeComponent},  
@@ -17,19 +12,13 @@ const routes:Routes = [
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    Circle12Component,
-    Circle13Component,
-    Circle14Component,
-    Circle15Component,
-    Upload180MbComponent,
-    WaterMeter12Component
+    HomeComponent,    
+    Circle13Component,    
+    Upload180MbComponent
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes),
-    FlexLayoutModule,
-    // CircleTimerModule
+    RouterModule.forChild(routes)
   ]
 })
 export class Random13Module { }

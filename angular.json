@@ -9,25 +9,13 @@
     "testing": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        },
-        "@schematics/angular:component": {
-          "style": "scss"          
-        },
-        "@schematics/angular:class": {
-          "skipTests": true          
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
+        "@schematics/angular:application": { "strict": true },
+        "@schematics/angular:component": { "style": "scss" },
+        "@schematics/angular:class": { "skipTests": true },
+        "@schematics/angular:directive": { "skipTests": true },
         "@schematics/angular:module": { },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
-        }
+        "@schematics/angular:pipe": { "skipTests": true },
+        "@schematics/angular:service": { "skipTests": true }
       },      
       "root": "",
       "sourceRoot": "src",
@@ -35,16 +23,16 @@
       "architect": {
         "build": {
           // uses default Configuration
-          "builder": "@angular-devkit/build-angular:browser",
+          // "builder": "@angular-devkit/build-angular:browser",
 
           // while building; use custom webpack ===> webpack-config23.js
-          // "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
 
           "options": {
-            // "customWebpackConfig": {
-            //   "path": "./webpack-config23.js",
-            //   "replaceDuplicatePlugins": true
-            // },
+            "customWebpackConfig": {
+              "path": "./webpack-config23.js",
+              "replaceDuplicatePlugins": true
+            },
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -119,10 +107,10 @@
         "serve": {
 
           
-          "builder": "@angular-devkit/build-angular:dev-server",
+          // "builder": "@angular-devkit/build-angular:dev-server",
 
           // even while serving (developing locally)... use customWebpack only
-          // "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
 
           "configurations": {
             "production": {
@@ -139,32 +127,6 @@
             }
           },
           "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-
-          // "builder": "@angular-builders/custom-webpack:extract-i18n",
-          "options": {
-            "browserTarget": "testing:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": [],
-            "webWorkerTsConfig": "tsconfig.worker.json"
-          }
         }
       }
     }

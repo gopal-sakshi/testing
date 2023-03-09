@@ -14,9 +14,7 @@ export class DelayRenderingDirective {
 
     ngOnInit() {
         console.log(this.delayTime);
-        setTimeout(()=> {
-            this.containerRef.createEmbeddedView(this.templateRef)
-        }, this.delayTime)
+        setTimeout(() => { this.containerRef.createEmbeddedView(this.templateRef) }, this.delayTime );
     }
 }
 

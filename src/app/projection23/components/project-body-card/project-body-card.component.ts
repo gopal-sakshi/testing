@@ -10,7 +10,6 @@ export class ProjectBodyCardComponent implements OnInit {
   @Input() headerText: string;
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

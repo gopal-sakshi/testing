@@ -20,7 +20,7 @@ export class EventManager14Component implements OnInit {
 
   ngAfterViewInit() {
     this.htmlElement = document.getElementById('button-element');
-    this.eventManager.addEventListener(this.htmlElement,'dblclick',()=>{console.log('event listener triggered')});
+    this.eventManager.addEventListener(this.htmlElement,'dblclick',() => { console.log('event listener triggered') });
   }
 
   doStuff() {

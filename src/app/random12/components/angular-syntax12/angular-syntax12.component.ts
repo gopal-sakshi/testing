@@ -16,10 +16,7 @@ export class AngularSyntax12Component implements OnInit {
   doStuff() {
     var input = document.querySelector('input');
     console.log(input.value)               // 'thoughtram'
-
-
-    input.value = 'Angular Master Class';   // we change the value... and try to read the value using getAttribute
-    
+    input.value = 'Angular Master Class';   // we change the value... and try to read the value using getAttribute    
     console.log(input.getAttribute('value'));            // why it still prints     'thoughtram'
                             /*          the property value is not reflected back to the attribute            */
 
@@ -34,7 +31,7 @@ export class AngularSyntax12Component implements OnInit {
       For some reasons, since version 2.x, Angular always binds to properties rather than attributes
 
     */
-
+   
 
   }
 }

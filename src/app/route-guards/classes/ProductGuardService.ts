@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 
-
-
 /*
     import canActivate
     create a class ProductGuardService which implements canActivate

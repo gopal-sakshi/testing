@@ -12,7 +12,7 @@ export class Filter23OperatorComponent implements OnInit {
   intervalIdentity:Subscription;
   intervalLog:Subscription;
   
-
+  // https://netbasal.com/creating-custom-operators-in-rxjs-32f052d69457
   constructor() { }
 
   ngOnInit(): void {}
@@ -33,9 +33,9 @@ export class Filter23OperatorComponent implements OnInit {
 
   interval1() {
     interval(1000).pipe(
-      map(num => num + 1),                                                                        // OPERATOR 1
-      map(num => num + 2),                                                                        // OPERATOR II
-      function<T>(inputSrcObs):Observable<T> {                                                    // OPERATOR III     custom operator
+      map(num => num + 1),                                  // OPERATOR 1
+      map(num => num + 2),                                  // OPERATOR II
+      function<T>(inputSrcObs):Observable<T> {              // OPERATOR III     custom operator
         return new Observable(subscriber => {
           const subscription = inputSrcObs.subscribe(
             { next(value) { if (value < 10) subscriber.next(value); } },
@@ -45,13 +45,12 @@ export class Filter23OperatorComponent implements OnInit {
           return () => subscription.unsubscribe();
         })
       },
-      map(num => {                                                                                  // OPERATOR IV
-        return {
-          numberIs: num,
-          jingChak: true
-        } 
-      })
-    ).subscribe((num) => { console.log(num) });
+      map(num => { return { numberIs: num, jingChak: true } })      // OPERATOR IV
+    ).subscribe(
+      (num) => { console.log(num) },
+      (err) => console.log(err),
+      () => console.log('observable is completed')
+    );
   }
 
   interval2() {
@@ -59,7 +58,7 @@ export class Filter23OperatorComponent implements OnInit {
     interval(1000).pipe(
       map(num => num + 1),
       map(num => num + 2),
-      this.filter23(),                    // instead of whole function... we just use filter23() here which does the same
+      this.filter23(),      // instead of whole function... we just use filter23() here which does the same
     ).subscribe((num) => { console.log(num) });
   }
 
@@ -70,16 +69,9 @@ export class Filter23OperatorComponent implements OnInit {
     this.intervalLog = interval(1000).pipe(this.identity23).subscribe(res => { console.log(res) });
     // https://indepth.dev/posts/1421/rxjs-custom-operators
   }
-
-
-  // returns the same observable (or) mirrors input observable
-  identity23<T>(source$: Observable<T>): Observable<T> {
-    return source$;
-  }
-
-  log<T>(source$: Observable<T>): Observable<T> {
-    return source$.pipe(tap(v => console.log(`log: ${v}`)));
-  }
+  
+  identity23<T>(source$: Observable<T>): Observable<T> { return source$; }  // returns/mirrors the same observable
+  log<T>(source$: Observable<T>): Observable<T> { return source$.pipe(tap(v => console.log(`log: ${v}`))); }
   
   ngOnDestroy() {
     console.log('ng On Destroy called');
@@ -88,16 +80,3 @@ export class Filter23OperatorComponent implements OnInit {
   }
 
 }
-
-/*
-  implementation of the pipe() method so that we can get a better understanding of how it works:
-
-  class Observable {
-    pipe(...operators): Observable<any> {
-      return operators.reduce((source, next) => next(source), this);
-    }
-  }
-
-  // https://netbasal.com/creating-custom-operators-in-rxjs-32f052d69457
-
-*/

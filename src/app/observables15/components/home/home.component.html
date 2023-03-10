@@ -3,6 +3,10 @@
         <button (click)="showAppGreeting=!showAppGreeting">greeting</button>
         <button (click)="showFilter23=!showFilter23">filter23</button>
     </div>
+    <!-- 
+        greeting component          = why its necessary to destroy observable 
+        showFilter23 component      = write custom pipe
+    -->
     <div class="userActions" *ngIf="showAppGreeting">
         <app69-greeting></app69-greeting>
     </div>

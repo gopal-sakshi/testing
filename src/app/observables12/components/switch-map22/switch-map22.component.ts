@@ -39,18 +39,9 @@ export class SwitchMap22Component implements OnInit {
 
   }
 
-  get clubNameSearchKeyword():string {
-    return this.form22.get('clubName').value;
-  }
-
-  get stadiumNameSearchKeyword():string {
-    return this.form22.get('stadiumName').value;
-  }
-
-  submit1() {
-    console.log(this.form22);
-  }
-
+  get clubNameSearchKeyword():string { return this.form22.get('clubName').value; }
+  get stadiumNameSearchKeyword():string { return this.form22.get('stadiumName').value; }
+  submit1() { console.log(this.form22); }
   search1() {
     var result = this.switchMap22service.searchClubs1('Real');
     console.log(result);

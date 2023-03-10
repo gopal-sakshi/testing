@@ -25,17 +25,13 @@ export class Cricket23Component extends Cricket23 implements OnInit {
   // showSupport() is called from base abstract class
     // meaning, base class can call function in grand-child class
   showSupport(): void {
-    if(this.format) {
-      console.log(`long live ${this.format}`);
-    }    
+    if(this.format) { console.log(`long live ${this.format}`); }    
   }
 
   famousPlayers(): String[] {
     return this.format === 'TEST' ? ["Bradman", "Kallis", "McGrath"] : this.format === 'T20' ? ["Gayle", "deVilliers"] : ["ponting"]
   }
 
-  sayHello() {
-    console.log('saying hello from cric component');
-  }
+  sayHello() { console.log('saying hello from cric component'); }
 
 }

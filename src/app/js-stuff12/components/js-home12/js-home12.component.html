@@ -4,17 +4,16 @@
         <a [routerLink]="['call-bind-apply']">call-bind-apply</a>
         <!-- <a [routerLink]="['mat-forms23']">mat forms</a>
     <a [routerLink]="['mat-table12']">mat table</a> -->
-        <button mat-raised-button color="primay" (click)="showCallBindApply = !showCallBindApply">click forchild</button>
-        <button mat-raised-button color="primay" (click)="showCricket = !showCricket">click for cricket</button>
-        <button mat-raised-button color="primay" (click)="showPromises = !showPromises">click for Promise</button>
-        <button mat-raised-button color="primay" (click)="showConsole23 = !showConsole23">click for Console</button>
-        <button mat-raised-button color="primay" (click)="showFunctions12 = !showFunctions12">click for Functions</button>
-        <button mat-raised-button color="primay" (click)="showTwoWayBinding = !showTwoWayBinding">Two way binding</button>
-        <button mat-raised-button color="primay" (click)="showRandomJS = !showRandomJS">Random JS</button>
-        <button mat-raised-button color="primay" (click)="showCallback22 = !showCallback22">Callback22</button>
-        <button mat-raised-button color="primay" (click)="showBubble23 = !showBubble23">bubble23</button>
-        <button mat-raised-button color="primay" (click)="showAWS1 = !showAWS1">AWS 1</button>
-        <button mat-raised-button color="primay" (click)="showConsoleTypes = !showConsoleTypes">Console types</button>        
+        <button (click)="showCallBindApply = !showCallBindApply">click forchild</button>
+        <button (click)="showCricket = !showCricket">click for cricket</button>
+        <button (click)="showPromises = !showPromises">click for Promise</button>
+        <button (click)="showConsole23 = !showConsole23">click for Console</button>
+        <button (click)="showFunctions12 = !showFunctions12">click for Functions</button>
+        <button (click)="showTwoWayBinding = !showTwoWayBinding">Two way binding</button>
+        <button (click)="showRandomJS = !showRandomJS">Random JS</button>
+        <button (click)="showCallback22 = !showCallback22">Callback22</button>
+        <button (click)="showBubble23 = !showBubble23">bubble23</button>        
+        <button (click)="showConsoleTypes = !showConsoleTypes">Console types</button>        
     </div>
 
     <div fxLayout="column" fxLayoutGap="20px">
@@ -34,24 +33,9 @@
         <div *ngIf="showCricket">
             <app69-cricket23 [format]="format23"></app69-cricket23>
         </div>
-        <div *ngIf="showPromises">
-            <app69-promise44></app69-promise44>
-        </div>
-        <div *ngIf="showConsole23">
-            <button (click)="changeInputToConsole23()">Change Input to Console</button>
-            <app69-console23 [input23]="inputToConsole"></app69-console23>
-        </div>
-        <div *ngIf="showFunctions12">
-            <app69-functions12></app69-functions12>
-        </div>
+
         <div *ngIf="showCallback22">
             <app69-callback22></app69-callback22>
         </div>
-        <div *ngIf="showAWS1">
-            <app69-aws-stuff1></app69-aws-stuff1>
-        </div>
-        <div *ngIf="showConsoleTypes">
-            <app69-console-types></app69-console-types>
-        </div>        
     </div>
 </div>

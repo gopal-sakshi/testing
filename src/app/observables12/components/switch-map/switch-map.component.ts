@@ -15,8 +15,7 @@ export class SwitchMapComponent implements OnInit {
   
   constructor(private rxjsService:RxJsService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   // switchMap subscribes to most recent observable... unsubscribes from previous ones
   ngAfterViewInit() {

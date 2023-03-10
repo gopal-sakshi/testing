@@ -23,7 +23,6 @@ export class GreetingComponent implements OnInit {
     });
   }
 
-
   // Comment this method ---> and see the console logs
   // ngOnDestroy(): void {
   //   this.unsubscribe.next();

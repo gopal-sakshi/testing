@@ -19,10 +19,12 @@ export class CallBindApplyComponent implements OnInit {
     deleteBtn1.className = 'delete';
     document.body.appendChild(deleteBtn1);
 
-    var tempThis = this;    // tempThis stores reference to this... because
-    // I mean, inside function, this points to function & not the class
+    var tempThis = this;    // tempThis stores reference to this... 
+    
     deleteBtn1.addEventListener('click', function () {
-      tempThis.showMessage();
+      console.log(this);                // this points to "deleteBtn1"
+      // this.showMessage();            // ERROR: showMessage() doesnt exist on "button HTML element"
+      // tempThis.showMessage();
     });
 
 
@@ -31,25 +33,18 @@ export class CallBindApplyComponent implements OnInit {
     someButton.className = 'fill-cart';
     document.body.appendChild(someButton);
     someButton.addEventListener('click', () => {
-      this.showMessage();       // because, we used arrow function... the reference to this isnt lost
-      // I mean, inside arrow function, this still points class
+      this.showMessage();       // because, we used arrow function... 
+                                // inside arrow function, this points to outerscope which has the object
     })
   }
 
-  showMessage() {
-    console.log('notice what this points to here');
-  }
+  showMessage() { console.log('notice what this points to here'); }
 
   // bind() method creates a new function that, when called, has its this keyword set to the provided value
-  bindExample() {
+  bindExample() {}
 
-  }
+  callExample() {}
 
-  callExample() {
+  applyExample() {}
 
-  }
-
-  applyExample() {
-
-  }
 }

@@ -1,0 +1,15 @@
+<div class="on-push-container" fxLayout="row" fxLayoutGap="20px">
+    <div class="applyBorder">
+        <div>weight = {{originalValue1}}</div>
+        <div>looks = {{ person?.height }} {{ person?.color}}  </div>
+        <button (click)="update23()">mutate existing</button>
+        <button (click)="update24()">assign new</button>
+        <div> even though, after 2 seconds, originalValue1 is updated in ts</div>
+        <div> ==> we still see only old value, as change detection wont run</div>
+    </div>
+    <div class="applyBorder">
+        <button (click)="trigger1()">trigger1</button>
+        <button (click)="trigger2()">trigger2</button>
+        <button (click)="trigger3()">trigger3</button>
+    </div>
+</div>

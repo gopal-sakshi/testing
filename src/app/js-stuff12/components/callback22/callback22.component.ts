@@ -14,30 +14,23 @@ export class Callback22Component implements OnInit {
 
   ngAfterViewInit() {
 
-    // here this.callback01 ----> callback function... we are not invoking the function... we are just passing function reference
-      // but what if we want to pass argument to this callback01 ??? 
-      // how do we achieve that ------------> blah1.addEventListener('change', this.callback01(arg1));    // THROWS error
     var blah1 = document.getElementById('inputValue1');
-    blah1.addEventListener('change', this.callback01);
+    blah1.addEventListener('change', this.callback01);      // callback01, a function ===> passed as argument
 
-    // THIS IS HOW WE DO IT
-    var blah2 = <HTMLInputElement>document.getElementById('inputValue2');
-    blah2.addEventListener('change', this.callbackWithParam('something2'));
+    // how to pass a "function with argument" as callback     THIS IS HOW WE DO IT
+    var blah2 = <HTMLInputElement>document.getElementById('inputValue2');    
+    blah2.addEventListener('change', this.callback01_withParam('ss'));
 
 
     // triggering event listener in case of 'keydown' & not 'change'  // coz, change gets triggered only when input element looses focus
     var blah3 = <HTMLInputElement>document.getElementById('inputValue3');
-    blah3.addEventListener('keydown', this.callbackWithParam('something3'));
+    blah3.addEventListener('keydown', this.callback01_withParam('sadf'));
   }
 
-  callback01() {
-    console.log('input changed');
-  }
+  callback01() { console.log('input changed'); }
 
-  callbackWithParam(obj23:any) {
-    return function() {
-      console.log(obj23);
-    }
+  callback01_withParam(obj23:any) {
+    return function() { console.log(obj23); }
   }
 
 }

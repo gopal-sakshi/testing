@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ContentInitComponent } from './components/content-init/content-init.component';
 import { ChangeDetectionChild13Component } from './components/change-detection-child13/change-detection-child13.component';
 import { ChangeDetection13Component } from './components/change-detection13/change-detection13.component';
+import { CdOnPush12Component } from './components/cd-on-push12/cd-on-push12.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ChangeDetection13Component } from './components/change-detection13/chan
     
     ContentInitComponent,
     ChangeDetectionChild13Component,
-    ChangeDetection13Component
+    ChangeDetection13Component,
+    CdOnPush12Component
   ],
   imports: [
     CommonModule,

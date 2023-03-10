@@ -17,45 +17,15 @@ export class FakeJsonStats {
     private kolkattaPincodes = 'https://api.postalpincode.in/pincode/700001';
     private chennaiPincodes = 'https://api.postalpincode.in/pincode/600001';
 
-
-    
-
     tempVariable1:any;
     tempVariable2:any;
 
     constructor(private httpClient: HttpClient) {}
 
-    fetchStats():Observable<any> {
-        return this.httpClient.get(this.ip_address);        
-    }
+    fetchStats():Observable<any> { return this.httpClient.get(this.ip_address); }
+    fetchpostCodeStats(): Observable<any> { return this.httpClient.get(this.chennaiPincodes); }
 
-    /*
-
-    mergeMap
-    - mergeMap is used when API requests are dependent ===> when we need data from 1st API request to make requests to 2nd API.
-    - you don't have to wait for every HTTP request to complete. 
-    - you can react as they complete. 
-    - plus, you can handle errors easier (so if one request fails you can still continue with the other requests)
-    - But you have to handle your emitted values in the .subscribe() a little differently
-
-
-    forkJoin
-    - forkJoin is used when API requests are independent. 1st request doesnt depend on 2nd request to complete and can execute in parallel.
-    - data from all http requests --> loaded inside subscribe() method
-    - you have to wait for every HTTP request to finish before forkJoin emits the value
-
-
-    concatMap 
-    - execute the requests in order. 
-    - Meaning it would wait for the first request to complete, and then send the next
-    - so as not to increase server capacity
-
-    */
-    fetchpostCodeStats(): Observable<any> {
-        return this.httpClient.get(this.chennaiPincodes);        
-    }
-
-    fetchDummyStats():Observable<any> {
+    mergeMapStats():Observable<any> {
 
         return this.httpClient.get<any>('https://api.postalpincode.in/pincode/110001').pipe(
             map(res => {
@@ -68,6 +38,7 @@ export class FakeJsonStats {
                 return this.httpClient.get(`https://api.postalpincode.in/pincode/${somethingPincode}`);
             }), 
             mergeMap ( blah => {
+                console.log(blah);
                 return of(23);
             })
         );
@@ -76,26 +47,22 @@ export class FakeJsonStats {
     useForkJoin1() {
         
         var fourCitiesPostalCodes;
-
         const obs1 = this.httpClient.get(this.delhiPincodes);
         const obs2 = this.httpClient.get(this.mumbaiPincodes);
         const obs3 = this.httpClient.get(this.kolkattaPincodes);
-        const obs4 = this.httpClient.get(this.chennaiPincodes);
-        
-        forkJoin([obs1, obs2, obs3, obs4]).subscribe(results => {
-            console.log(results);
-            fourCitiesPostalCodes = results;
-        });
-        return fourCitiesPostalCodes
+        const obs4 = this.httpClient.get(this.chennaiPincodes);        
+        return forkJoin(obs1, obs2, obs3, obs4);                    // THIS IS DEPRECATED (old signature)
+        // return forkJoin([obs1, obs2, obs3, obs4]);              // THIS IS NOT DEPRECATED. in new signature
+                                                                // forkJoin accepts array of observables
     }
 
     useForkJoin2() : Observable<any> {
-        const obs1 = this.httpClient.get(this.delhiPincodes).pipe(map(res => {}), catchError(e => of('Error')));
-        const obs2 = this.httpClient.get(this.mumbaiPincodes).pipe(map(res => {}), catchError(e => of('Error')));;
-        // const obs3 = this.httpClient.get(this.kolkattaPincodes).pipe(map(res => {}), catchError(e => of('Error')));
-        const obs3 = this.httpClient.get('www.lkjs.com').pipe(map(res => {}), catchError(e => of('Error')));    // hoping this obs3 fails
-        const obs4 = this.httpClient.get(this.chennaiPincodes).pipe(map(res => {}), catchError(e => of('Error')));;
-
+        const wrongUrl = 'www.lkjs.com';
+        const obs1 = this.httpClient.get(this.delhiPincodes).pipe(catchError(e => of('Error')));
+        const obs2 = this.httpClient.get(this.mumbaiPincodes).pipe(catchError(e => of('Error')));;
+        // const obs3 = this.httpClient.get(this.kolkattaPincodes).pipe(catchError(e => of('Error')));
+        const obs3 = this.httpClient.get(wrongUrl).pipe(catchError(e => of('Error')));    // hoping this obs3 fails
+        const obs4 = this.httpClient.get(this.chennaiPincodes).pipe(catchError(e => of('Error')));;
         return forkJoin([obs1, obs2, obs3, obs4]);
     }
 

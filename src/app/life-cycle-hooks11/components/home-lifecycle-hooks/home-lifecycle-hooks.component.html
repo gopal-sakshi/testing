@@ -2,12 +2,12 @@
     
     <div>
         <button (click)="showCd11=!showCd11">cd11</button>        
-        <button (click)="showCd12=!showCd12; openBottomSheet1()">cd12</button>
-        <button (click)="showCd13=!showCd13">cd13</button>
+        <button (click)="openBottomSheet1()">cd12</button>
         <button (click)="openBottomSheet2()">cd12 via class</button>
-        <button (click)="change23=!change23">change23</button>
+        <button (click)="showCd13=!showCd13">cd13</button>        
         <button (click)="ngDoCheck=!ngDoCheck">change inputs</button>
-        <button (click)="zone11OutsideAngular=!zone11OutsideAngular">color changing div</button>        
+        <button (click)="showOnPush=!showOnPush">on push strategy</button>
+        <button (click)="zone11OutsideAngular=!zone11OutsideAngular">color changing div</button> 
         <button (click)="showZone=!showZone">zone</button>
         <button (click)="showContentInit=!showContentInit">showContentInit</button>
     </div>
@@ -15,26 +15,24 @@
     <div *ngIf="showCd11" class="change-detection-2">    
         <app-change-detection11></app-change-detection11>
     </div>
-    <!-- this is wrong way to instantiate this component; no provider for Mat_bottom_sheet_data error-->
-    <div *ngIf="showCd12">
-        <!-- <button (click)="modifyBottomSheetInputs()">modify bottomsheet inputs</button> -->
-        <!-- <app-change-detection12></app-change-detection12> -->        
-    </div>
+
     <div *ngIf="showCd13">
         <app69-change-detection13></app69-change-detection13>
     </div>
     
-
-    <div *ngIf="change23">
-        this component is not needed anymore    
-    </div>
-
     <div *ngIf="ngDoCheck" class="change-detection-1">
         <button (click)="changeInput1()">change input 1</button>
         <button (click)="changeInput2()">change input 2</button>
+        <button (click)="changeInput2_async()">change input 2 async </button>
+        <button (click)="changeInput2_outsideAngular()">change input 2 outsideAngular</button>        
         <button (click)="changeInput3()">change input 3</button>
+        <button (click)="changeInput3_whole()">change input 3 whole</button>
         <app-ng-do-check12 [input1]="input1" [input2]="input2" [input3]="input3"></app-ng-do-check12>
         <!-- https://angular-change-detection-demo.netlify.app/expression-changed-demo -->
+    </div>
+
+    <div *ngIf="showOnPush">        
+        <app69-cd-on-push12></app69-cd-on-push12>
     </div>
     <div *ngIf="zone11OutsideAngular">
         <app-zone11-outside-angular></app-zone11-outside-angular>

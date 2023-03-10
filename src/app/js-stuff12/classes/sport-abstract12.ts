@@ -5,17 +5,13 @@ export abstract class SportAbstract12 {
 
     init() {
         console.log('inside init of sport abstract');
-        this.sayHello();
-        this.showSupport();
+        this.sayHello();        this.showSupport();
     }
 
-    sayHello() {
-        console.log('saying hello from sport abstract');
-    }
+    sayHello() { console.log('saying hello from sport abstract'); }
 
     // all inherited classes must implement this method... first we cheer for the team
     abstract showSupport():void
-
     abstract famousPlayers():String[];
 }
 

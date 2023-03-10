@@ -8,7 +8,6 @@ import { ChangeDetection12Component } from '../change-detection12/change-detecti
   styleUrls: ['./home-lifecycle-hooks.component.scss']
 })
 export class HomeLifecycleHooksComponent extends ChangeDetection11 implements OnInit {
-// export class HomeLifecycleHooksComponent extends ChangeDetection11 {
 
   input1:any;
   input2:any;
@@ -21,61 +20,70 @@ export class HomeLifecycleHooksComponent extends ChangeDetection11 implements On
   showCd11:boolean = false;
   showCd12:boolean = false;
   showCd13:boolean = false;
-  change23:boolean = false;
   showZone:boolean = false;
+  showOnPush:boolean = false;
   zone11OutsideAngular:boolean = false;
   showContentInit:boolean = false;
-  /*
 
-  Constructor
-  - The constructor should only be used to initialize class members but shouldn't do actual "work".
-  - So you should use constructor() to setup Dependency Injection and not much else
-
-  ngOnInit
-  - we use ngOnInit for all the initialization/declaration and avoid stuff to work in the constructor.
-  - ngOnInit() is better place to "start" - it's where/when components' bindings are resolved.
-
-  https://stackoverflow.com/questions/35763730/difference-between-constructor-and-ngoninit
-
-  */
   constructor(private _ngZone:NgZone, protected injector: Injector) {
     super(injector);
   }
 
-  // If you import OnInit... do export class AppComponent implements OnInit ----> then you have to add the ngOnInit() method
-  // Otherwise, you get compilation error...
   ngOnInit(): void {
-
-    console.log('inside ngOnIniti of life cycle hooks home');
     this.input1 = { name: "gopal", age: 33 }
-
     this.input2 = { city: "hyderabad", country: "India" }
-
     this.input3 = {
       football: { clubName: 'Real Madrid', captain: 'Benzema', stadium: 'Santiago Bernabeu' }
     }
   }
 
-  changeInput1() {
-    this.input1 = { name: "sakshi", age: 34 }
-  }
+  changeInput1() { this.input1 = { name: "sakshi", age: 34 } }
 
   changeInput2() {
-
-    this._ngZone.runOutsideAngular(() => {
-      
-      // nested property change is not detected
-      // this.input2.city = "vijayawada";
-
-      // run outside angular change got detected ???      
-        // but I think, it should be async operation for change not to be detected
-      setTimeout(() => {
-        this.input2 = { city: "madrid", country: "spain" } }, 1000)      
-      });
+    this.input2 = { city: "madrid", country: "spain" };
   }
 
-  changeInput3() {
-    this.input3.football.captain = 'Luka'
+  changeInput2_async() {
+    setTimeout(() => { this.input2 = { city: "madrid", country: "spain" } }, 3000);
+  }
+
+  changeInput2_outsideAngular() {
+    // For ChangeDetection not to work... change must be made asynchronously && outside Angular zone
+
+    // Approach I ====> change made asynchronously
+    // setTimeout(() => { this.input2 = { city: "madrid", country: "spain" } }, 3000);
+
+
+    // Approach II ====> change made outside angular... 
+    // runOutsideAngular doesn't mean Angular won't see the change
+        // it only means that the code run this way doesn't cause change detection
+        // but because the click event already does, it's meaningless
+    // https://stackoverflow.com/questions/40300635/angular-2-runoutsideangular-still-change-the-ui
+    // this._ngZone.runOutsideAngular(() => { 
+    //   this.input2 = { city: "madrid", country: "spain" };
+    // });
+
+    // Approach III =====> change made outside angular & asynchronously
+    // this._ngZone.runOutsideAngular(() => { 
+    //   setTimeout(() => { this.input2 = { city: "madrid", country: "spain" }; console.log(this.input2) }, 1000) 
+    // });
+
+    // Approach IV ======> change made asynchronously & outside Angular
+    setTimeout(() => {
+      this._ngZone.runOutsideAngular(() => { 
+        this.input2 = { city: "madrid", country: "spain" }; 
+        console.log(this.input2) 
+      });
+    }, 2000);
+
+  }
+
+  changeInput3() {        // In OnPush strategy, change wont be reflected... use changeInput3_whole() instead
+    this.input3.football.captain = 'Luka';
+  }
+
+  changeInput3_whole() {    
+    this.input3 = { football: { clubName: 'Real Madrid', captain: 'Luka', stadium: 'Santiago Bernabeu' } }
   }
 
   openBottomSheet1() {
@@ -84,9 +92,5 @@ export class HomeLifecycleHooksComponent extends ChangeDetection11 implements On
     );
   }
 
-  modifyBottomSheetInputs() {
-    // this.playerName = 'Modric';
-    // this.club = 'RM';
-  }
 
 }

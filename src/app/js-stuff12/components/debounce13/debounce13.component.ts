@@ -26,7 +26,7 @@ export class Debounce13Component implements OnInit {
     and wait function parameters and the timeout variable so that their values are preserved
   
 
-  https://levelup.gitconnected.com/debounce-in-javascript-improve-your-applications-performance-5b01855e086#:~:text=A%20debounce%20is%20a%20higher,that%20their%20values%20are%20preserved.
+  https://levelup.gitconnected.com/debounce-in-javascript-improve-your-applications-performance-5b01855e086
 
   https://www.freecodecamp.org/news/debounce-explained-how-to-make-your-javascript-wait-for-your-user-to-finish-typing-2/
 

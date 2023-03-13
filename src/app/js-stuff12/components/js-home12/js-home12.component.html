@@ -1,19 +1,13 @@
 <div class="js-home12-container" fxLayout="row" fxLayoutGap="20px">
 
     <div fxLayout="column" fxLayoutGap="10px">
-        <a [routerLink]="['call-bind-apply']">call-bind-apply</a>
-        <!-- <a [routerLink]="['mat-forms23']">mat forms</a>
-    <a [routerLink]="['mat-table12']">mat table</a> -->
-        <button (click)="showCallBindApply = !showCallBindApply">click forchild</button>
-        <button (click)="showCricket = !showCricket">click for cricket</button>
-        <button (click)="showPromises = !showPromises">click for Promise</button>
-        <button (click)="showConsole23 = !showConsole23">click for Console</button>
-        <button (click)="showFunctions12 = !showFunctions12">click for Functions</button>
-        <button (click)="showTwoWayBinding = !showTwoWayBinding">Two way binding</button>
         <button (click)="showRandomJS = !showRandomJS">Random JS</button>
+        <button (click)="showBubble23 = !showBubble23">bubble23</button>
+        <button (click)="showTwoWayBinding = !showTwoWayBinding">Two way binding</button>
+        <button (click)="showCallBindApply = !showCallBindApply">call bind apply</button>
         <button (click)="showCallback22 = !showCallback22">Callback22</button>
-        <button (click)="showBubble23 = !showBubble23">bubble23</button>        
-        <button (click)="showConsoleTypes = !showConsoleTypes">Console types</button>        
+        <button (click)="showDebounce = !showDebounce">debounce</button>
+        <button (click)="showCricket = !showCricket">click for cricket</button>
     </div>
 
     <div fxLayout="column" fxLayoutGap="20px">
@@ -27,7 +21,9 @@
             <app69-two-way-binding></app69-two-way-binding>
         </div>
         <div *ngIf="showCallBindApply">
-            <app-call-bind-apply></app-call-bind-apply>
+            <app-call-bind-apply></app-call-bind-apply>            
+        </div>
+        <div *ngIf="showDebounce">
             <app69-debounce13></app69-debounce13>
         </div>
         <div *ngIf="showCricket">

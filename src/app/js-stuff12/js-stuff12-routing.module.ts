@@ -4,14 +4,7 @@ import { CallBindApplyComponent } from './components/call-bind-apply/call-bind-a
 import { JsHome12Component } from './components/js-home12/js-home12.component';
 
 const javaScriptRoutes: Routes = [
-  {
-    path: '',
-    component: JsHome12Component
-  },
-  {
-    path: 'call-bind-apply',
-    component: CallBindApplyComponent
-  }
+  { path: '', component: JsHome12Component },
 ];
 
 @NgModule({

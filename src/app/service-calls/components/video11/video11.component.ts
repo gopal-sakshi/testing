@@ -14,8 +14,7 @@ export class Video11Component implements OnInit {
 
   fileToUpload: File | null = null;
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   fetchVideo() {
     this.videoStreamingService.fetchVideo().pipe().subscribe(res => {

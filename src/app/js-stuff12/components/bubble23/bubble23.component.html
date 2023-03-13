@@ -1,28 +1,16 @@
-<div class="bubble23-container">
-
-    <!-- rect-1 section-->
+<div class="bubble23-container">    
     <div (click)="rect1Handler($event)" class="rect-1">
-        <h1>this is rect-1</h1>
-
-        <!-- rect-2 section-->
-        <div (click)="rect2Handler()" class="rect-2">
-            <h2>this is rect-2</h2>
-
-            <div fxLayout="row" fxLayoutGap="10px">
-                <!-- rect-3a section -->
-                <div (click)="rect3aHandler()" class="rect-3" id="rect3a">
-                    <h3>this is rect-3a</h3>
+        <h1>click on rect-1</h1>
+        <div (click)="rect2Handler($event)" class="rect-2">
+            <h2>click on rect-2</h2>
+            <div class="grand-child">
+                <div (click)="rect3aHandler($event)" class="rect-3" id="rect3a">
+                    <h6>rect-3a (dont click on text, click on empty space)</h6>
                 </div>
-                <!-- end of rect-3a -->
-
-                <!-- rect-3b section -->
-                <div (click)="rect3bHandler()" class="rect-3" id="rect3b">
-                    <h3>this is rect-3b</h3>
-                </div>
-                <!-- end of rect-3b -->
+                <div (click)="rect3bHandler($event)" class="rect-3" id="rect3b">
+                    <h3>click on rect-3b</h3>
+                </div>                
             </div>
-        </div>
-        <!-- end of rect-2 -->
-    </div>
-    <!-- end of rect-1 -->
+        </div>        
+    </div>    
 </div>

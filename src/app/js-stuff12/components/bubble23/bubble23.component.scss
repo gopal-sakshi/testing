@@ -1,17 +1,22 @@
 .bubble23-container {
     .rect-1 {
-        border: 1px dotted rgb(216, 174, 174);
-        padding: 5px;
+        border: 1px solid rgb(216, 174, 174);
+        padding: 20px;
         width: fit-content;
         .rect-2 {
-            border: 1px dotted rgb(39, 180, 138);
-            padding: 5px;
+            border: 1px solid rgb(39, 180, 138);
+            padding: 20px;
             width: fit-content;
-            .rect-3 {
-                border: 1px dotted red;
-                padding: 5px;
-                width: fit-content;
+            .grand-child {
+                display: flex;
+                flex-direction: row;
+                .rect-3 {
+                    border: 1px solid red;
+                    padding: 20px;
+                    width: fit-content;
+                }
             }
+            
         }
     }
 }

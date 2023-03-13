@@ -13,19 +13,10 @@ export class TwoWayBindingComponent implements OnInit {
     
     const el = <HTMLInputElement>document.getElementById('inputEl');
     const valueToDisplay = document.getElementById('val');
-
-    // attaching the event listener on keyup events
-    el.addEventListener('keyup', (event) => {
-      valueToDisplay.innerHTML = '23';
-      // console.log(event);
-    });
-
-
     const btn = document.getElementById('incrementVal');
-      btn.addEventListener('click', () => {
-        valueToDisplay.innerHTML = 'increment'
-    });
-
+    
+    el.addEventListener('keyup', () => { valueToDisplay.innerHTML = (<HTMLInputElement>document.getElementById('inputEl')).value; });
+    btn.addEventListener('click', () => { valueToDisplay.innerHTML = valueToDisplay.innerHTML + '1' });
 
   }
 

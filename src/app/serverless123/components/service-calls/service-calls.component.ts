@@ -14,34 +14,23 @@ export class ServiceCallsComponent implements OnInit {
   }
 
   submitPost() {
-    this.serviceCallService.addPost('#testing is my angular app - posts').subscribe(res => {
-      console.log('post added successfully');
-    });
+    this.serviceCallService.addPost('#testing is my angular app - posts').subscribe(res => { console.log(res); });
   }
 
   submitQuote() {
-      this.serviceCallService.addQuote('angular application - quote').subscribe(res => {
-      console.log('quote added successfully');
-    });
+    this.serviceCallService.addQuote('angular application - quote').subscribe(res => { console.log(res); });
   }
 
   showQuotes() {
-    this.serviceCallService.getQuotes().subscribe(res => {
-      console.log('Quotes ', res);
-    });
+    this.serviceCallService.getQuotes().subscribe(res => { console.log(res); });
   }
 
   showPosts() {
-    this.serviceCallService.getPosts().subscribe(res => {
-      console.log('Posts ', res);
-    })
-
+    this.serviceCallService.getPosts().subscribe(res => { console.log('Posts ', res); })
   }
 
   postWithParams() {
-    this.serviceCallService.postWithParams().subscribe(res => {
-      console.log('post with params', res);
-    })
+    this.serviceCallService.postWithParams().subscribe(res => { console.log('post with params', res); })
   }
 
 }
@@ -58,25 +47,3 @@ export class ServiceCallsComponent implements OnInit {
 
 
 */
-
-/**
- * ERROR
- *
- *   {
-        "headers": {
-            "normalizedNames": {},
-            "lazyUpdate": null
-        },
-        "status": 200,
-        "statusText": "OK",
-        "url": "http://localhost:4000/dev/jingchak/jingchak/posts/showALL",
-        "ok": false,
-        "name": "HttpErrorResponse",
-        "message": "Http failure during parsing for http://localhost:4000/dev/jingchak/jingchak/posts/showALL",
-        "error": {
-            "error": {},
-            "text": "Real Madrid\r\nAtletico Madrid\r\nBarcelona\r\nSevilla won Europa League multiple times\r\nDani Parejo played for Valencia\r\nHala Madrid\r\nReal Madrid won record 13 Champions Leagues\r\nReal Madrid's present coach is Carlo Ancelotti\r\n"
-        }
-      }
-
- */

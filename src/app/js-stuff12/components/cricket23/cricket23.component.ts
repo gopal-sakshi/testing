@@ -11,9 +11,7 @@ export class Cricket23Component extends Cricket23 implements OnInit {
 
   @Input() format:string    // we choose ODI by default
 
-  constructor() { 
-    super();
-  }
+  constructor() { super(); }
 
   ngOnInit(): void {    
     console.log(this.playerPerTeam);

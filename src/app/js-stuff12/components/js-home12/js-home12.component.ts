@@ -18,6 +18,7 @@ export class JsHome12Component implements OnInit {
   showAWS1:boolean = false;
   showConsoleTypes:boolean = false;
   showBubble23: boolean = false;
+  showDebounce:boolean = false;
   
   inputToConsole:string = 'Input from parent';
   format23:string = 'ODI';

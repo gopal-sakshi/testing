@@ -28,7 +28,7 @@ export class AgGrid22Component implements OnInit {
   paginationAutoPageSize: boolean = false;
 
 	columnDefs = [
-    { field: 'athlete', width: 150 },
+    { field: 'athlete', width: 150, filter: 'agTextColumnFilter' },
     { field: 'age', width: 90 },
     { field: 'country', width: 150 },
     { field: 'year', width: 90 },

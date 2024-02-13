@@ -42,7 +42,7 @@ export class AgGrid23Component implements OnInit {
   columnDefs1 = [
     { headerName: "Row", valueGetter: "node.rowIndex + 1" },
     { headerName: "company", field: "make", resizable: true, pinned:"left"},
-    { field: "model" },
+    { field: "model", hide: true },     // model column will not be visible in ag-grid
     { headerName: "price-fixedWidth", field: "price", sortable: true, width: 180 },
     { field: "comments44", cellRenderer: Comments14Component, resizable: true}
   ];
@@ -60,13 +60,12 @@ export class AgGrid23Component implements OnInit {
     { field: 'total', width: 100 },
   ];
 
-  
-
   private gridApi!: GridApi;
+  columnApi:any;
+  
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   paginationHappened(event) {
     this.currentPage = this.gridApi ? this.gridApi.paginationGetCurrentPage() : 232323;
@@ -81,7 +80,8 @@ export class AgGrid23Component implements OnInit {
 
   onGridReady(event:GridReadyEvent) {
     console.log('grid ready event fired');
-    this.gridApi = event.api
+    this.gridApi = event.api;
+    this.columnApi = event.columnApi
   }
 
   onPageSelect(pageValue) {
@@ -94,6 +94,31 @@ export class AgGrid23Component implements OnInit {
     if(this.currentPage > 5) {
       this.gridApi.paginationGoToPage(this.currentPage-4)
     }    
+  }
+  
+  // export as EXCEL only for ag-grid-enterprise (not in community)
+  downloadAsCSV() {
+    this.columnApi.setColumnsVisible(['model'], true) //In that case we show them
+    var params1 = { columnKeys: ['make', 'price'] };
+    var params2 = {
+      fileName: 'ag-grid23-jingChak.csv',
+      columnSeparator: '__',
+      processCellCallback: (params) => { return this.processCells23(params) }
+    }
+    console.log('exporting as csv');
+    // this.gridApi.exportDataAsCsv();                   // all columns will be in CSV
+    // this.gridApi.exportDataAsCsv(params1);             // only two columns will be in CSV
+    this.gridApi.exportDataAsCsv(params2);
+  }
+
+  processCells23(params) {
+    console.log(params);
+    if(params.column.colId == 'comments44') {
+      return params.value.USA + '_AND_' + params.value.india;
+    } else {
+      return params.value
+    }
+
   }
 
   previousPage() {

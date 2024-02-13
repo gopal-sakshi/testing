@@ -14,13 +14,17 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { Primeng23Component } from './components/primeng23/primeng23.component';
+import { CountryService } from './services/CountryService';
+import { MultiSelectModule } from 'primeng/multiselect';
 
 @NgModule({
   declarations: [
     Sidenav2Component,
     MatForms23Component,
     MatTable12Component,
-    MatHome12Component
+    MatHome12Component,
+    Primeng23Component
   ],
   imports: [
     CommonModule,
@@ -34,7 +38,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     FormsModule,
     ReactiveFormsModule,
     MatToolbarModule,
-    MatFormFieldModule, 
-  ]
+    MatFormFieldModule,
+    MultiSelectModule 
+  ],
+  providers: [ CountryService ]
 })
 export class Material23Module { }

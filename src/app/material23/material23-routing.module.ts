@@ -4,6 +4,7 @@ import { MatForms23Component } from './components/mat-forms23/mat-forms23.compon
 import { MatHome12Component } from './components/mat-home12/mat-home12.component';
 import { MatTable12Component } from './components/mat-table12/mat-table12.component';
 import { Sidenav2Component } from './components/sidenav2/sidenav2.component';
+import { Primeng23Component } from './components/primeng23/primeng23.component';
 
 const routes: Routes = [
     {
@@ -12,7 +13,8 @@ const routes: Routes = [
         children: [
             { path:'mat-forms23', component: MatForms23Component },
             { path: 'sidenav2', component: Sidenav2Component },
-            { path: 'mat-table12', component: MatTable12Component }
+            { path: 'mat-table12', component: MatTable12Component },
+            { path: 'prime-ng23', component: Primeng23Component}
         ]
     },
 ]

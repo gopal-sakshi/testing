@@ -2,7 +2,7 @@
     <div fxLayout="row" fxLayoutGap="20px">
         <div class="info">
             Olympic data uses - custom pagination<br>
-            Cars data 1 --> uses single component for single cell (see comments44 field)<br>            
+            Cars data 1 ==> uses single component for single cell (see comments44 field)<br>            
         </div>
         <div fxLayout="column" fxLayoutGap="10px" class="user-actions">
             <button (click)="showOlympicData=!showOlympicData">Olympic data</button>
@@ -43,11 +43,14 @@
     </div>
     
     <div *ngIf="showCarData1">         <!-- using ag-grid pagination -->
-        <ag-grid-angular style="width: 100%; height: 300px;" class="ag-theme-balham" [rowData]="rowData1"
-            [columnDefs]="columnDefs1" [paginationAutoPageSize]="paginationAutoPageSize"
-            [paginationPageSize]="paginationPageSize" [pagination]="pagination"
-            (paginationChanged)="paginationHappened($event)" (gridReady)="onGridReady($event)" 
-            (cellClicked)="onCellClicked($event)"
+        <button (click)="downloadAsCSV()">export32</button>
+        <ag-grid-angular style="width: 100%; height: 300px;" class="ag-theme-balham" 
+            [rowData]="rowData1" [columnDefs]="columnDefs1" 
+            [paginationAutoPageSize]="paginationAutoPageSize"
+            [paginationPageSize]="paginationPageSize" 
+            [pagination]="pagination"
+            (paginationChanged)="paginationHappened($event)" 
+            (gridReady)="onGridReady($event)" (cellClicked)="onCellClicked($event)"
             (columnResized)="onColumnSized($event)">
             <!-- use rowData2 & columnDefs2 for large olympic medal winners json -->
         </ag-grid-angular>

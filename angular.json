@@ -59,7 +59,9 @@
             "styles": [
               "src/styles.scss",
               // if you add it here... bootstrap will be applied across entire application
-              // "./node_modules/bootstrap/dist/css/bootstrap.css"
+              // "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "./node_modules/primeng/resources/themes/nova-light/theme.css",
+              "./node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": [
               // use it either here (or) in index.html

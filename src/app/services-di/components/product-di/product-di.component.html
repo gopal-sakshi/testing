@@ -13,8 +13,11 @@
             </thead>
             <tbody>
                 <tr *ngFor="let product of products;">
-                    <td>{{product.productID}}</td>
-                    <td>{{product.name}}</td>
+                    <!-- if product is very long, we can make it move to next line -->
+                    <td style="word-wrap:break-word">put very big word here; word-wrap does the trick </td>
+                    <td>or we can use br tag<br>now this content is shown in 2nd line<br>this is 3rd line</td>
+                    <!-- <td>{{product.productID}}</td>
+                    <td>{{product.name}}</td> -->
                     <td>{{product.price}}</td>
                 </tr>
             </tbody>

@@ -50,8 +50,8 @@
 
 <div *ngIf="useModelForms">
     <mat-toolbar color="primary">Model Forms</mat-toolbar>
-    <div style="padding: 0 0 20px 20px">
-        <mat-form-field>
+    <div >
+        <mat-form-field appearance="outline">
             <mat-select name="countryString" [(value)]="selectedCountry" placeholder="Country">
                 <mat-option [value]="'ESP'">spain</mat-option>
                 <mat-option [value]="'POR'">Portugal</mat-option>

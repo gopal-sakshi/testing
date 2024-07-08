@@ -7,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Flex12Component implements OnInit {
 
-  santiagoBernabeuCapacity: number = 81004;
+    date23: any;
+    santiagoBernabeuCapacity: number = 81004;
+    
   constructor() { }
 
   ngOnInit(): void {
+    setInterval(() => {
+        this.date23 = new Date().toISOString();
+        // console.log(this.date23);
+        // console.log((this.date23.slice(17,19) / 30) > 1);
+    }, 1000);
+    
+    // this.date23.slice(17,19) ===> gives seconds
   }
 
 }

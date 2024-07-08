@@ -11,7 +11,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    // loadComponent: () => import("./app-hello").then((m) => m.StandaloneComponent),
   },
   {
     path: 'bootstrap23',

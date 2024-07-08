@@ -6,6 +6,13 @@
         <div class="defenders">
             <div redHighlight>Carvajal, Militao, Alaba, Mendy</div>
             <div blueHighlight> Casillas, Ramos, Pepe (mouse over to see blue)</div>
+            <div style="border: 1px dotted black">disappear once every 3 seconds <br>
+                <div *appUnless23="date23?.slice(17,19) % 3 == 0">
+                    {{ (date23?.slice(17,19) / 10) > 2 && (date23?.slice(17,19) / 10) < 4 }} <br>
+                    {{ date23| date: 'HH:mm:ss': 'IST' }}<br>
+                    {{ date23 }}
+                </div>
+            </div>
         </div>
     </div>
     <div fxLayout="row" fxLayoutGap="20px">

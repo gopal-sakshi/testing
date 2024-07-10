@@ -35,10 +35,20 @@ const routes:Routes = [
     Common23Module
   ],
   providers: [
-    Auth23Service,
+    // Auth23Service,          // inject Auth23Service @ app module     -- see EXPLANATION23
     AuthGuard23,
     AuthInterceptor23,
     AuthInterceptor24    
   ]
 })
 export class Auth23Module { }
+
+/*
+    EXPLANATION23
+    - if we provide Auth23Service here in auth23.module.ts
+    - then we get Circular dependency in DI detected for InjectionToken HTTP_INTERCEPTORS
+    - jwtInterceptor11 is injected @ app.module.ts
+    - jwtInterceptor11 uses Auth23Service (but Auth23Service is injected @ auth23.module.ts)
+    - thatswhy we got "circular dependency in DI" error
+    - Solution ===> remove Auth23Service here and inject @ app.module.ts --> where jwtInterceptor11 got injected
+*/

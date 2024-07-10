@@ -21,6 +21,9 @@
         <div class="signUp-form" *ngIf="showSignup">
             <app69-signup11></app69-signup11>
         </div>
+        <div>
+            <button mat-raised-button color="primary" (click)="signout23()">Sign Out</button>
+        </div>
     </div>
     <div fxLayout="column" fxLayoutGap="20px">
         <a [routerLink]="['seeArticles']"> See Articles </a><span style="font-weight:100">of course login first</span>

@@ -1,29 +1,30 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
-import { map } from "rxjs/operators";
+import { catchError, map } from "rxjs/operators";
 import { Common23Service } from "src/app/common23/services/common23.service";
 
 @Injectable()
 export class Auth23Service {
 
     private url = 'http://localhost:3044/auth';
-    
+    isSignedIn:boolean = false;
 
     constructor(private httpClient:HttpClient, 
         private commonService:Common23Service) {
-            this.commonService.getSignInDetails().pipe(
-                map(res => {
-                    console.log(res);
-                    return res;
-                })
-            ).subscribe(res => {
-                this.signIn(res).subscribe(res => {
-                    this.commonService.sendMessage(res);
-                    this.commonService.isSignInHappening = false;
-                });
+            
+        this.commonService.getSignInDetails().pipe(
+            map(res => {
+                console.log(res);
+                return res;
             })
-        }
+        ).subscribe(res => {
+            this.signIn(res).subscribe(res => {
+                this.commonService.sendMessage(res);
+                this.commonService.isSignInHappening = false;
+            });
+        })
+    }
 
     signIn(payload:any):Observable<any> {
         console.log(payload);
@@ -32,7 +33,7 @@ export class Auth23Service {
         headers.append('Content-Type', 'application/json');
         // return of(1,2,3);
         let signInUrl = this.url + '/signin'
-        return this.httpClient.put<any>(signInUrl, payload, {headers});
+        return this.httpClient.put<any>(signInUrl, payload, { headers });
 
         // let httpHeaders = new HttpHeaders();        
         // httpHeaders.append('Content-Type', 'application/json');
@@ -51,14 +52,40 @@ export class Auth23Service {
     seeArticles():Observable<any> {
         let seeArticlesUrl = this.url + '/secretArticles';
         let httpHeaders = new HttpHeaders();
-        httpHeaders = httpHeaders.append('token', localStorage.getItem('token'));
-        return this.httpClient.get(seeArticlesUrl, {headers: httpHeaders});
+        console.log("whta is access_token ===> ", localStorage.getItem('access_token'));
+        httpHeaders = httpHeaders.append('token', localStorage.getItem('access_token'));
+        return this.httpClient.get(seeArticlesUrl, { headers: httpHeaders });
     }
 
     seeRumours():Observable<any> {
         let seeRumoursUrl = this.url + '/seeRumours';        
         let httpHeaders = new HttpHeaders();
         httpHeaders = httpHeaders.append('token', localStorage.getItem('token'));
-        return this.httpClient.get(seeRumoursUrl, {headers: httpHeaders});
+        return this.httpClient.get(seeRumoursUrl, {headers: httpHeaders}).pipe(catchError(error => {
+            console.log("see rumours api call error ===> ", error.message)
+            return of(false)
+        }) );
+    }
+
+    logout() { 
+        console.log("implement logout functionality ====> ");
+    }
+
+    refreshAccessToken():Observable<any>{ 
+        let body = {
+            access_token: localStorage.getItem('access_token'),
+            refresh_token: localStorage.getItem('refresh_token'),
+            grantType:'refresh_token',
+            userName: localStorage.getItem('userName')
+        }
+        return this.httpClient.post<any>(this.url + '/refreshToken23' + '', body).pipe(
+            map(resp => {
+                this.commonService.sendMessage(resp);
+            })
+        )
+    }
+
+    getAccessToken() {
+        return localStorage.getItem('access_token');
     }
 }

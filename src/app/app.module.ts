@@ -20,6 +20,8 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { i18Loader } from './i18Loader';
 import { AuthInterceptor22 } from './auth23/classes/authInterceptor22';
 import { RouterModule } from '@angular/router';
+import { JwtInterceptor11 } from './auth23/classes/jwtInterceptor11';
+import { Auth23Service } from './auth23/services/auth23.service';
 
 
 
@@ -49,6 +51,7 @@ import { RouterModule } from '@angular/router';
   ],
   providers: [
     ProductGuardService,
+    Auth23Service,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: PincodeInterceptor23,
@@ -69,6 +72,11 @@ import { RouterModule } from '@angular/router';
     //   useClass: AuthInterceptor23,        // to make expired auth token requests again
     //   multi: true
     // },
+    {
+        provide: HTTP_INTERCEPTORS,
+        useClass: JwtInterceptor11,         // to make expired auth token - refresh token - kpt way             
+        multi: true 
+    },
     // {
     //   provide: HTTP_INTERCEPTORS,    
     //   useClass: AuthInterceptor24,            // to show how to handle http errors... nothing else...

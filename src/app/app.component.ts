@@ -72,12 +72,11 @@ export class AppComponent {
   }
 
   processLogin(payload:any) {    
-    console.log(payload);
+    console.log("processLogin23 ====> ", payload);
     this.userName = payload.userName;
     localStorage.setItem('userName', payload.userName);
-    localStorage.setItem('password', payload.password);
-    localStorage.setItem('token', payload.token ? payload.token : 'token ledu babai');
-    console.log(localStorage.getItem('token'));
+    localStorage.setItem('access_token', payload.access_token ? payload.access_token : 'token ledu babai1');
+    localStorage.setItem('refresh_token', payload.refresh_token ? payload.refresh_token : 'token ledu babai2');
   }
 
   showingSweetAlert() {

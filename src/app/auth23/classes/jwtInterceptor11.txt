@@ -1,0 +1,31 @@
+this interceptor does ONLY one thing
+if token is expired, it makes 2nd API call -- refresh token to fetch new token
+======================================================================================
+
+STEP 01
+- We don't want to refresh token for some requests like login or refresh token itself
+- So we verify url and we throw an error if it's the case
+
+STEP 02
+- We do another check to see if refresh token failed
+- In this case we want to logout user and to redirect it to login page
+
+STEP 03
+- If error status is different than 401 we want to skip refresh token
+- So we check that and throw the error if it's the case
+
+STEP 04
+- If refreshTokenInProgress is true, we will wait until refreshTokenSubject has a non-null value
+– which means the new token is ready and we can retry the request again
+
+STEP 05
+- Set the refreshTokenSubject to null so that subsequent API calls will wait until the new token has been retrieved
+
+
+STEP 06
+- Call auth.refreshAccessToken(this is an Observable that will be returned)
+
+STEP 07
+- When the call to refreshToken completes we reset the refreshTokenInProgress to false
+- for the next time the token needs to be refreshed
+

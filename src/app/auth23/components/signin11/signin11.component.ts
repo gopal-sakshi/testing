@@ -45,6 +45,7 @@ export class Signin11Component implements OnInit {
     this.authService.signIn(payload23).pipe().subscribe(res => {
       console.log(res);
       if(res.info == 'signIn success' && res.code == 200) {
+        this.authService.isSignedIn = true;     // after loggingIn, we set isSignedIn to true; set it to false after loggingOut
         this.commonService.sendMessage(res);
       }
     });

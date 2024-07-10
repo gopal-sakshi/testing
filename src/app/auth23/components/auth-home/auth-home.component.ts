@@ -35,6 +35,11 @@ export class AuthHomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  signout23() {
+    console.log("signout called --> clearing local storage");
+    localStorage.clear();
+  }
+
   gotoSignIn() {
     this.showSignin = !this.showSignin;
   }

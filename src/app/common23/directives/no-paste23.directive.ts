@@ -16,7 +16,7 @@ export class NoPaste23Directive {
 
   @HostListener("paste", ["$event"]) 
   blockPaste(e: KeyboardEvent) {
-    console.log('blockPaste executed');
+    console.log('blockPaste executed23');
     e.preventDefault();
   }
 

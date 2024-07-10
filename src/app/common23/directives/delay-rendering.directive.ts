@@ -7,18 +7,20 @@ import { Directive, Input, TemplateRef, ViewContainerRef } from "@angular/core";
 })
 export class DelayRenderingDirective {
     
-    @Input() delayTime:any = 2000;
+    @Input() delayRendering:any = 2000;
 
     constructor(private templateRef: TemplateRef<any>,
         private containerRef: ViewContainerRef) {}
 
     ngOnInit() {
-        console.log(this.delayTime);
+        console.log(this.delayRendering);
         setTimeout(()=> {
             this.containerRef.createEmbeddedView(this.templateRef)
-        }, this.delayTime)
+        }, this.delayRendering)
     }
 }
+
+
 
 // https://medium.com/technofunnel/creating-custom-structural-directive-in-angular-79a2862cc169
 

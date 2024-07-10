@@ -54,17 +54,27 @@ export class Auth23Service {
         let httpHeaders = new HttpHeaders();
         console.log("whta is access_token ===> ", localStorage.getItem('access_token'));
         httpHeaders = httpHeaders.append('token', localStorage.getItem('access_token'));
-        return this.httpClient.get(seeArticlesUrl, { headers: httpHeaders });
+        
+        // return this.httpClient.get(seeArticlesUrl, { headers: httpHeaders });
+
+        return this.httpClient.get(seeArticlesUrl, { headers: httpHeaders }).pipe(catchError(error => {
+            console.log("see articles api call error ===> ", error.message);
+            return of({data: "secret articles phattu"})
+        }));
     }
 
     seeRumours():Observable<any> {
         let seeRumoursUrl = this.url + '/seeRumours';        
         let httpHeaders = new HttpHeaders();
-        httpHeaders = httpHeaders.append('token', localStorage.getItem('token'));
+        httpHeaders = httpHeaders.append('token', localStorage.getItem('access_token'));
+
+        // return this.httpClient.get(seeRumoursUrl, {headers: httpHeaders});
+
         return this.httpClient.get(seeRumoursUrl, {headers: httpHeaders}).pipe(catchError(error => {
             console.log("see rumours api call error ===> ", error.message)
-            return of(false)
+            return of({data: "secret rumours phattu"})
         }) );
+        
     }
 
     logout() { 

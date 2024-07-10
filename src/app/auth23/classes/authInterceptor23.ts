@@ -2,13 +2,14 @@ import { HttpErrorResponse, HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { catchError, map, switchMap, tap } from "rxjs/operators";
-import { Common23Service } from "src/app/common23/services/common23.service";
+// import { Common23Service } from "src/app/common23/services/common23.service";
+import { Auth23Service } from "../services/auth23.service";
 
 
 @Injectable()
 export class AuthInterceptor23 implements HttpInterceptor {
 
-    constructor(private commonService: Common23Service) {}
+    constructor(private auth23: Auth23Service) {}
     
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         
@@ -19,11 +20,12 @@ export class AuthInterceptor23 implements HttpInterceptor {
             // }),
             switchMap(async (res) => {
                 if((res as any).error == 'expired auth token') {
-                    console.log(res);
-                    await this.refreshAuthToken(res).then(message => {
-                        console.log(message);
-                        console.log('promise returned');
-                    });
+                    console.log("error @ intercept ===> ", res);
+                    /********* NEED TO WORK ------------------------ LATERRRRRRRRRRRRRRRRRRRRRR */
+                    // await this.auth23.refreshAccessToken().then(message => {
+                    //     console.log(message);
+                    //     console.log('promise returned');
+                    // });
                 } else {
                     console.log(res);
                     console.log('no error - dont make another service call');                    
@@ -43,7 +45,7 @@ export class AuthInterceptor23 implements HttpInterceptor {
     async refreshAuthToken(res:any):Promise<any> {
         // .promise()           // what this .promise() does ???
         console.log('inside doStuff ',res);
-        // need to regenerate authToken... we will do that by calling token (or) signin service again
+        // need to use refreshToken and get new accessToken... 
         const payload23 = {
             userName:localStorage.getItem('userName'), 
             password:localStorage.getItem('password')

@@ -22,6 +22,8 @@ export class Reactive12Component implements OnInit {
       clubName: new FormControl('', [ Validators.required, Validators.pattern(/[^0-9]/)]),
       stadiumName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]],
       address: ['', Validators.required],
+      // this regex ONLY allows ---> a-z A-Z 0-9 ====> 8 special chars _ . , ! ? ( ) -  
+      specialChar: ['', [Validators.required, Validators.pattern(/^[ A-Za-z0-9_.,!\?\(\)-]*$/)]],
       players: this.formBuilder.array([])
     })
   }

@@ -2,6 +2,7 @@
     <form name="reactiveForm1" [formGroup]="reactiveForm1" (ngSubmit)="submitForm()">
         <input placeholder="club name" formControlName="clubName">          <!-- why formControlName & not [formControlName] -->
         <input placeholder="stadium name" formControlName="stadiumName">
+        <input placeholder="special Char23" formControlName="specialChar">
         <select formControlName="address">
             <!-- 
                 here, we need to use ngValue & not value... 

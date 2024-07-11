@@ -11,8 +11,10 @@ export class AuthGuard23 implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
 
         console.log("is Signed In ===> ", this.authService.isSignedIn);
+        
         // this is a bad practice... because anyone can dynamically set "userName" in localStorage
         // just open chrome_dev_tools ===> run this ==> localStorage.setItem('dynamicGaSetChesa', "jingChakSarissa");
+        // instead use --> this.authService.isSignedIn ===> to allow route navigation
         if(localStorage.getItem('userName')) {
             return true;
         } else {

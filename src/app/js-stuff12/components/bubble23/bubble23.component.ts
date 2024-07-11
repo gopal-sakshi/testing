@@ -9,14 +9,17 @@ export class Bubble23Component implements OnInit {
 
   constructor() { }
 
+  outer1($event) { console.log("rcvd event @ outer1 ") }
+  middle1($event) { console.log("rcvd event @ middle1 ") }
+  inner1($event) { console.log("rcvd event @ inner1 ") }
+
   ngOnInit(): void {
+    document.getElementById("captureOuter1").addEventListener('click', this.outer1, true);
+    document.getElementById("captureMiddle1").addEventListener('click', this.middle1);
+    document.getElementById("captureInner1").addEventListener('click', this.inner1);
   }
 
-  rect1Handler(event) { 
-    console.log('rest1'); 
-    console.log(`event occured @ `, event.target);   
-    console.log('check Id property');
-  }
+  rect1Handler(event) {  console.log({ src: 'rest1', target23: event.target}); }
   rect2Handler() { console.log('rest2'); }
   rect3aHandler() { console.log('rest3a'); }
   rect3bHandler() { console.log('rest3b'); }
@@ -47,7 +50,7 @@ export class Bubble23Component implements OnInit {
   Examples
 
   addEventListener('click', cb23, false)      // we used bubbling mode (which is also default mode)
-  addEventListener('click', cb23, false)      // we used capture mode 
+  addEventListener('click', cb23, true)      // we used capture mode 
 
 
 

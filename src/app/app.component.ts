@@ -42,7 +42,12 @@ export class AppComponent {
   }
 
   changeLang() {
-    this.translate.use('te')
+    if(this.translate.currentLang == 'te') {
+        this.translate.use('en')
+    } else {
+        this.translate.use('te')
+    }
+
   }
 
   useBrowserGlobalObjects() {

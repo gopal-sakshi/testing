@@ -14,11 +14,11 @@
                             <button class="col" (click)="showingSweetAlert()">sweet alert</button>
                             <button (click)="changeLang()">change Lang</button>
                             <div class="col">{{ isTesting ? ('Yes' | translate) : ('No' | translate) }} </div>
-                            <div class="logged-in-details col"> Welcome 
+                            <div translate class="logged-in-details col"> Welcome 
                                 <span *ngIf="userName"> {{userName}} </span>
                                 <span *ngIf="!userName"> guest </span>
                             </div>
-                            <button class="col" (click)="testingWebWorker()">Web Worker</button>
+                            <button translate class="col" (click)="testingWebWorker()">Web Worker</button>
                         </ul>
                     </div>
                 </div>    

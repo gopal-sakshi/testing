@@ -25,7 +25,8 @@ export class Callback22Component implements OnInit {
     blah2.addEventListener('change', this.callbackWithParam('something2'));
 
 
-    // triggering event listener in case of 'keydown' & not 'change'  // coz, change gets triggered only when input element looses focus
+    // triggering event listener in case of 'keydown' & not 'change'  
+    // coz, change gets triggered only when input element looses focus
     var blah3 = <HTMLInputElement>document.getElementById('inputValue3');
     blah3.addEventListener('keydown', this.callbackWithParam('something3'));
   }

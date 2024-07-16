@@ -11,11 +11,12 @@ export class HomeObsComponent implements OnInit {
   showSwitchMap1:boolean = false;
   showSwitchMap22:boolean = false;
   showObservable72:boolean = false;
-  showObservable21:boolean = false;
+  showObservable41:boolean = false;
   showObservable61:boolean = false;
+  showObs62:boolean = false;
   showMerge:boolean = false;
   showFutDb:boolean = false;
-  showUserObs:boolean = false;
+  showObservable71:boolean = false;
   
   constructor() { }
 

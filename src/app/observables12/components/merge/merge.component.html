@@ -3,27 +3,27 @@
     <!-- uses ngModel -->
     <div class="user-actions" fxLayout="column" fxLayoutGap="10px">
         <button (click)="getPlayers()">get players</button>
-        <input [ngModel]="searchString" (ngModelChange)="searchBro($event)" id="search-string" placeholder="search players" name="player">
+        <input [ngModel]="searchString" (ngModelChange)="searchBro($event)" id="search-string" placeholder="search players" name="player">        
+        <button *ngIf="morePlayers" (click)="getMorePlayers()">get more</button>
     </div>
     <!-- /uses ngModel -->
+
 
     <!-- real madrid players service-call -->
     <div class="main-content-1">
         <span *ngFor="let player of realMadridPlayers">
             {{player}} &nbsp;
         </span>
-        <div>
-            <button *ngIf="morePlayers" (click)="getMorePlayers()">get more</button>
-        </div>
     </div>
     <!-- /real madrid players service-call -->
 
-    <!-- template driven forms?? -->
-    <!-- findout why (ngOnSubmit() isnt working )-->
-    <!-- <form #templateForm23 ="ngForm" (ngOnSubmit)="submitNobelHero()"> -->
-    <form #templateForm23 ="ngForm">
-        <input name="hero_name" placeholder="hero/nobel-winner" ngModel>
-        <button (click)="submitNobelHero()">search</button>
-    </form>
-    <!-- /template driven forms?? -->
+
+
+    <div>
+        <form #templateForm23 ="ngForm">
+            <input name="hero_name" placeholder="hero/nobel-winner" ngModel>
+            <button (click)="submitNobelHero()">search</button>
+        </form>
+    </div>
+
 </div>

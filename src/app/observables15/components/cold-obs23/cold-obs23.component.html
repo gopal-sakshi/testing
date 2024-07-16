@@ -1,0 +1,36 @@
+<div>
+    <h3> Cold Observables</h3>
+    <ul>
+        <li>you want each subscription to receive all the data from the beginning</li>
+        <li>When you want to repeat the data for each new subscriber</li>
+        <li>Examples: HTTP requests, mouse clicks, timer observables</li>
+    </ul>
+</div>
+
+<div>
+    Angular's http returns <u>Cold Observables</u><br> 
+    Any new subscriptions will trigger the execution once again <br>
+    - meaning the request will be send as many times as there are subscriptions<br>
+    - To avoid this use share,shareReplay, publish, publishLast or publishReplay<br>
+</div>
+
+<h4>Read this file <u>cold-obs23.md</u></h4>
+
+<div>
+    <button (click)="startObs()">start cold Obs</button>
+    <button (click)="hotObs()">hot Obs</button>
+    <button (click)="coldHot()">cold_vs_hot</button>
+</div>
+
+<!-- 
+    https://dev.to/benarambide/understanding-rxjs-cold-and-hot-observables-1g7c
+
+    When to use hot Observable
+    - subscribers to receive only values that are emitted after they subscribe.
+    - don't want each subscriber to get its own independent stream of values.
+    - Examples: WebSocket streams, mouse move events, stock tickers.
+
+
+    When the data is produced by the Observable itself, we call it a cold Observable. 
+    When the data is produced outside the Observable, we call it a hot Observable.
+-->

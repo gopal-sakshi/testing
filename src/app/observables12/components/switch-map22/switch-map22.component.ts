@@ -33,9 +33,9 @@ export class SwitchMap22Component implements OnInit {
     ).subscribe(res => { console.log(res)});
 
     merge(this.stadiumInputChangedObs).pipe(
-      map(res => {console.log('valueChanged'); return res}),
-      map(_=>this.switchMap22service.searchClubs1(this.stadiumNameSearchKeyword))
-    ).subscribe(res => { console.log(res)});
+      map(res => { /*console.log('valueChanged') */; return res}),
+      switchMap(_=>this.switchMap22service.searchStadiums1(this.stadiumNameSearchKeyword))
+    ).subscribe(res => { console.log(res,'\n\n')});
 
   }
 

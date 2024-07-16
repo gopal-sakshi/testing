@@ -48,23 +48,10 @@ export class MergeObservableService {
 
         var regexThingy = new RegExp(keyword, 'gi');        // uses both g & i flags
         var blah3 = this.realMadridPlayers.filter(player => (player.match(regexThingy)) != null);
-
-        var blah4 = this.realMadridPlayers.filter(function jc (player) {
-            return player.match(regexThingy) != null
-        });         // blah4 is nothing but blah3 ===> blah3 is arrow function, while blah4 isnt --> it uses jc function
-
-        var blah5 = this.realMadridPlayers.filter((player) => {
-            return player.match(regexThingy) != null
-        }); // blah3 doesnt have paranthesis around player... because only 1 argument
-            // blah5 uses parentheses around player... although, not needed... we used...
-            // single line function means ---> you can omit return word... but in blah5 I didnt omit
-
         
         console.log(blah1);
         console.log(blah2);
         console.log(blah3);
-        console.log(blah4);
-        console.log(blah5);
     }
 
     searchPlayers(keyword:string) {

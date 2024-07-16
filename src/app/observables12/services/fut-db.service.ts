@@ -9,9 +9,9 @@ export class FutDbService {
 
     // for some reason, I am getting 404 error... while curl is working... 
     getPlayers() {
-        let playersUrl = this.baseUrl + 'players?page=1&limit=50';
+        let playersUrl = this.baseUrl + '/players?page=1&limit=50';
         let headers = new HttpHeaders();
-        headers = headers.append('X-AUTH-TOKEN', '9e63b8a5-a72b-4898-930d-9cc7278b78f5');
+        headers = headers.append('X-AUTH-TOKEN', 'token_search_in_pat2');
         headers = headers.append('Content-Type', 'application/json');
         return this.httpClient.get(playersUrl, {headers});
     }

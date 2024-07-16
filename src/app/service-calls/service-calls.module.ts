@@ -11,6 +11,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { Soap14Component } from './components/soap14/soap14.component';
 import { AxiosFetchComponent } from './components/axios-fetch/axios-fetch.component';
 import { XssAttacks12Component } from './components/xss-attacks12/xss-attacks12.component';
+import { HttpClientMockService } from './services/http-mock23.service';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { XssAttacks12Component } from './components/xss-attacks12/xss-attacks12.
   ],
   providers: [
     VideoStreamingService,
-    SimpleExpressService
+    SimpleExpressService,
+    HttpClientMockService
   ]
 })
 export class ServiceCallsModule { }

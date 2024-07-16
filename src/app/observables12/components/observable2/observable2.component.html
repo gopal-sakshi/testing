@@ -1,8 +1,15 @@
 <div class="observable2-container" fxLayout="column wrap" fxLayoutGap="30px">
-    <!-- <div *ngFor="let image of images; index as index">
-        <img [src]="im">
-    </div> -->
     <div>
         <span> we used forkJoin... but if 1 service fails... all services will fail... look into it</span>
+    </div>
+    <div>
+        read fake-json-mergeMap.md
+    </div>
+    <div>
+        <button (click)="nestedApiCalls()">nestedAPis</button>
+        <button (click)="mergeMap23()">mergemap</button>
+        <button (click)="forkJoin1()">forkjoin1</button>
+        <button (click)="forkJoin2()">forkjoin2</button>
+        <button (click)="fakeService()">fake service</button>
     </div>
 </div>

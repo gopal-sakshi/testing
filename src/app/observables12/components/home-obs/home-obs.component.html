@@ -3,14 +3,16 @@
         <a [routerLink]="['observable23']"> observable 23 - as$, bs$, hs$</a> <br>
         <a [routerLink]="['observable1']"> observable 1 - purity, flow </a> <br> 
         <button mat-raised-button color="warning" (click)="showObservable2=!showObservable2">Observable 2</button>
-        <button mat-raised-button color="warning" (click)="showObservable21=!showObservable21">observable21-KalugdiAuth</button>
+        <button mat-raised-button color="warning" (click)="showObservable41=!showObservable41">observable41 (KalugdiAuth)</button>
         <button mat-raised-button color="warning" (click)="showObservable61=!showObservable61">userGenObservable</button>
         <button mat-raised-button color="warning" (click)="showSwitchMap1=!showSwitchMap1">switch map</button>
         <button mat-raised-button color="warning" (click)="showSwitchMap22=!showSwitchMap22">switchMap 22</button>
+        <button mat-raised-button color="warning" (click)="showObs62=!showObs62">showObs62 (debounce)</button>
         <button mat-raised-button color="warning" (click)="showObservable72=!showObservable72">obs 72 (firebase sim)</button>
+        <button mat-raised-button color="warning" (click)="showObservable71=!showObservable71">obs 71</button>
         <button mat-raised-button color="warning" (click)="showMerge=!showMerge">merge</button>
         <button mat-raised-button color="warning" (click)="showFutDb=!showFutDb">fut db</button>
-        <button mat-raised-button color="warning" (click)="showUserObs=!showUserObs">userObs</button>
+        
         
     </div>
     <div class="child-components" fxLayout="column" fxLayoutGap="10px">
@@ -20,7 +22,7 @@
         <div class="child-component-element" *ngIf="showObservable61">
             <app69-observable61></app69-observable61>       <!-- user generated observable -->
         </div>
-        <div class="child-component-element" *ngIf="showObservable21">
+        <div class="child-component-element" *ngIf="showObservable41">
             <app69-observable41></app69-observable41>       <!-- auth refresh token - testing -->
         </div>
         <div class="child-component-element" *ngIf="showObservable2">
@@ -35,11 +37,14 @@
         <div class="child-component-element" *ngIf="showMerge">
             <app69-merge></app69-merge>
         </div>
-        <div class="child-component-element" *ngIf="showUserObs">
+        <div class="child-component-element" *ngIf="showObservable71">
             <app69-observable71></app69-observable71>
         </div>
         <div class="child-component-element" *ngIf="showSwitchMap22">
             <app69-switch-map22></app69-switch-map22>
+        </div>
+        <div class="child-component-element" *ngIf="showObs62">
+            <app69-observable62></app69-observable62>
         </div>        
     </div>    
 </div>

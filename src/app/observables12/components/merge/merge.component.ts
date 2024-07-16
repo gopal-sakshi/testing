@@ -56,7 +56,6 @@ export class MergeComponent implements OnInit {
   }
 
   submitNobelHero() {
-    console.log(this.templateForm23);
     const searchName = this.templateForm23.form.value.hero_name;
     const result = this.mergeObservableService.searchNobelPlayers(searchName);
     console.log(result);

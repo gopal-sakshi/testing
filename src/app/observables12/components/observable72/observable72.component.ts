@@ -26,15 +26,15 @@ export class Observable72Component extends SimulateFirebase implements OnInit {
     this.stream2$ = this.simulateFirebase('JC', 5000);
     
     this.stream1Sub = this.stream1$.subscribe(
-      res => { console.log(res); },
+      res => { console.log('val rcvd @ stream1 observer', res); },
       err => { console.log(err); },
-      () => { console.log('completed') }
+      () => { console.log('stream1 completed') }
     );
 
     this.stream2Sub = this.stream2$.subscribe(
-      res => { console.log(res); },
+      res => { console.log('stream2 observer lo val ==>', res); },
       err => { console.log(err); },
-      () => { console.log('completed') }
+      () => { console.log('stream2 completed' ) }
     );
 
   }

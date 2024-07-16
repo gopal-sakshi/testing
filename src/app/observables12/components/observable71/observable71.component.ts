@@ -19,10 +19,7 @@ export class Observable71Component implements OnInit {
 
   startTimer() {
     
-    this.timerSub23 = timer(3000).pipe(
-      switchMapTo(of(1,2,3))
-    ).subscribe(res => { console.log(res) });
-
+    // timer ====> rxjs operator; emit data after specified time
     this.timerSub23 = timer(3000).pipe(
       switchMapTo(of(1,2,3))
     ).subscribe(res => { console.log(res) });
@@ -34,28 +31,6 @@ export class Observable71Component implements OnInit {
     this.timerSub23.unsubscribe();
   }
 
-  kalgudiLogin() {
-    const urlProd = 'https://outputs.kalgudi.com/v2/auth/login';
-    const urlDev = 'https://devkalgudi.vasudhaika.net/v2/auth/login';
-    let payloadProd = {
-      password: "NjY2NjY2",
-      sessionId: "",
-      type: "mobile",
-      userName: "+911111193925"
-    };
 
-    let payloadDev = {
-      password: "MTIzNDU2Nzg=",
-      sessionId: "",
-      type: "email",
-      userName: "first@ai.com"
-    }
-    // this.httpClient.post<any>(urlProd,payloadProd).subscribe(res => {
-    //   console.log(res);
-    // });
-    this.httpClient.post<any>(urlDev,payloadDev).subscribe(res => {
-      console.log(res);
-    });
-  }
 
 }

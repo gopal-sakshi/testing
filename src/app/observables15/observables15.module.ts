@@ -4,6 +4,7 @@ import { GreetingComponent } from './components/greeting/greeting.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { Filter23OperatorComponent } from './components/filter23-operator/filter23-operator.component';
+import { ColdObs23Component } from './components/cold-obs23/cold-obs23.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }
@@ -13,7 +14,8 @@ const routes: Routes = [
   declarations: [
     GreetingComponent,
     HomeComponent,
-    Filter23OperatorComponent    
+    Filter23OperatorComponent,
+    ColdObs23Component    
   ],
   imports: [
     CommonModule,

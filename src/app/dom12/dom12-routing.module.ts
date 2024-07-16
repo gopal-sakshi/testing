@@ -12,6 +12,7 @@ import { NgTemplateOutlet12Component } from './components/ng-template-outlet12/n
 import { NgTemplate11Component } from './components/ng-template11/ng-template11.component';
 import { ParentDomComponent } from './components/parent-dom/parent-dom.component';
 import { ViewEncapsulation12Component } from './components/view-encapsulation12/view-encapsulation12.component';
+import { NgTemplateReuse11Component } from './components/ng-template-reuse11/ng-template-reuse11.component';
 
 const routes: Routes = [
   { path: '', component: HomeDom12Component },
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'au-ng-content33', component: AuNgContent33Component },
   { path: 'embed-view11', component: EmbedView11Component },
   { path: 'host-view11', component: HostView11Component },
-  { path: 'view-encapsulation12', component: ViewEncapsulation12Component }
+  { path: 'view-encapsulation12', component: ViewEncapsulation12Component },
+  { path: 'ng-template-reuse', component: NgTemplateReuse11Component}
 ];
 
 @NgModule({

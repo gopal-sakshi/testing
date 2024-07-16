@@ -24,6 +24,7 @@ import { HostViewExample2Component } from './components/host-view-example2/host-
 import { Renderer2Component } from './components/renderer2/renderer2.component';
 import { Renderer2Directive } from './directives/renderer2.directive';
 import { DomContentLoadedComponent } from './components/dom-content-loaded/dom-content-loaded.component';
+import { NgTemplateReuse11Component } from './components/ng-template-reuse11/ng-template-reuse11.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { DomContentLoadedComponent } from './components/dom-content-loaded/dom-c
     HostViewExample2Component,
     Renderer2Component,
     Renderer2Directive,
-    DomContentLoadedComponent
+    DomContentLoadedComponent,
+    NgTemplateReuse11Component
   ],
   imports: [
     CommonModule,

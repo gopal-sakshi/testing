@@ -1,0 +1,79 @@
+<div class="d-flex justify-content-center bg-white w-100">
+    <h2 class="h2 mt-3">Welcome to Social Manager Dashboard</h2>
+</div>
+
+<ng-container *ngTemplateOutlet="socialManagerDashboard">
+
+</ng-container>
+<!--------------------------------------------------------------------------->
+
+<ng-template #socialManagerDashboardElement let-data="data">
+    <h2 class="d-flex justify-content-center">{{ data.title }}</h2>
+    <div class="row my-4">
+        <div class="col-md-4">
+            <div class="bg-grey box-item"
+                routerLink="{{ data.routeTo }}" [queryParams]="{status:'ACTIVE'}">
+                <p class=" font-weight-bold mb-0 arrow">
+                    Active: {{ data.active }}
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="d-flex bg-grey shadow p-3 justify-content-center alignitemscenter pending"
+                routerLink="{{ data.routeTo }}" [queryParams]="{status:'INACTIVE'}">
+                <p class=" font-weight-bold mb-0  arrow">
+                    Inactive: {{ data.inactive }}
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="d-flex bg-grey shadow p-3 justify-content-center alignitemscenter pending"
+                routerLink="{{ data.routeTo }}">
+                <p class=" font-weight-bold mb-0  arrow">
+                    Total: {{ data.active + data.inactive }}
+                </p>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #socialManagerDashboard>
+    <div class="bg-white p-3 my-3 m-0 w-100">
+        <!-- Auth -->
+        <ng-container
+            [ngTemplateOutlet]="socialManagerDashboardElement"
+            [ngTemplateOutletContext] ="{data: socialManagerObject.auth}">
+        </ng-container>
+
+        <!-- Subjects-->
+        <ng-container
+            *ngTemplateOutlet="socialManagerDashboardElement;
+            context:{data: socialManagerObject.subjects}">
+        </ng-container>
+
+        <!-- Styling -->
+        <ng-container
+            [ngTemplateOutlet]="socialManagerDashboardElement"
+            [ngTemplateOutletContext] ="{data: socialManagerObject.styling12}">
+        </ng-container>
+
+        <!-- Services - DI -->
+        <ng-container
+            [ngTemplateOutlet]="socialManagerDashboardElement"
+            [ngTemplateOutletContext] ="{data: socialManagerObject.services_di}">
+        </ng-container>
+
+        <!-- Design23 -->
+        <ng-container
+            [ngTemplateOutlet]="socialManagerDashboardElement"
+            [ngTemplateOutletContext] ="{data: socialManagerObject.design23}">
+        </ng-container>
+
+        <!-- Random14 -->
+        <ng-container
+            [ngTemplateOutlet]="socialManagerDashboardElement"
+            [ngTemplateOutletContext] ="{data: socialManagerObject.random14}">
+        </ng-container>
+
+    </div>
+</ng-template>

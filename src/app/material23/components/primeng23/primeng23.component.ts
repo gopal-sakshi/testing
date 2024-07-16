@@ -22,6 +22,7 @@ export class Primeng23Component implements OnInit {
 
   items: any[];
   item: string;
+  // primeng ====> this dependency removed from package.json ---> upstream dependency conflict
 
   constructor(private countryService: CountryService) {
     

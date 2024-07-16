@@ -16,7 +16,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Primeng23Component } from './components/primeng23/primeng23.component';
 import { CountryService } from './services/CountryService';
+// primeng ===> npm i --force; otherwise upstream dependency conflict ERROR
 import { MultiSelectModule } from 'primeng/multiselect';
+import { Paginate23Component } from './components/paginate23/paginate23.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
     MatForms23Component,
     MatTable12Component,
     MatHome12Component,
-    Primeng23Component
+    Primeng23Component,
+    Paginate23Component
   ],
   imports: [
     CommonModule,
@@ -39,7 +43,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
     ReactiveFormsModule,
     MatToolbarModule,
     MatFormFieldModule,
-    MultiSelectModule 
+    MultiSelectModule,
+    NgxPaginationModule
   ],
   providers: [ CountryService ]
 })

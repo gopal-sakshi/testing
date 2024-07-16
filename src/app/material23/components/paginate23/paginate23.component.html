@@ -1,0 +1,53 @@
+<button (click)="clientside=!clientside">client/server pagination toggle</button>
+
+<!-------- this implements serverside pagination --------->
+<div *ngIf="!clientside">
+    <p *ngFor=" let item of passenger
+        | paginate : {
+              itemsPerPage: itemsPerPage,
+              currentPage: page,
+              totalItems: totalItems
+        }">
+        {{ item.name }}
+        <span>{{ item.airline.country }}</span> <br />
+        <img src="{{ item.airline[0].logo }}" alt="" /> <br />
+        <span>{{ item.airline[0].slogan }}</span> <br />
+    </p>
+    <pagination-controls
+        (pageChange)="gty((page = $event))"
+    ></pagination-controls>
+</div>
+<!-------- this implements serverside pagination --------->
+
+
+<!-------- this implements clientside pagination ---------->
+<div *ngIf="clientside">
+    <h3>lets see how pagination works23</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr class="info">
+                <th scope="col" class="text-center">SL No.</th>
+                <th>athlete</th>
+                <th>age</th>
+                <th>country</th>
+                <th>sport</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let winner of olympicWinners23 
+                | paginate: { itemsPerPage: pageSize, currentPage: p }; let i = index">
+                <td>{{ i+1 }}</td>
+                <td>{{ winner?.athlete }}</td>
+                <td>{{ winner?.age }}</td>
+                <td>{{ winner?.country }}</td>
+                <td>{{ winner?.sport }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <pagination-controls 
+        *ngIf="olympicWinners23?.length > 0;" 
+        (pageChange)="pageChange23($event)" 
+        class="float-right">
+    </pagination-controls>
+</div>
+<!-------- this implements clientside pagination ---------->

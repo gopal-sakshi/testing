@@ -17,6 +17,7 @@ import { Layout17Component } from './components/layout17/layout17.component';
 import { Footer44Component } from './components/footer44/footer44.component';
 import { Classes23Component } from './components/classes23/classes23.component';
 import { Flex13Component } from './components/flex13/flex13.component';
+import { MediaQueries11Component } from './components/media-queries11/media-queries11.component';
 
 
 const routes:Routes = [
@@ -39,7 +40,8 @@ const routes:Routes = [
     Layout17Component,
     Footer44Component,
     Classes23Component,
-    Flex13Component,    
+    Flex13Component,
+    MediaQueries11Component,    
   ],
   imports: [
     CommonModule,

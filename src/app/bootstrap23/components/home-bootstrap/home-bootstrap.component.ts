@@ -20,6 +20,7 @@ export class HomeBootstrapComponent implements OnInit {
   showFullWebsite12:boolean = false;
   showProgressBar:boolean = false;
   showClasses23:boolean = false;
+  showMediaQueries11:boolean = false;
 
   constructor() { }
 

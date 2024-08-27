@@ -1,0 +1,142 @@
+Bootstrap contents - ARC Tutorials
+
+Introduction
+Whats new
+Layouts & Grids
+Designing Layouts & Grids
+Responsive Grid Layouts			5
+Live Project #1
+Live Project #2
+Live Project #3
+Navbar
+Cards						10
+Lists
+Tables
+Buttons
+Button Group
+Live Project #4				
+Live Project #5				
+Alerts
+Modal
+Collapse
+Forms
+Dropdown
+Tooltips
+Popovers
+Progress Bar
+Spinners
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Live Project #4						Build your own website
+
+		Bootstrap 5 be aware that text-left & text-right classes have been removed... Now you can use text-start and text-end
+		
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+Live Project #5
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+Alerts
+
+			alert 
+			alert-primary (alert-warning, alert-success, alert-info, alert-danger)
+			alert-heading
+			alert-link
+			alert-warning
+			alert-dismissable fade show
+			
+			
+----------------------------------------------------------------------------------------------------------------------------------------------
+Modal
+
+		Modal windows = important part of modern web application
+		opening a particular record, adding quick data, creating new resource, confirmation window
+		they only work with modern browsers...
+		
+		modal
+			modal-dailog
+				modal-content
+					modal-header
+						modal-title
+				modal-body
+				modal-footer
+				
+				
+				data-target
+				data-toggle
+				
+		modal-md, modal-lg, modal-sm 
+		
+----------------------------------------------------------------------------------------------------------------------------------------------
+19) Collapse
+
+			data-toggle='collapse'
+			data-target='#collapseExample'
+			class='collapse'
+----------------------------------------------------------------------------------------------------------------------------------------------
+Forms
+
+		Various input mechanisms/components
+			text-area, text-box
+			check box
+			input, radio, select, drop-down
+			
+		through forms, we collect inputs from users
+		
+		form-label = used to create a label for the form
+		form-check-input
+		form-control = to add input element to form label
+		
+		Input Group ---------------------> all input fields will be in single line				$ | input-text-field |.00
+		File Upload
+		Input Range
+		Validations
+			
+			
+		In radio button ------> name must be same for all options... and we can select only one option 
+		In checkbox ---------> name is different for all options... we can select multiple options
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Dropdowns, Dropdown
+
+
+				class='dropdown
+				class = 'dropdown-toggle'					type='button'			id='dropdownMenuButton'				data-togggle='dropdown'
+				class='dropdown-menu'
+					class='dropdown-item'
+					class='dropdown-item'
+					class='dropdown-item'
+				
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Tooltips
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Popovers
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+Progress Bar
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+Spinners
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Bootstrap 5
+- New Docs = brighter, better organized with new content sections
+- offcanvas component
+- Floating labels
+- updated - accordion, forms
+- support for RTL (right to left) text
+-----------------------------------------------------------------------------------------------------------------------------------------------
+

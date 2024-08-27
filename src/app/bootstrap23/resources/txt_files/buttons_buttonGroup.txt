@@ -1,0 +1,14 @@
+Buttons
+
+Main class          = btn
+colors              = btn-primary, btn-secondary
+outline             = btn-outline-primary, btn-outline-secondary
+sizes               = btn-sm, btn-md
+disabled state      = disabled
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Button Group
+- group multiple buttons in a single UI element     (print, pdf, save)	
+
+Main class          = btn-group
+----------------------------------------------------------------------------------------------------------------------------------------------

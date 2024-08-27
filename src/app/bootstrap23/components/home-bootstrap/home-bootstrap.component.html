@@ -1,5 +1,5 @@
-<div class="bootstrap-container">
-    <div class="buttons">
+<div class="container-fluid bootstrap-container">
+    <div class="row23">
         <button (click)="showBootstrapButtons=!showBootstrapButtons" [ngClass]=" showBootstrapButtons ? 'highlight-tab' : '' ">buttons</button>
         <button (click)="showCosmos12=!showCosmos12" [ngClass]="showCosmos12 ? 'highlight-tab' : '' ">cosmos12</button>
         <button (click)="showFlex12=!showFlex12" [ngClass]="showFlex12 ? 'highlight-tab' : '' ">flex12</button>
@@ -12,7 +12,8 @@
         <button (click)="showLayout16=!showLayout16" [ngClass]="showLayout16 ? 'highlight-tab' : '' ">Layout16</button>
         <button (click)="showLayout17=!showLayout17" [ngClass]="showLayout17 ? 'highlight-tab' : '' ">Layout17</button>
         <button (click)="showProgressBar=!showProgressBar" [ngClass]="showProgressBar ? 'highlight-tab' : '' ">progress-bar</button>
-        <button (click)="showClasses23=!showClasses23" [ngClass]="showClasses23 ? 'highlight-tab' : '' ">classes23</button>        
+        <button (click)="showClasses23=!showClasses23" [ngClass]="showClasses23 ? 'highlight-tab' : '' ">classes23</button>
+        <button (click)="showMediaQueries11=!showMediaQueries11" [ngClass]="showMediaQueries11 ? 'highlight-tab' : '' ">media queries11</button>
     </div>
     <div class="child-elements">
         <div *ngIf="showBootstrapButtons">
@@ -54,8 +55,13 @@
         <div *ngIf="showClasses23">
             <app69-classes23></app69-classes23>
         </div>
+        <div *ngIf="showMediaQueries11">
+            <app69-media-queries11></app69-media-queries11>
+        </div>
     </div>
-    <div class="footer-section add-border">
+
+    <!-- How to make this footer stay at the bottom... position:fixed is alright, but main content goes behind footer -->
+    <!-- <div class="footer-section add-border">
         <app69-footer44></app69-footer44>
-    </div>
+    </div> -->
 </div>

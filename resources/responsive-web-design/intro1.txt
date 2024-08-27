@@ -1,0 +1,26 @@
+responsive web design
+- creating websites 
+- whose UI components adapt themselves 
+- to various devices, screen sizes
+----------------------------------------------------------------------
+
+Fluid layouts
+- instead of fixed pixel values 
+    height: '20px'
+- div elements ---> are specified in proportions relative to container width
+    allowing the layout to adapt & resize to fit
+- as the screen size changes -- elements automatically adjust their width
+
+----------------------------------------------------------------------
+
+flexible images
+- set max width of image to 100% of its parent container
+- as container resizes ===> image scales proportionally to fit within it
+
+----------------------------------------------------------------------
+
+CSS media queries
+- write set of rules
+- apply style23 if screen width is smaller than 600pixels
+- apply style24 if screen width is greater than 400 pixels but less than 600 pixels
+----------------------------------------------------------------------

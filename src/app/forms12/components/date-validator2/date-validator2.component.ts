@@ -14,14 +14,20 @@ export class DateValidator2Component implements OnInit {
   // Need to look into it... for the time being... just go with "date-validator.component.ts"
   ngOnInit(): void {
     this.dateRange2 = new FormGroup ({
-      to: new FormControl('', this.sixtyDaysValidator),
+      to: new FormControl('', this.sixDaysValidator),
       from: new FormControl('')
     });
   }
 
-  sixtyDaysValidator(control: AbstractControl):ValidatorFn {
-    console.log(control);
-    return null;
+  sixDaysValidator = (control: AbstractControl):ValidatorFn => {    
+    return (control:AbstractControl):any => {
+        console.log("six day validator triggered roi");
+        if(new Date(control.value).getSeconds() - new Date(this.dateRange2.get('from').value).getSeconds() > 6 * 86400 * 1000) {
+            return { timeDiffError: true }
+        } else {
+            console.log("date diff less than 6 days ---> all good23")
+            return null;
+        }
+    }
   }
-
 }

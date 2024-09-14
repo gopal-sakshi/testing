@@ -20,24 +20,17 @@
     <div>custom-val-13</div>
     <form #multipleEmailForm="ngForm" class="custom-validator13-form">
         <div fxLayout="column" fxLayoutGap="20px">
-            <input type="text" placeholder="email1" name="email1" ngModel>
+            <input type="text" placeholder="anything" name="email1" ngModel>
 
             <!-- validateEmail12 = only 'abc' is valid email -->
-            <input type="text" placeholder="email2...12" name="email2" ngModel validateEmail12>
+            <input type="text" placeholder="12_abc" name="email2" ngModel validateEmail12>
 
             <!-- validateEmail13 = not implemented yet -->
-            <input type="text" placeholder="email2...13" name="email3" ngModel validateEmail13>
+            <input type="text" placeholder="13_not_implemented" name="email3" ngModel validateEmail13>
 
-            <!-- validateEmail14 = gopal612, ped (blacklisted)  APPROACH 1-->
-            <!-- <input type="text" placeholder="email2...14" name="email4" ngModel validateEmail14> -->            
-            <!--
-                in validateEmail12 directive, we used 'useValue'
-                but in validateEmail14 directive, we are forced to use 'useFactory'
-                because we dont return the factoryFunction... rather we return what the factoryFunction returns
-            -->
-
-            <!-- validateEmail14 = gopal612, ped (blacklisted)  APPROACH 2-->            
-            <!-- <input type="text" placeholder="email2...15" name="email5" ngModel validateEmail15> -->
+            <!-- validateEmail12 directive == 'useValue'; in validateEmail14 == 'useFactory' -->
+            <input type="text" placeholder="14_!(gop@g.com || ped@g.com)" name="email4" ngModel validateEmail14>            
+            <input type="text" placeholder="15_!(gop@g.com || ped@g.com)" name="email5" ngModel validateEmail15>
         </div>
         <button mat-raised-button [disabled]="isFormValid(multipleEmailForm)" (click)="onSubmit(multipleEmailForm)">Submit1</button>
         <button mat-raised-button (click)="consoleForm(multipleEmailForm)">Submit2</button>

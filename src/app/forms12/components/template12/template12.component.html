@@ -44,7 +44,7 @@
         <!-- ngModel outside of <form> tag -->
         <input title="executes only after control moves to next input field" placeholder="type smthng & press tab"
             [value]="domInput" (change)="changeFnDOM1($event)" (onchange)="changeFnDOM2($event)">
-        <!-- the change event doesn't fire until the control loses focus -->
+        <!-- the change event doesn't fire until the control loses focus; use keyup (or) keydown -->
 
         <input [ngModel]="angularInput" (ngModelChange)="changeFnAngular($event)">
         <!-- this ngModel doesnt have name attribute, bcoz, its not within <form> tag-->

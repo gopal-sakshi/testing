@@ -14,14 +14,5 @@ export class EmailValidator12 { }
 
 function validateEmail12Fn(c: FormControl) {
     console.log("testing emailValidator12");
-    
-    // let EMAIL_REGEXP = /[abc]/
-
-    // return EMAIL_REGEXP.test(c.value) ? null : {
-    //     validateEmail: {
-    //         valid: false
-    //     }
-    // };
-
     return c.value === 'abc' ? null : {valueMustBeABC:'get lost'}
 }

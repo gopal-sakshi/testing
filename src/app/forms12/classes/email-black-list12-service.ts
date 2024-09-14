@@ -1,16 +1,8 @@
 
 export class EmailBlackList12Service {
 
-    isInvalidEmail(emailString:string):boolean {
-        if(emailString === 'gopal@gmail.com' || emailString === 'ped@gmail.com') {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     isValidEmail(emailString:string):boolean {
-        if(emailString === 'gopal@gmail.com' || emailString === 'ped@gmail.com') {
+        if(emailString === 'gop@g.com' || emailString === 'ped@g.com') {
             return false;
         } else {
             return true;

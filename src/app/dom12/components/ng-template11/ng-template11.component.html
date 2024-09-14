@@ -22,7 +22,7 @@
     -->    
     
     
-    <ng-template *ngIf="test3" class="test3-saying-hello">saying test3</ng-template>
+    <ng-template *ngIf="test3" class="test3-saying-hello">saying test3a</ng-template>
     <!--        this is PLAIN WRONG 
         because, as soon as angular sees *ngIf="test3", 
             it puts the entire ng-template within another ng-template (ofcourse, after removing *ngIf structural directive)
@@ -31,12 +31,14 @@
         <ng-template [ngIf]="test3">
             <ng-template class="test3-saying-hello">saying test3</ng-template>
         </ng-template>
+
+        but this wont render bcoz there is no "then applyTest3" after [ngIf]="test3"
     -->
     
     <!-- CORRECT WAY-->
     <ng-template *ngIf="test3 then applyTest3"></ng-template>
     <ng-template #applyTest3>
-        <div class="test3-saying-hello">saying test3</div>
+        <div class="test3-saying-hello">saying test3b</div>
     </ng-template>
     
     

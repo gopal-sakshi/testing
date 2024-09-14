@@ -18,6 +18,7 @@
             a grouping element that doesn't interfere with styles or layout because Angular doesn't put it in the DOM.
     -->
     
+    <br><br>
     <!-- so use this instead... it wont have any extra div elements -->
     <ng-container *ngFor="let item of items">
         <div *ngIf="item.id">{{item.id}}&nbsp;{{item.name}}</div>

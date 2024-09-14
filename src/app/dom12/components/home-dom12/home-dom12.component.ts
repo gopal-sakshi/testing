@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 @Component({
@@ -10,9 +10,10 @@ export class HomeDom12Component implements OnInit {
 
   showEncapsulation:boolean = false;
   showRenderer2:boolean = false;
-  constructor(private titleService:Title) { }
+  constructor(private titleService:Title, private element: ElementRef) { }
 
   ngOnInit(): void {
+    console.log(this.element.nativeElement);
     this.titleService.setTitle('dom12_anta');
     var link = <HTMLLinkElement>document.querySelector("link[rel~='icon']");
     if (!link) {

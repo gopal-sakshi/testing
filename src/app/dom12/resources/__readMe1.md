@@ -27,7 +27,7 @@
 
 <!-- *************************************************************************************  -->
 
-// app-ng-content11                         is a child component
+<!-- app-ng-content11 is a child component -->
 <app-ng-content11>
     <h6>this is h6 element</h6>
     <div>this is div element</div>
@@ -36,9 +36,10 @@
 </app-ng-content11>
 
 
-// Notice this
-        <app-ng-content11  inputProp2="blah" inputProp2="blah2"> </app-ng-content11>                        WRONG... this is not how we used ng-content
-        <app-ng-content11> inputProp2="blah" inputProp2="blah2"> </app-ng-content11>                        RIGHT... this IS HOW we used ng-content
+<!-- Notice this -->
+
+<app-ng-content11  inputProp2="blah" inputProp2="blah2"> </app-ng-content11>        <!-- WRONG -->
+<app-ng-content11> inputProp2="blah" inputProp2="blah2" </app-ng-content11>        <!-- RIGHT -->
 
 <ng-content select="h6"></ng-content>
 <ng-content select="div"></ng-content

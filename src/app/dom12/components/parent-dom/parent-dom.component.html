@@ -19,7 +19,7 @@
     <div>
         <app-ng-content11>      <!-- "parent-dom component" provides content to "app-ng-content11 component" -->
             <h6>this is h6 element</h6>
-            <div>this is div element</div>
+            <div>this is div element {{ time23 }}</div>
             <span>this is span element</span>
             <p>this is a paragraph (p element)</p>
         </app-ng-content11>
@@ -42,7 +42,7 @@
     <!--ngTemplateOutlet customisable components -->    
     <div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="start center">
         <div class="customised1-component">
-            <app-ng-template-outlet12 [headerTemplate]="header1" [bodyTemplate]="body1" [footerTemplate]="footer1">
+            <app-ng-template-outlet12 [headerTemplate]=header1 [bodyTemplate]="body1" [footerTemplate]="footer1">
             </app-ng-template-outlet12>
         </div>
         
@@ -62,7 +62,7 @@
 
 
 <!-- section defining ng-templates -->
-<ng-template #header1><div>this is header1</div></ng-template>
+<ng-template #header1><div style="text-decoration:underline">this is header1</div></ng-template>
 <ng-template #body1><div>this is body1</div></ng-template>
 <ng-template #footer1><div>this is footer1</div></ng-template>
 

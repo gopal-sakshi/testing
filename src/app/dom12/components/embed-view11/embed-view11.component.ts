@@ -37,7 +37,6 @@ export class EmbedView11Component implements OnInit {
 
   ngAfterViewInit() {
 
-
     this.elementRef0.nativeElement.textContent = "hello doctor"
 
 

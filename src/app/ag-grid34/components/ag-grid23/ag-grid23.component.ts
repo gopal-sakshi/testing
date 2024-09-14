@@ -2,6 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { GridApi, GridReadyEvent } from 'ag-grid-community';
 import { Comments14Component } from '../comments14/comments14.component';
 import olympicData from "../../resources/olympic-winners.json";
+import { Colors14Component } from './Colors14Component';
+
+// // It seems these are needed for dropdown ---> color23
+// import { ClientSideRowModelModule } from "@ag-grid-community/client-side-row-model";
+// import { RichSelectModule } from "@ag-grid-enterprise/rich-select";
+// ModuleRegistry.registerModules([ClientSideRowModelModule, RichSelectModule]);
+
 
 @Component({
   selector: 'app69-ag-grid23',
@@ -20,30 +27,36 @@ export class AgGrid23Component implements OnInit {
   
 
   rowData1 = [
-    { make: "Toyota", model: "Celica", price: 35000, comments44: {india: "toyota car", USA: "decent toyota in US"} },
-    { make: "Ford", model: "Mondeo", price: 32000, comments44: {india: "ford car stopped", USA: "good going ford in US"} },
-    { make: "Porsche", model: "Boxter", price: 72000, comments44: {india: "expensive porsche", USA: "affordable in US"} },
-    { make: "BMW", model: "Mustang", price: 45000, comments44: {india: "expensive bmw", USA: "BMW in US"} },
-    { make: "Audi", model: "A6", price: 67000, comments44: {india: "pricey audi", USA: "medium range Audi in US"} },
-    { make: "Tata", model: "Nano", price: 78000, comments44: {india: "affordable tata", USA: "not available tata in US"} },
-    { make: "Honda", model: "City", price: 23000, comments44: {india: "decent honda", USA: "cheap honda in US"} },
-    { make: "Lamborghini", model: "Lmb-model", price: 59000, comments44: {india: "costly lamborghini", USA: "premium lamb"} },
-    { make: "Aston Martin", model: "Am-model", price: 56000, comments44: {india: "no-comments-ind", USA: "no-comments-US"} },
-    { make: "Bugati", model: "Bugati-model", price: 67000, comments44: {india: "no-comments-ind", USA: "no-comments-US"} },
-    { make: "Cadillac", model: "Cadillac-model", price: 23300, comments44: {india: "no-comments-ind", USA: "no-comments-US"} },
-    { make: "Chevrolet", model: "Chev-model", price: 76000, comments44: {india: "no-comments-ind", USA: "no-comments-US"} },
-    { make: "Fiat", model: "Fiat-model", price: 98000, comments44: {india: "no-comments-ind", USA: "no-comments-US"} },
-    { make: "Ferrari", model: "Ferrari-model", price: 16000, comments44: {india: "no-comments-ind", USA: "no-comments-US"} },
-    { make: "Jaguar", model: "Jaguar-model", price: 38000, comments44: {india: "no-comments-ind", USA: "no-comments-US"} },
-    { make: "Kia", model: "Kia-model", price: 44000, comments44: {india: "no-comments-ind", USA: "no-comments-US"} },
-    { make: "Rolls Royce", model: "RR-model", price: 87000, comments44: {india: "no-comments-ind", USA: "no-comments-US"} },
+    { make: "Toyota", model: "Celica", price: 35000, color23: "red", comments44: {india: "toyota car", USA: "decent toyota in US"} },
+    { make: "Ford", model: "Mondeo", price: 32000, color23: "red", comments44: {india: "ford car stopped", USA: "good going ford in US"} },
+    { make: "Porsche", model: "Boxter", price: 72000, color23: "red", comments44: {india: "expensive porsche", USA: "affordable in US"} },
+    { make: "BMW", model: "Mustang", price: 45000, color23: "red", comments44: {india: "expensive bmw", USA: "BMW in US"} },
+    { make: "Audi", model: "A6", price: 67000, color23: "red", comments44: {india: "pricey audi", USA: "medium range Audi in US"} },
+    { make: "Tata", model: "Nano", price: 78000, color23: "red", comments44: {india: "affordable tata", USA: "not available tata in US"} },
+    { make: "Honda", model: "City", price: 23000, color23: "red", comments44: {india: "decent honda", USA: "cheap honda in US"} },
+    { make: "Lamborghini", model: "Lmb-model", price: 59000, color23: "red", comments44: {india: "costly lamborghini", USA: "premium lamb"} },
+    { make: "Aston Martin", model: "Am-model", price: 56000, color23: "red", comments44: {india: "no-comments-ind", USA: "no-comments-US"} },
+    { make: "Bugati", model: "Bugati-model", price: 67000, color23: "red", comments44: {india: "no-comments-ind", USA: "no-comments-US"} },
+    { make: "Cadillac", model: "Cadillac-model", price: 23300, color23: "red", comments44: {india: "no-comments-ind", USA: "no-comments-US"} },
+    { make: "Chevrolet", model: "Chev-model", price: 76000, color23: "red", comments44: {india: "no-comments-ind", USA: "no-comments-US"} },
+    { make: "Fiat", model: "Fiat-model", price: 98000, color23: "red", comments44: {india: "no-comments-ind", USA: "no-comments-US"} },
+    { make: "Ferrari", model: "Ferrari-model", price: 16000, color23: "red", comments44: {india: "no-comments-ind", USA: "no-comments-US"} },
+    { make: "Jaguar", model: "Jaguar-model", price: 38000, color23: "red", comments44: {india: "no-comments-ind", USA: "no-comments-US"} },
+    { make: "Kia", model: "Kia-model", price: 44000, color23: "red", comments44: {india: "no-comments-ind", USA: "no-comments-US"} },
+    { make: "Rolls Royce", model: "RR-model", price: 87000, color23: "red", comments44: {india: "no-comments-ind", USA: "no-comments-US"} },
   ];
   rowData2 = olympicData;
   columnDefs1 = [
     { headerName: "Row", valueGetter: "node.rowIndex + 1" },
     { headerName: "company", field: "make", resizable: true, pinned:"left"},
     { field: "model", hide: true },     // model column will not be visible in ag-grid
-    { headerName: "price-fixedWidth", field: "price", sortable: true, width: 180 },
+
+    // dropdown needs ag-enterprise I suspect...
+    { headerName: "dropdown23", field:'color23', cellRenderer: Colors14Component,
+        cellEditor: "agRichSelectCellEditor",
+        cellEditorParams: { cellRenderer: Colors14Component, values: ["red", "green", "blue"], },
+    },
+    { headerName: "price-fixedWidth-EditChesko", field: "price", editable:true, sortable: true, width: 280 },
     { field: "comments44", cellRenderer: Comments14Component, resizable: true}
   ];
   columnDefs2 = [

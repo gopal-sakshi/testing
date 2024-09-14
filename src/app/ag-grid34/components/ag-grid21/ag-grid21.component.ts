@@ -80,7 +80,7 @@ export class AgGrid21Component implements OnInit {
     return res.count ? res.count > res.results.length : false
   }
 
-  groupAndFetch(res, url, fetchSequentially = true) {
+  groupAndFetch(res, url, fetchSequentially = false) {
 
     const obs: Observable<any>[] = this.splitApiCalls(url, +res.count);
 
@@ -88,7 +88,7 @@ export class AgGrid21Component implements OnInit {
     const sequentialFetchObs = concat(of(res), ...obs).pipe(toArray());
 
     // Observable to make API calls in parallel
-    const parallelFetchObs = combineLatest(of(res), ...obs);
+    const parallelFetchObs = combineLatest([of(res), ...obs]);
 
     // Resultant observable to call based on the fetchSequentially param
     const resultantObs = fetchSequentially ? sequentialFetchObs : parallelFetchObs;
@@ -105,7 +105,7 @@ export class AgGrid21Component implements OnInit {
     return mergedResponse;
   }
 
-  splitApiCalls(url:string, totalCount:Number) {
+  splitApiCalls(url:string, totalCount:number) {
     const obs:Observable<any>[] = [];
 
     for (let offset = this.batchSize; offset < totalCount; offset+=this.batchSize) {

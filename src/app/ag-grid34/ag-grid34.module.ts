@@ -14,6 +14,7 @@ import { AgGrid24Component } from './components/ag-grid24/ag-grid24.component';
 import { AgGrid25Component } from './components/ag-grid25/ag-grid25.component';
 import { AgGrid26Component } from './components/ag-grid26/ag-grid26.component';
 import { AgGrid26Service } from './services/ag-grid26.service';
+import { Colors14Component } from './components/ag-grid23/Colors14Component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { AgGrid26Service } from './services/ag-grid26.service';
     AgGrid21Component,
     AgGrid23Component,
     Comments14Component,
+    Colors14Component,
     AgGrid24Component,
     AgGrid25Component,
     AgGrid26Component

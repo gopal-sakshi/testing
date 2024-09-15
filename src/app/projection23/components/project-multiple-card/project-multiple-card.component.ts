@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app69-project-multiple-card',
-  templateUrl: './project-multiple-card.component.html',
-  styleUrls: ['./project-multiple-card.component.scss']
+    selector: 'app69-project-multiple-card',
+    templateUrl: './project-multiple-card.component.html',
+    styleUrls: ['./project-multiple-card.component.scss']
 })
 export class ProjectMultipleCardComponent implements OnInit {
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
 }

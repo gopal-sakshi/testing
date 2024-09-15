@@ -1,22 +1,29 @@
 <div class="home-projection23-container" fxLayout="column" fxLayoutGap="20px">
     <div class="apply-border">
-        <app69-input-card bodyText="This is some text within a card body."></app69-input-card>
+        <app69-input-card bodyText23="This is some text within a card body."></app69-input-card>
+        <app69-input-card [bodyText23]="variable23"></app69-input-card>
+        <app69-input-card bodyText23="variable23"></app69-input-card>
     </div>
     <div class="apply-border">
-        <app69-project-body-card headerText="A sample card">
-            <!-- whatever is placed in these comments... will go and sit inside ng-content; app69-project-body-card = just a wrapper around ng-content -->
-            Now I <strong>can</strong> add <em>markup!</em >
+        <app69-project-body-card headerText="headerText_oka_@Input_thingy">
+            <!-- 
+                whatever is placed in these comments... 
+                child_component lo ekkada ng-content undo akkada kurchuntundi
+                app69-project-body-card = just a wrapper around ng-content 
+            -->
+            Now I <strong>can</strong> add <em>italicContent23!</em >
             <span class="badge badge-info">And Other Elements</span>
             <div>hello doctor</div>
-            <!-- whatever is placed in these comments... will go and sit inside ng-content; app69-project-body-card = just a wrapper around ng-content -->
+            <!-- ENDDDDDDDDDDDDDDDDD -->
         </app69-project-body-card>
     </div>
     <div class="apply-border">
         <app69-project-multiple-card>
-            <div header>Projected Heading <button class="btn btn-primary">With buttons!</button></div>
-            <div body>
-                Now I <strong>can</strong> add <em>markup!</em >
-                <span class="badge badge-info">And Other Elements</span>
+            <div>Projected Heading 
+                <button class="btn btn-primary">With buttons!</button>
+            </div>
+            <div>
+                Now I <strong>can</strong> add <em>markup!</em> <span>And Other Elements</span>
             </div>
         </app69-project-multiple-card>
     </div>

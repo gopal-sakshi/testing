@@ -27,7 +27,7 @@ import { Component, OnInit } from '@angular/core';
         width: '200px',
         height: '200px'
       })),
-      transition('initial=>final', animate('1500ms')),
+      transition('initial=>final', animate('5000ms')),
       transition('final=>initial', animate('1000ms'))
     ]),
     trigger('balloonEffect', [
@@ -37,7 +37,7 @@ import { Component, OnInit } from '@angular/core';
       })),
       state('final', style({
         backgroundColor: 'black',
-        transform: 'scale(1.5)'
+        transform: 'scale(4)'
       })),
       transition('final=>initial', animate('1000ms')),
       transition('initial=>final', animate('1500ms'))

@@ -1,7 +1,7 @@
 <div class="ng-class12-container">
     <div fxLayout="row" fxLayoutGap="20px" fxFlex="calc(0,0,20%)" class="ng-class12-items">
         <div [ngClass]="{'testing-ngClass-1' : item1>5}">element 1</div>
-        <!-- <div [ngClass]="{(item2>5 && item2<13) ? 'testing-ngClass-1' : ''}">element 2</div> -->
+        <div [ngClass]="item2>5 && item2<13 ? 'testing-ngClass-2' : ''">element 2</div>
         <div [ngClass]="{'font-size-80': item1 === 6, 'blue-shade-color' : item2===12 }">element 3</div>
         <div [ngClass]="item3 == 14 ? 'font-size-40' : 'font-size-20'">element 4</div>
         <!-- <div>element 5</div>

@@ -4,10 +4,12 @@ if token is expired, it makes 2nd API call -- refresh token to fetch new token
 
 STEP 01
 - We don't want to refresh token for some requests like login or refresh token itself
+- ante inka "login" avvakundaane, token generate avvakundaane -- token ni refresh cheyyamantam meaningLess
 - So we verify url and we throw an error if it's the case
 
 STEP 02
 - We do another check to see if refresh token failed
+- ante refreshToken23 API eh fail aithe... malli enduku refreshToken call cheyyatam
 - In this case we want to logout user and to redirect it to login page
 
 STEP 03

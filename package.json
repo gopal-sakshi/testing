@@ -18,7 +18,8 @@
     "analyze-prod-stats1": "webpack-bundle-analyzer dist/stats.json",
     "NOTE___________": "angular team strongly recommends `source-map-explorer` instead of webpack-bundle-analyzer",
     "build-prod-sourceMap": "ng build --sourceMap=true --namedChunks=true",
-    "analyze-prod-stats2": "source-map-explorer dist/*.js"
+    "analyze-prod-stats2": "source-map-explorer dist/*.js",
+    "server23": "ts-node -P ./server/server.tsconfig.json ./server/server.ts"
   },
   "private": true,
   "dependencies": {

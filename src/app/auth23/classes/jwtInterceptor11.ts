@@ -72,7 +72,7 @@ export class JwtInterceptor11 implements HttpInterceptor {
     }
 
 
-    /*************************************************************************************************************/
+    /********************************************************************************************/
     // refresh_access_token_is_this__fn_needed(next, request, error) {
     //     this.refreshTokenInProgress = true;
     //     // Set the refreshTokenSubject to null so that subsequent API calls will wait until the new token has been retrieved

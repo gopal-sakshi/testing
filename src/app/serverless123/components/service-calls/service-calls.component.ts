@@ -2,47 +2,47 @@ import { Component, OnInit } from '@angular/core';
 import { ServiceCallService } from '../../services/service-call.service';
 
 @Component({
-  selector: 'app69-service-calls',
-  templateUrl: './service-calls.component.html',
-  styleUrls: ['./service-calls.component.scss']
+    selector: 'app69-service-calls',
+    templateUrl: './service-calls.component.html',
+    styleUrls: ['./service-calls.component.scss']
 })
 export class ServiceCallsComponent implements OnInit {
 
-  constructor(private serviceCallService: ServiceCallService) { }
+    constructor(private serviceCallService: ServiceCallService) { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
-  submitPost() {
-    this.serviceCallService.addPost('#testing is my angular app - posts').subscribe(res => {
-      console.log('post added successfully');
-    });
-  }
+    submitPost() {
+        this.serviceCallService.addPost('#testing is my angular app - posts').subscribe(res => {
+            console.log('post added successfully');
+        });
+    }
 
-  submitQuote() {
-      this.serviceCallService.addQuote('angular application - quote').subscribe(res => {
-      console.log('quote added successfully');
-    });
-  }
+    submitQuote() {
+        this.serviceCallService.addQuote('angular application - quote').subscribe(res => {
+            console.log('quote added successfully');
+        });
+    }
 
-  showQuotes() {
-    this.serviceCallService.getQuotes().subscribe(res => {
-      console.log('Quotes ', res);
-    });
-  }
+    showQuotes() {
+        this.serviceCallService.getQuotes().subscribe(res => {
+            console.log('Quotes ', res);
+        });
+    }
 
-  showPosts() {
-    this.serviceCallService.getPosts().subscribe(res => {
-      console.log('Posts ', res);
-    })
+    showPosts() {
+        this.serviceCallService.getPosts().subscribe(res => {
+            console.log('Posts ', res);
+        })
 
-  }
+    }
 
-  postWithParams() {
-    this.serviceCallService.postWithParams().subscribe(res => {
-      console.log('post with params', res);
-    })
-  }
+    postWithParams() {
+        this.serviceCallService.postWithParams().subscribe(res => {
+            console.log('post with params', res);
+        })
+    }
 
 }
 /*

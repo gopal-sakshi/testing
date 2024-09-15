@@ -5,30 +5,30 @@ import { Observable } from 'rxjs';
 import { share } from 'rxjs/operators';
 
 @Component({
-  selector: 'app69-simple-express',
-  templateUrl: './simple-express.component.html',
-  styleUrls: ['./simple-express.component.scss']
+    selector: 'app69-simple-express',
+    templateUrl: './simple-express.component.html',
+    styleUrls: ['./simple-express.component.scss']
 })
 export class SimpleExpressComponent implements OnInit {
 
-  constructor(private simpleExpressService:SimpleExpressService) { }
+    constructor(private simpleExpressService: SimpleExpressService) { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
-  
-  makeApiCall() {
-    // subscriber 1 in home component
-    this.simpleExpressService.apiCall23('').subscribe(res => { console.log("res1 @ Api call ===> ", res) });
 
-    // subscriber 2 in header component
-    this.simpleExpressService.apiCall23('').subscribe(res => { console.log("res2 @ Api call ===> ", res) });
-  }
+    makeApiCall() {
+        // subscriber 1 in home component
+        this.simpleExpressService.apiCall23('').subscribe(res => { console.log("res1 @ Api call ===> ", res) });
 
-  showStream() {
-    this.simpleExpressService.showStream().pipe().subscribe(res => {
-      console.log(res);
-    })
-  }
+        // subscriber 2 in header component
+        this.simpleExpressService.apiCall23('').subscribe(res => { console.log("res2 @ Api call ===> ", res) });
+    }
+
+    showStream() {
+        this.simpleExpressService.showStream().pipe().subscribe(res => {
+            console.log(res);
+        })
+    }
 
 }

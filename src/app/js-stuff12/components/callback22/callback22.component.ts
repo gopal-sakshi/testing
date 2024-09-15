@@ -21,6 +21,10 @@ export class Callback22Component implements OnInit {
     blah1.addEventListener('change', this.callback01);
 
     // THIS IS HOW WE DO IT
+
+    var blah1a = document.getElementById('inputValue1a');
+    blah1a.addEventListener('change', this.callback01a);
+
     var blah2 = <HTMLInputElement>document.getElementById('inputValue2');
     blah2.addEventListener('change', this.callbackWithParam('something2'));
 
@@ -29,6 +33,10 @@ export class Callback22Component implements OnInit {
     // coz, change gets triggered only when input element looses focus
     var blah3 = <HTMLInputElement>document.getElementById('inputValue3');
     blah3.addEventListener('keydown', this.callbackWithParam('something3'));
+  }
+
+  callback01a = (event) => {
+        console.log("onChange happened @ ", event.target.value, new Date().toISOString());
   }
 
   callback01() {

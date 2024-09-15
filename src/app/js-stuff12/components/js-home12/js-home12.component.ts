@@ -14,6 +14,8 @@ export class JsHome12Component implements OnInit {
   showFunctions12:boolean = false;
   showTwoWayBinding:boolean = false;
   showRandomJS:boolean = false;
+  showFb:boolean = false;
+  showdbnce:boolean = false;
   showCallback22:boolean = false;
   showAWS1:boolean = false;
   showConsoleTypes:boolean = false;

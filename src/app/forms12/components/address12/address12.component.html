@@ -3,5 +3,9 @@
         <app69-reusable-form formControlName="user"></app69-reusable-form>
         <input class="form-control" type="text" formControlName="city">
         <input class="form-control" type="text" formControlName="country">        
-    </div>    
+    </div>
+    <div>
+        <button (click)="logForm11()" [disabled]="address12?.invalid">Submit1</button>
+        <button (click)="logForm11()">Submit2</button>
+    </div>
 </div>

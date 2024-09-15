@@ -16,12 +16,13 @@ export class Subjects42Component implements OnInit {
   constructor(private middlemanService: MiddleManService) { }
 
   ngOnInit(): void {
+    // observer42 is an object with 3 properties; all those properties are functions, not strings like 'name', 'age'
     this.observer42 = {
       next: (next) => {console.log('next called ',next); this.playerNames.push(next.player)},
       err: (err) => {console.log('errorey ')},
       complete: () => {console.log('observable complete... so, myself observer42 will not receive any more data')}
     };
-    // Notice here, 'footballMsgSubject' is a Subject... its must send that data it reveived to 'this.observer42'
+    // Notice here, 'footballMsgSubject' is a Subject... it must send that data it reveived to 'this.observer42'
     // Similary, see, subject43 component... there the same subject will send the data it received to 'this.observer43'
     // Meaning... at this moment, footballMsgSubject ----> has TWO observers/subscribers...
     // whenever a next() method is called on footballMsgSubject ----> the corresponding next() callback is triggered in observer42 & observer43

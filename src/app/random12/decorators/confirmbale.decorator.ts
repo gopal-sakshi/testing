@@ -5,7 +5,8 @@ import Swal, { SweetAlertOptions } from 'sweetalert2';
     3 arguments of decorators
     - target = the method being decorated.
     - propertyKey = the name of the method being decorated.
-    - descriptor = a property descriptor of the given property if it exists on the object, undefined otherwise. The property descriptor is obtained by invoking the Object.getOwnPropertyDescriptor() function.
+    - descriptor = a property descriptor of the given property if it exists on the object, undefined otherwise. 
+        The property descriptor is obtained by invoking the Object.getOwnPropertyDescriptor() function.
 
 */
 
@@ -37,20 +38,19 @@ export function old_Confirmable(target: Object, propertyKey: string, descriptor:
 
 /*  
     old_Confirmable() = just runs the method()
-    Confirmable() = is a factory function... which returns the decorator function
-
+    Confirmable23() = is a factory function... which returns the decorator function
     QUESTION: Why cant options & config must be 'any' type... It threw error, when I used SweetAlertOptions data type on them
 */
-export function Confirmable(options?: any) {
+export function Confirmable23(options?: any) {
 
     return (target: Object, propertyKey: string, descriptor: PropertyDescriptor) => {
-    
-        const originalMethod = descriptor.value;            // descriptor.value holds the actual function
-                                                                // on which this Confirmable decorator is applied
-                                                                // in our case this is deleteItem() (or) deleteItem2() function
-                                                                // we store this function temporarily in originalMethod.
-                                                            // later when we fire the sweetAlert... Swal.fire()
-                                                                // based on user action we will proceed...
+
+        /*
+            descriptor.value holds the actual function on which this Confirmable decorator is applied
+            in our case this is deleteItem() (or) deleteItem2() function we store this function temporarily in originalMethod obj.
+            later when we fire the sweetAlert... Swal.fire() based on user action we will proceed...
+        */
+        const originalMethod = descriptor.value;
     
         const config: any = {
             title: 'Are you sure?',
@@ -76,14 +76,8 @@ export function Confirmable(options?: any) {
         
             const res = await Swal.fire(config);
             /*
-                res = {
-                    isConfirmed: true,
-                    isDenied: false,
-                    isDismissed: false,
-                    value: "0"                      // if user chooses first option... elephant
-                                                            // value: "1"       if user chooses tiger
-                }                                       
-
+                res = { isConfirmed: true, isDenied: false, isDismissed: false, value: "0" }
+                if user chooses first option... elephant value: "1"       if user chooses tiger                                       
             */
             console.log(res);
             if (res.isConfirmed) {
@@ -95,4 +89,15 @@ export function Confirmable(options?: any) {
 
     };
 
+}
+
+export function unkoDecorator23(options?:any) {
+    return (target: Object, propertyKey: string, descriptor: PropertyDescriptor) => {
+        console.log("options ===> ", options);
+        const originalMethod = descriptor.value;
+        descriptor.value = async function (...args: any) {
+            const result = originalMethod.apply(this, args);
+        };
+        return descriptor;
+    };
 }

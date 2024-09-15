@@ -70,11 +70,17 @@ export class Observable1Component implements OnInit {
     let obs2b$ = of(1, 2, 'obs2b RM');
 
     // observer is of type any ===> Observer (can take any value) || (can emit any value)
-    let obs2c$ = new Observable((observer:Observer<any>) => {
-      observer.next(23);
-      observer.next('obs2c gopal');
-      observer.complete();
-    });
+    // let obs2c$ = new Observable((observer:Observer<any>) => {
+    //   observer.next(23);
+    //   observer.next('obs2c gopal');
+    //   observer.complete();
+    // });
+    let edoOkaFn = (observer:Observer<any>) => {
+        observer.next(23);
+        observer.next('obs2c gopal');
+        observer.complete();
+    }
+    let obs2c$ = new Observable(edoOkaFn);
 
     let obs2d$ = new Observable((observer: Observer<string>) => {
       // observer.next(43);           // this throws error... number not assignable to string

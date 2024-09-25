@@ -4,10 +4,10 @@ import { forwardRef, Inject, Injectable } from "@angular/core";
 // https://indepth.dev/posts/1133/what-is-forwardref-in-angular-and-why-we-need-it
 
 export class Door23 {
-    lock: Lock23;    
+    lockVar: Lock23;
     // Door attempts to inject Lock, despite it not being defined yet. forwardRef makes this possible.
     // constructor(@Inject(forwardRef(() => Lock)) lock: Lock) {  this.lock = lock; }
-    constructor(@Inject(Lock23) lock: Lock23) { this.lock = lock; }
+    constructor(@Inject(Lock23) lock: Lock23) { this.lockVar = lock; }
 }
 
 // Only at this point Lock is defined.

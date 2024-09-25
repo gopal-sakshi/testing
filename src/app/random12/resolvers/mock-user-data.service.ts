@@ -12,6 +12,6 @@ export class MockUserDataService {
     ];
 
     getUsers(): Observable<any> {
-        return of(this.users).pipe(delay(500));
+        return of(this.users).pipe(delay(5000));
     }
 }

@@ -1,45 +1,45 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { DomSanitizer, SafeHtml, SafeResourceUrl } from '@angular/platform-browser';
+import { Observable, of } from 'rxjs';
 
 @Component({
-  selector: 'app69-xss-attacks12',
-  templateUrl: './xss-attacks12.component.html',
-  styleUrls: ['./xss-attacks12.component.scss']
+    selector: 'app69-xss-attacks12',
+    templateUrl: './xss-attacks12.component.html',
+    styleUrls: ['./xss-attacks12.component.scss']
 })
 export class XssAttacks12Component implements OnInit {
 
-  // sanitizer == your requirement/logic/code is such that, you should allow html to execute scripts
-    // (or) your html snippet must execute the script contained within
-    // only then, use sanitizer to bypass securityTrust
-  constructor(private sanitizer: DomSanitizer) { }
-
-  @ViewChild('scriptPlacedHere2') divElement: ElementRef;
-  ngOnInit(): void {    
-  }
-
-  domXss() {
-
-    // try entering this as inputScript = <script>alert("pappa ayyavu ga")</script>
-      // <div>input23</div>                                             // ideal Behaviour
-      // <div>        
-            // </div><span style="color:red">baduuu</span><div>           // imagine input23 as this
-      // </div>       
-
-    var inputScript = (<HTMLInputElement>document.getElementById('badScript')).value;
-    console.log(inputScript);
-    this.sanitizer.bypassSecurityTrustScript(inputScript);
-    this.sanitizer.bypassSecurityTrustHtml(inputScript);
     
-    // APPROACH I ===> didnt work, even with sanitizers, bypass & stuff
-    document.getElementById('scriptPlacedHere1').innerHTML = inputScript;
+    html23_copy:string = `<img src=assets/images/company-logo.png onerror="alert('Doh!')"/>`;
+    html23:string = `<img src=1 onerror="alert('Doh!')"/>`;
+    safeHTML23:SafeHtml
+    linky23 = `//localhost:9999/assets/itemDetails/banana`;
+    safeLinky23!: SafeResourceUrl;
+    imageId: string = '23';
+    @ViewChild('whydothis23') public el!: ElementRef<HTMLElement>;
 
-    // APPROACH II ==> didnt work
-    var badScriptElement = document.createElement('p');
-    badScriptElement.textContent = inputScript;
-    document.body.appendChild(badScriptElement);
-    
-    // using native APIs
-    this.divElement.nativeElement.innerHTML = inputScript;
-  }
+
+    constructor(private sanitizer: DomSanitizer, private renderer: Renderer2) { }
+
+    @ViewChild('scriptPlacedHere2') divElement: ElementRef;
+
+    ngOnInit(): void {
+        this.safeHTML23 = this.sanitizer.bypassSecurityTrustHtml(this.html23);
+        this.safeLinky23 = this.sanitizer.bypassSecurityTrustResourceUrl(this.linky23 + `${this.imageId}` + '.jpg' );
+    }
+
+    ngAfterViewInit(): void {
+        let err23 = `<img src=1 onerror="alert('sanitizer pani cheyyadu elementRef use cheste')"/>`
+        this.el.nativeElement.innerHTML = err23;
+        this.renderer.setProperty(this.el.nativeElement, 'innerHTML', err23);
+    }
+
+    get comments(): Observable<any> {
+        return of([
+            '<a href="javascript:alert(\'Crash Landing on You stinks!\')">Click to win a free prize!</a>',
+            `<img src=1 onerror="alert('Doh!')"/>`,
+            `<strong>It's a wonderful drama! The best!</strong>`
+        ])
+    }
 
 }

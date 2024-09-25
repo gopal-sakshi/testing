@@ -1,10 +1,14 @@
 <div class="messages11-container" fxLayout="column" fxLayoutGap="10px">
     <div *ngFor="let item of [1,2,3,4]; let index as index">
-        Message <a [routerLink]="['/router13', chosenFolder, chosenYear, 'messages', index]">{{index}}</a> of year {{chosenYear}} in {{ chosenFolder }}
+        Message 
+        <a [routerLink]="['/router13', chosenFolder, chosenYear, 'messages', index]" 
+            [queryParams]="{'player': 'luka'}">
+            {{index}}
+        </a> of year {{chosenYear}} in {{ chosenFolder }}
     </div>
 </div>
 <!-- why do we need to place router-outlet here ??? just comment out and see... -->
-<!-- <router-outlet></router-outlet> -->
+<router-outlet></router-outlet>
 
 <!--
     The unnamed outlet is the primary outlet in your app 

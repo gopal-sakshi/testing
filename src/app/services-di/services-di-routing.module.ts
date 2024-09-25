@@ -7,30 +7,15 @@ import { ProductNoDiComponent } from './components/product-no-di/product-no-di.c
 import { TokenTypesComponent } from './components/token-types/token-types.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeDiComponent
-  },
-  {
-    path: 'no-di',
-    component: ProductNoDiComponent
-  },
-  {
-    path: 'di',
-    component: ProductDiComponent
-  },
-  {
-    path: 'di-inject',
-    component: ProductDiInjectComponent
-  },
-  {
-    path: 'token-types',
-    component: TokenTypesComponent
-  }
+    { path: '', component: HomeDiComponent },
+    { path: 'no-di', component: ProductNoDiComponent },
+    { path: 'di', component: ProductDiComponent },
+    { path: 'di-inject', component: ProductDiInjectComponent },
+    { path: 'token-types', component: TokenTypesComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
 export class ServicesDIRoutingModule { }

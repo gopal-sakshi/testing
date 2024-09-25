@@ -3,7 +3,7 @@ import { ClassManuallyInjected } from "../classes/class-manually-injected";
 
 export const someStringTokenByInjectionToken = new InjectionToken<string>('');
 
-export const someClassTokenByInjectionToken = new InjectionToken<ClassManuallyInjected>('bhale bhale');
+export const someClassTokenByInjectionToken = new InjectionToken<ClassManuallyInjected>('bhale_bhale');
 
 // Object.freeze() = object properties can no longer be modified...
 export const SOME_CONFIG = Object.freeze({
@@ -11,29 +11,13 @@ export const SOME_CONFIG = Object.freeze({
     IsDevleomentMode: true
 });
 
-export const doubleFunction = function (name:string) {
-  console.log("doubleFunction says hello ", name + ' ' + name);
-}
-export const thriceFunction = function (name:string) {
-  console.log("'thriceFunction says hello ", name + ' ' + name + ' ' + name);
+
+export function factoryFunctionUseValue(someArgument: string) {
+    return `${Date.now()}___${someArgument}`
 }
 
-export function factoryFunctionUseValue (someArgument:string) {
-  if(someArgument === 'Sakshi') {
-    return doubleFunction(someArgument);
-  } else {
-    return thriceFunction(someArgument);
-  }
-}
-
-export function factoryFunction (someArgument:string) {
-  if(someArgument === 'Sakshi') {
-    return doubleFunction(someArgument);
-    //return doubleFunction
-  } else {
-    return thriceFunction(someArgument);
-    //return doubleFunction
-  }
+export function factoryFunction(p1: string, p2:string = 'p2_Default') {
+    return `${Date.now()}___${p1}__${p2}_factFn`
 }
 
 

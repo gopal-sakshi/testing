@@ -6,6 +6,15 @@ import { catchError, map, switchMap, tap } from "rxjs/operators";
 import { Auth23Service } from "../services/auth23.service";
 
 
+
+/************* IGNOREEEEEEEEEEEEEEEEEEEEEEEE **************************/
+/************* IGNOREEEEEEEEEEEEEEEEEEEEEEEE **************************/
+/************* IGNOREEEEEEEEEEEEEEEEEEEEEEEE **************************/
+/************* IGNOREEEEEEEEEEEEEEEEEEEEEEEE **************************/
+/************* IGNOREEEEEEEEEEEEEEEEEEEEEEEE **************************/
+/************* IGNOREEEEEEEEEEEEEEEEEEEEEEEE **************************/
+/************* IGNOREEEEEEEEEEEEEEEEEEEEEEEE **************************/
+
 @Injectable()
 export class AuthInterceptor23 implements HttpInterceptor {
 

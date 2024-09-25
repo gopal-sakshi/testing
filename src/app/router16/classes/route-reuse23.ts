@@ -8,6 +8,7 @@ export class RouteReuse23 extends RouteReuseStrategy {
 
     // This loads the detached route if the method above returns true.
     retrieve(route: ActivatedRouteSnapshot): DetachedRouteHandle | null {
+        console.log("saved route ===> ", this.getRouteKey(route));
         return this.savedHandles.get(this.getRouteKey(route));
         // return null;
     }
@@ -26,7 +27,7 @@ export class RouteReuse23 extends RouteReuseStrategy {
 
     shouldReuseRoute(future: ActivatedRouteSnapshot, curr: ActivatedRouteSnapshot): boolean {
         // APPROACH I (angular default) 
-        return future.routeConfig === curr.routeConfig;
+        // return future.routeConfig === curr.routeConfig;
 
         /*  EXPLANATION for APPROACH I:
 
@@ -41,12 +42,15 @@ export class RouteReuse23 extends RouteReuseStrategy {
 
         // APPROACH II  (USING for PARENT-CHILD DESIGN)
 
-        // if (future.routeConfig === curr.routeConfig) {
-        //     return !future.data.alwaysRefresh;          // if alwaysRefresh is set to true ---> we dont want to reuse the route
-        //                                                         // hence, we return false...
-        // } else {
-        //     return false;
-        // }
+        if (future.routeConfig === curr.routeConfig) {
+            return !future.data.alwaysRefresh;
+        } else {
+            return false;
+        }
+        /*  EXPLANATION for APPROACH II
+            a) if alwaysRefresh is set to true ---> we dont want to reuse the route
+            b) hence, we return false...
+        */
 
         // APPROACH III (using for search Design)
     }

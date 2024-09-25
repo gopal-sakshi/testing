@@ -4,38 +4,38 @@ import { ProductService } from '../../classes/product.service';
 import { someClassTokenByInjectionToken, someStringTokenByInjectionToken } from '../../types/tokens';
 
 @Component({
-  selector: 'app-token-types',
-  templateUrl: './token-types.component.html',
-  styleUrls: ['./token-types.component.css'],
-  providers: [ProductService]
+    selector: 'app-token-types',
+    templateUrl: './token-types.component.html',
+    styleUrls: ['./token-types.component.css'],
+    providers: [ProductService]
 })
 export class TokenTypesComponent implements OnInit {
 
-  constructor(
-    public productServiceClassToken: ProductService,
-    // @Inject('someStringToken') public someString:string,
-    // @Inject('function456') public someFunction,
-    @Inject(someStringTokenByInjectionToken) public anotherString:string,
-    @Inject(someClassTokenByInjectionToken) public anotherClass:ClassManuallyInjected
-    // @Inject('myFunction') public localFactoryFunction:any,
-    // @Inject('myFunctionUseValue') public localFactoryFunctionUseValue:any
-  ) { }
+    constructor(
+        public productServiceClassToken: ProductService,
+        @Inject('someStringToken') public someString:string,
+        @Inject('function456') public someFunction,
+        @Inject(someStringTokenByInjectionToken) public anotherString: string,
+        @Inject(someClassTokenByInjectionToken) public anotherClass: ClassManuallyInjected,
+        @Inject('myFunctionUseValue') public localFactoryFunctionUseValue:any,
+        @Inject('myFunction') public localFactoryFunction:any,
+        @Inject('bhale_bhale') public bb:any,        
+    ) { }
 
-  ngOnInit(): void {
+    ngOnInit(): void {
 
-    //this.localFactoryFunction;
-            // we injected a function into the localFactoryFunction (see factoryFunction in 'tokens.ts')
-            // hence this statement, executes whatever is in that factoyFunction in 'tokens.ts'
-            // we used useFactory to do this...
+        console.log("products ===> ", this.productServiceClassToken.getProducts())
+        console.log("someStringToken ======> ", this.someString);
+        console.log('function456 ====> ', this.someFunction);
+        console.log("someStringTokenByInjectionToken ===> ", this.anotherString);
+        console.log("someClassTokenByInjectionToken ===> ", this.anotherClass.someMethod1());
+        console.log("myFunctionUseValue ====> ", this.localFactoryFunctionUseValue);
+        console.log("myFunction ====> ", this.localFactoryFunction);
+        console.log("bhale_bhale ====> ", this.bb.someMethod2(), this.bb.param1);
 
-    //this.localFactoryFunctionUseValue();
-
-
-    //console.log(this.someFunction);
-
-    console.log(this.anotherString);
-    this.anotherClass.someMethod1();
-  }
+        
+        
+    }
 
 }
 
@@ -48,6 +48,7 @@ export class TokenTypesComponent implements OnInit {
 
     Hence, we InjectionToken
 
-    The Angular provides InjectionToken class so as to ensure that the Unique tokens are created. The Injection Token is created by creating a new instance of the InjectionToken class.
+    The Angular provides InjectionToken class so as to ensure that the Unique tokens are created. 
+    The Injection Token is created by creating a new instance of the InjectionToken class.
 
 */

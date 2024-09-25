@@ -13,8 +13,8 @@ export class Inject23Component implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.token23);
-    console.log(this.token24);
+    console.log("token23 =====> ", this.token23);
+    console.log("token24 =====> ", this.token24);
   }
 
 }

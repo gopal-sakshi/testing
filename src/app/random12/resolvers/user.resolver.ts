@@ -3,18 +3,24 @@ import { Resolve } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { MockUserDataService } from './mock-user-data.service';
 
-
-
 @Injectable()
 export class UserResolver implements Resolve<Observable<any>> {
-    constructor(private userService: MockUserDataService) { }
+    constructor(private userService: MockUserDataService) { 
+        console.log("userResolver constructor");
+    }
 
-    resolve(): Observable<any> {
-        // var blah = this.userService.getUsers();
-        // console.log(blah);
+    resolve(): Observable<any> | Promise<any> {
+        console.log("userResolver started");
+        // // returns Observable
+        // var blah = this.userService.getUsers();        
         // return blah;
-        //return of('gopal', 'sakshi', 'rm');
-        return of(['gopal', 'sakshi', 'rm']);
+
+        return new Promise((resolve, reject) => {
+            setTimeout(() => { 
+                console.log("userResolver ayipoindi")
+                resolve('promise_trying23') 
+            }, 500)
+        })
     }
 }
 

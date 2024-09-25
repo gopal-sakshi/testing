@@ -9,8 +9,12 @@ export class Inject26BaseClass {
     inject26BServiceInstance: any;
     router23:Router
 
-    // APPROACH I ------------> in this case, we only need ONE parameter 'injector' in constructor... 
-        // from this one parameter 'injector'  ----> we will get needed dependencies like Inject26AService, Inject26BService
+    /*
+        APPROACH I
+        - in this case, we only need ONE parameter 'injector' in constructor... 
+        - from this one parameter 'injector'  ----> 
+        - we will get needed dependencies like Inject26AService, Inject26BService
+    */
 
     constructor(protected injector:Injector) { 
         this.inject26AServiceInstance = this.injector.get(Inject26AService);
@@ -18,13 +22,17 @@ export class Inject26BaseClass {
         this.router23 = this.injector.get(Router)
     }
 
-    // APPROACH II ------------> instead, we need to manually inject both Inject26AService, Inject26BService dependencies
-        // those 2 dependencies must be provided by the component that extends this class
+    /*
+        APPROACH II
+        - instead, we need to manually inject both Inject26AService, Inject26BService dependencies
+        - those 2 dependencies must be provided by the component that extends this class
+    */
 
     /* 
         
         ----------------> in Inject26Component
-        constructor (private 26A: Inject26AService, private 26B: Inject26BService) {
+        
+        constructor_26Comp (private 26A: Inject26AService, private 26B: Inject26BService) {
             super(26A, 26B);        // this actually calls the constructor of Inject26BaseClass
         }     
 

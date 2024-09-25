@@ -25,6 +25,15 @@ export class Preload23Service implements PreloadingStrategy {
         }
     }
 
+/*
+    Preloading
+    - useful to load those features which are in high probability to be visited by user just after loading the application.
+    - When we hit the application
+        first AppModule & modules imported by it, will be loaded eagerly. 
+        Just after that modules configured for "preloading" is loaded asynchronously.
+        In lazy loading, feature module will be loaded on demand 
 
+    https://dev.to/krishna7852/angular-module-loading-eager-lazy-and-preloading-3jj4
+*/
 
 }

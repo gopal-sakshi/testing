@@ -25,6 +25,7 @@ import { Typescript11Component } from './components/typescript11/typescript11.co
 import { EventManager14Component } from './components/event-manager14/event-manager14.component';
 import { TypeSafety23Component } from './components/type-safety23/type-safety23.component'
 import { FormsModule } from '@angular/forms';
+import { PlayerResolver } from './resolvers/player.resolver';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { FormsModule } from '@angular/forms';
     CanActivate12Guard,
     Auth12Service,
     UserResolver,
+    PlayerResolver,
     MockUserDataService
   ]
 })

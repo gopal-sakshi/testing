@@ -1,13 +1,22 @@
-<div class="xss-attacks12-container">
-    <button (click)="domXss()"> simulate dom xss</button>
+<div class="xss-attacks12-container">    
     
-    <div class="dom-xss">
-        <label>enter bad script input</label> &nbsp;&nbsp;&nbsp;
-        <input id="badScript" placeholder="enter bad script here">
-        <div>--------------------------------</div>
-        <label>script appears here</label>
-        <div id="scriptPlacedHere1"></div>
-        <div #scriptPlacedHere2></div>
-    </div>    
+    <!-- using [innerHTML] -->
+    <div class="add-padding-margin23">
+        <p *ngFor="let comment of comments | async" [innerHTML]="comment"><p>
+    </div>
+
+    <!-- using interpolation -->
+    <div class="add-padding-margin23">
+        <p *ngFor="let comment of comments | async">{{ comment }}<p>
+    </div>
+
+    <section [innerHTML]="html23"></section>
+    <section [innerHTML]="safeHTML23"></section>
+
+    <!-- Angular Throws ERROR, but we still want to show a video in a iframe; so sanitize it -->
+    <!-- <iframe [src]="linky23" width="800px" height="450px"></iframe> -->     
+    <iframe [src]="safeLinky23" width="500px" height="500px"></iframe>
+
+    <div #whydothis23></div>
 
 </div>

@@ -4,6 +4,7 @@
 
         <!-- pass routes as arguments -->
         <a [routerLink]="['itemDetail', '2']">navigate to apple</a>
+        <a [routerLink]="[blah1, blah2]">navigate to apple_TS</a>
 
         <!-- route starts with /         so, look at root of the app -->
         <a [routerLink]="['/bootstrap23']">bootstrap23</a>
@@ -11,13 +12,15 @@
 
         <!-- route doesnt start with / (or) ./ (or) ..          so, look child routes I -->
         <a [routerLink]="['params12']"> Params12 </a>
+        <a [routerLink]="['./params12']"> Params12_with_dot </a>
 
         <!-- route starts with ./                               so, look child routes II -->
         <a [routerLink]="['./snapshot12']"> snapshot12 </a>
 
         <!-- queryParams is another input of routerLink where they can be passed like -->
         <a [routerLink]="['itemDetail', '2']" [queryParams]="{player1: 'Luka', player2: 'Casemiro'}"> Pass Query Param </a>
-        
+
+        <div> read routeReuseStrategy23.md</div>
     </div>
 
     <div fxLayout="column" fxLayoutGap="10px" class="button-links">

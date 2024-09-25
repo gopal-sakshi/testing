@@ -58,4 +58,9 @@ export class SimpleExpressService {
         let url = this.url + `/fileUpload23`;
         return this.httpClient.post(url, payload);
     }
+
+    error_500() {
+        // ErrorIntereptorService
+        return this.httpClient.get(this.url + '/buffer/error500')
+    }
 }

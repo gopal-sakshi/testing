@@ -13,11 +13,11 @@ export class RouteReuse23Service implements RouteReuseStrategy {
     private handlers: { [key: string]: DetachedRouteHandle } = {};
 
     shouldDetach(route: ActivatedRouteSnapshot): boolean {
+        console.log('shouldDetach called ===> ', route, this.getUrl(route));
         if (!route.routeConfig || route.routeConfig.loadChildren) {
             return false;
         }
-        let shouldReuse = false;
-        console.log('checking if this route should be re used or not', route);
+        let shouldReuse = false;        
         if (route.routeConfig.data) {
             route.routeConfig.data.reuse ? shouldReuse = true : shouldReuse = false;
         }
@@ -25,14 +25,14 @@ export class RouteReuse23Service implements RouteReuseStrategy {
     }
 
     store(route: ActivatedRouteSnapshot, handler: DetachedRouteHandle): void {
-        console.log('storing handler');
+        console.log('storing handler ====> ', this.getUrl(route));
         if (handler) {
             this.handlers[this.getUrl(route)] = handler;
         }
     }
 
     shouldAttach(route: ActivatedRouteSnapshot): boolean {
-        console.log('checking if it should be re attached');
+        console.log('shouldAttached called ===> ', this.getUrl(route), !!this.handlers[this.getUrl(route)]);
         return !!this.handlers[this.getUrl(route)];
     }
 
@@ -56,8 +56,7 @@ export class RouteReuse23Service implements RouteReuseStrategy {
 
     getUrl(route: ActivatedRouteSnapshot): string {
         if (route.routeConfig) {
-            const url = route.routeConfig.path;
-            console.log('returning url', url);
+            const url = route.routeConfig.path;            
             return url;
         } 
         return '';

@@ -12,57 +12,38 @@ import { HomeRandomComponent } from './components/home-random/home-random.compon
 import { Lifecycle12Component } from './components/lifecycle12/lifecycle12.component';
 import { SweetAlert12Component } from './components/sweet-alert12/sweet-alert12.component';
 import { UserResolver } from './resolvers/user.resolver';
+import { PlayerResolver } from './resolvers/player.resolver';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeRandomComponent
-  },
-  {
-    path: 'cors23',
-    component: Cors23Component
-  },
-  {
-    path: 'navigation-life-cycle',
-    component: Lifecycle12Component
-  },
-  {
-    path: 'navigation-life-cycle/displayUsers',
-    component: DisplayUsersComponent,
-    canActivate: [CanActivate12Guard],
-    resolve: {
-      data_is_stored_here_key: UserResolver
+    { path: '', component: HomeRandomComponent },
+    { path: 'cors23', component: Cors23Component },
+    { 
+        path: 'navigation-life-cycle/param1/:time23', 
+        component: Lifecycle12Component,
+        resolve: {
+            players: PlayerResolver,
+            users: UserResolver
+        }
     },
-  },
-  {
-    path: 'decorator12',
-    component: Decorator12Component
-  },
-  {
-    path: 'custom-decorator12',
-    component: CustomDecorator12Component
-  },
-  {
-    path: 'custom-component',
-    component: CustomComp12Component
-  },
-  {
-    path: 'angular-syntax12',
-    component: AngularSyntax12Component
-  },
-  {
-    path: 'dynamic-imports23',
-    component: DynamicImports23Component
-  },
-  {
-    path: 'swal-12',
-    component: SweetAlert12Component
-  }
-  
+    {
+        path: 'navigation-life-cycle/displayUsers',
+        component: DisplayUsersComponent,
+        canActivate: [CanActivate12Guard],
+        resolve: {
+            data_is_stored_here_key: UserResolver
+        },
+    },
+    { path: 'decorator12', component: Decorator12Component },
+    { path: 'custom-decorator12', component: CustomDecorator12Component },
+    { path: 'custom-component', component: CustomComp12Component },
+    { path: 'angular-syntax12', component: AngularSyntax12Component },
+    { path: 'dynamic-imports23', component: DynamicImports23Component },
+    { path: 'swal-12', component: SweetAlert12Component }
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
 export class Random12RoutingModule { }

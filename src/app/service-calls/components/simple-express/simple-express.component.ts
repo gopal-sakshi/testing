@@ -31,4 +31,10 @@ export class SimpleExpressComponent implements OnInit {
         })
     }
 
+    error500() {
+        this.simpleExpressService.error_500().subscribe(res => {
+            console.log("res ===> ", res)
+        })
+    }
+
 }

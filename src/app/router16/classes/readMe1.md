@@ -1,12 +1,13 @@
 https://www.intertech.com/angular-development-10-routereusestrategy-maintaining-component-state/
 this is some 11 part series on Angular... Do READDDDDD
 
+https://www.intertech.com/angular-development-article-series-preview/
 
 MUST READ
 
 
 MUST READ
-------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
 # ERROR 01
 
 class-is-using-angular-features-but-is-not-decorated-please-add-an-explicit-ang
@@ -38,7 +39,7 @@ may be we can even use @Directive decorator
 
 # ERROR 03
 
-------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
 it seems, we used abstract class - MasterComponent
 - abstract classes cant be initialised
 - so, there is no need for template, styles ???
@@ -56,10 +57,10 @@ it seems, we used abstract class - MasterComponent
     both these designs ---> use some shared functionality
         abstract class 'MasterComponent'
         'DetailComponent'   -----> this is the details 
-                                        in parent child design ---> it just appears below parent component
-                                        in search design ----> this component is opened & not rendered in the same page
+                            in parent child design ---> it just appears below parent component
+                            in search design ----> this component is opened & not rendered in the same page
 
--------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
 # Parent Child design
 
 PASS – Master page is maintained 
@@ -74,7 +75,7 @@ Angular DefaultRouteReuseStrategy ---> shouldReuseRoute()
 - When the shouldReuseRoute method returns true, 
     Angular will not destroy the component tree 
         by firing the ngOnInit and ngOnDestroy hooks – 
-    instead the only thing that happens it the router emits new values for the route parameters and other Observables.
+    instead the only thing that happens is the router emits new values for the route parameters and other Observables.
     Therefore, we see the `Detail ID update` but not the `random number`.
 
 - We could easily solve the random number generation issue by 
@@ -117,7 +118,7 @@ shouldReuseRoute = false
 - We can accomplish this by using the data property on the route configuration 
     which is designed exactly for this type of extensibility to a route.
 - see alwaysRefresh property on routeConfiguration
--------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
 
 # Search DESIGN
 
@@ -127,6 +128,6 @@ PASS – Detail view is a unique URL
 PASS – Detail view initialization runs and gives a new random value 
 PASS – Detail component is cleaned up between detail views
 
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
 
 just modified here for git purposes... delete this later

@@ -1,15 +1,17 @@
-// this service logs message to console... twice... 
-// we use this to see how @Inject works... 
-// we wont use @Injectable() decorator, because LoggerTwiceService has no external dependency.. 
-    // I mean its not a consumer of any dependency
+/*
+    we can configure injectors in two ways 
+    - Option1 ===> @Injectable(), @Injectable({ providedIn: 'root' })
+    - Option2 ===> without @Injectable() decorator --> add this class in providers array of NgModule
 
+    Here, we didnt add @Injectable() decorator, and used Option2
+*/
 export class LoggerTwiceService {
 
     constructor() { }
 
     log(message: any) {
-        console.log(message);
-        console.log(message);
+        console.log("loggin once ===> ", message);
+        console.log("logging twice ===> ", message);
     }
 
 }

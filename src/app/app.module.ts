@@ -7,95 +7,68 @@ import { SubjectsModule } from './subjects/subjects.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductGuardService } from './route-guards/classes/ProductGuardService';
-
 import { Common23Module } from './common23/common23.module';
+
+/*********** providers23  ********/
+import { PincodeInterceptor23 } from './classes/http-interceptor23';
 import { HttpInterceptor24 } from './classes/http-interceptor24';
+import { AuthInterceptor22 } from './auth23/classes/authInterceptor22';
 import { AuthInterceptor23 } from './auth23/classes/authInterceptor23';
 import { AuthInterceptor24 } from './auth23/classes/authInterceptor24';
-import { PincodeInterceptor23 } from './classes/http-interceptor23';
-import { RouteReuseStrategy } from '@angular/router';
-import { RouteReuse23Service } from './router15/services/route-reuse23.service';
-import { RouteReuse23 } from './classes/route-reuse23';
+import { JwtInterceptor11 } from './auth23/classes/jwtInterceptor11';
+import { ErrorIntereptorService } from './common23/services/error-interceptor';
+/*********** providers23  ********/
+
+
+
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { i18Loader } from './i18Loader';
-import { AuthInterceptor22 } from './auth23/classes/authInterceptor22';
-import { RouterModule } from '@angular/router';
-import { JwtInterceptor11 } from './auth23/classes/jwtInterceptor11';
+import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { Auth23Service } from './auth23/services/auth23.service';
+import { RouteReuse11 } from './router16/classes/route-reuse11';
+import { Router15Module } from './router15/router15.module';
+
 
 
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    SubjectsModule,
-    FlexLayoutModule,
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+        SubjectsModule,
+        FlexLayoutModule,
 
-    BrowserAnimationsModule,
-    Common23Module,
+        BrowserAnimationsModule,
+        Common23Module,
+        Router15Module,     // Adding here, coz RouteReuseStrategy doesnt work with LazyLoadedModules
+        TranslateModule.forRoot({
+            defaultLanguage: 'en',
+            loader: {
+                provide: TranslateLoader,
+                useFactory: (i18Loader),
+                deps: [HttpClient]
+            }
+        }),
+        RouterModule
+    ],
+    providers: [
+        ProductGuardService,
+        Auth23Service,        
+        { provide: HTTP_INTERCEPTORS, useClass: PincodeInterceptor23, multi: true, },   // CORS
+        { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptor24, multi: true },      // console        
+        // { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor23, multi: true },    // expired token - ignore
+        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor11, multi: true },        // expired token - KPT        
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor24, multi: true },       // expired token - ignore
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorIntereptorService, multi: true },  // retry 2 times
+        
 
-    TranslateModule.forRoot({
-      defaultLanguage: 'en',
-      loader: {
-        provide: TranslateLoader,
-        useFactory: (i18Loader),
-        deps: [ HttpClient ]
-      }
-    }),
-    RouterModule
-  ],
-  providers: [
-    ProductGuardService,
-    Auth23Service,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: PincodeInterceptor23,
-      multi: true,
-    },
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: HttpInterceptor23,          // this is for pincode CORS stuff... presently disabling... enable it later...
-    //   multi: true,
-    // },
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: HttpInterceptor24,         // dummy interceptor... only for console.log... nothing else...
-    //   multi: true
-    // },
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: AuthInterceptor23,        // to make expired auth token requests again
-    //   multi: true
-    // },
-    {
-        provide: HTTP_INTERCEPTORS,
-        useClass: JwtInterceptor11,         // to make expired auth token - refresh token - kpt way             
-        multi: true 
-    },
-    // {
-    //   provide: HTTP_INTERCEPTORS,    
-    //   useClass: AuthInterceptor24,            // to show how to handle http errors... nothing else...
-    //   multi: true
-    // },
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: ErrorIntereptorService,
-    //   multi: true
-    // },
-
-    // { provide: RouteReuseStrategy, useClass: RouteReuse23Service }
-    // did not work... need to understand MOREEEEEEEE
-
-    { provide: RouteReuseStrategy, useClass: RouteReuse23}
-    //   useClass: AuthInterceptor22,            // to show how to handle http errors... nothing else...
-    //   multi: true
-    // }
-  ],
-  bootstrap: [AppComponent]
+        // { provide: RouteReuseStrategy, useClass: RouteReuse11 }         // DEFAULT Angular
+        // https://stackoverflow.com/questions/42383546/angular2-doesnt-work-custom-reuse-strategy-with-lazy-module-loading
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

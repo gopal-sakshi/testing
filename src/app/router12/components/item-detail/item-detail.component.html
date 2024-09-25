@@ -2,7 +2,10 @@
     <div fxLayout="column" fxLayoutGap="20px">
         <button [routerLink]="['/router-12/snapshot12']">absolute navigation to snapshot12</button>
         <button [routerLink]="['../../snapshot12']">relative navigation to snapshot12 (A)</button>
-        <button [routerLink]="['../5']">sibling navigation to item 5</button>
+        <h4>know about route reuse strategy23</h4>
+        <button [routerLink]="itemId == '2' ? ['../5'] : ['../2'] ">sibling navigation to item 5/2</button>
+        <button (click)="navigate23()">sibling navigation to item 5/2</button>
+        
         <div class="navigate-2-levels">
             <a [routerLink]="['../../snapshot12']">Go up 2 levels</a>
             <div>navigates from "router-12/itemDetail/2" ===> "router-12/snapshot12" </div>

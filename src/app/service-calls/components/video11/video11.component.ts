@@ -49,6 +49,16 @@ export class Video11Component implements OnInit {
 
     }
 
+    skip23(time) {
+        var video = <HTMLVideoElement>document.getElementById("video-id-23");
+        video.currentTime = video.currentTime + time;
+    }
+
+    restart23() {
+        var video = <HTMLVideoElement>document.getElementById("video-id-23");
+        video.currentTime = 0;
+    }
+
     processResponse2() { }
 
     handleFileInput23(files: any) {

@@ -35,4 +35,10 @@ export class OnReturnDirective {
 
     }
 
+    /*
+        @HostListener('window:resize')     show/hide sideNav content based on window.innerWidth
+        
+
+
+    */
 }

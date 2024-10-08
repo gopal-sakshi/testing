@@ -7,7 +7,11 @@
         <button (click)="showUploadFile=!showUploadFile">uploadFile</button>
         <button (click)="showAxiosFetch=!showAxiosFetch">axios_vs_fetch</button>
         <button (click)="fetchLocalServerData()">local server (do "npm run server" first)</button>
-        <button (click)="showXssAttacks12=!showXssAttacks12">XssAttacks12</button>        
+        <button (click)="showXssAttacks12=!showXssAttacks12">XssAttacks12</button>
+        <button (click)="doSSE()">server sent events</button>
+    </div>
+    <div>
+        {{ text23 }}
     </div>
     <div class="components" fxLayout="column">
         <div class="video-component" *ngIf="showVideo11">

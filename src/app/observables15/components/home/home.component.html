@@ -3,6 +3,8 @@
         <button (click)="showAppGreeting=!showAppGreeting">greeting</button>
         <button (click)="showFilter23=!showFilter23">filter23</button>
         <button (click)="coldObs23=!coldObs23">cold Observable23</button>
+        <button (click)="scheduler23=!scheduler23">scheduler23</button>
+        <button (click)="blink23=!blink23">blink23</button>
     </div>
     <div class="userActions" *ngIf="showAppGreeting">
         <app69-greeting></app69-greeting>
@@ -13,4 +15,11 @@
     <div *ngIf="coldObs23">
         <app69-cold-obs23></app69-cold-obs23>
     </div>
+    <div *ngIf="scheduler23">
+        <app69-scheduler23></app69-scheduler23>
+    </div>
+    <div *ngIf="blink23">
+        <app69-blink23>blink autundaa </app69-blink23>
+    </div>
+    
 </div>

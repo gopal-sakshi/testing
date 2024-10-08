@@ -22,12 +22,12 @@
 
 Even though bootstrap is responsive webdesign, there are certain usecases where fixed width is desirable
 - like login screen
----------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
 `Layouts & Grids`
 - Steps while building a website
 	what kind of layout a website needs... whether 3-column (or) 4-column
 
-----------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
 
 Fluid container = always occupy 100% width of the device (be it mobile, iPad, desktop, large screens, etc)
 

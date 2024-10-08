@@ -5,55 +5,55 @@ import { map, switchMap } from 'rxjs/operators';
 import { SwitchMap22Service } from '../../services/switch-map-22.service';
 
 @Component({
-  selector: 'app69-switch-map22',
-  templateUrl: './switch-map22.component.html',
-  styleUrls: ['./switch-map22.component.scss']
+    selector: 'app69-switch-map22',
+    templateUrl: './switch-map22.component.html',
+    styleUrls: ['./switch-map22.component.scss']
 })
 export class SwitchMap22Component implements OnInit {
 
-  input1:string;
-  form22:FormGroup;
-  clubInputChangedObs:Observable<any>;
-  stadiumInputChangedObs:Observable<any>;
-  
-  constructor(private formBuilder:FormBuilder, private switchMap22service:SwitchMap22Service) { }
+    input1: string;
+    form22: FormGroup;
+    clubInputChangedObs: Observable<any>;
+    stadiumInputChangedObs: Observable<any>;
 
-  ngOnInit(): void {
-    this.form22 = this.formBuilder.group({
-      clubName: ['', Validators.required],
-      stadiumName: ['']
-    });
+    constructor(private formBuilder: FormBuilder, private switchMap22service: SwitchMap22Service) { }
 
-    this.clubInputChangedObs = this.form22.get('clubName').valueChanges;              // uses switchMap
-    this.stadiumInputChangedObs = this.form22.get('stadiumName').valueChanges;        // doesnt USE switchMap
+    ngOnInit(): void {
+        this.form22 = this.formBuilder.group({
+            clubName: ['', Validators.required],
+            stadiumName: ['']
+        });
 
-    merge(this.clubInputChangedObs).pipe(
-      map(res => {/* console.log('valueChanged'); */ return res}),
-      switchMap(_=>this.switchMap22service.searchClubs1(this.clubNameSearchKeyword))
-    ).subscribe(res => { console.log(res)});
+        this.clubInputChangedObs = this.form22.get('clubName').valueChanges;              // uses switchMap
+        this.stadiumInputChangedObs = this.form22.get('stadiumName').valueChanges;        // doesnt USE switchMap
 
-    merge(this.stadiumInputChangedObs).pipe(
-      map(res => { /*console.log('valueChanged') */; return res}),
-      switchMap(_=>this.switchMap22service.searchStadiums1(this.stadiumNameSearchKeyword))
-    ).subscribe(res => { console.log(res,'\n\n')});
+        merge(this.clubInputChangedObs).pipe(
+            map(res => {/* console.log('valueChanged'); */ return res }),
+            switchMap(_ => this.switchMap22service.searchClubs1(this.clubNameSearchKeyword))
+        ).subscribe(res => { console.log(res) });
 
-  }
+        merge(this.stadiumInputChangedObs).pipe(
+            map(res => { /*console.log('valueChanged') */; return res }),
+            switchMap(_ => this.switchMap22service.searchStadiums1(this.stadiumNameSearchKeyword))
+        ).subscribe(res => { console.log(res, '\n\n') });
 
-  get clubNameSearchKeyword():string {
-    return this.form22.get('clubName').value;
-  }
+    }
 
-  get stadiumNameSearchKeyword():string {
-    return this.form22.get('stadiumName').value;
-  }
+    get clubNameSearchKeyword(): string {
+        return this.form22.get('clubName').value;
+    }
 
-  submit1() {
-    console.log(this.form22);
-  }
+    get stadiumNameSearchKeyword(): string {
+        return this.form22.get('stadiumName').value;
+    }
 
-  search1() {
-    var result = this.switchMap22service.searchClubs1('Real');
-    console.log(result);
-  }
+    submit1() {
+        console.log(this.form22);
+    }
+
+    search1() {
+        var result = this.switchMap22service.searchClubs1('Real');
+        console.log(result);
+    }
 
 }
